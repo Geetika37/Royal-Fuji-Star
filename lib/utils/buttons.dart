@@ -42,6 +42,47 @@ class BlueButton extends StatelessWidget {
   }
 }
 
+class BlueButtonOutlined extends StatelessWidget {
+  const BlueButtonOutlined({
+    super.key,
+    required this.height,
+    required this.width,
+    required this.circularRadius,
+    required this.text,
+    required this.onTap,
+  });
+  final double height, width, circularRadius;
+  final String text;
+  final Function() onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        height: height,
+        width: width,
+        decoration: BoxDecoration(
+          border: Border.all(
+            width: 2,
+            color: Appcolor.buttonColor,
+          ),
+          borderRadius: BorderRadius.circular(circularRadius),
+        ),
+        child: Center(
+            child: Text(
+          text,
+          style: poppins(
+            Appcolor.buttonColor,
+            14,
+            FontWeight.w600,
+          ),
+        )),
+      ),
+    );
+  }
+}
+
 class BlueButtonWithIcon extends StatelessWidget {
   const BlueButtonWithIcon({
     super.key,

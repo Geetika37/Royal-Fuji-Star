@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
+import 'package:royal_fuji_star/screens/splash/views/screens/joinus.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 import 'package:royal_fuji_star/utils/buttons.dart';
 
@@ -71,7 +73,7 @@ class LanguageSelect extends StatelessWidget {
               circularRadius: 10,
               text: 'Continue',
               onTap: () {
-                
+                Get.to(const JoinUs());
               },
             )
           ],
