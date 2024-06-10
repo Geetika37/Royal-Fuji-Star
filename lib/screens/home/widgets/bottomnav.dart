@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:royal_fuji_star/constants/size.dart';
+import 'package:royal_fuji_star/screens/annualmaintenance/views/annual.dart';
 import 'package:royal_fuji_star/screens/home/views/homepage.dart';
 import 'package:royal_fuji_star/screens/services/views/services.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
@@ -43,7 +44,7 @@ class _BottomnavState extends State<Bottomnav> {
     final List<Widget> bottomBarPages = [
       const Homepage(),
       const Services(),
-      const Homepage(),
+      const AnualMaintenance(),
       const Homepage(),
     ];
     return SafeArea(
@@ -56,62 +57,57 @@ class _BottomnavState extends State<Bottomnav> {
         extendBody: true,
         bottomNavigationBar: _isDrawerOpen
             ? null
-            : Padding(
-                padding: const EdgeInsets.only(
-                  bottom: 15,
-                  left: 40,
-                  right: 40,
+            : Container(
+                margin: EdgeInsets.all(screenWidth * 0.05),
+                height: screenHeight * 0.10,
+                decoration: const BoxDecoration(
+                  color: Appcolor.buttonColor,
+                  borderRadius: BorderRadius.all(Radius.circular(50.0)),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black26,
+                      spreadRadius: 0,
+                      blurRadius: 10,
+                    ),
+                  ],
                 ),
-                child: Container(
-                  height: screenHeight * 0.10,
-                  decoration: const BoxDecoration(
-                    color: Appcolor.buttonColor,
-                    borderRadius: BorderRadius.all(Radius.circular(50.0)),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black26,
-                        spreadRadius: 0,
-                        blurRadius: 10,
-                      ),
-                    ],
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      BottomBarItem(
-                        image: bottombarContents[0].image,
-                        pressedimage: bottombarContents[0].pressedimage,
-                        label: bottombarContents[0].label,
-                        isSelected: _currentIndex == 0,
-                        index: 0,
-                        onTap: _onItemTapped,
-                      ),
-                      BottomBarItem(
-                        image: bottombarContents[1].image,
-                        pressedimage: bottombarContents[1].pressedimage,
-                        label: bottombarContents[1].label,
-                        isSelected: _currentIndex == 1,
-                        index: 1,
-                        onTap: _onItemTapped,
-                      ),
-                      BottomBarItem(
-                        image: bottombarContents[2].image,
-                        pressedimage: bottombarContents[2].pressedimage,
-                        label: bottombarContents[2].label,
-                        isSelected: _currentIndex == 2,
-                        index: 2,
-                        onTap: _onItemTapped,
-                      ),
-                      BottomBarItem(
-                        image: bottombarContents[3].image,
-                        pressedimage: bottombarContents[3].pressedimage,
-                        label: bottombarContents[3].label,
-                        isSelected: _currentIndex == 3,
-                        index: 3,
-                        onTap: _onItemTapped,
-                      ),
-                    ],
-                  ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    BottomBarItem(
+                      image: bottombarContents[0].image,
+                      pressedimage: bottombarContents[0].pressedimage,
+                      label: bottombarContents[0].label,
+                      isSelected: _currentIndex == 0,
+                      index: 0,
+                      onTap: _onItemTapped,
+                    ),
+                    BottomBarItem(
+                      image: bottombarContents[1].image,
+                      pressedimage: bottombarContents[1].pressedimage,
+                      label: bottombarContents[1].label,
+                      isSelected: _currentIndex == 1,
+                      index: 1,
+                      onTap: _onItemTapped,
+                    ),
+                    BottomBarItem(
+                      image: bottombarContents[2].image,
+                      pressedimage: bottombarContents[2].pressedimage,
+                      label: bottombarContents[2].label,
+                      isSelected: _currentIndex == 2,
+                      index: 2,
+                      onTap: _onItemTapped,
+                    ),
+                    BottomBarItem(
+                      image: bottombarContents[3].image,
+                      pressedimage: bottombarContents[3].pressedimage,
+                      label: bottombarContents[3].label,
+                      isSelected: _currentIndex == 3,
+                      index: 3,
+                      onTap: _onItemTapped,
+                    ),
+                  ],
                 ),
               ),
       ),
@@ -150,15 +146,16 @@ class BottomBarItem extends StatelessWidget {
                   color: Colors.white,
                 )
               : null,
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(12.0),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SvgPicture.asset(
                 isSelected ? pressedimage : image,
                 height: screenHeight * 0.03,
               ),
               SizedBox(
-                height: screenHeight * 0.01,
+                height: screenHeight * 0.005,
               ),
               Text(
                 label,

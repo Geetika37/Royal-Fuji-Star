@@ -33,6 +33,7 @@ class LoginContainer extends StatelessWidget {
                 Textformfield(
                   textfieldWidth: screenWidth * 0.8,
                   hintText: 'Phone or email',
+                  hintTextSize: 15,
                 ),
                 SizedBox(height: screenHeight * 0.03),
                 TextformfieldWithIcons(
