@@ -57,57 +57,59 @@ class _BottomnavState extends State<Bottomnav> {
         extendBody: true,
         bottomNavigationBar: _isDrawerOpen
             ? null
-            : Container(
-                margin: EdgeInsets.all(screenWidth * 0.05),
-                height: screenHeight * 0.10,
-                decoration: const BoxDecoration(
-                  color: Appcolor.buttonColor,
-                  borderRadius: BorderRadius.all(Radius.circular(50.0)),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black26,
-                      spreadRadius: 0,
-                      blurRadius: 10,
-                    ),
-                  ],
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    BottomBarItem(
-                      image: bottombarContents[0].image,
-                      pressedimage: bottombarContents[0].pressedimage,
-                      label: bottombarContents[0].label,
-                      isSelected: _currentIndex == 0,
-                      index: 0,
-                      onTap: _onItemTapped,
-                    ),
-                    BottomBarItem(
-                      image: bottombarContents[1].image,
-                      pressedimage: bottombarContents[1].pressedimage,
-                      label: bottombarContents[1].label,
-                      isSelected: _currentIndex == 1,
-                      index: 1,
-                      onTap: _onItemTapped,
-                    ),
-                    BottomBarItem(
-                      image: bottombarContents[2].image,
-                      pressedimage: bottombarContents[2].pressedimage,
-                      label: bottombarContents[2].label,
-                      isSelected: _currentIndex == 2,
-                      index: 2,
-                      onTap: _onItemTapped,
-                    ),
-                    BottomBarItem(
-                      image: bottombarContents[3].image,
-                      pressedimage: bottombarContents[3].pressedimage,
-                      label: bottombarContents[3].label,
-                      isSelected: _currentIndex == 3,
-                      index: 3,
-                      onTap: _onItemTapped,
-                    ),
-                  ],
+            : Padding(
+                padding: const EdgeInsets.only(bottom: 10, right: 30, left: 30),
+                child: Container(
+                  height: screenHeight * 0.10,
+                  decoration: const BoxDecoration(
+                    color: Appcolor.buttonColor,
+                    borderRadius: BorderRadius.all(Radius.circular(50.0)),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black26,
+                        spreadRadius: 0,
+                        blurRadius: 10,
+                      ),
+                    ],
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      BottomBarItem(
+                        image: bottombarContents[0].image,
+                        pressedimage: bottombarContents[0].pressedimage,
+                        label: bottombarContents[0].label,
+                        isSelected: _currentIndex == 0,
+                        index: 0,
+                        onTap: _onItemTapped,
+                      ),
+                      BottomBarItem(
+                        image: bottombarContents[1].image,
+                        pressedimage: bottombarContents[1].pressedimage,
+                        label: bottombarContents[1].label,
+                        isSelected: _currentIndex == 1,
+                        index: 1,
+                        onTap: _onItemTapped,
+                      ),
+                      BottomBarItem(
+                        image: bottombarContents[2].image,
+                        pressedimage: bottombarContents[2].pressedimage,
+                        label: bottombarContents[2].label,
+                        isSelected: _currentIndex == 2,
+                        index: 2,
+                        onTap: _onItemTapped,
+                      ),
+                      BottomBarItem(
+                        image: bottombarContents[3].image,
+                        pressedimage: bottombarContents[3].pressedimage,
+                        label: bottombarContents[3].label,
+                        isSelected: _currentIndex == 3,
+                        index: 3,
+                        onTap: _onItemTapped,
+                      ),
+                    ],
+                  ),
                 ),
               ),
       ),
