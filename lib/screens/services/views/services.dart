@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
-import 'package:royal_fuji_star/screens/login/widgets/login_container.dart';
-import 'package:royal_fuji_star/screens/notification/views/notification.dart';
-import 'package:royal_fuji_star/screens/signup/views/signup.dart';
+import 'package:royal_fuji_star/screens/services/widgets/service_container.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class Services extends StatelessWidget {
+  const Services({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -46,25 +42,19 @@ class LoginScreen extends StatelessWidget {
                       height: screenHeight * 0.03,
                     ),
                     Text(
-                      'Login to Your Account',
+                      'Services',
                       style: poppins(Appcolor.white, 20, FontWeight.w600),
                     ),
                   ],
                 ),
               ),
-              Positioned(
+              const Positioned(
                 bottom: 0,
-                child: LoginContainer(
-                  onTap: () {
-                    HapticFeedback.heavyImpact();
-                    Get.to(const SignUp());
-                  },
-                ),
+                child: ServiceContainer(),
               ),
             ],
           ),
         ),
-        
       ),
     );
   }

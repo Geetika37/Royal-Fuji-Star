@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
+import 'package:royal_fuji_star/screens/home/widgets/bottomnav.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 import 'package:royal_fuji_star/utils/buttons.dart';
 import 'package:royal_fuji_star/utils/textformfield.dart';
 
 class LoginContainer extends StatelessWidget {
   const LoginContainer({
-    super.key, required this.onTap,
+    super.key,
+    required this.onTap,
   });
   final Function() onTap;
 
@@ -47,11 +50,14 @@ class LoginContainer extends StatelessWidget {
                 ),
                 SizedBox(height: screenHeight * 0.04),
                 BlueButton(
-                    height: screenHeight * 0.07,
-                    width: screenWidth * 0.8,
-                    circularRadius: 10,
-                    text: 'Login',
-                    onTap: () {})
+                  height: screenHeight * 0.07,
+                  width: screenWidth * 0.8,
+                  circularRadius: 10,
+                  text: 'Login',
+                  onTap: () {
+                    Get.to(const Bottomnav());
+                  },
+                )
               ],
             ),
           ),

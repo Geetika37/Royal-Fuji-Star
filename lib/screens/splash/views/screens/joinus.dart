@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
 import 'package:royal_fuji_star/screens/login/views/loginscreen.dart';
+import 'package:royal_fuji_star/screens/notification/views/notification.dart';
 import 'package:royal_fuji_star/screens/signup/views/signup.dart';
 import 'package:royal_fuji_star/screens/splash/widgets/bottom_container.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
@@ -86,6 +87,9 @@ class JoinUs extends StatelessWidget {
             )
           ],
         ),
+        floatingActionButton: FloatingActionButton(onPressed: () {
+          Get.to(const NotificationPage());
+        }),
       ),
     );
   }
