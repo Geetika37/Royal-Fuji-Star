@@ -5,7 +5,10 @@ import 'package:royal_fuji_star/utils/appcolor.dart';
 
 class Textformfield extends StatelessWidget {
   const Textformfield(
-      {super.key, required this.textfieldWidth, required this.hintText, required this.hintTextSize});
+      {super.key,
+      required this.textfieldWidth,
+      required this.hintText,
+      required this.hintTextSize});
   final double textfieldWidth;
   final String hintText;
   final double hintTextSize;
@@ -18,8 +21,8 @@ class Textformfield extends StatelessWidget {
         child: TextFormField(
           decoration: InputDecoration(
             hintText: hintText,
-            hintStyle: poppins(
-                const Color.fromARGB(255, 149, 147, 147), hintTextSize, FontWeight.w300),
+            hintStyle: poppins(const Color.fromARGB(255, 149, 147, 147),
+                hintTextSize, FontWeight.w300),
             filled: true,
             fillColor: const Color.fromARGB(255, 227, 228, 229),
             contentPadding:
@@ -67,6 +70,32 @@ class TextformfieldWithIcons extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class TextfieldMultipleLine extends StatelessWidget {
+  const TextfieldMultipleLine(
+      {super.key, required this.hintText, required this.hintTextSize});
+  final String hintText;
+  final double hintTextSize;
+  @override
+  Widget build(BuildContext context) {
+    return TextField(
+      decoration: InputDecoration(
+        hintText: hintText,
+        hintStyle: poppins(const Color.fromARGB(255, 149, 147, 147),
+            hintTextSize, FontWeight.w300),
+        filled: true,
+        fillColor: const Color.fromARGB(255, 227, 228, 229),
+        contentPadding:
+            const EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
+        border: const OutlineInputBorder(
+          borderRadius: BorderRadius.all(Radius.circular(0)),
+          borderSide: BorderSide.none,
+        ),
+      ),
+      maxLines: 3,
     );
   }
 }

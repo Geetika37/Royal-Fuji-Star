@@ -1,6 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:royal_fuji_star/constants/size.dart';
 
 class CustomCarouselSlider extends StatefulWidget {
   const CustomCarouselSlider({
@@ -29,7 +28,6 @@ class _CustomCarouselSliderState extends State<CustomCarouselSlider> {
           children: [
             InkWell(
               onTap: () {
-                print(currentIndex);
               },
               child: CarouselSlider(
                 items: imageList

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
 import 'package:royal_fuji_star/screens/annualmaintenance/widgets/annualcontainer.dart';
@@ -22,11 +23,16 @@ class AnualMaintenance extends StatelessWidget {
           ),
           child: Stack(
             children: [
-              const Padding(
-                padding: EdgeInsets.all(15.0),
-                child: Icon(
-                  Icons.arrow_back,
-                  color: Appcolor.white,
+              Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: IconButton(
+                  onPressed: () {
+                    Get.back();
+                  },
+                  icon: const Icon(
+                    Icons.arrow_back,
+                    color: Appcolor.white,
+                  ),
                 ),
               ),
               Center(

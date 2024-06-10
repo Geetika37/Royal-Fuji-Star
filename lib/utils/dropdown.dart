@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 
@@ -6,15 +7,12 @@ class Dropdown extends StatefulWidget {
   const Dropdown({
     super.key,
     required this.title,
-    required this.hint,
-    required this.icon,
     this.textValue = "",
     this.margin = 0,
   });
 
-  final String title, hint, textValue;
+  final String title, textValue;
   final double margin;
-  final IconData icon;
 
   @override
   State<Dropdown> createState() => _DropdownState();
@@ -35,85 +33,63 @@ class _DropdownState extends State<Dropdown> {
       padding: const EdgeInsets.only(
         top: 10,
       ),
-      child: Stack(children: [
-        DropdownButtonFormField<String>(
-          validator: (value) {
-            if (value == null || value == 'Select') {
-              return 'Please select a valid option';
-            }
-            return null;
-          },
-          decoration: InputDecoration(
-            border: OutlineInputBorder(
-              borderSide:
-                  const BorderSide(width: 1, color: Appcolor.buttonColor),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            enabledBorder: OutlineInputBorder(
-              borderSide:
-                  const BorderSide(width: 1, color: Appcolor.buttonColor),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderSide:
-                  const BorderSide(width: 1, color: Appcolor.buttonColor),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            errorBorder: OutlineInputBorder(
-              borderSide:
-                  const BorderSide(width: 1, color: Appcolor.buttonColor),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            focusedErrorBorder: OutlineInputBorder(
-              borderSide:
-                  const BorderSide(width: 1, color: Appcolor.buttonColor),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            contentPadding: const EdgeInsets.only(
-              top: 30,
-              left: 10,
-            ),
-          ),
-          isExpanded: true,
-          value: dropdownValue,
-          icon: const Icon(
-            Icons.keyboard_arrow_down_rounded,
-            color: Colors.black,
-          ),
-          iconSize: 24,
-          style: const TextStyle(
-              color: Colors.black87,
-              fontSize: 12,
-              fontWeight: FontWeight.w600,
-              height: 1.5),
-          onChanged: (String? newValue) {
-            setState(() {
-              dropdownValue = newValue!;
-            });
-          },
-          items: <String>['Select', 'Male', 'Female']
-              .map<DropdownMenuItem<String>>((String value) {
-            return DropdownMenuItem<String>(
-              value: value,
-              child: Text(
-                value,
-                style: value == 'Select'
-                    ? poppins(Colors.black12, 14, FontWeight.w400)
-                    : poppins(
-                        Appcolor.bgColorTextformfield, 14, FontWeight.w400),
-              ),
-            );
-          }).toList(),
-        ),
-        Positioned(
-          top: 2,
-          left: 10,
-          child: Text(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
             widget.title,
-            style: const TextStyle(color: Appcolor.buttonColor, fontSize: 10),
+            style: poppins(Appcolor.black, 12, FontWeight.w400),
           ),
-        )
-      ]),
+          SizedBox(height: screenHeight * 0.01),
+          DropdownButtonFormField<String>(
+            validator: (value) {
+              if (value == null || value == 'Select') {
+                return 'Please select a valid option';
+              }
+              return null;
+            },
+            decoration: const InputDecoration(
+              filled: true,
+              fillColor: Color.fromARGB(255, 227, 228, 229),
+              contentPadding:
+                  EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(0)),
+                borderSide: BorderSide.none,
+              ),
+            ),
+            isExpanded: true,
+            value: dropdownValue,
+            icon: const Icon(
+              Icons.keyboard_arrow_down_rounded,
+              color: Colors.black,
+            ),
+            iconSize: 24,
+            style: const TextStyle(
+                color: Colors.black87,
+                fontSize: 12,
+                fontWeight: FontWeight.w600,
+                height: 1.5),
+            onChanged: (String? newValue) {
+              setState(() {
+                dropdownValue = newValue!;
+              });
+            },
+            items: <String>['Select', 'Male', 'Female']
+                .map<DropdownMenuItem<String>>((String value) {
+              return DropdownMenuItem<String>(
+                value: value,
+                child: Text(
+                  value,
+                  style: value == 'Select'
+                      ? poppins(Colors.black12, 14, FontWeight.w400)
+                      : poppins(Colors.grey.shade700, 14, FontWeight.w400),
+                ),
+              );
+            }).toList(),
+          ),
+        ],
+      ),
     );
   }
 }
