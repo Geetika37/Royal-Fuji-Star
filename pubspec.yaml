@@ -1,11 +1,11 @@
 name: royal_fuji_star
 description: "A new Flutter project."
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.4.1 <4.0.0'
+  sdk: ">=3.4.1 <4.0.0"
 
 dependencies:
   carousel_slider: ^4.2.1
@@ -18,6 +18,7 @@ dependencies:
   google_fonts: ^6.2.1
   image_cropper: ^6.0.0
   image_picker: ^1.1.1
+  youtube_player_flutter: ^8.1.2
 
 dev_dependencies:
   flutter_lints: ^3.0.0

@@ -23,18 +23,6 @@ class About extends StatelessWidget {
           ),
           child: Stack(
             children: [
-              Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: IconButton(
-                  onPressed: () {
-                    Get.back();
-                  },
-                  icon: const Icon(
-                    Icons.arrow_back,
-                    color: Appcolor.white,
-                  ),
-                ),
-              ),
               Center(
                 child: Column(
                   children: [
