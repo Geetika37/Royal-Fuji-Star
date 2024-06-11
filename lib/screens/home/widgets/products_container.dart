@@ -19,7 +19,7 @@ class _ProductsContainerState extends State<ProductsContainer> {
     Product(imagePath: 'assets/svg/product1.svg', text: 'Elevators'),
     Product(imagePath: 'assets/svg/product2.svg', text: 'Escalators'),
     Product(imagePath: 'assets/svg/product3.svg', text: 'Lift Parts'),
-    Product(imagePath: 'assets/svg/product4.svg', text: 'More'),
+    Product(imagePath: 'assets/svg/product4.svg', text: 'Dumbwaiters'),
   ];
 
   @override
@@ -34,7 +34,7 @@ class _ProductsContainerState extends State<ProductsContainer> {
             crossAxisCount: 2,
             mainAxisSpacing: 8,
             crossAxisSpacing: 8,
-            childAspectRatio: 1.5,
+            childAspectRatio: 1.45,
           ),
           itemBuilder: (context, index) {
             return Container(

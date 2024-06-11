@@ -49,7 +49,7 @@ class Consultation extends StatelessWidget {
                       height: screenHeight * 0.03,
                     ),
                     Text(
-                      'Consultation',
+                      'Advisory',
                       style: poppins(Appcolor.white, 20, FontWeight.w600),
                     ),
                   ],

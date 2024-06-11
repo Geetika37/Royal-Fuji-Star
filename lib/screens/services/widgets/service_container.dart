@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
+import 'package:royal_fuji_star/screens/services/views/screens/annualmaintenance.dart';
+import 'package:royal_fuji_star/screens/services/views/screens/spareparts.dart';
 import 'package:royal_fuji_star/screens/services/widgets/service_types.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 
@@ -21,13 +24,17 @@ class ServiceContainer extends StatelessWidget {
           children: [
             SizedBox(height: screenHeight * 0.05),
             ServiceTypes(
-              onTap: () {},
+              onTap: () {
+                Get.to(const AnualMaintenance());
+              },
               image: 'assets/svg/service1.svg',
-              text: 'Repair',
+              text: 'Annual Maintenance',
             ),
             SizedBox(height: screenHeight * 0.04),
             ServiceTypes(
-              onTap: () {},
+              onTap: () {
+                Get.to(const SpareParts());
+              },
               image: 'assets/svg/service2.svg',
               text: 'Spare Parts for all Brands',
             ),

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/screens/menu/settings/views/screens/delete_account.dart';
+import 'package:royal_fuji_star/screens/menu/settings/views/screens/language_settings.dart';
+import 'package:royal_fuji_star/screens/menu/settings/views/screens/notification_settings.dart';
 import 'package:royal_fuji_star/screens/menu/settings/views/screens/privacy_security.dart';
 import 'package:royal_fuji_star/screens/menu/settings/views/screens/support_feedback.dart';
 import 'package:royal_fuji_star/screens/menu/settings/widgets/cardsettings.dart';
@@ -27,11 +29,11 @@ class SettingsPage extends StatelessWidget {
             children: [
               CardSettings(
                 text: 'Notification Settings',
-                onTap: () {},
+                onTap: () => Get.to(const NotificationSettings()),
               ),
               CardSettings(
                 text: 'Language Settings',
-                onTap: () {},
+                onTap: () => Get.to(const LanguageSettings()),
               ),
               CardSettings(
                 text: 'Privacy and Security',

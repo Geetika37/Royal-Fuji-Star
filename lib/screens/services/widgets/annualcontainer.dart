@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
-import 'package:royal_fuji_star/screens/annualmaintenance/widgets/radio_button.dart';
+import 'package:royal_fuji_star/screens/services/widgets/radio_button.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 import 'package:royal_fuji_star/utils/buttons.dart';
 import 'package:royal_fuji_star/utils/dropdown.dart';

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
-import 'package:royal_fuji_star/screens/annualmaintenance/views/annual.dart';
 import 'package:royal_fuji_star/screens/consultation/widgets/uploadpic.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 import 'package:royal_fuji_star/utils/buttons.dart';
@@ -104,9 +102,7 @@ class ConsultationContainer extends StatelessWidget {
                     width: screenWidth * 0.7,
                     circularRadius: 10,
                     text: 'Submit',
-                    onTap: () {
-                      Get.to(const AnualMaintenance());
-                    }),
+                    onTap: () {}),
               ),
               SizedBox(height: screenHeight * 0.01),
             ],
