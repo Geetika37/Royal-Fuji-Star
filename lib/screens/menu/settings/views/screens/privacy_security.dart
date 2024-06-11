@@ -25,6 +25,7 @@ class PrivacySecurity extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const CustomTitle(
+                    fontWeight: FontWeight.w500,
                     textHeading: 'Introduction',
                     fontSize: 12,
                     color: Appcolor.black),
@@ -37,6 +38,7 @@ class PrivacySecurity extends StatelessWidget {
                     maxLines: 4),
                 SizedBox(height: screenHeight * 0.02),
                 const CustomTitle(
+                    fontWeight: FontWeight.w500,
                     textHeading: 'Data Collection',
                     fontSize: 12,
                     color: Appcolor.black),
@@ -49,6 +51,7 @@ class PrivacySecurity extends StatelessWidget {
                     maxLines: 5),
                 SizedBox(height: screenHeight * 0.02),
                 const CustomTitle(
+                    fontWeight: FontWeight.w500,
                     textHeading: 'Use of Data',
                     fontSize: 12,
                     color: Appcolor.black),
@@ -61,6 +64,7 @@ class PrivacySecurity extends StatelessWidget {
                     maxLines: 4),
                 SizedBox(height: screenHeight * 0.02),
                 const CustomTitle(
+                    fontWeight: FontWeight.w500,
                     textHeading: 'Data Sharing',
                     fontSize: 12,
                     color: Appcolor.black),
@@ -73,6 +77,7 @@ class PrivacySecurity extends StatelessWidget {
                     maxLines: 3),
                 SizedBox(height: screenHeight * 0.02),
                 const CustomTitle(
+                    fontWeight: FontWeight.w500,
                     textHeading: 'Data Security',
                     fontSize: 12,
                     color: Appcolor.black),
@@ -85,6 +90,7 @@ class PrivacySecurity extends StatelessWidget {
                     maxLines: 4),
                 SizedBox(height: screenHeight * 0.02),
                 const CustomTitle(
+                    fontWeight: FontWeight.w500,
                     textHeading: 'User Rights',
                     fontSize: 12,
                     color: Appcolor.black),
@@ -97,6 +103,7 @@ class PrivacySecurity extends StatelessWidget {
                     maxLines: 3),
                 SizedBox(height: screenHeight * 0.02),
                 const CustomTitle(
+                    fontWeight: FontWeight.w500,
                     textHeading: 'Cookies and Tracking Technologies',
                     fontSize: 12,
                     color: Appcolor.black),
@@ -109,6 +116,7 @@ class PrivacySecurity extends StatelessWidget {
                     maxLines: 4),
                 SizedBox(height: screenHeight * 0.02),
                 const CustomTitle(
+                    fontWeight: FontWeight.w500,
                     textHeading: 'Changes to This Policy',
                     fontSize: 12,
                     color: Appcolor.black),
@@ -121,6 +129,7 @@ class PrivacySecurity extends StatelessWidget {
                     maxLines: 3),
                 SizedBox(height: screenHeight * 0.02),
                 const CustomTitle(
+                    fontWeight: FontWeight.w500,
                     textHeading: 'Contact Information',
                     fontSize: 12,
                     color: Appcolor.black),

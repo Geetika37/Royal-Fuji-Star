@@ -27,18 +27,20 @@ class Aboutcontainer extends StatelessWidget {
             children: [
               SizedBox(height: screenHeight * 0.02),
               const CustomTitle(
+                  fontWeight: FontWeight.w500,
                   textHeading: 'Projects',
                   fontSize: 16,
                   color: Appcolor.buttonColor),
               SizedBox(height: screenHeight * 0.01),
               const CustomSubTitle(
-                color: Appcolor.black,
+                  color: Appcolor.black,
                   fontSize: 11,
                   subTitle:
                       'Exploring the heights of innovation, let’s have a deep look at our cutting-edge elevator projects in the UAE.',
                   maxLines: 2),
               SizedBox(height: screenHeight * 0.02),
               const CustomTitle(
+                  fontWeight: FontWeight.w500,
                   textHeading: 'Watch video',
                   fontSize: 12,
                   color: Appcolor.buttonColor),
@@ -46,6 +48,7 @@ class Aboutcontainer extends StatelessWidget {
               const VideoPlayer(),
               SizedBox(height: screenHeight * 0.02),
               const CustomTitle(
+                  fontWeight: FontWeight.w500,
                   textHeading: 'Why Royal Fuji Elevators....?',
                   fontSize: 14,
                   color: Appcolor.buttonColor),
@@ -61,6 +64,7 @@ class Aboutcontainer extends StatelessWidget {
               Aboutgridview(),
               SizedBox(height: screenHeight * 0.02),
               const CustomTitle(
+                  fontWeight: FontWeight.w500,
                   textHeading: 'Contact Info',
                   fontSize: 14,
                   color: Appcolor.buttonColor),

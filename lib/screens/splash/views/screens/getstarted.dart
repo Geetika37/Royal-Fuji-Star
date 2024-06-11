@@ -55,6 +55,7 @@ class GetStarted extends StatelessWidget {
               height: screenHeight * 0.02,
             ),
             BlueButton(
+              textColor: Appcolor.white,
               color: Appcolor.buttonColor,
               height: screenHeight * 0.07,
               width: screenWidth * 0.7,

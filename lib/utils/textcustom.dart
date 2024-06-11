@@ -6,7 +6,8 @@ class CustomSubTitle extends StatelessWidget {
     super.key,
     required this.subTitle,
     required this.maxLines,
-    required this.fontSize, required this.color,
+    required this.fontSize,
+    required this.color,
   });
   final String subTitle;
   final int maxLines;
@@ -17,8 +18,7 @@ class CustomSubTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       subTitle,
-      style: poppins(
-         color, fontSize, FontWeight.w400),
+      style: poppins(color, fontSize, FontWeight.w400),
       maxLines: maxLines,
     );
   }
@@ -29,17 +29,18 @@ class CustomTitle extends StatelessWidget {
     super.key,
     required this.textHeading,
     required this.fontSize,
-    required this.color,
+    required this.color, required this.fontWeight,
   });
   final String textHeading;
   final double fontSize;
   final Color color;
+  final FontWeight fontWeight;
 
   @override
   Widget build(BuildContext context) {
     return Text(
       textHeading,
-      style: poppins(color, fontSize, FontWeight.w500),
+      style: poppins(color, fontSize, fontWeight),
     );
   }
 }

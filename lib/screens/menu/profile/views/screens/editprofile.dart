@@ -42,6 +42,7 @@ class EditProfile extends StatelessWidget {
                   imagePath: 'assets/png/picon4.png', text: 'Location'),
               SizedBox(height: screenHeight * 0.14),
               BlueButton(
+                textColor: Appcolor.white,
                 height: screenHeight * 0.08,
                 width: screenWidth * 0.9,
                 circularRadius: 20,

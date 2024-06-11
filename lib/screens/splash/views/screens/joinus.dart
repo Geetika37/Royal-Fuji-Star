@@ -57,8 +57,8 @@ class JoinUs extends StatelessWidget {
                   height: screenHeight * 0.06,
                 ),
                 BlueButton(
+                  textColor: Appcolor.white,
                   color: Appcolor.buttonColor,
-
                   height: screenHeight * 0.06,
                   width: screenWidth * 0.45,
                   circularRadius: 10,

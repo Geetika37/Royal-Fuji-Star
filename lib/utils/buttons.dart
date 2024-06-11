@@ -11,12 +11,12 @@ class BlueButton extends StatelessWidget {
     required this.width,
     required this.circularRadius,
     required this.text,
-    required this.onTap, required this.color,
+    required this.onTap, required this.color, required this.textColor,
   });
   final double height, width, circularRadius;
   final String text;
   final Function() onTap;
-  final Color color;
+  final Color color,textColor;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class BlueButton extends StatelessWidget {
             child: Text(
           text,
           style: poppins(
-            Appcolor.white,
+            textColor,
             14,
             FontWeight.w600,
           ),
@@ -202,7 +202,7 @@ class OutlineBlueButtonWithIcon extends StatelessWidget {
                 shape: BoxShape.circle,
               ),
               child: const Padding(
-                padding: const EdgeInsets.all(8),
+                padding:  EdgeInsets.all(8),
               ),
             )
           ],

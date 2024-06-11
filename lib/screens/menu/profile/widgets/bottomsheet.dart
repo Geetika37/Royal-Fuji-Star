@@ -37,6 +37,7 @@ class Bottomsheet extends StatelessWidget {
             ),
             SizedBox(height: screenHeight * 0.04),
             BlueButton(
+                textColor: Appcolor.white,
                 height: screenHeight * 0.05,
                 width: screenWidth * 0.4,
                 circularRadius: 20,

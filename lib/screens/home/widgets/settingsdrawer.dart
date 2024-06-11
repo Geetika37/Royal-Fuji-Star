@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
+import 'package:royal_fuji_star/screens/menu/faq/views/faq.dart';
 import 'package:royal_fuji_star/screens/menu/profile/views/profile.dart';
 import 'package:royal_fuji_star/screens/menu/settings/views/settings.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
@@ -69,7 +70,9 @@ class SettingsDrawer extends StatelessWidget {
                       ListTile(
                         leading: Image.asset('assets/png/faq.png'),
                         title: Text('FAQ', style: drawertext),
-                        onTap: () {},
+                        onTap: () {
+                          Get.to(const FAQPage());
+                        },
                         contentPadding:
                             EdgeInsets.symmetric(horizontal: width * 0.05),
                       ),

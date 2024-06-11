@@ -25,6 +25,7 @@ class SupportFeedback extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const CustomTitle(
+                    fontWeight: FontWeight.w500,
                     textHeading: 'Introduction',
                     fontSize: 12,
                     color: Appcolor.black),
@@ -37,11 +38,13 @@ class SupportFeedback extends StatelessWidget {
                     maxLines: 4),
                 SizedBox(height: screenHeight * 0.03),
                 const CustomTitle(
+                    fontWeight: FontWeight.w500,
                     textHeading: 'Contact Support',
                     fontSize: 12,
                     color: Appcolor.black),
                 SizedBox(height: screenHeight * 0.01),
                 const CustomTitle(
+                    fontWeight: FontWeight.w500,
                     textHeading: 'Email Support',
                     fontSize: 10,
                     color: Appcolor.black),
@@ -54,6 +57,7 @@ class SupportFeedback extends StatelessWidget {
                     maxLines: 2),
                 SizedBox(height: screenHeight * 0.013),
                 const CustomTitle(
+                    fontWeight: FontWeight.w500,
                     textHeading: 'Phone Support',
                     fontSize: 10,
                     color: Appcolor.black),
@@ -66,6 +70,7 @@ class SupportFeedback extends StatelessWidget {
                     maxLines: 2),
                 SizedBox(height: screenHeight * 0.013),
                 const CustomTitle(
+                    fontWeight: FontWeight.w500,
                     textHeading: 'Support Hours',
                     fontSize: 10,
                     color: Appcolor.black),
@@ -78,6 +83,7 @@ class SupportFeedback extends StatelessWidget {
                     maxLines: 2),
                 SizedBox(height: screenHeight * 0.013),
                 const CustomTitle(
+                    fontWeight: FontWeight.w500,
                     textHeading: 'Report a Problem',
                     fontSize: 10,
                     color: Appcolor.black),
@@ -90,6 +96,7 @@ class SupportFeedback extends StatelessWidget {
                     maxLines: 4),
                 SizedBox(height: screenHeight * 0.013),
                 const CustomTitle(
+                    fontWeight: FontWeight.w500,
                     textHeading: 'Send Feedback',
                     fontSize: 10,
                     color: Appcolor.black),
@@ -102,6 +109,7 @@ class SupportFeedback extends StatelessWidget {
                     maxLines: 3),
                 SizedBox(height: screenHeight * 0.013),
                 const CustomTitle(
+                    fontWeight: FontWeight.w500,
                     textHeading: 'Status Updates',
                     fontSize: 10,
                     color: Appcolor.black),
@@ -114,6 +122,7 @@ class SupportFeedback extends StatelessWidget {
                     maxLines: 3),
                 SizedBox(height: screenHeight * 0.013),
                 const CustomTitle(
+                    fontWeight: FontWeight.w500,
                     textHeading: 'Additional Resources',
                     fontSize: 10,
                     color: Appcolor.black),
