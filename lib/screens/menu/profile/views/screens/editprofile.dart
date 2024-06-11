@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
+import 'package:royal_fuji_star/screens/menu/profile/widgets/bottomsheet.dart';
 import 'package:royal_fuji_star/screens/menu/profile/widgets/textfieldwithoutborder.dart';
 import 'package:royal_fuji_star/screens/widgets/customappbar.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
@@ -44,7 +46,12 @@ class EditProfile extends StatelessWidget {
                 width: screenWidth * 0.9,
                 circularRadius: 20,
                 text: 'Save',
-                onTap: () {},
+                onTap: () {
+                  Get.bottomSheet(
+                    backgroundColor: Appcolor.bgColor,
+                    const Bottomsheet(),
+                  );
+                },
                 color: Appcolor.buttonColor,
               )
             ],

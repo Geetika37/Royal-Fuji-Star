@@ -6,4 +6,5 @@ class Appcolor {
   static const Color white = Color(0xFFFFFFFF);
   static const Color black = Color.fromARGB(255, 0, 0, 0);
   static const Color bgColorTextformfield = Color.fromARGB(255, 227, 228, 229);
+  static const Color cardColor = Color.fromARGB(255, 163, 222, 253);
 }
