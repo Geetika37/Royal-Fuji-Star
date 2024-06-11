@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
@@ -8,18 +8,19 @@ import 'package:royal_fuji_star/utils/appcolor.dart';
 class HomeAppbar extends StatelessWidget {
   const HomeAppbar({
     super.key,
+    required this.scaffoldKey,
   });
+  final GlobalKey<ScaffoldState> scaffoldKey;
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leading: IconButton(
-        onPressed: () {},
-        icon: const Icon(
-          Icons.menu,
-          color: Appcolor.buttonColor,
-        ),
-      ),
+      leading: InkWell(
+          onTap: () {
+            HapticFeedback.mediumImpact();
+            scaffoldKey.currentState?.openDrawer();
+          },
+          child: Image.asset('assets/png/drawer.png')),
       title: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -34,7 +35,7 @@ class HomeAppbar extends StatelessWidget {
       actions: [
         SvgPicture.asset('assets/svg/notification.svg'),
         SizedBox(
-          width: screenWidth * 0.04,
+          width: screenWidth * 0.02,
         )
       ],
     );

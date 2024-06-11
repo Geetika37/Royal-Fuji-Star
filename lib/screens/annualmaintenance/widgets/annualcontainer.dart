@@ -75,6 +75,7 @@ class Annualcontainer extends StatelessWidget {
               SizedBox(height: screenHeight * 0.01),
               Center(
                 child: BlueButton(
+                  color: Appcolor.buttonColor,
                     height: screenHeight * 0.06,
                     width: screenWidth * 0.7,
                     circularRadius: 10,

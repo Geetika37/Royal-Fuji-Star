@@ -11,11 +11,12 @@ class BlueButton extends StatelessWidget {
     required this.width,
     required this.circularRadius,
     required this.text,
-    required this.onTap,
+    required this.onTap, required this.color,
   });
   final double height, width, circularRadius;
   final String text;
   final Function() onTap;
+  final Color color;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,7 @@ class BlueButton extends StatelessWidget {
         height: height,
         width: width,
         decoration: BoxDecoration(
-          color: Appcolor.buttonColor,
+          color: color,
           borderRadius: BorderRadius.circular(circularRadius),
         ),
         child: Center(

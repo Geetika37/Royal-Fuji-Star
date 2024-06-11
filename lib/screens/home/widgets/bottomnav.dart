@@ -26,11 +26,11 @@ class _BottomnavState extends State<Bottomnav> {
     super.dispose();
   }
 
-  // void _onDrawerChanged(bool isOpen) {
-  //   setState(() {
-  //     _isDrawerOpen = isOpen;
-  //   });
-  // }
+  void _onDrawerChanged(bool isOpen) {
+    setState(() {
+      _isDrawerOpen = isOpen;
+    });
+  }
 
   void _onItemTapped(int index) {
     setState(() {
@@ -43,7 +43,7 @@ class _BottomnavState extends State<Bottomnav> {
   @override
   Widget build(BuildContext context) {
     final List<Widget> bottomBarPages = [
-      const Homepage(),
+      Homepage(onDrawerChanged: _onDrawerChanged),
       const Services(),
       const Consultation(),
       const About(),

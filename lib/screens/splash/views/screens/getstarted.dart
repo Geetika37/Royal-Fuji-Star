@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:royal_fuji_star/screens/splash/views/screens/language_select.dart';
+import 'package:royal_fuji_star/utils/appcolor.dart';
 import 'package:royal_fuji_star/utils/buttons.dart';
 
 class GetStarted extends StatelessWidget {
@@ -54,6 +55,7 @@ class GetStarted extends StatelessWidget {
               height: screenHeight * 0.02,
             ),
             BlueButton(
+              color: Appcolor.buttonColor,
               height: screenHeight * 0.07,
               width: screenWidth * 0.7,
               circularRadius: 10,

@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 
 class CustomAppbar extends StatelessWidget {
   const CustomAppbar({
-    super.key, required this.text, required this.titleSpacing,
+    super.key,
+    required this.text,
+    required this.titleSpacing,
   });
   final String text;
   final double titleSpacing;
@@ -13,7 +16,9 @@ class CustomAppbar extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppBar(
       leading: IconButton(
-        onPressed: () {},
+        onPressed: () {
+          Get.back();
+        },
         icon: const Icon(
           Icons.arrow_back,
           color: Appcolor.buttonColor,

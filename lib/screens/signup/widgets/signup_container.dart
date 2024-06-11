@@ -47,6 +47,7 @@ class SignupContainer extends StatelessWidget {
                 ),
                 SizedBox(height: screenHeight * 0.04),
                 BlueButton(
+                    color: Appcolor.buttonColor,
                     height: screenHeight * 0.07,
                     width: screenWidth * 0.8,
                     circularRadius: 10,

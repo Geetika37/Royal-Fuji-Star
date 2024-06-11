@@ -4,18 +4,36 @@ import 'package:royal_fuji_star/constants/textstyle.dart';
 import 'package:royal_fuji_star/screens/home/widgets/carousel_slider.dart';
 import 'package:royal_fuji_star/screens/home/widgets/homeappbar.dart';
 import 'package:royal_fuji_star/screens/home/widgets/products_container.dart';
+import 'package:royal_fuji_star/screens/home/widgets/settingsdrawer.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 
-class Homepage extends StatelessWidget {
-  const Homepage({super.key});
+class Homepage extends StatefulWidget {
+  const Homepage({super.key, required this.onDrawerChanged});
+  final Function(bool) onDrawerChanged;
+
+  @override
+  State<Homepage> createState() => _HomepageState();
+}
+
+class _HomepageState extends State<Homepage> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const PreferredSize(
-        preferredSize: Size.fromHeight(kToolbarHeight),
-        child: HomeAppbar(),
+      key: _scaffoldKey,
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(kToolbarHeight),
+        child: HomeAppbar(
+          scaffoldKey: _scaffoldKey,
+        ),
       ),
+      drawer: SettingsDrawer(
+        onDrawerChanged: widget.onDrawerChanged,
+        width: screenWidth * 0.999,
+        height: screenHeight,
+      ),
+      onDrawerChanged: widget.onDrawerChanged,
       body: Container(
         width: double.infinity,
         decoration: const BoxDecoration(
