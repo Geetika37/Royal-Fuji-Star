@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
-import 'package:royal_fuji_star/screens/services/models/partlist.dart';
+import 'package:royal_fuji_star/screens/home/models/partlist.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 import 'package:royal_fuji_star/utils/buttons.dart';
 
-class PartsContainer extends StatelessWidget {
-  const PartsContainer({
+class ListPartsContainer extends StatelessWidget {
+  const ListPartsContainer({
     super.key,
   });
 

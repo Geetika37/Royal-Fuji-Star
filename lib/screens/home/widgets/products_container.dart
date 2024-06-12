@@ -4,7 +4,8 @@ import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
 import 'package:royal_fuji_star/screens/home/models/product.dart';
-import 'package:royal_fuji_star/screens/home/views/screens/productpage.dart';
+import 'package:royal_fuji_star/screens/home/views/screens/product_page.dart';
+import 'package:royal_fuji_star/screens/home/views/screens/lift_parts.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 
 class ProductsContainer extends StatefulWidget {
@@ -27,7 +28,7 @@ class _ProductsContainerState extends State<ProductsContainer> {
         imagePath: 'assets/svg/product2.svg',
         text: 'Escalators'),
     Product(
-        onTap: () => Get.to(() => const Escalators()),
+        onTap: () => Get.to(() => const LiftParts()),
         imagePath: 'assets/svg/product3.svg',
         text: 'Lift Parts'),
     Product(

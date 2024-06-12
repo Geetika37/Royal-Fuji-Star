@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:royal_fuji_star/constants/size.dart';
-import 'package:royal_fuji_star/screens/services/widgets/partscontainer.dart';
-import 'package:royal_fuji_star/screens/services/widgets/partsname.dart';
+import 'package:royal_fuji_star/screens/home/widgets/lift_partscontainer.dart';
+import 'package:royal_fuji_star/screens/home/widgets/lift_partsname.dart';
 import 'package:royal_fuji_star/screens/widgets/customappbar.dart';
 
-class SpareParts extends StatefulWidget {
-  const SpareParts({super.key});
+class LiftParts extends StatefulWidget {
+  const LiftParts({super.key});
 
   @override
-  State<SpareParts> createState() => _SparePartsState();
+  State<LiftParts> createState() => _LiftPartsState();
 }
 
-class _SparePartsState extends State<SpareParts> {
+class _LiftPartsState extends State<LiftParts> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -19,8 +19,8 @@ class _SparePartsState extends State<SpareParts> {
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(kToolbarHeight),
           child: CustomAppbar(
-            text: 'Spare Parts for all Brands',
-            titleSpacing: screenWidth * 0.1,
+            text: 'Parts',
+            titleSpacing: screenWidth * 0.3,
           ),
         ),
         body: Padding(
@@ -29,12 +29,12 @@ class _SparePartsState extends State<SpareParts> {
           ),
           child: ListView(
             children: [
-              const PartsName(),
+              const LiftPartsName(text: 'cabins'),
               SizedBox(height: screenHeight * 0.01),
               SizedBox(
                 height: screenHeight * 0.31,
-                child: const PartsContainer(),
-              )
+                child: const ListPartsContainer(),
+              ),
             ],
           ),
         ),
