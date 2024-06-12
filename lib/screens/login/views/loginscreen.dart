@@ -45,7 +45,7 @@ class LoginScreen extends StatelessWidget {
                       height: screenHeight * 0.03,
                     ),
                     Text(
-                      'Login to Your Account',
+                      'login_heading'.tr,
                       style: poppins(Appcolor.white, 20, FontWeight.w600),
                     ),
                   ],
@@ -63,7 +63,6 @@ class LoginScreen extends StatelessWidget {
             ],
           ),
         ),
-        
       ),
     );
   }

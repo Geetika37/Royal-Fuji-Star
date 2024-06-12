@@ -44,7 +44,7 @@ class SignUp extends StatelessWidget {
                     height: screenHeight * 0.03,
                   ),
                   Text(
-                    'Register Your Account',
+                    'register_heading'.tr,
                     style: poppins(Appcolor.white, 20, FontWeight.w600),
                   ),
                 ],

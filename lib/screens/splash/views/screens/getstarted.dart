@@ -36,7 +36,7 @@ class GetStarted extends StatelessWidget {
                           height: screenHeight * 0.2,
                         ),
                         Text(
-                          'Discover how our Elevator Services at Royal Fuji Elevator Company in the UAE can contribute to the enduring performance of your elevators with meticulous installations and comprehensive Annual Maintenance Contracts prioritizingsafety and durability.',
+                          'started'.tr,
                           textAlign: TextAlign.center,
                           style: GoogleFonts.nunito(
                             color: Colors.white,
@@ -60,7 +60,7 @@ class GetStarted extends StatelessWidget {
               height: screenHeight * 0.07,
               width: screenWidth * 0.7,
               circularRadius: 10,
-              text: 'Get Started',
+              text: 'get_button'.tr,
               onTap: () {
                 Get.to(const LanguageSelect());
               },

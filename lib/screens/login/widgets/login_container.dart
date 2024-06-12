@@ -32,20 +32,20 @@ class LoginContainer extends StatelessWidget {
                 SizedBox(height: screenHeight * 0.1),
                 Textformfield(
                   textfieldWidth: screenWidth * 0.8,
-                  hintText: 'Phone or email',
+                  hintText: 'phone_email'.tr,
                   hintTextSize: 15,
                 ),
                 SizedBox(height: screenHeight * 0.03),
                 TextformfieldWithIcons(
                   textfieldWidth: screenWidth * 0.8,
-                  hintText: 'Password',
+                  hintText: 'password'.tr,
                   suffixIcon: Image.asset('assets/png/eye.png'),
                 ),
                 SizedBox(height: screenHeight * 0.01),
                 Align(
                   alignment: Alignment.topLeft * 0.8,
                   child: Text(
-                    'Forgot password?',
+                    'forgot_password'.tr,
                     style: poppins(Appcolor.buttonColor, 13, FontWeight.w500),
                   ),
                 ),
@@ -56,7 +56,7 @@ class LoginContainer extends StatelessWidget {
                   height: screenHeight * 0.07,
                   width: screenWidth * 0.8,
                   circularRadius: 10,
-                  text: 'Login',
+                  text: 'login'.tr,
                   onTap: () {
                     Get.to(const Bottomnav());
                   },
@@ -72,7 +72,7 @@ class LoginContainer extends StatelessWidget {
                 child: Row(
                   children: [
                     Text(
-                      'Don’t have an account?',
+                      'account_no'.tr,
                       style: poppins(const Color.fromARGB(255, 163, 162, 162),
                           13, FontWeight.w400),
                     ),
@@ -81,9 +81,9 @@ class LoginContainer extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: onTap,
-                      child: const Text(
-                        ' Sign up',
-                        style: TextStyle(
+                      child:  Text(
+                        'sign_up'.tr,
+                        style: const TextStyle(
                           color: Appcolor.buttonColor,
                           fontSize: 13,
                           fontWeight: FontWeight.w500,

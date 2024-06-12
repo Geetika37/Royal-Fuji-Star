@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
@@ -26,7 +26,7 @@ class BottomContainer extends StatelessWidget {
             children: [
               Image.asset('assets/png/logo.png'),
               Text(
-                'ROYAL FUJI STAR ELEVATOR AND ESCALATOR',
+                'company_name'.tr,
                 style: poppins(Appcolor.black, 12, FontWeight.w500),
               )
             ],

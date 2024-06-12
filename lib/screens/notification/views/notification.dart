@@ -13,10 +13,10 @@ class NotificationPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: const PreferredSize(
-          preferredSize: Size.fromHeight(kToolbarHeight),
+        appBar:  PreferredSize(
+          preferredSize:const Size.fromHeight(kToolbarHeight),
           child: CustomAppbar(
-            text: 'Notifications',
+            text: 'notifications'.tr,
             titleSpacing: 0,
           ),
         ),
@@ -52,7 +52,7 @@ class NotificationPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Elevator Annual Check-Up Complete',
+                    'notification_msg'.tr,
                     style: poppins(const Color.fromARGB(255, 126, 130, 133), 14,
                         FontWeight.w600),
                   ),

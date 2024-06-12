@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
@@ -30,19 +31,19 @@ class SignupContainer extends StatelessWidget {
                 SizedBox(height: screenHeight * 0.05),
                 Textformfield(
                   textfieldWidth: screenWidth * 0.8,
-                  hintText: 'Full Name',
+                  hintText: 'full_name'.tr,
                   hintTextSize: 15,
                 ),
                 SizedBox(height: screenHeight * 0.03),
                 Textformfield(
                   textfieldWidth: screenWidth * 0.8,
-                  hintText: 'Phone or email',
+                  hintText: 'phone_email'.tr,
                   hintTextSize: 15,
                 ),
                 SizedBox(height: screenHeight * 0.03),
                 TextformfieldWithIcons(
                   textfieldWidth: screenWidth * 0.8,
-                  hintText: 'Password',
+                  hintText: 'password'.tr,
                   suffixIcon: Image.asset('assets/png/eye.png'),
                 ),
                 SizedBox(height: screenHeight * 0.04),
@@ -52,13 +53,13 @@ class SignupContainer extends StatelessWidget {
                     height: screenHeight * 0.07,
                     width: screenWidth * 0.8,
                     circularRadius: 10,
-                    text: 'Sign Up',
+                    text: 'sign_up'.tr,
                     onTap: () {}),
                 SizedBox(height: screenHeight * 0.01),
                 SizedBox(
                   width: screenWidth * 0.5,
                   child: Text(
-                    'By signing up you accept the Terms of Service and Privacy Policy',
+                    'policy_terms'.tr,
                     maxLines: 2,
                     style: poppins(Appcolor.buttonColor, 10, FontWeight.w500),
                     textAlign: TextAlign.center,
@@ -75,7 +76,7 @@ class SignupContainer extends StatelessWidget {
                 child: Row(
                   children: [
                     Text(
-                      'Already have an account?',
+                      'already_account'.tr,
                       style: poppins(const Color.fromARGB(255, 163, 162, 162),
                           13, FontWeight.w400),
                     ),
@@ -84,9 +85,9 @@ class SignupContainer extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: onTap,
-                      child: const Text(
-                        ' Login',
-                        style: TextStyle(
+                      child: Text(
+                        'login'.tr,
+                        style: const TextStyle(
                           color: Appcolor.buttonColor,
                           fontSize: 13,
                           fontWeight: FontWeight.w500,

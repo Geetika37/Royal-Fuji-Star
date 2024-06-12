@@ -9,9 +9,14 @@ import 'package:royal_fuji_star/screens/splash/widgets/bottom_container.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 import 'package:royal_fuji_star/utils/buttons.dart';
 
-class JoinUs extends StatelessWidget {
+class JoinUs extends StatefulWidget {
   const JoinUs({super.key});
 
+  @override
+  State<JoinUs> createState() => _JoinUsState();
+}
+
+class _JoinUsState extends State<JoinUs> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -37,12 +42,12 @@ class JoinUs extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Join us!',
+                              'join'.tr,
                               style:
                                   poppins(Appcolor.white, 35, FontWeight.w600),
                             ),
                             Text(
-                              'Explore our innovations',
+                              'explore_innovations'.tr,
                               style:
                                   poppins(Appcolor.white, 14, FontWeight.w300),
                             ),
@@ -62,7 +67,7 @@ class JoinUs extends StatelessWidget {
                   height: screenHeight * 0.06,
                   width: screenWidth * 0.45,
                   circularRadius: 10,
-                  text: 'Sign Up',
+                  text: 'sign_up'.tr,
                   onTap: () {
                     Get.to(const SignUp());
                   },
@@ -74,7 +79,7 @@ class JoinUs extends StatelessWidget {
                   height: screenHeight * 0.06,
                   width: screenWidth * 0.45,
                   circularRadius: 10,
-                  text: 'Login',
+                  text: 'login'.tr,
                   onTap: () {
                     Get.to(const LoginScreen());
                   },
