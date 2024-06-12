@@ -9,20 +9,23 @@ class PartsName extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Text(
-          'cabins',
-          style: poppins(const Color.fromARGB(255, 133, 133, 133), 12,
-              FontWeight.w500),
-        ),
-        SizedBox(width: screenWidth * 0.03),
-        const Expanded(
-          child: Divider(
-            color: Color.fromARGB(255, 206, 206, 206),
+    return Padding(
+      padding: const EdgeInsets.only(right: 10),
+      child: Row(
+        children: [
+          Text(
+            'cabins',
+            style: poppins(
+                const Color.fromARGB(255, 133, 133, 133), 12, FontWeight.w500),
           ),
-        ),
-      ],
+          SizedBox(width: screenWidth * 0.03),
+          const Expanded(
+            child: Divider(
+              color: Color.fromARGB(255, 206, 206, 206),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
