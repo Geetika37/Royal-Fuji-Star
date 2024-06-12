@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
-import 'package:royal_fuji_star/screens/consultation/widgets/consultation_container.dart';
+import 'package:royal_fuji_star/screens/bottomnav/advisory/widgets/consultation_container.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 
 class Consultation extends StatelessWidget {

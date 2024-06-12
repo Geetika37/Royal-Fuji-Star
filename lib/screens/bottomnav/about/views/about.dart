@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
-import 'package:royal_fuji_star/screens/services/widgets/service_container.dart';
+import 'package:royal_fuji_star/screens/bottomnav/about/widgets/aboutcontainer.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 
-class Services extends StatelessWidget {
-  const Services({super.key});
+class About extends StatelessWidget {
+  const About({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +42,7 @@ class Services extends StatelessWidget {
                       height: screenHeight * 0.03,
                     ),
                     Text(
-                      'Services',
+                      'About',
                       style: poppins(Appcolor.white, 20, FontWeight.w600),
                     ),
                   ],
@@ -50,7 +50,7 @@ class Services extends StatelessWidget {
               ),
               const Positioned(
                 bottom: 0,
-                child: ServiceContainer(),
+                child: Aboutcontainer(),
               ),
             ],
           ),

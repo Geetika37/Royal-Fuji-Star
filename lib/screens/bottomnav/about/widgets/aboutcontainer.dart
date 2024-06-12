@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:royal_fuji_star/constants/size.dart';
-import 'package:royal_fuji_star/screens/about/widgets/aboutgridview.dart';
-import 'package:royal_fuji_star/screens/about/widgets/contactinfo.dart';
-import 'package:royal_fuji_star/screens/about/widgets/emailinfo.dart';
-import 'package:royal_fuji_star/screens/about/widgets/videoplayer.dart';
+import 'package:royal_fuji_star/screens/bottomnav/about/widgets/aboutgridview.dart';
+import 'package:royal_fuji_star/screens/bottomnav/about/widgets/contactinfo.dart';
+import 'package:royal_fuji_star/screens/bottomnav/about/widgets/emailinfo.dart';
+import 'package:royal_fuji_star/screens/bottomnav/about/widgets/videoplayer.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 import 'package:royal_fuji_star/utils/textcustom.dart';
 

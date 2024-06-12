@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:royal_fuji_star/constants/size.dart';
-import 'package:royal_fuji_star/screens/about/views/about.dart';
-import 'package:royal_fuji_star/screens/consultation/views/consultation.dart';
+import 'package:royal_fuji_star/screens/bottomnav/about/views/about.dart';
+import 'package:royal_fuji_star/screens/bottomnav/advisory/views/consultation.dart';
 import 'package:royal_fuji_star/screens/home/views/homepage.dart';
-import 'package:royal_fuji_star/screens/services/views/services.dart';
+import 'package:royal_fuji_star/screens/bottomnav/services/views/services.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 
 class Bottomnav extends StatefulWidget {
