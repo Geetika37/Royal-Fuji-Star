@@ -96,6 +96,7 @@ class ConsultationContainer extends StatelessWidget {
 
               Center(
                 child: BlueButton(
+                    fontSize: 14,
                     textColor: Appcolor.white,
                     color: Appcolor.buttonColor,
                     height: screenHeight * 0.06,

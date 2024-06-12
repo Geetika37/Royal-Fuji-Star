@@ -123,6 +123,7 @@ class _LanguageSelectState extends State<LanguageSelect> {
                 height: screenHeight * 0.23,
               ),
               BlueButton(
+                fontSize: 14,
                 textColor: Appcolor.white,
                 color: Appcolor.buttonColor,
                 height: screenHeight * 0.07,

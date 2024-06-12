@@ -60,6 +60,7 @@ class DeleteAccount extends StatelessWidget {
                     "Service Access: You will lose access to all features and services associated with your account."),
             SizedBox(height: screenHeight * 0.4),
             BlueButton(
+              fontSize: 14,
               textColor: Appcolor.white,
               height: screenHeight * 0.07,
               width: screenWidth,

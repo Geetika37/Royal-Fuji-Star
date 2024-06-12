@@ -38,6 +38,7 @@ class ProfilePage extends StatelessWidget {
                           icon: const Icon(Icons.arrow_back,
                               color: Appcolor.white)),
                       BlueButton(
+                        fontSize: 14,
                         textColor: Appcolor.white,
                         color: Colors.red,
                         height: screenHeight * 0.04,
@@ -64,6 +65,7 @@ class ProfilePage extends StatelessWidget {
                   imagePath: 'assets/svg/location.svg', text: ' Abu Dhabi'),
               SizedBox(height: screenHeight * 0.04),
               BlueButton(
+                fontSize: 14,
                 textColor: Appcolor.white,
                 height: screenHeight * 0.08,
                 width: screenWidth * 0.9,

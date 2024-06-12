@@ -51,6 +51,7 @@ class LoginContainer extends StatelessWidget {
                 ),
                 SizedBox(height: screenHeight * 0.04),
                 BlueButton(
+                  fontSize: 14,
                   textColor: Appcolor.white,
                   color: Appcolor.buttonColor,
                   height: screenHeight * 0.07,
@@ -81,7 +82,7 @@ class LoginContainer extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: onTap,
-                      child:  Text(
+                      child: Text(
                         'sign_up'.tr,
                         style: const TextStyle(
                           color: Appcolor.buttonColor,

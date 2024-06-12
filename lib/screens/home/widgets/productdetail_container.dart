@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
+import 'package:royal_fuji_star/constants/textstyle.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 
 class ProductDetailContainer extends StatelessWidget {
@@ -17,11 +18,13 @@ class ProductDetailContainer extends StatelessWidget {
         image: DecorationImage(
             image: AssetImage('assets/png/productbg.png'), fit: BoxFit.cover),
       ),
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
+      child: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
@@ -45,8 +48,12 @@ class ProductDetailContainer extends StatelessWidget {
                 )
               ],
             ),
-          )
-        ],
+            Text(
+              'MRL Passenger Elevator',
+              style: poppins(Appcolor.white, 17, FontWeight.w700),
+            )
+          ],
+        ),
       ),
     );
   }

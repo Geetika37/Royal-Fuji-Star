@@ -40,6 +40,7 @@ class BottomsheetDelete extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 BlueButton(
+                    fontSize: 14,
                     textColor: const Color.fromARGB(255, 149, 149, 149),
                     height: screenHeight * 0.05,
                     width: screenWidth * 0.4,
@@ -52,6 +53,7 @@ class BottomsheetDelete extends StatelessWidget {
                     color: const Color(0xFFE5E7E8)),
                 SizedBox(width: screenWidth * 0.02),
                 BlueButton(
+                    fontSize: 14,
                     textColor: Appcolor.white,
                     height: screenHeight * 0.05,
                     width: screenWidth * 0.4,

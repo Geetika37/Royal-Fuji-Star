@@ -1,6 +1,5 @@
 import 'package:get/get.dart';
 import 'package:royal_fuji_star/screens/home/views/screens/productdetail.dart';
-import 'package:royal_fuji_star/screens/menu/settings/views/screens/privacy_security.dart';
 
 class EscalatorList {
   final String imagePath, title, subTitle, description;

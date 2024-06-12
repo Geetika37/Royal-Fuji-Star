@@ -11,9 +11,9 @@ class BlueButton extends StatelessWidget {
     required this.width,
     required this.circularRadius,
     required this.text,
-    required this.onTap, required this.color, required this.textColor,
+    required this.onTap, required this.color, required this.textColor, required this.fontSize,
   });
-  final double height, width, circularRadius;
+  final double height, width, circularRadius,fontSize;
   final String text;
   final Function() onTap;
   final Color color,textColor;
@@ -34,7 +34,7 @@ class BlueButton extends StatelessWidget {
           text,
           style: poppins(
             textColor,
-            14,
+            fontSize,
             FontWeight.w600,
           ),
         )),

@@ -62,6 +62,7 @@ class _JoinUsState extends State<JoinUs> {
                   height: screenHeight * 0.06,
                 ),
                 BlueButton(
+                  fontSize: 14,
                   textColor: Appcolor.white,
                   color: Appcolor.buttonColor,
                   height: screenHeight * 0.06,
