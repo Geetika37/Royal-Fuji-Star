@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
+import 'package:royal_fuji_star/screens/splash/views/screens/arabic_container.dart';
+import 'package:royal_fuji_star/screens/splash/views/screens/english_container.dart';
 import 'package:royal_fuji_star/screens/splash/views/screens/joinus.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 import 'package:royal_fuji_star/utils/buttons.dart';
@@ -13,7 +15,6 @@ class LanguageSelect extends StatefulWidget {
   @override
   State<LanguageSelect> createState() => _LanguageSelectState();
 }
-
 
 class _LanguageSelectState extends State<LanguageSelect> {
   var onPressed1 = false;
@@ -50,30 +51,12 @@ class _LanguageSelectState extends State<LanguageSelect> {
                   setState(() {
                     onPressed1 = true;
                     onPressed2 = false;
+                    var locale = const Locale('en', 'US');
+                    Get.updateLocale(locale);
+                    box.write('locale', 'en_US');
                   });
                 },
-                child: onPressed1
-                    ? BlueButtonWithIcon(
-                        height: screenHeight * 0.06,
-                        width: screenWidth * 0.45,
-                        circularRadius: 10,
-                        text: 'english'.tr,
-                        onTap: () {
-                          var locale = const Locale('en', 'US');
-                          Get.updateLocale(locale);
-                          box.write('locale', 'en_US');
-                        },
-                      )
-                    : OutlineBlueButtonWithIcon(
-                        height: screenHeight * 0.06,
-                        width: screenWidth * 0.45,
-                        circularRadius: 10,
-                        text: 'english'.tr,
-                        onTap: () {
-                          var locale = const Locale('en', 'US');
-                          Get.updateLocale(locale);
-                          box.write('locale', 'en_US');
-                        }),
+                child: EnglishContainer(onPressed1: onPressed1),
               ),
               SizedBox(
                 height: screenHeight * 0.05,
@@ -83,30 +66,12 @@ class _LanguageSelectState extends State<LanguageSelect> {
                   setState(() {
                     onPressed2 = true;
                     onPressed1 = false;
+                    var locale = const Locale('ar', 'SA');
+                    Get.updateLocale(locale);
+                    box.write('locale', 'ar_SA');
                   });
                 },
-                child: onPressed2 == false
-                    ? OutlineBlueButtonWithIcon(
-                        height: screenHeight * 0.06,
-                        width: screenWidth * 0.45,
-                        circularRadius: 10,
-                        text: 'arabic'.tr,
-                        onTap: () {
-                          var locale = const Locale('ar', 'SA');
-                          Get.updateLocale(locale);
-                          box.write('locale', 'ar_SA');
-                        },
-                      )
-                    : BlueButtonWithIcon(
-                        height: screenHeight * 0.06,
-                        width: screenWidth * 0.45,
-                        circularRadius: 10,
-                        text: 'arabic'.tr,
-                        onTap: () {
-                          var locale = const Locale('ar', 'SA');
-                          Get.updateLocale(locale);
-                          box.write('locale', 'ar_SA');
-                        }),
+                child: ArabicContainer(onPressed2: onPressed2),
               ),
               SizedBox(
                 height: screenHeight * 0.07,
