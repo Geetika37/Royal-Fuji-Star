@@ -27,8 +27,7 @@ class _CustomCarouselSliderState extends State<CustomCarouselSlider> {
         Stack(
           children: [
             InkWell(
-              onTap: () {
-              },
+              onTap: () {},
               child: CarouselSlider(
                 items: imageList
                     .map(

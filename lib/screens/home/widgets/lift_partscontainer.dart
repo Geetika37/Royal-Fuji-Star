@@ -5,8 +5,8 @@ import 'package:royal_fuji_star/screens/home/models/partlist.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 import 'package:royal_fuji_star/utils/buttons.dart';
 
-class ListPartsContainer extends StatelessWidget {
-  const ListPartsContainer({
+class LiftPartsContainer extends StatelessWidget {
+  const LiftPartsContainer({
     super.key,
   });
 

@@ -6,9 +6,13 @@ class LiftPartsName extends StatelessWidget {
   const LiftPartsName({
     super.key,
     required this.text,
+    required this.fontWeight, required this.textColor, required this.dividerColor, required this.fontSize,
   });
 
   final String text;
+  final FontWeight fontWeight;
+  final Color textColor, dividerColor;
+  final double fontSize;
 
   @override
   Widget build(BuildContext context) {
@@ -19,12 +23,12 @@ class LiftPartsName extends StatelessWidget {
           Text(
             text,
             style: poppins(
-                const Color.fromARGB(255, 133, 133, 133), 12, FontWeight.w500),
+                textColor, fontSize, fontWeight),
           ),
           SizedBox(width: screenWidth * 0.03),
-          const Expanded(
+           Expanded(
             child: Divider(
-              color: Color.fromARGB(255, 206, 206, 206),
+              color:dividerColor,
             ),
           ),
         ],
