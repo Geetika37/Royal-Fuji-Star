@@ -58,7 +58,7 @@ class LoginContainer extends StatelessWidget {
                 ),
                 SizedBox(height: screenHeight * 0.04),
                 Obx(() => loginController.isLoading.value
-                    ? Center(
+                    ? Container(
                         child: LoadingAnimationWidget.prograssiveDots(
                           size: 50,
                           color: Appcolor.black,
@@ -79,6 +79,8 @@ class LoginContainer extends StatelessWidget {
                           );
                         },
                       )),
+
+               
               ],
             ),
           ),

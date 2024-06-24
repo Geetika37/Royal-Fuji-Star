@@ -85,7 +85,33 @@ class BlueButtonOutlined extends StatelessWidget {
   }
 }
 
+class BlueButtonLoading extends StatelessWidget {
+  const BlueButtonLoading({
+    super.key,
+    required this.height,
+    required this.width,
+    required this.circularRadius,
+    required this.onTap,
+    required this.color,
+    required this.widget,
+  });
+  final double height, width, circularRadius;
+  final Function() onTap;
+  final Color color;
+  final Widget widget;
 
-
-
-
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        height: height,
+        width: width,
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: BorderRadius.circular(circularRadius),
+        ),
+      ),
+    );
+  }
+}
