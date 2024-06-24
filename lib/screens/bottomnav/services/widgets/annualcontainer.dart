@@ -31,11 +31,11 @@ class Annualcontainer extends StatelessWidget {
                 style: poppins(Appcolor.black, 12, FontWeight.w400),
               ),
               SizedBox(height: screenHeight * 0.01),
-              Textformfield(
-                textfieldWidth: screenWidth,
-                hintText: 'Enter the brand name here',
-                hintTextSize: 12,
-              ),
+              // Textformfield(
+              //   textfieldWidth: screenWidth,
+              //   hintText: 'Enter the brand name here',
+              //   hintTextSize: 12,
+              // ),
               Row(
                 children: [
                   const Expanded(child: Dropdown(title: 'Capacity')),

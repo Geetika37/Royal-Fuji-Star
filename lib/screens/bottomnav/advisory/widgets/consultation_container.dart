@@ -29,33 +29,33 @@ class ConsultationContainer extends StatelessWidget {
               SizedBox(height: screenHeight * 0.01),
               Text('Name', style: poppins(Appcolor.black, 12, FontWeight.w400)),
               SizedBox(height: screenHeight * 0.01),
-              Textformfield(
-                textfieldWidth: screenWidth,
-                hintText: 'Enter the brand name here',
-                hintTextSize: 12,
-              ),
+              // Textformfield(
+              //   textfieldWidth: screenWidth,
+              //   hintText: 'Enter the brand name here',
+              //   hintTextSize: 12,
+              // ),
 
-              //email
-              SizedBox(height: screenHeight * 0.01),
-              Text('Email',
-                  style: poppins(Appcolor.black, 12, FontWeight.w400)),
-              SizedBox(height: screenHeight * 0.01),
-              Textformfield(
-                textfieldWidth: screenWidth,
-                hintText: '@',
-                hintTextSize: 12,
-              ),
+              // //email
+              // SizedBox(height: screenHeight * 0.01),
+              // Text('Email',
+              //     style: poppins(Appcolor.black, 12, FontWeight.w400)),
+              // SizedBox(height: screenHeight * 0.01),
+              // Textformfield(
+              //   textfieldWidth: screenWidth,
+              //   hintText: '@',
+              //   hintTextSize: 12,
+              // ),
 
-              //phone number
-              SizedBox(height: screenHeight * 0.01),
-              Text('Phone Number',
-                  style: poppins(Appcolor.black, 12, FontWeight.w400)),
-              SizedBox(height: screenHeight * 0.01),
-              Textformfield(
-                textfieldWidth: screenWidth,
-                hintText: '+971',
-                hintTextSize: 12,
-              ),
+              // //phone number
+              // SizedBox(height: screenHeight * 0.01),
+              // Text('Phone Number',
+              //     style: poppins(Appcolor.black, 12, FontWeight.w400)),
+              // SizedBox(height: screenHeight * 0.01),
+              // Textformfield(
+              //   textfieldWidth: screenWidth,
+              //   hintText: '+971',
+              //   hintTextSize: 12,
+              // ),
 
               //dropdown
               SizedBox(height: screenHeight * 0.001),

@@ -21,7 +21,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        // fontFamily: GoogleFonts.poppins().toString(),
         fontFamily: 'Poppins',
         scaffoldBackgroundColor: Appcolor.bgColor,
         appBarTheme: const AppBarTheme(

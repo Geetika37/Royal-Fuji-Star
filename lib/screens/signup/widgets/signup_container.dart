@@ -4,7 +4,6 @@ import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 import 'package:royal_fuji_star/utils/buttons.dart';
-import 'package:royal_fuji_star/utils/textformfield.dart';
 
 class SignupContainer extends StatelessWidget {
   const SignupContainer({
@@ -29,23 +28,23 @@ class SignupContainer extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(height: screenHeight * 0.05),
-                Textformfield(
-                  textfieldWidth: screenWidth * 0.8,
-                  hintText: 'full_name'.tr,
-                  hintTextSize: 15,
-                ),
+                // Textformfield(
+                //   textfieldWidth: screenWidth * 0.8,
+                //   hintText: 'full_name'.tr,
+                //   hintTextSize: 15,
+                // ),
+                // SizedBox(height: screenHeight * 0.03),
+                // Textformfield(
+                //   textfieldWidth: screenWidth * 0.8,
+                //   hintText: 'phone_email'.tr,
+                //   hintTextSize: 15,
+                // ),
                 SizedBox(height: screenHeight * 0.03),
-                Textformfield(
-                  textfieldWidth: screenWidth * 0.8,
-                  hintText: 'phone_email'.tr,
-                  hintTextSize: 15,
-                ),
-                SizedBox(height: screenHeight * 0.03),
-                TextformfieldWithIcons(
-                  textfieldWidth: screenWidth * 0.8,
-                  hintText: 'password'.tr,
-                  suffixIcon: Image.asset('assets/png/eye.png'),
-                ),
+                // TextformfieldWithIcons(
+                //   textfieldWidth: screenWidth * 0.8,
+                //   hintText: 'password'.tr,
+                //   suffixIcon: Image.asset('assets/png/eye.png'),
+                // ),
                 SizedBox(height: screenHeight * 0.04),
                 BlueButton(
                     fontSize: 14,

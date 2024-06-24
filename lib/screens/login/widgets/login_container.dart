@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
-import 'package:royal_fuji_star/screens/home/widgets/bottomnav.dart';
+import 'package:royal_fuji_star/screens/login/controllers/login_controller.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 import 'package:royal_fuji_star/utils/buttons.dart';
 import 'package:royal_fuji_star/utils/textformfield.dart';
@@ -16,6 +17,10 @@ class LoginContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final LoginController loginController = Get.put(LoginController());
+    TextEditingController emailController = TextEditingController();
+    TextEditingController passwordController = TextEditingController();
+
     return Stack(
       children: [
         Container(
@@ -31,6 +36,7 @@ class LoginContainer extends StatelessWidget {
               children: [
                 SizedBox(height: screenHeight * 0.1),
                 Textformfield(
+                  controller: emailController,
                   textfieldWidth: screenWidth * 0.8,
                   hintText: 'phone_email'.tr,
                   hintTextSize: 15,
@@ -40,6 +46,7 @@ class LoginContainer extends StatelessWidget {
                   textfieldWidth: screenWidth * 0.8,
                   hintText: 'password'.tr,
                   suffixIcon: Image.asset('assets/png/eye.png'),
+                  controller: passwordController,
                 ),
                 SizedBox(height: screenHeight * 0.01),
                 Align(
@@ -50,18 +57,28 @@ class LoginContainer extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: screenHeight * 0.04),
-                BlueButton(
-                  fontSize: 14,
-                  textColor: Appcolor.white,
-                  color: Appcolor.buttonColor,
-                  height: screenHeight * 0.07,
-                  width: screenWidth * 0.8,
-                  circularRadius: 10,
-                  text: 'login'.tr,
-                  onTap: () {
-                    Get.to(const Bottomnav());
-                  },
-                )
+                Obx(() => loginController.isLoading.value
+                    ? Center(
+                        child: LoadingAnimationWidget.prograssiveDots(
+                          size: 50,
+                          color: Appcolor.black,
+                        ),
+                      )
+                    : BlueButton(
+                        fontSize: 14,
+                        textColor: Appcolor.white,
+                        color: Appcolor.buttonColor,
+                        height: screenHeight * 0.07,
+                        width: screenWidth * 0.8,
+                        circularRadius: 10,
+                        text: 'login'.tr,
+                        onTap: () {
+                          loginController.login(
+                            emailController.text,
+                            passwordController.text,
+                          );
+                        },
+                      )),
               ],
             ),
           ),
