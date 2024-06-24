@@ -95,9 +95,6 @@ class _JoinUsState extends State<JoinUs> {
             )
           ],
         ),
-        floatingActionButton: FloatingActionButton(onPressed: () {
-          Get.to(const NotificationPage());
-        }),
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:royal_fuji_star/constants/size.dart';
@@ -48,6 +49,7 @@ class _LanguageSelectState extends State<LanguageSelect> {
               ),
               InkWell(
                 onTap: () {
+                  HapticFeedback.heavyImpact;
                   setState(() {
                     onPressed1 = true;
                     onPressed2 = false;
@@ -63,6 +65,7 @@ class _LanguageSelectState extends State<LanguageSelect> {
               ),
               InkWell(
                 onTap: () {
+                  HapticFeedback.heavyImpact;
                   setState(() {
                     onPressed2 = true;
                     onPressed1 = false;

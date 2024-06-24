@@ -44,8 +44,7 @@ class _HomepageState extends State<Homepage> {
                 fit: BoxFit.fitWidth)),
         child: Padding(
           padding: const EdgeInsets.only(right: 15, left: 15),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          child: ListView(
             children: [
               Text('WELCOME TO ROYAL FUJI STAR',
                   style: poppins(Appcolor.black, 9, FontWeight.w600)),
@@ -67,7 +66,7 @@ class _HomepageState extends State<Homepage> {
                   style: poppins(Appcolor.white, 12, FontWeight.w600),
                 ),
               ),
-              const Expanded(child: ProductsContainer())
+              const ProductsContainer()
             ],
           ),
         ),
