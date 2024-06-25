@@ -23,7 +23,8 @@ class LoginController extends GetxController {
       final jsonResponse = jsonDecode(response.body);
 
       if (response.statusCode == 200) {
-        TokenKey.saveToken(jsonResponse['data']['jwt']);
+        // TokenKey.saveToken(jsonResponse['data']['jwt']);
+        TokenKey.saveValue('token', jsonResponse['data']['jwt']);
         Get.to(const Bottomnav());
         // print(jsonResponse);
         // print('****** Token *****${jsonResponse['data']['jwt']}');

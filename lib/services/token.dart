@@ -1,16 +1,22 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 class TokenKey {
-  
-  static Future<void> saveToken(String token) async {
+  static Future<void> saveValue(String key, String value) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setString('token', token);
-    print('***token***: $token');
+    await prefs.setString(key, value);
+    print('saved value***: $value  key:$key');
   }
 
-  static Future<String?> getToken() async {
+  static Future<String?> getValue(String key) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    String? token = prefs.getString('token');
-    return token;
+    final value = prefs.getString(key);
+    print('**retrieved value*****: $value');
+    return value;
+  }
+
+  static Future<void> clearValue(String key) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.remove(key);
+    print('--cleared value--$key');
   }
 }
