@@ -12,7 +12,7 @@ class SignupContainer extends StatelessWidget {
     super.key,
     required this.onTap,
   });
-  final Function() onTap;
+  final Function()onTap;
 
   @override
   Widget build(BuildContext context) {

@@ -1,7 +1,6 @@
 import 'package:get/get.dart';
 import 'package:royal_fuji_star/screens/home/widgets/bottomnav.dart';
 import 'package:royal_fuji_star/screens/splash/views/screens/getstarted.dart';
-import 'package:royal_fuji_star/services/token.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Splashcontroller extends GetxController {

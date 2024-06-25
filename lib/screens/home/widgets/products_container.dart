@@ -1,72 +1,90 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
+import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
-import 'package:royal_fuji_star/screens/home/models/product.dart';
+import 'package:royal_fuji_star/screens/home/controller/productcategory_controller.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 
-class ProductsContainer extends StatefulWidget {
-  const ProductsContainer({
-    super.key,
-  });
+class ProductsContainer extends StatelessWidget {
+  final ProductCategoryController productCategoryController =
+      Get.put(ProductCategoryController());
 
-  @override
-  State<ProductsContainer> createState() => _ProductsContainerState();
-}
+  ProductsContainer({super.key});
 
-class _ProductsContainerState extends State<ProductsContainer> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: GridView.builder(
-        shrinkWrap: true,
-        physics: const NeverScrollableScrollPhysics(),
-        itemCount: products.length,
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          mainAxisSpacing: 8,
-          crossAxisSpacing: 8,
-          childAspectRatio: 1.45,
-        ),
-        itemBuilder: (context, index) {
-          return InkWell(
-            onTap: products[index].onTap,
-            child: Stack(
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Appcolor.white, width: 2.5),
-                    borderRadius: BorderRadius.circular(8.0),
-                    gradient: const LinearGradient(
-                        colors: [Color(0xFF00286A), Color(0xFF0052B6)],
-                        begin: Alignment.bottomCenter,
-                        end: Alignment.topCenter),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.only(
-                      top: 10,
-                      bottom: 30,
-                      left: 50,
-                      right: 50,
+    productCategoryController.productCategory();
+
+    return Obx(() {
+      if (productCategoryController.isLoading.value) {
+        return const Center(child: CircularProgressIndicator());
+      } else if (productCategoryController.product.isEmpty) {
+        return const Center(child: Text('No product categories found.'));
+      }
+
+      final productCategories = productCategoryController.product;
+      print('productcategories----${productCategories.length}');
+
+      return Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: GridView.builder(
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          itemCount: productCategories.length,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            mainAxisSpacing: 8,
+            crossAxisSpacing: 8,
+            childAspectRatio: 1.45,
+          ),
+          itemBuilder: (context, index) {
+            final category = productCategories[index];
+            print('category---$category');
+            final imageUrl =
+                'https://royalfuji.jissanto.com${category['gallery'][0]['url']}';
+            print(imageUrl);
+            return InkWell(
+              onTap: () {},
+              child: Stack(
+                children: [
+                  Container(
+                    height: screenHeight * 0.15,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Appcolor.white, width: 2.5),
+                      borderRadius: BorderRadius.circular(8.0),
+                      gradient: const LinearGradient(
+                          colors: [Color(0xFF00286A), Color(0xFF0052B6)],
+                          begin: Alignment.bottomCenter,
+                          end: Alignment.topCenter),
                     ),
-                    child: SvgPicture.asset(products[index].imagePath),
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                        bottom: 30,
+                        left: 50,
+                        right: 50,
+                      ),
+                      child: imageUrl.isNotEmpty
+                          ? Image.network(imageUrl)
+                          : const SizedBox(),
+                    ),
                   ),
-                ),
-                Positioned(
-                  bottom: 20,
-                  right: 40,
-                  left: 50,
-                  child: Text(
-                    products[index].text,
-                    maxLines: 2,
-                    style: poppins(Appcolor.white, 12, FontWeight.w600),
-                  ),
-                )
-              ],
-            ),
-          );
-        },
-      ),
-    );
+                  Positioned(
+                    bottom: 10,
+                    right: 40,
+                    left: 40,
+                    child: Text(
+                      category['name'],
+                      maxLines: 2,
+                      style: poppins(Appcolor.white, 12, FontWeight.w600),
+                      textAlign: TextAlign.center,
+                    ),
+                  )
+                ],
+              ),
+            );
+          },
+        ),
+      );
+    });
   }
 }
