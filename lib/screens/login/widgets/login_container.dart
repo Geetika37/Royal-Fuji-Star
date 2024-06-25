@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
+import 'package:royal_fuji_star/screens/forgotpassword/view/forgotpassword.dart';
 import 'package:royal_fuji_star/screens/login/controllers/login_controller.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 import 'package:royal_fuji_star/utils/buttons.dart';
@@ -51,9 +52,14 @@ class LoginContainer extends StatelessWidget {
                 SizedBox(height: screenHeight * 0.01),
                 Align(
                   alignment: Alignment.topLeft * 0.8,
-                  child: Text(
-                    'forgot_password'.tr,
-                    style: poppins(Appcolor.buttonColor, 13, FontWeight.w500),
+                  child: InkWell(
+                    onTap: () {
+                      Get.to(const Forgotpassword());
+                    },
+                    child: Text(
+                      'forgot_password'.tr,
+                      style: poppins(Appcolor.buttonColor, 13, FontWeight.w500),
+                    ),
                   ),
                 ),
                 SizedBox(height: screenHeight * 0.04),
@@ -79,8 +85,6 @@ class LoginContainer extends StatelessWidget {
                           );
                         },
                       )),
-
-               
               ],
             ),
           ),
