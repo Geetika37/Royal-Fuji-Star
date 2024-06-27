@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
+import 'package:royal_fuji_star/screens/home/controller/productcategory_controller.dart';
 import 'package:royal_fuji_star/screens/widgets/customappbar.dart';
+import 'package:royal_fuji_star/services/token.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 
 class LanguageSettings extends StatefulWidget {
-  const LanguageSettings({super.key});
+  LanguageSettings({super.key});
+  final ProductCategoryController productCategoryController =
+      Get.put(ProductCategoryController());
 
   @override
   State<LanguageSettings> createState() => _LanguageSettingsState();
@@ -14,6 +19,32 @@ class LanguageSettings extends StatefulWidget {
 class _LanguageSettingsState extends State<LanguageSettings> {
   bool firstValue = false;
   bool secondValue = false;
+
+  @override
+  void initState() {
+    super.initState();
+    loadSelectedLanguage();
+  }
+
+  Future<void> loadSelectedLanguage() async {
+    String? selectedLanguage = await TokenKey.getValue('selectedLanguage');
+
+    setState(() {
+      if (selectedLanguage == 'en') {
+        firstValue = true;
+        secondValue = false;
+      } else if (selectedLanguage == 'ar-AE') {
+        firstValue = false;
+        secondValue = true;
+      }
+    });
+  }
+
+  Future<void> saveSelectedLanguage(String languageCode) async {
+    TokenKey.saveValue('selectedLanguage', languageCode);
+    widget.productCategoryController.updateLocale(languageCode);
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -41,6 +72,7 @@ class _LanguageSettingsState extends State<LanguageSettings> {
                         () {
                           firstValue = value!;
                           secondValue = false;
+                          saveSelectedLanguage('en');
                         },
                       );
                     },
@@ -60,6 +92,7 @@ class _LanguageSettingsState extends State<LanguageSettings> {
                       setState(() {
                         secondValue = value!;
                         firstValue = false;
+                        saveSelectedLanguage('ar-AE');
                       });
                     },
                     activeColor: Appcolor.buttonColor,

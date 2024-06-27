@@ -6,6 +6,7 @@ import 'package:royal_fuji_star/screens/menu/faq/views/faq.dart';
 import 'package:royal_fuji_star/screens/menu/profile/views/profile.dart';
 import 'package:royal_fuji_star/screens/menu/settings/views/settings.dart';
 import 'package:royal_fuji_star/screens/splash/views/base.dart';
+import 'package:royal_fuji_star/screens/splash/views/screens/getstarted.dart';
 import 'package:royal_fuji_star/services/token.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 
@@ -82,7 +83,7 @@ class SettingsDrawer extends StatelessWidget {
                       title: Text('Logout', style: drawertext),
                       onTap: () async {
                         await TokenKey.clearValue('token');
-                        Get.to(const BasePage());
+                        Get.to(const GetStarted());
                       },
                       contentPadding:
                           EdgeInsets.symmetric(horizontal: width * 0.05)),

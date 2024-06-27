@@ -33,7 +33,7 @@ class SettingsPage extends StatelessWidget {
               ),
               CardSettings(
                 text: 'Language Settings',
-                onTap: () => Get.to(const LanguageSettings()),
+                onTap: () => Get.to( LanguageSettings()),
               ),
               CardSettings(
                 text: 'Privacy and Security',

@@ -4,14 +4,18 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
+import 'package:royal_fuji_star/screens/home/controller/productcategory_controller.dart';
 import 'package:royal_fuji_star/screens/splash/views/screens/arabic_container.dart';
 import 'package:royal_fuji_star/screens/splash/views/screens/english_container.dart';
 import 'package:royal_fuji_star/screens/splash/views/screens/joinus.dart';
+import 'package:royal_fuji_star/services/token.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 import 'package:royal_fuji_star/utils/buttons.dart';
 
 class LanguageSelect extends StatefulWidget {
-  const LanguageSelect({super.key});
+  LanguageSelect({super.key});
+  final ProductCategoryController productCategoryController =
+      Get.put(ProductCategoryController());
 
   @override
   State<LanguageSelect> createState() => _LanguageSelectState();
@@ -20,9 +24,25 @@ class LanguageSelect extends StatefulWidget {
 class _LanguageSelectState extends State<LanguageSelect> {
   var onPressed1 = false;
   var onPressed2 = false;
+
+  void changeLocalLanguage() async {
+    final box = GetStorage();
+
+    final language = await TokenKey.getValue('selectedLanguage') ?? '';
+
+    if (language == 'en') {
+      var locale = const Locale('en', 'US');
+      Get.updateLocale(locale);
+      box.write('locale', 'en_US');
+    } else if (language == 'ar-AE') {
+      var locale = const Locale('ar', 'SA');
+      Get.updateLocale(locale); 
+      box.write('locale', 'ar_SA');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    final box = GetStorage();
     return SafeArea(
       child: Scaffold(
         body: Center(
@@ -53,9 +73,8 @@ class _LanguageSelectState extends State<LanguageSelect> {
                   setState(() {
                     onPressed1 = true;
                     onPressed2 = false;
-                    var locale = const Locale('en', 'US');
-                    Get.updateLocale(locale);
-                    box.write('locale', 'en_US');
+                    TokenKey.saveValue('selectedLanguage', 'en');
+                    changeLocalLanguage();
                   });
                 },
                 child: EnglishContainer(onPressed1: onPressed1),
@@ -69,9 +88,8 @@ class _LanguageSelectState extends State<LanguageSelect> {
                   setState(() {
                     onPressed2 = true;
                     onPressed1 = false;
-                    var locale = const Locale('ar', 'SA');
-                    Get.updateLocale(locale);
-                    box.write('locale', 'ar_SA');
+                    TokenKey.saveValue('selectedLanguage', 'ar');
+                    changeLocalLanguage();
                   });
                 },
                 child: ArabicContainer(onPressed2: onPressed2),

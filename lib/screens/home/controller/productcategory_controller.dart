@@ -8,13 +8,31 @@ class ProductCategoryController extends GetxController {
   var isLoading = false.obs;
   var product = <dynamic>[].obs;
   var errorMessage = ''.obs;
+  var locale = 'en'.obs;
+
+  @override
+  void onInit() {
+    super.onInit();
+    loadLocale();
+  }
+
+  Future<void> loadLocale() async {
+    locale.value = await TokenKey.getValue('selectedLanguage') ?? ' ';
+    productCategory();
+  }
+
+  Future<void> updateLocale(String newLocale) async {
+    locale.value = newLocale;
+    await TokenKey.saveValue('selectedLanguage', newLocale);
+    productCategory();
+  }
 
   Future<void> productCategory() async {
     isLoading(true);
     try {
       final token = await TokenKey.getValue('token');
-      final url =
-          Uri.parse('${APIConstants.baseUrl}/api/product-categories?locale=');
+      final url = Uri.parse(
+          '${APIConstants.baseUrl}/api/product-categories?locale=${locale.value}');
       final response = await http.get(
         url,
         headers: {
@@ -23,13 +41,14 @@ class ProductCategoryController extends GetxController {
           'Authorization': 'Bearer $token',
         },
       );
-      final jsonResponse = jsonDecode(response.body);
-      print('jsonResponse is==== $jsonResponse');
       if (response.statusCode == 200) {
+        final jsonResponse = jsonDecode(response.body);
+        print('jsonResponse is==== $jsonResponse');
         product.value = jsonResponse['data'];
-        print('product  is ##### $product');
+        print('product is ##### $product');
       } else {
-        Get.snackbar('Error', jsonResponse['error']['message']) ;
+        final jsonResponse = jsonDecode(response.body);
+        Get.snackbar('Error', jsonResponse['error']['message']);
       }
     } catch (e) {
       errorMessage.value = 'Error: ${e.toString()}';
@@ -38,3 +57,7 @@ class ProductCategoryController extends GetxController {
     }
   }
 }
+
+
+
+

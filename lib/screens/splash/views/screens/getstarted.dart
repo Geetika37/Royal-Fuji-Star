@@ -63,7 +63,7 @@ class GetStarted extends StatelessWidget {
               circularRadius: 10,
               text: 'get_button'.tr,
               onTap: () {
-                Get.to(const LanguageSelect());
+                Get.to( LanguageSelect());
               },
             ),
           ],

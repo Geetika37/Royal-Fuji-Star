@@ -13,8 +13,6 @@ class ProductsContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    productCategoryController.productCategory();
-
     return Obx(() {
       if (productCategoryController.isLoading.value) {
         return const Center(child: CircularProgressIndicator());
@@ -40,15 +38,21 @@ class ProductsContainer extends StatelessWidget {
           itemBuilder: (context, index) {
             final category = productCategories[index];
             print('category---$category');
-            final imageUrl =
-                'https://royalfuji.jissanto.com${category['gallery'][0]['url']}';
+
+            final imageUrl = category['gallery'] != null &&
+                    category['gallery'].isNotEmpty &&
+                    category['gallery'][0]['url'] != null
+                ? 'https://royalfuji.jissanto.com${category['gallery'][0]['url']}'
+                : null;
             print(imageUrl);
+
             return InkWell(
               onTap: () {},
               child: Stack(
                 children: [
                   Container(
                     height: screenHeight * 0.15,
+                    width: screenWidth * 0.41,
                     decoration: BoxDecoration(
                       border: Border.all(color: Appcolor.white, width: 2.5),
                       borderRadius: BorderRadius.circular(8.0),
@@ -63,7 +67,7 @@ class ProductsContainer extends StatelessWidget {
                         left: 50,
                         right: 50,
                       ),
-                      child: imageUrl.isNotEmpty
+                      child: imageUrl != null
                           ? Image.network(imageUrl)
                           : const SizedBox(),
                     ),

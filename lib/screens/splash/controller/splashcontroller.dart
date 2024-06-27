@@ -17,7 +17,7 @@ class Splashcontroller extends GetxController {
     await Future.delayed(const Duration(seconds: 2));
 
     if (value == null) {
-      Get.offAll(() => const GetStarted());
+      Get.to(() => const GetStarted());
     } else {
       Get.to(const Bottomnav());
     }
