@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
 import 'package:royal_fuji_star/screens/home/widgets/carousel_slider.dart';
@@ -46,27 +47,26 @@ class _HomepageState extends State<Homepage> {
           padding: const EdgeInsets.only(right: 15, left: 15),
           child: ListView(
             children: [
-              Text('WELCOME TO ROYAL FUJI STAR',
+              Text('hometitle1'.tr,
                   style: poppins(Appcolor.black, 9, FontWeight.w600)),
               SizedBox(height: screenHeight * 0.007),
-              Text('Sky-High Convenience',
+              Text('hometitle2'.tr,
                   style: poppins(Appcolor.buttonColor, 14, FontWeight.w700)),
-              Text('Elevators to transform your life',
+              Text('hometitle3'.tr,
                   style: poppins(Appcolor.black, 10, FontWeight.w500)),
               SizedBox(height: screenHeight * 0.022),
-              Text(
-                  "Royal Fuji is a leading lift company in Dubai, with over 15 years of experience. We specialize in manufacturing, supplying, installing, repairing, maintaining, and modernizing all types of lifts for residential and commercial buildings. Our reputation is built on professionalism, hard work, and high-quality products tailored to our customers' needs.",
+              Text("hometitle4".tr,
                   style: poppins(const Color(0xFF273039), 9, FontWeight.w400)),
               SizedBox(height: screenHeight * 0.01),
               const CustomCarouselSlider(),
               SizedBox(height: screenHeight * 0.02),
               Center(
                 child: Text(
-                  'OUR PRODUCTS',
+                  'hometitle5'.tr,
                   style: poppins(Appcolor.white, 12, FontWeight.w600),
                 ),
               ),
-               ProductsContainer()
+              ProductsContainer()
             ],
           ),
         ),

@@ -32,9 +32,19 @@ class AppTranslations extends Translations {
           'account_no': 'Don’t have an account?',
           'notifications': 'Notifications',
           'notification_msg':'Elevator Annual Check-Up Complete',
+          'phone_email':'Phone or Email',
+          'hometitle1':'WELCOME TO ROYAL FUJI STAR',
+          'hometitle2':'Sky-High Convenience',
+          'hometitle3':'Elevators to transform your life',
+          'hometitle4':'Royal Fuji is a leading lift company in Dubai, with over 15 years of experience. We specialize in manufacturing, supplying, installing, repairing, maintaining, and modernizing all types of lifts for residential and commercial buildings. Our reputation is built on professionalism, hard work, and high-quality products tailored to our customers" needs.',
+          'hometitle5':'Our Products',
+          'bottomnav1':'Products',
+          'bottomnav2':'Services',
+          'bottomnav3':'Advisory',
+          'bottomnav4':'About',
 
         },
-        'ar_SA': {
+        'ar_AE': {
           'started':
               'اكتشف كيف يمكن لخدمات المصاعد التي نقدمها في شركة Royal Fuji Elevator Company في الإمارات العربية المتحدة أن تساهم في الأداء الدائم لمصاعدك من خلال التركيبات الدقيقة وعقود الصيانة السنوية الشاملة التي تعطي الأولوية للسلامة والمتانة.',
           'get_button': 'البدء',
@@ -62,6 +72,17 @@ class AppTranslations extends Translations {
           'account_no': 'ليس لديك حساب؟',
           'notifications': 'إشعارات',
           'notification_msg':'اكتمال الفحص السنوي للمصعد',
+          'phone_email':'الهاتف أو البريد الإلكتروني',
+          'hometitle1':'مرحبًا بكم في رويال فوجي ستار',
+          'hometitle2':'راحة عالية في السماء',
+          'hometitle3':'المصاعد ستغير حياتك',
+          'hometitle4':'رويال فوجي هي شركة مصاعد رائدة في دبي، وتتمتع بخبرة تزيد عن 15 عامًا. نحن متخصصون في تصنيع وتوريد وتركيب وإصلاح وصيانة وتحديث جميع أنواع المصاعد للمباني السكنية والتجارية. سمعتنا مبنية على الاحتراف والعمل الجاد والمنتجات عالية الجودة المصممة خصيصًا لتلبية احتياجات عملائنا.',
+          'hometitle5':'منتجاتنا',
+          'bottomnav1':'منتجات',
+          'bottomnav2':'خدمات',
+          'bottomnav3':'استشارية',
+          'bottomnav4':'عن',
+
         },
       };
 }

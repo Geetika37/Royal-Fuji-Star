@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/screens/bottomnav/about/views/about.dart';
 import 'package:royal_fuji_star/screens/bottomnav/advisory/views/consultation.dart';
@@ -80,7 +81,7 @@ class _BottomnavState extends State<Bottomnav> {
                       BottomBarItem(
                         image: bottombarContents[0].image,
                         pressedimage: bottombarContents[0].pressedimage,
-                        label: bottombarContents[0].label,
+                        label: bottombarContents[0].label.tr,
                         isSelected: _currentIndex == 0,
                         index: 0,
                         onTap: _onItemTapped,
@@ -88,7 +89,7 @@ class _BottomnavState extends State<Bottomnav> {
                       BottomBarItem(
                         image: bottombarContents[1].image,
                         pressedimage: bottombarContents[1].pressedimage,
-                        label: bottombarContents[1].label,
+                        label: bottombarContents[1].label.tr,
                         isSelected: _currentIndex == 1,
                         index: 1,
                         onTap: _onItemTapped,
@@ -96,7 +97,7 @@ class _BottomnavState extends State<Bottomnav> {
                       BottomBarItem(
                         image: bottombarContents[2].image,
                         pressedimage: bottombarContents[2].pressedimage,
-                        label: bottombarContents[2].label,
+                        label: bottombarContents[2].label.tr,
                         isSelected: _currentIndex == 2,
                         index: 2,
                         onTap: _onItemTapped,
@@ -104,7 +105,7 @@ class _BottomnavState extends State<Bottomnav> {
                       BottomBarItem(
                         image: bottombarContents[3].image,
                         pressedimage: bottombarContents[3].pressedimage,
-                        label: bottombarContents[3].label,
+                        label: bottombarContents[3].label.tr,
                         isSelected: _currentIndex == 3,
                         index: 3,
                         onTap: _onItemTapped,
@@ -184,10 +185,11 @@ class BottombarContent {
 
 List<BottombarContent> bottombarContents = [
   BottombarContent(
-      "assets/svg/wproduct.svg", "assets/svg/bproduct.svg", "Products"),
+      "assets/svg/wproduct.svg", "assets/svg/bproduct.svg", "bottomnav1"),
   BottombarContent(
-      "assets/svg/wservice.svg", "assets/svg/bservice.svg", "Services"),
+      "assets/svg/wservice.svg", "assets/svg/bservice.svg", "bottomnav2"),
   BottombarContent(
-      "assets/svg/wadvisory.svg", "assets/svg/badvisory.svg", "Advisory"),
-  BottombarContent("assets/svg/wabout.svg", "assets/svg/babout.svg", "About"),
+      "assets/svg/wadvisory.svg", "assets/svg/badvisory.svg", "bottomnav3"),
+  BottombarContent(
+      "assets/svg/wabout.svg", "assets/svg/babout.svg", "bottomnav4"),
 ];
