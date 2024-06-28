@@ -33,7 +33,73 @@
     "bottomnav1":"Products",
     "bottomnav2":"Services",
     "bottomnav3":"Advisory",
-    "bottomnav4":"About"
+    "bottomnav4":"About",
+    "drawertext1":"We are ready to elevate you",
+    "drawertext2":"Profile",
+    "drawertext3":"Settings",
+    "drawertext4":"",
+    "drawertext5":"Logout",
+    "Settingstitle1":"Settings",
+    "Settingstitle2":"Notification Settings",
+    "Settingstitle3":"Language Settings",
+    "Settingstitle4":"Privacy and Security",
+    "Settingstitle5":"Support and Feedback",
+    "Settingstitle6":"Delete Account",
+    "privacytitle1":"Introduction",
+    "privacytitle2":"Data Collection",
+    "privacytitle3":"Use of Data",
+    "privacytitle4":"Data Sharing",
+    "privacytitle5":"Data Security",
+    "privacytitle6":"User Rights",
+    "privacytitle7":"Cookies and Tracking Technologies",
+    "privacytitle8":"Changes to This Policy",
+    "privacytitle9":"Contact Information",
+    "privacysubtitle1":"At Royal Fuji Star, we value your privacy and are committed to protecting your personal information. This Privacy and Security policy explains how we collect, use, and protect your data when you use our mobile application. This policy was last updated on [Date].",
+    "privacysubtitle2":"We collect various types of information to provide and improve our services to you. This includes personal information such as your name, email address, and phone number, as well as usage data like your interactions with our app and location data if you have enabled location services.",
+    "privacysubtitle3":"We use the data we collect to provide and maintain our services, notify you of changes, allow you to participate in interactive features, and improve our app. Additionally, your data helps us monitor app usage and detect and address technical issues.",
+    "privacysubtitle4":"We may share your data with third-party service providers to help us analyze and improve our services. We will not share your personal data without your consent unless required by law.",
+    "privacysubtitle5":"We implement various security measures, including encryption and access controls, to protect your data. However, it's important that you also protect your information by using strong passwords and keeping your login details confidential.",
+    "privacysubtitle6":"You have the right to access, correct, and delete your personal information. You can also request a copy of your data in a machine-readable format. Please contact us to exercise these rights.",
+    "privacysubtitle7":"We implement various security measures, including encryption and access controls, to protect your data. However, it's important that you also protect your information by using strong passwords and keeping your login details confidential.",
+    "privacysubtitle8":"We use cookies to enhance your experience, analyze usage, and for advertising purposes. You can manage your cookie preferences in the app settings or through your browser settings.",
+    "privacysubtitle9":"If you have any questions or concerns about our Privacy and Security policy, please contact us at [Email Address], [Mailing Address], or [Phone Number].",
+    "supporttitle1":"Contact Support",
+    "supporttitle2":"Email Support",
+    "supporttitle3":"Phone Support",
+    "supporttitle4":"Support Hours",
+    "supporttitle5":"Report a Problem",
+    "supporttitle6":"Send Feedback",
+    "supporttitle7":"Status Updates",
+    "supporttitle8":"Additional Resources",
+    "supportsubtitle1":"Welcome to the Support and Feedback page! Here, you can find various ways to get help, report problems, and share your feedback with us. Our goal is to ensure you have the best experience with our app.",
+    "supportsubtitle2":"If you need assistance, please email us at support@company.com. Our support team will get back to you within 24 hours.",
+    "supportsubtitle3":"For immediate help, call us at [1-800-123-4567]. Our support lines are open Monday to Friday, from 9 AM to 5 PM.",
+    "supportsubtitle4":"Our support team is available from 9 AM to 5 PM, Monday to Friday. We aim to respond to all inquiries within one business day.",
+    "supportsubtitle5":"Encountered a problem? Let us know! Please provide as much detail as possible, including any error messages and screenshots. You can report issues directly through the app by navigating to the 'Report a Problem' section in the menu, or email us at support@company.com.",
+    "supportsubtitle6":"We value your feedback! To share your thoughts, suggestions, or feature requests, please fill out our Feedback Form. Your input helps us improve and provide a better experience for all users.",
+    "supportsubtitle7":"Check our Status Page for updates on ongoing issues, scheduled maintenance, and system status. We keep this page updated to ensure you are informed about any service interruptions.",
+    "supportsubtitle8":"'Explore our User Guides and Tutorials to get the most out of our app. Join our Community Forum to connect with other users, share tips, and ask questions.'",
+    "deletetitle1":"Are You Sure You Want to Delete Your Account?",
+    "deletetitle2":"What Happens When You Delete Your Account?",
+    "deletesubtitle1":"We're sorry to see you go! Deleting your account is a permanent action that cannot be undone. Before you proceed, please read the following important information carefully:",
+    "deletesubtitle2":"Permanent Data Loss: All your personal information, service history, and settings will be permanently deleted from our servers.",
+    "deletesubtitle3":"Irreversibility: Once your account is deleted, it cannot be recovered.",
+    "deletesubtitle4":"Service Access: You will lose access to all features and services associated with your account.",
+    "faqtitle1":"Frequently Asked questions",
+    "faqtitle2":"1. How fast can i expect delivery of my desired elevator?",
+    "faqtitle3":"2. Tell me more about the installation process.",
+    "faqtitle4":"3. What makes Royal Fuji’s elevator repair service xceptional?",
+    "faqtitle5":"4. Can you elaborate on elevator maintenance services?",
+    "faqtitle6":"5. Why are spare parts crucial for elevator maintenance?"
+
+
+
+
+
+
+
+
+
 
 
   }

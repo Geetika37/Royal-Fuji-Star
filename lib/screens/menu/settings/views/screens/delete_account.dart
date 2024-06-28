@@ -18,7 +18,7 @@ class DeleteAccount extends StatelessWidget {
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(kToolbarHeight),
         child: CustomAppbar(
-          text: 'Delete Account',
+          text: 'Settingstitle6'.tr,
           titleSpacing: screenWidth * 0.2,
         ),
       ),
@@ -28,36 +28,26 @@ class DeleteAccount extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: screenHeight * 0.03),
-            const CustomTitle(
+            CustomTitle(
                 fontWeight: FontWeight.w500,
-                textHeading: 'Are You Sure You Want to Delete Your Account?',
+                textHeading: 'deletetitle1'.tr,
                 fontSize: 12,
                 color: Appcolor.black),
             SizedBox(height: screenHeight * 0.01),
-            const CustomSubTitle(
-                color: Color.fromARGB(255, 86, 86, 86),
+            CustomSubTitle(
+                color: const Color.fromARGB(255, 86, 86, 86),
                 fontSize: 11,
-                subTitle:
-                    "We're sorry to see you go! Deleting your account is a permanent action that cannot be undone. Before you proceed, please read the following important information carefully:",
+                subTitle: "deletesubtitle1".tr,
                 maxLines: 3),
             SizedBox(height: screenHeight * 0.03),
-            const CustomTitle(
+            CustomTitle(
                 fontWeight: FontWeight.w500,
-                textHeading: 'What Happens When You Delete Your Account:',
+                textHeading: 'deletetitle2'.tr,
                 fontSize: 12,
                 color: Appcolor.black),
-            const BulletPoint(
-                maxLines: 2,
-                text:
-                    "Permanent Data Loss: All your personal information, service history, and settings will be permanently deleted from our servers."),
-            const BulletPoint(
-                maxLines: 1,
-                text:
-                    "Irreversibility: Once your account is deleted, it cannot be recovered."),
-            const BulletPoint(
-                maxLines: 2,
-                text:
-                    "Service Access: You will lose access to all features and services associated with your account."),
+            BulletPoint(maxLines: 2, text: "deletesubtitle2".tr),
+            BulletPoint(maxLines: 1, text: "deletesubtitle3".tr),
+            BulletPoint(maxLines: 2, text: "deletesubtitle4".tr),
             SizedBox(height: screenHeight * 0.4),
             BlueButton(
               fontSize: 14,

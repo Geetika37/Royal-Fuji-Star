@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/screens/widgets/customappbar.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
@@ -14,7 +15,7 @@ class SupportFeedback extends StatelessWidget {
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(kToolbarHeight),
           child: CustomAppbar(
-            text: 'Support and Feedback',
+            text: 'Settingstitle5'.tr,
             titleSpacing: screenWidth * 0.2,
           ),
         ),
@@ -24,114 +25,106 @@ class SupportFeedback extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const CustomTitle(
+                CustomTitle(
                     fontWeight: FontWeight.w500,
-                    textHeading: 'Introduction',
+                    textHeading: 'privacytitle1'.tr,
                     fontSize: 12,
                     color: Appcolor.black),
                 SizedBox(height: screenHeight * 0.01),
-                const CustomSubTitle(
-                    color: Color.fromARGB(255, 114, 114, 114),
+                CustomSubTitle(
+                    color: const Color.fromARGB(255, 114, 114, 114),
                     fontSize: 10,
-                    subTitle:
-                        'Welcome to the Support and Feedback page! Here, you can find various ways to get help, report problems, and share your feedback with us. Our goal is to ensure you have the best experience with our app.',
+                    subTitle: 'supportsubtitle1'.tr,
                     maxLines: 4),
                 SizedBox(height: screenHeight * 0.03),
-                const CustomTitle(
+                CustomTitle(
                     fontWeight: FontWeight.w500,
-                    textHeading: 'Contact Support',
+                    textHeading: 'supporttitle1'.tr,
                     fontSize: 12,
                     color: Appcolor.black),
                 SizedBox(height: screenHeight * 0.01),
-                const CustomTitle(
+                CustomTitle(
                     fontWeight: FontWeight.w500,
-                    textHeading: 'Email Support',
+                    textHeading: 'supporttitle2'.tr,
                     fontSize: 10,
                     color: Appcolor.black),
                 SizedBox(height: screenHeight * 0.005),
-                const CustomSubTitle(
-                    color: Color.fromARGB(255, 114, 114, 114),
+                CustomSubTitle(
+                    color: const Color.fromARGB(255, 114, 114, 114),
                     fontSize: 10,
-                    subTitle:
-                        'If you need assistance, please email us at support@company.com. Our support team will get back to you within 24 hours.',
+                    subTitle: 'supportsubtitle2'.tr,
                     maxLines: 2),
                 SizedBox(height: screenHeight * 0.013),
-                const CustomTitle(
+                CustomTitle(
                     fontWeight: FontWeight.w500,
-                    textHeading: 'Phone Support',
+                    textHeading: 'supporttitle3'.tr,
                     fontSize: 10,
                     color: Appcolor.black),
                 SizedBox(height: screenHeight * 0.005),
-                const CustomSubTitle(
-                    color: Color.fromARGB(255, 114, 114, 114),
+                CustomSubTitle(
+                    color: const Color.fromARGB(255, 114, 114, 114),
                     fontSize: 10,
-                    subTitle:
-                        'For immediate help, call us at [1-800-123-4567]. Our support lines are open Monday to Friday, from 9 AM to 5 PM.',
+                    subTitle: 'supportsubtitle3'.tr,
                     maxLines: 2),
                 SizedBox(height: screenHeight * 0.013),
-                const CustomTitle(
+                CustomTitle(
                     fontWeight: FontWeight.w500,
-                    textHeading: 'Support Hours',
+                    textHeading: 'supporttitle4'.tr,
                     fontSize: 10,
                     color: Appcolor.black),
                 SizedBox(height: screenHeight * 0.005),
-                const CustomSubTitle(
-                    color: Color.fromARGB(255, 114, 114, 114),
+                CustomSubTitle(
+                    color: const Color.fromARGB(255, 114, 114, 114),
                     fontSize: 10,
-                    subTitle:
-                        'Our support team is available from 9 AM to 5 PM, Monday to Friday. We aim to respond to all inquiries within one business day.',
+                    subTitle: 'supportsubtitle4'.tr,
                     maxLines: 2),
                 SizedBox(height: screenHeight * 0.013),
-                const CustomTitle(
+                CustomTitle(
                     fontWeight: FontWeight.w500,
-                    textHeading: 'Report a Problem',
+                    textHeading: 'supporttitle5'.tr,
                     fontSize: 10,
                     color: Appcolor.black),
                 SizedBox(height: screenHeight * 0.005),
-                const CustomSubTitle(
-                    color: Color.fromARGB(255, 114, 114, 114),
+                CustomSubTitle(
+                    color: const Color.fromARGB(255, 114, 114, 114),
                     fontSize: 10,
-                    subTitle:
-                        "Encountered a problem? Let us know! Please provide as much detail as possible, including any error messages and screenshots. You can report issues directly through the app by navigating to the 'Report a Problem' section in the menu, or email us at support@company.com.",
+                    subTitle: "supportsubtitle5".tr,
                     maxLines: 4),
                 SizedBox(height: screenHeight * 0.013),
-                const CustomTitle(
+                CustomTitle(
                     fontWeight: FontWeight.w500,
-                    textHeading: 'Send Feedback',
+                    textHeading: 'supporttitle6'.tr,
                     fontSize: 10,
                     color: Appcolor.black),
                 SizedBox(height: screenHeight * 0.005),
-                const CustomSubTitle(
-                    color: Color.fromARGB(255, 114, 114, 114),
+                CustomSubTitle(
+                    color: const Color.fromARGB(255, 114, 114, 114),
                     fontSize: 10,
-                    subTitle:
-                        "We value your feedback! To share your thoughts, suggestions, or feature requests, please fill out our Feedback Form. Your input helps us improve and provide a better experience for all users.",
+                    subTitle: "supportsubtitle6".tr,
                     maxLines: 3),
                 SizedBox(height: screenHeight * 0.013),
-                const CustomTitle(
+                CustomTitle(
                     fontWeight: FontWeight.w500,
-                    textHeading: 'Status Updates',
+                    textHeading: 'supporttitle7'.tr,
                     fontSize: 10,
                     color: Appcolor.black),
                 SizedBox(height: screenHeight * 0.005),
-                const CustomSubTitle(
-                    color: Color.fromARGB(255, 114, 114, 114),
+                CustomSubTitle(
+                    color: const Color.fromARGB(255, 114, 114, 114),
                     fontSize: 10,
-                    subTitle:
-                        "Check our Status Page for updates on ongoing issues, scheduled maintenance, and system status. We keep this page updated to ensure you are informed about any service interruptions.",
+                    subTitle: "supportsubtitle7".tr,
                     maxLines: 3),
                 SizedBox(height: screenHeight * 0.013),
-                const CustomTitle(
+                CustomTitle(
                     fontWeight: FontWeight.w500,
-                    textHeading: 'Additional Resources',
+                    textHeading: 'supporttitle8'.tr,
                     fontSize: 10,
                     color: Appcolor.black),
                 SizedBox(height: screenHeight * 0.005),
-                const CustomSubTitle(
-                    color: Color.fromARGB(255, 114, 114, 114),
+                CustomSubTitle(
+                    color: const Color.fromARGB(255, 114, 114, 114),
                     fontSize: 10,
-                    subTitle:
-                        '"Explore our User Guides and Tutorials to get the most out of our app. Join our Community Forum to connect with other users, share tips, and ask questions."',
+                    subTitle: 'supportsubtitle8'.tr,
                     maxLines: 3),
               ],
             ),

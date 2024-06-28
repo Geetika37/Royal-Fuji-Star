@@ -8,7 +8,7 @@ import 'package:royal_fuji_star/utils/appcolor.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await GetStorage.init();  // Initialize GetStorage for local storage
+  await GetStorage.init(); // Initialize GetStorage for local storage
 
   final savedLanguage = await TokenKey.getValue('selectedLanguage');
 
@@ -38,7 +38,8 @@ class MyApp extends StatelessWidget {
       locale: savedLanguage == 'ar'
           ? const Locale('ar', 'AE')
           : const Locale('en', 'US'), // Initial locale based on savedLanguage
-      fallbackLocale: const Locale('en', 'US'), // Fallback locale if not available
+      fallbackLocale:
+          const Locale('en', 'US'), // Fallback locale if not available
       home: const BasePage(), // Your initial home page
     );
   }

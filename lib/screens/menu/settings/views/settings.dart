@@ -19,7 +19,7 @@ class SettingsPage extends StatelessWidget {
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(kToolbarHeight),
           child: CustomAppbar(
-            text: 'Settings',
+            text: 'Settingstitle1'.tr,
             titleSpacing: screenWidth * 0.2,
           ),
         ),
@@ -28,23 +28,23 @@ class SettingsPage extends StatelessWidget {
           child: ListView(
             children: [
               CardSettings(
-                text: 'Notification Settings',
+                text: 'Settingstitle2'.tr,
                 onTap: () => Get.to(const NotificationSettings()),
               ),
               CardSettings(
-                text: 'Language Settings',
+                text: 'Settingstitle3'.tr,
                 onTap: () => Get.to( LanguageSettings()),
               ),
               CardSettings(
-                text: 'Privacy and Security',
+                text: 'Settingstitle4'.tr,
                 onTap: () => Get.to(const PrivacySecurity()),
               ),
               CardSettings(
-                text: 'Support and Feedback',
+                text: 'Settingstitle5'.tr,
                 onTap: () => Get.to(const SupportFeedback()),
               ),
               CardSettings(
-                text: 'Delete Account',
+                text: 'Settingstitle6'.tr,
                 onTap: () => Get.to(const DeleteAccount()),
               ),
             ],

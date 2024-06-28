@@ -5,7 +5,6 @@ import 'package:royal_fuji_star/constants/textstyle.dart';
 import 'package:royal_fuji_star/screens/menu/faq/views/faq.dart';
 import 'package:royal_fuji_star/screens/menu/profile/views/profile.dart';
 import 'package:royal_fuji_star/screens/menu/settings/views/settings.dart';
-import 'package:royal_fuji_star/screens/splash/views/base.dart';
 import 'package:royal_fuji_star/screens/splash/views/screens/getstarted.dart';
 import 'package:royal_fuji_star/services/token.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
@@ -36,7 +35,7 @@ class SettingsDrawer extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.only(bottom: 10, left: 15),
                 child: Text(
-                  'We are ready to elevate you',
+                  'drawertext1'.tr,
                   style: poppins(Appcolor.buttonColor, 14, FontWeight.w700),
                 ),
               ),
@@ -49,7 +48,7 @@ class SettingsDrawer extends StatelessWidget {
                 children: [
                   ListTile(
                     leading: Image.asset('assets/png/profile.png'),
-                    title: Text('Profile', style: drawertext),
+                    title: Text('drawertext2'.tr, style: drawertext),
                     onTap: () {
                       Get.to(const ProfilePage());
                     },
@@ -61,7 +60,7 @@ class SettingsDrawer extends StatelessWidget {
                   const Divider(),
                   ListTile(
                       leading: Image.asset('assets/png/settings.png'),
-                      title: Text('Settings', style: drawertext),
+                      title: Text('drawertext3'.tr, style: drawertext),
                       onTap: () {
                         Get.to(const SettingsPage());
                       },
@@ -70,7 +69,7 @@ class SettingsDrawer extends StatelessWidget {
                   const Divider(),
                   ListTile(
                     leading: Image.asset('assets/png/faq.png'),
-                    title: Text('FAQ', style: drawertext),
+                    title: Text('FAQ'.tr, style: drawertext),
                     onTap: () {
                       Get.to(const FAQPage());
                     },
@@ -80,7 +79,7 @@ class SettingsDrawer extends StatelessWidget {
                   const Divider(),
                   ListTile(
                       leading: Image.asset('assets/png/logout.png'),
-                      title: Text('Logout', style: drawertext),
+                      title: Text('drawertext5'.tr, style: drawertext),
                       onTap: () async {
                         await TokenKey.clearValue('token');
                         Get.to(const GetStarted());
