@@ -8,11 +8,8 @@ import 'package:royal_fuji_star/utils/appcolor.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await GetStorage.init(); // Initialize GetStorage for local storage
-
-  final savedLanguage = await TokenKey.getValue('selectedLanguage');
-
-  runApp(MyApp(savedLanguage: savedLanguage));
+  await GetStorage.init();
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -22,6 +19,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final savedLanguage = TokenKey.getValue('selectedLanguage');
+
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
@@ -35,7 +34,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       translations: AppTranslations(), // Your translation class
-      locale: savedLanguage == 'ar'
+      locale: savedLanguage.toString() == 'ar'
           ? const Locale('ar', 'AE')
           : const Locale('en', 'US'), // Initial locale based on savedLanguage
       fallbackLocale:

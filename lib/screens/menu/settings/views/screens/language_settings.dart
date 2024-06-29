@@ -42,7 +42,9 @@ class _LanguageSettingsState extends State<LanguageSettings> {
 
   Future<void> saveSelectedLanguage(String languageCode) async {
     await TokenKey.saveValue('selectedLanguage', languageCode);
-    Get.updateLocale(languageCode == 'en-US' ? const Locale('en', 'US') : const Locale('ar', 'AE'));
+    Get.updateLocale(languageCode == 'en-US'
+        ? const Locale('en', 'US')
+        : const Locale('ar', 'AE'));
     widget.productCategoryController.loadLocale();
   }
 
@@ -108,6 +110,7 @@ class _LanguageSettingsState extends State<LanguageSettings> {
     );
   }
 }
+
 
 
 

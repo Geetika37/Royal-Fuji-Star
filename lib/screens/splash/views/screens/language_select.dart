@@ -46,7 +46,9 @@ class _LanguageSelectState extends State<LanguageSelect> {
 
   Future<void> saveSelectedLanguage(String languageCode) async {
     await TokenKey.saveValue('selectedLanguage', languageCode);
-    Get.updateLocale(languageCode == 'en-US' ? const Locale('en', 'US') : const Locale('ar', 'AE'));
+    Get.updateLocale(languageCode == 'en'
+        ? const Locale('en', 'US')
+        : const Locale('ar', 'AE'));
     widget.productCategoryController.loadLocale();
   }
 
@@ -82,8 +84,8 @@ class _LanguageSelectState extends State<LanguageSelect> {
                   setState(() {
                     onPressed1 = true;
                     onPressed2 = false;
-                    TokenKey.saveValue('selectedLanguage', 'en');
-                    saveSelectedLanguage('en-US');
+                    saveSelectedLanguage('en');
+
                     widget.productCategoryController.loadLocale();
                   });
                 },
@@ -98,7 +100,6 @@ class _LanguageSelectState extends State<LanguageSelect> {
                   setState(() {
                     onPressed2 = true;
                     onPressed1 = false;
-                    TokenKey.saveValue('selectedLanguage', 'ar');
                     saveSelectedLanguage('ar-AE');
                     widget.productCategoryController.loadLocale();
                   });
