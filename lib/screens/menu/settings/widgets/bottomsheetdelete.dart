@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
+import 'package:royal_fuji_star/screens/menu/settings/controller/deletecontroller.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 import 'package:royal_fuji_star/utils/buttons.dart';
 
@@ -11,11 +12,12 @@ class BottomsheetDelete extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Deletecontroller deletecontroller = Get.put(Deletecontroller());
     return SizedBox(
       width: screenWidth,
       height: screenHeight * 0.4,
       child: Padding(
-        padding: const EdgeInsets.only(top: 50, right: 20, left: 20),
+        padding: const EdgeInsets.only(top: 50, right: 10, left: 10),
         child: Column(
           children: [
             SvgPicture.asset('assets/svg/delete.svg'),
@@ -39,31 +41,32 @@ class BottomsheetDelete extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                BlueButton(
-                    fontSize: 14,
-                    textColor: const Color.fromARGB(255, 149, 149, 149),
-                    height: screenHeight * 0.05,
-                    width: screenWidth * 0.4,
-                    circularRadius: 20,
-                    text: 'Cancel',
-                    onTap: () {
-                      Get.back();
-                      Get.back();
-                    },
-                    color: const Color(0xFFE5E7E8)),
-                SizedBox(width: screenWidth * 0.02),
-                BlueButton(
-                    fontSize: 14,
-                    textColor: Appcolor.white,
-                    height: screenHeight * 0.05,
-                    width: screenWidth * 0.4,
-                    circularRadius: 20,
-                    text: 'Delete',
-                    onTap: () {
-                      Get.back();
-                      Get.back();
-                    },
-                    color: Appcolor.buttonColor),
+                Expanded(
+                  child: BlueButton(
+                      fontSize: 14,
+                      textColor: const Color.fromARGB(255, 149, 149, 149),
+                      height: screenHeight * 0.05,
+                      width: screenWidth,
+                      circularRadius: 20,
+                      text: 'Cancel',
+                      onTap: () {
+                        Get.back();
+                      },
+                      color: const Color(0xFFE5E7E8)),
+                ),
+                Expanded(
+                  child: BlueButton(
+                      fontSize: 14,
+                      textColor: Appcolor.white,
+                      height: screenHeight * 0.05,
+                      width: screenWidth,
+                      circularRadius: 20,
+                      text: 'Delete',
+                      onTap: () {
+                        deletecontroller.deleteAccount();
+                      },
+                      color: Appcolor.buttonColor),
+                ),
               ],
             )
           ],
