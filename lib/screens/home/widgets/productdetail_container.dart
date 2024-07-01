@@ -59,9 +59,18 @@ class ProductDetailContainer extends StatelessWidget {
                 )
               ],
             ),
-            Text(
-              productCategoryTitle,
-              style: poppins(Appcolor.white, 17, FontWeight.w700),
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.black54,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  productCategoryTitle,
+                  style: poppins(Appcolor.white, 17, FontWeight.w700),
+                ),
+              ),
             )
           ],
         ),

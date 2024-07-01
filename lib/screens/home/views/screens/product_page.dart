@@ -81,7 +81,7 @@ class ProductPage extends StatelessWidget {
                           ),
                           SizedBox(height: screenHeight * 0.006),
                           Text(
-                            'Description',
+                            'description'.tr,
                             style: poppins(
                                 Appcolor.blackPrimary, 12, FontWeight.w500),
                           ),

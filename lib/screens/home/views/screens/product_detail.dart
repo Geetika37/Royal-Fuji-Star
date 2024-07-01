@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/screens/home/widgets/productdetail_container.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
@@ -23,10 +24,10 @@ class ProductDetail extends StatelessWidget {
               productCategoryTitle: productCategoryTitle,
             ),
             SizedBox(height: screenHeight * 0.01),
-            const Padding(
-              padding: EdgeInsets.only(right: 10, left: 10),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
               child: CustomTitle(
-                textHeading: 'Description :',
+                textHeading: 'description'.tr,
                 fontSize: 12,
                 color: Appcolor.black,
                 fontWeight: FontWeight.w500,
@@ -34,7 +35,7 @@ class ProductDetail extends StatelessWidget {
             ),
             SizedBox(height: screenHeight * 0.01),
             Padding(
-              padding: const EdgeInsets.only(right: 10, left: 10),
+              padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
               child: CustomSubTitle(
                 subTitle: productDetail['description'],
                 maxLines: 7,
@@ -43,26 +44,28 @@ class ProductDetail extends StatelessWidget {
               ),
             ),
             SizedBox(height: screenHeight * 0.01),
-            const Padding(
-              padding: EdgeInsets.only(right: 10, left: 10),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
               child: CustomTitle(
-                textHeading: 'Gallery :',
+                textHeading: 'gallery'.tr,
                 fontSize: 12,
                 color: Appcolor.black,
                 fontWeight: FontWeight.w500,
               ),
             ),
+            SizedBox(height: screenHeight * 0.01),
             GalleryContainer(
               gallery: productDetail['gallery'],
             ),
-            SizedBox(height: screenHeight * 0.01),
+            const Spacer(),
+            SizedBox(height: screenHeight * 0.02),
             Center(
               child: BlueButton(
                   fontSize: 14,
                   height: screenHeight * 0.06,
-                  width: screenWidth * 0.7,
+                  width: screenWidth,
                   circularRadius: 10,
-                  text: 'Enquiry Now',
+                  text: 'enquiry'.tr,
                   onTap: () {},
                   color: Appcolor.buttonColor,
                   textColor: Appcolor.white),
@@ -85,7 +88,7 @@ class GalleryContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     print('galleryimages----)))==$gallery');
     return GridView.builder(
-        padding: const EdgeInsets.all(10),
+        padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         itemCount: gallery?.length ?? 0,

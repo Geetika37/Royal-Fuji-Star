@@ -12,6 +12,8 @@ class AppTranslations extends Translations {
           'english': 'English',
           'arabic': 'عربي',
           'continue': 'Continue',
+          'description': 'Description',
+          'gallery': 'Gallery',
           'change_preference':
               'Your language preference can be changed at any time in settings',
           'join': 'Join us',
@@ -32,6 +34,7 @@ class AppTranslations extends Translations {
           'account_no': 'Don’t have an account?',
           'notifications': 'Notifications',
           'notification_msg': 'Elevator Annual Check-Up Complete',
+          'enquiry': 'Enquiry Now',
           'phone_email': 'Phone or Email',
           'hometitle1': 'WELCOME TO ROYAL FUJI STAR',
           'hometitle2': 'Sky-High Convenience',
@@ -124,11 +127,11 @@ class AppTranslations extends Translations {
           'faqtitle5': '4. Can you elaborate on elevator maintenance services?',
           'faqtitle6':
               '5. Why are spare parts crucial for elevator maintenance?',
-          'faqsubtitle1': '',
-          'faqsubtitle2': '',
-          'faqsubtitle3': '',
-          'faqsubtitle4': '',
-          'faqsubtitle5': '',
+          'faqsubtitle1': 'We take pride in our rapid delivery service – your desired elevator product will be at your doorstep within just 30 days.',
+          'faqsubtitle2': 'Our expert technicians efficiently complete elevator installations from the ground floor to the tenth floor within an astonishing 40 to 42 days. Residential or commercial, we’ve got you covered.',
+          'faqsubtitle3': 'Our experienced technicians promptly diagnose and efficiently repair elevator malfunctions, ensuring uninterrupted vertical mobility',
+          'faqsubtitle4': 'Royal Fuji’s meticulous attention ensures the longevity of your elevator. Our technicians conduct regular inspections, check oil levels, and test components for seamless functionality.',
+          'faqsubtitle5': 'Quality spare parts are essential for maintaining elevator safety and efficiency. We offer an extensive collection of elevator components, available within 2-3 hours regardless of brand.',
         },
         'ar_AE': {
           'started':
@@ -139,6 +142,8 @@ class AppTranslations extends Translations {
           'english': 'الإنجليزية',
           'arabic': 'عربي',
           'continue': 'استمر',
+          'description': 'وصف',
+          'gallery': 'صالة عرض',
           'change_preference':
               'يمكن تغيير تفضيل اللغة الخاص بك في أي وقت في الإعدادات',
           'join': 'انضم إلينا',
@@ -151,6 +156,7 @@ class AppTranslations extends Translations {
           'email': 'بريد إلكتروني',
           'phone': 'هاتف',
           'password': 'كلمة المرور',
+          'enquiry': 'الاستفسار الآن',
           'policy_terms': 'بالتسجيل فإنك توافق على شروط الخدمة وسياسة الخصوصية',
           'already_account': 'هل لديك حساب؟',
           'login_heading': 'تسجيل الدخول إلى حسابك',
@@ -248,11 +254,11 @@ class AppTranslations extends Translations {
               '3. ما الذي يجعل خدمة إصلاح المصاعد في رويال فوجي استثنائية؟',
           'faqtitle5': '4. هل يمكنك توضيح خدمات صيانة المصاعد؟',
           'faqtitle6': '5. لماذا تعتبر قطع الغيار ضرورية لصيانة المصاعد؟',
-          'faqsubtitle1': '',
-          'faqsubtitle2': '',
-          'faqsubtitle3': '',
-          'faqsubtitle4': '',
-          'faqsubtitle5': '',
+          'faqsubtitle1': 'نحن نفخر بخدمة التوصيل السريعة التي نقدمها - سيكون منتج المصعد الذي تريده عند عتبة داركم خلال 30 يومًا فقط.',
+          'faqsubtitle2': 'يقوم الفنيون الخبراء لدينا بإكمال تركيبات المصاعد بكفاءة من الطابق الأرضي إلى الطابق العاشر خلال فترة مذهلة تتراوح من 40 إلى 42 يومًا. سكني أو تجاري، نحن نوفر لك كل ما تحتاجه.',
+          'faqsubtitle3': 'يقوم الفنيون ذوو الخبرة لدينا بتشخيص أعطال المصاعد وإصلاحها بكفاءة، مما يضمن الحركة العمودية دون انقطاع',
+          'faqsubtitle4': 'يضمن اهتمام رويال فوجي الدقيق طول عمر المصعد الخاص بك. يقوم الفنيون لدينا بإجراء عمليات فحص منتظمة، والتحقق من مستويات الزيت، واختبار المكونات للحصول على وظائف سلسة.',
+          'faqsubtitle5': 'تعتبر قطع الغيار عالية الجودة ضرورية للحفاظ على سلامة وكفاءة المصعد. نحن نقدم مجموعة واسعة من مكونات المصاعد، المتوفرة خلال 2-3 ساعات بغض النظر عن العلامة التجارية.',
         },
       };
 }
