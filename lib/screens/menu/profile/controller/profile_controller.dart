@@ -38,4 +38,16 @@ class ProfileController extends GetxController {
       isLoading(false);
     }
   }
+
+  void updateProfileData({
+    required String username,
+    required String email,
+    required String phone,
+    required String location,
+  }) {
+    profileData['username'] = username;
+    profileData['email'] = email;
+    profileData['phone'] = phone;
+    profileData['location'] = location;
+  }
 }

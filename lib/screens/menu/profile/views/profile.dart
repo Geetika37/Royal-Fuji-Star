@@ -14,6 +14,7 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ProfileController profileController = Get.put(ProfileController());
+    final profileDetails = profileController.profileData;
 
     return SafeArea(
         child: Scaffold(
@@ -69,7 +70,6 @@ class ProfilePage extends StatelessWidget {
                 if (profileController.profileData.isEmpty) {
                   return const Text('No profile data available');
                 }
-                final profileDetails = profileController.profileData;
                 print('profile data######----$profileDetails');
                 return Column(
                   children: [
@@ -100,7 +100,12 @@ class ProfilePage extends StatelessWidget {
                 circularRadius: 20,
                 text: 'editprofile'.tr,
                 onTap: () {
-                  Get.to(const EditProfile());
+                  Get.to(EditProfile(
+                    username: profileDetails['username'] ?? '',
+                    email: profileDetails['email'] ?? '',
+                    phone: profileDetails['phone'] ?? '',
+                    location: profileDetails['location'] ?? '',
+                  ));
                 },
                 color: Appcolor.buttonColor,
               )
