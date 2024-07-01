@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
+import 'package:royal_fuji_star/screens/home/widgets/fileshare.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 
 class ProductDetailContainer extends StatelessWidget {
@@ -16,10 +17,10 @@ class ProductDetailContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final imageUrl = productDetail['gallery'] != null &&
-            productDetail['gallery'].isNotEmpty &&
-            productDetail['gallery'][0]['url'] != null
-        ? 'https://royalfuji.jissanto.com${productDetail['gallery'][0]['url']}'
+    final imageUrl = productDetail['mainImage'] != null &&
+            productDetail['mainImage'].isNotEmpty &&
+            productDetail['mainImage']['url'] != null
+        ? 'https://royalfuji.jissanto.com${productDetail['mainImage']['url']}'
         : null;
     return Container(
       height: screenHeight * 0.35,
@@ -48,13 +49,18 @@ class ProductDetailContainer extends StatelessWidget {
                         color: Appcolor.buttonColor),
                   ),
                 ),
-                Container(
-                  decoration: const BoxDecoration(
-                      color: Color(0xFF263239),
-                      borderRadius: BorderRadius.all(Radius.circular(10))),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8),
-                    child: SvgPicture.asset('assets/svg/share.svg'),
+                InkWell(
+                  onTap: () {
+                    shareFile(productDetail);
+                  },
+                  child: Container(
+                    decoration: const BoxDecoration(
+                        color: Color(0xFF263239),
+                        borderRadius: BorderRadius.all(Radius.circular(10))),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8),
+                      child: SvgPicture.asset('assets/svg/share.svg'),
+                    ),
                   ),
                 )
               ],

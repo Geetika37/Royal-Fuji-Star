@@ -42,10 +42,10 @@ class ProductsContainer extends StatelessWidget {
             print('category---$category');
             print('category ID---${category['id']}');
 
-            final imageUrl = category['gallery'] != null &&
-                    category['gallery'].isNotEmpty &&
-                    category['gallery'][0]['url'] != null
-                ? 'https://royalfuji.jissanto.com${category['gallery'][0]['url']}'
+            final imageUrl = category['image'] != null &&
+                    category['image'].isNotEmpty &&
+                    category['image']['url'] != null
+                ? 'https://royalfuji.jissanto.com${category['image']['url']}'
                 : null;
 
             return InkWell(

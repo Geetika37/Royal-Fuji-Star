@@ -38,10 +38,10 @@ class ProductPage extends StatelessWidget {
             itemBuilder: (context, index) {
               final categoryProd = categoryProduct[index];
               print('categoryProd%%%%----$categoryProd');
-              final imageUrl = categoryProd['gallery'] != null &&
-                      categoryProd['gallery'].isNotEmpty &&
-                      categoryProd['gallery'][0]['url'] != null
-                  ? 'https://royalfuji.jissanto.com${categoryProd['gallery'][0]['url']}'
+              final imageUrl = categoryProd['mainImage'] != null &&
+                      categoryProd['mainImage'].isNotEmpty &&
+                      categoryProd['mainImage']['url'] != null
+                  ? 'https://royalfuji.jissanto.com${categoryProd['mainImage']['url']}'
                   : null;
               return Padding(
                 padding: const EdgeInsets.all(18.0),

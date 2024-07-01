@@ -57,7 +57,6 @@ class ProductDetail extends StatelessWidget {
             GalleryContainer(
               gallery: productDetail['gallery'],
             ),
-            const Spacer(),
             SizedBox(height: screenHeight * 0.02),
             Center(
               child: BlueButton(
