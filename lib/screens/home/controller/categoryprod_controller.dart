@@ -1,44 +1,21 @@
 import 'dart:convert';
+
 import 'package:get/get.dart';
 import 'package:royal_fuji_star/services/api_baseurl.dart';
-import 'package:http/http.dart' as http;
 import 'package:royal_fuji_star/services/token.dart';
+import 'package:http/http.dart' as http;
 
-class ProductCategoryController extends GetxController {
+class CategoryProductController extends GetxController {
   var isLoading = false.obs;
   var product = <dynamic>[].obs;
   var errorMessage = ''.obs;
-  var locale = 'en'.obs;
 
-  @override
-  void onInit() {
-    super.onInit();
-    loadLocale();
-  }
-
-  Future<void> loadLocale() async {
-    try {
-      locale.value = await TokenKey.getValue('selectedLanguage') ?? 'en';
-      print('locale: ---- ${locale.value}');
-    } catch (e) {
-      errorMessage.value = 'Error loading locale: ${e.toString()}';
-    } finally {
-      await productCategory();
-    }
-  }
-
-  Future<void> productCategory() async {
+  Future<void> categoryProduct(int id) async {
     isLoading(true);
     try {
       final token = await TokenKey.getValue('token');
-      if (token == null) {
-        errorMessage.value = 'Error: Token is null';
-        isLoading(false);
-        return;
-      }
-
       final url = Uri.parse(
-          '${APIConstants.baseUrl}/api/product-categories?locale=${locale.value}');
+          '${APIConstants.baseUrl}/api/findCategoryProducts/$id?&title=desc');
       final response = await http.get(
         url,
         headers: {
@@ -47,19 +24,25 @@ class ProductCategoryController extends GetxController {
           'Authorization': 'Bearer $token',
         },
       );
+
       final jsonResponse = jsonDecode(response.body);
+      print('jsonResponse is ******* :$jsonResponse');
 
       if (response.statusCode == 200) {
         if (jsonResponse['data'] != null) {
           product.value = jsonResponse['data'];
+          print('product ###----$product');
+          print(response.statusCode);
         } else {
           errorMessage.value = 'Error: No data in response';
         }
       } else {
+          print(response.statusCode);
+
         errorMessage.value = 'Error: ${jsonResponse['error']['message']}';
       }
     } catch (e) {
-      errorMessage.value = 'Error: ${e.toString()}';
+      print(e);
     } finally {
       isLoading(false);
     }

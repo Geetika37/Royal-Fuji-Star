@@ -16,11 +16,11 @@ class Product {
 
 final List<Product> products = [
   Product(
-      onTap: () => Get.to(const Escalators()),
+      onTap: () => Get.to(const ProductPage()),
       imagePath: 'assets/svg/product1.svg',
       text: 'Elevators'),
   Product(
-      onTap: () => Get.to(() => const Escalators()),
+      onTap: () => Get.to(() => const ProductPage()),
       imagePath: 'assets/svg/product2.svg',
       text: 'Escalators'),
   Product(
@@ -28,11 +28,11 @@ final List<Product> products = [
       imagePath: 'assets/svg/product3.svg',
       text: 'Cargo Lift'),
   Product(
-      onTap: () => Get.to(() => const Escalators()),
+      onTap: () => Get.to(() => const ProductPage()),
       imagePath: 'assets/svg/product4.svg',
       text: 'Dumbwaiter'),
   Product(
-      onTap: () => Get.to(() => const Escalators()),
+      onTap: () => Get.to(() => const ProductPage()),
       imagePath: 'assets/svg/product4.svg',
       text: 'Car Elevator'),
 ];
