@@ -28,7 +28,7 @@ class ServiceContainer extends StatelessWidget {
                 Get.to(const AnualMaintenance());
               },
               image: 'assets/svg/service1.svg',
-              text: 'Annual Maintenance',
+              text: 'servicetypes1'.tr,
             ),
             SizedBox(height: screenHeight * 0.04),
             ServiceTypes(
@@ -36,13 +36,13 @@ class ServiceContainer extends StatelessWidget {
                 Get.to(const SpareParts());
               },
               image: 'assets/svg/service2.svg',
-              text: 'Spare Parts for all Brands',
+              text: 'servicetypes2'.tr,
             ),
             SizedBox(height: screenHeight * 0.04),
             ServiceTypes(
               onTap: () {},
               image: 'assets/svg/service3.svg',
-              text: 'Others',
+              text: 'servicetypes3'.tr,
             ),
           ],
         ),

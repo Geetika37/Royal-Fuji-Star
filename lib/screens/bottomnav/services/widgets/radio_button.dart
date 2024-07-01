@@ -11,7 +11,11 @@ class RadioButton extends StatefulWidget {
   State<RadioButton> createState() => _RadioButtonState();
 }
 
-List<String> options = ['Comprehensive', 'Non-Comprehensive'];
+List<String> options = [
+  'Comprehensive',
+  'Non-Comprehensive',
+  'Semi-Comprehensive'
+];
 
 class _RadioButtonState extends State<RadioButton> {
   String currentOption = options[0];
@@ -36,7 +40,7 @@ class _RadioButtonState extends State<RadioButton> {
               ),
               Text(
                 'Comprehensive',
-                style: poppins(Appcolor.black, 12, FontWeight.w500),
+                style: poppins(Appcolor.black, 9, FontWeight.w500),
               ),
             ],
           ),
@@ -56,7 +60,27 @@ class _RadioButtonState extends State<RadioButton> {
               ),
               Text(
                 'Non-Comprehensive',
-                style: poppins(Appcolor.black, 12, FontWeight.w500),
+                style: poppins(Appcolor.black, 9, FontWeight.w500),
+              ),
+            ],
+          ),
+        ),
+        Expanded(
+          child: Row(
+            children: [
+              Radio(
+                activeColor: Appcolor.buttonColor,
+                value: options[1],
+                groupValue: currentOption,
+                onChanged: (value) {
+                  setState(() {
+                    currentOption = value.toString();
+                  });
+                },
+              ),
+              Text(
+                'Semi-Comprehensive',
+                style: poppins(Appcolor.black, 9, FontWeight.w500),
               ),
             ],
           ),

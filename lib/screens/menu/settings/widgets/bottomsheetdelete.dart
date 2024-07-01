@@ -22,17 +22,17 @@ class BottomsheetDelete extends StatelessWidget {
           children: [
             SvgPicture.asset('assets/svg/delete.svg'),
             SizedBox(height: screenHeight * 0.04),
-            Text('Delete Account',
+            Text('deleteacbutton'.tr,
                 style: poppins(Appcolor.black, 18, FontWeight.w600)),
             SizedBox(height: screenHeight * 0.01),
             Text(
-              'Are you sure want to delete this account?',
+              'deletebottomsheet1'.tr,
               style: poppins(const Color.fromARGB(255, 101, 101, 101), 11,
                   FontWeight.w400),
               textAlign: TextAlign.center,
             ),
             Text(
-              'This action cannot be undone.',
+              'deletebottomsheet2'.tr,
               style: poppins(
                   const Color.fromARGB(255, 71, 71, 71), 11, FontWeight.w400),
               textAlign: TextAlign.center,
@@ -48,7 +48,7 @@ class BottomsheetDelete extends StatelessWidget {
                       height: screenHeight * 0.05,
                       width: screenWidth,
                       circularRadius: 20,
-                      text: 'Cancel',
+                      text: 'deletebottomsheet3'.tr,
                       onTap: () {
                         Get.back();
                       },
@@ -61,7 +61,7 @@ class BottomsheetDelete extends StatelessWidget {
                       height: screenHeight * 0.05,
                       width: screenWidth,
                       circularRadius: 20,
-                      text: 'Delete',
+                      text: 'deletebottomsheet4'.tr,
                       onTap: () {
                         deletecontroller.deleteAccount();
                       },

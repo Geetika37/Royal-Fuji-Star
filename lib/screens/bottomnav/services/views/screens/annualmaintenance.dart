@@ -55,7 +55,7 @@ class AnualMaintenance extends StatelessWidget {
                       height: screenHeight * 0.03,
                     ),
                     Text(
-                      'Annual Maintenance',
+                      'servicetypes1'.tr,
                       style: poppins(Appcolor.white, 20, FontWeight.w600),
                     ),
                   ],

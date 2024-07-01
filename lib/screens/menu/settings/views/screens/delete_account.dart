@@ -55,7 +55,7 @@ class DeleteAccount extends StatelessWidget {
               height: screenHeight * 0.07,
               width: screenWidth,
               circularRadius: 15,
-              text: 'Delete  Account',
+              text: 'deleteacbutton'.tr,
               onTap: () {
                 Get.bottomSheet(
                   backgroundColor: Appcolor.white,

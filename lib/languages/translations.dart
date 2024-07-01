@@ -120,6 +120,8 @@ class AppTranslations extends Translations {
               'Irreversibility: Once your account is deleted, it cannot be recovered.',
           'deletesubtitle4':
               'Service Access: You will lose access to all features and services associated with your account.',
+          'deleteacbutton':'Delete Account',
+          
           'faqtitle1': 'Frequently Asked questions',
           'faqtitle2':
               '1. How fast can i expect delivery of my desired elevator?',
@@ -144,6 +146,16 @@ class AppTranslations extends Translations {
           'editprofilehinttext2':'Email id',
           'editprofilehinttext3':'Mobile',
           'editprofilehinttext4':'Location',
+          'deletebottomsheet1':'Are you sure want to delete this account?',
+          'deletebottomsheet2':'This action cannot be undone.',
+          'deletebottomsheet3':'Cancel',
+          'deletebottomsheet4':'Delete',
+          'profileeditbottomsheet1':'Profile Updated Successfully',
+          'profileeditbottomsheet2':'Your profile details have been saved.',
+          'profileeditbottomsheet3':'Keep exploring the app to enjoy a personalized experience',
+          'servicetypes1':'Annual Maintenance',
+          'servicetypes2':'Spare Parts for all Brands',
+          'servicetypes3':'Others',
 
         },
         'ar_AE': {
@@ -261,6 +273,7 @@ class AppTranslations extends Translations {
           'deletesubtitle3': 'اللارجعة: بمجرد حذف حسابك، لا يمكن استعادته.',
           'deletesubtitle4':
               'الوصول إلى الخدمة: ستفقد إمكانية الوصول إلى جميع الميزات والخدمات المرتبطة بحسابك.',
+          'deleteacbutton':'حذف الحساب',
           'faqtitle1': 'أسئلة مكررة',
           'faqtitle2':
               '1. ما هي السرعة التي يمكنني أن أتوقع بها تسليم المصعد المطلوب؟',
@@ -284,6 +297,18 @@ class AppTranslations extends Translations {
           'editprofilehinttext2':'عنوان الايميل',
           'editprofilehinttext3':'متحرك',
           'editprofilehinttext4':'موقع',
+          'deletebottomsheet1':'هل أنت متأكد أنك تريد حذف هذا الحساب؟',
+          'deletebottomsheet2':'لا يمكن التراجع عن هذا الإجراء.',
+          'deletebottomsheet3':'يلغي',
+          'deletebottomsheet4':'يمسح',
+          'profileeditbottomsheet1':'تم تحديث الملف الشخصي بنجاح',
+          'profileeditbottomsheet2':'تم حفظ تفاصيل ملفك الشخصي.',
+          'profileeditbottomsheet3':'استمر في استكشاف التطبيق للاستمتاع بتجربة مخصصة',
+          'servicetypes1':'الصيانة السنوية',
+          'servicetypes2':'قطع غيار لجميع الماركات',
+          'servicetypes3':'آحرون',
+
+
         },
       };
 }

@@ -85,6 +85,7 @@
     "deletesubtitle2":"فقدان البيانات بشكل دائم: سيتم حذف جميع معلوماتك الشخصية وسجل الخدمة والإعدادات بشكل دائم من خوادمنا.",
     "deletesubtitle3":"اللارجعة: بمجرد حذف حسابك، لا يمكن استعادته.",
     "deletesubtitle4":"الوصول إلى الخدمة: ستفقد إمكانية الوصول إلى جميع الميزات والخدمات المرتبطة بحسابك.",
+    "deleteacbutton":"حذف الحساب",
     "faqtitle1":"أسئلة مكررة",
     "faqtitle2":"1. ما هي السرعة التي يمكنني أن أتوقع بها تسليم المصعد المطلوب؟",
     "faqtitle3":"2. أخبرني المزيد عن عملية التثبيت.",
@@ -105,10 +106,17 @@
     "editprofilehinttext1":"اسم المستخدم",
     "editprofilehinttext2":"عنوان الايميل",
     "editprofilehinttext3":"متحرك",
-    "editprofilehinttext4":"موقع"
-
-
-
+    "editprofilehinttext4":"موقع",
+    "deletebottomsheet1":"هل أنت متأكد أنك تريد حذف هذا الحساب؟",
+    "deletebottomsheet2":"لا يمكن التراجع عن هذا الإجراء.",
+    "deletebottomsheet3":"يلغي",
+    "deletebottomsheet4":"يمسح",
+    "profileeditbottomsheet1":"تم تحديث الملف الشخصي بنجاح",
+    "profileeditbottomsheet2":"تم حفظ تفاصيل ملفك الشخصي.",
+    "profileeditbottomsheet3":"استمر في استكشاف التطبيق للاستمتاع بتجربة مخصصة",
+    "servicetypes1":"الصيانة السنوية",
+    "servicetypes2":"قطع غيار لجميع الماركات",
+    "servicetypes3":"آحرون"
 
 
   }

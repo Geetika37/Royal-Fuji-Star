@@ -20,17 +20,17 @@ class Bottomsheet extends StatelessWidget {
           children: [
             SvgPicture.asset('assets/svg/bottomsheet1.svg'),
             SizedBox(height: screenHeight * 0.04),
-            Text('Profile Updated Successfully',
+            Text('profileeditbottomsheet1'.tr,
                 style: poppins(Appcolor.black, 18, FontWeight.w600)),
             SizedBox(height: screenHeight * 0.01),
             Text(
-              'Your profile details have been saved.',
+              'profileeditbottomsheet2'.tr,
               style: poppins(const Color.fromARGB(255, 101, 101, 101), 11,
                   FontWeight.w400),
               textAlign: TextAlign.center,
             ),
             Text(
-              'Keep exploring the app to enjoy a personalized experience',
+              'profileeditbottomsheet3'.tr,
               style: poppins(
                   const Color.fromARGB(255, 71, 71, 71), 11, FontWeight.w400),
               textAlign: TextAlign.center,
@@ -42,7 +42,7 @@ class Bottomsheet extends StatelessWidget {
                 height: screenHeight * 0.05,
                 width: screenWidth * 0.4,
                 circularRadius: 20,
-                text: 'Continue',
+                text: 'continue'.tr,
                 onTap: () {
                   Get.back();
                   Get.back();
