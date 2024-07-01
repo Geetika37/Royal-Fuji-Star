@@ -6,15 +6,22 @@ import 'package:royal_fuji_star/utils/buttons.dart';
 import 'package:royal_fuji_star/utils/textcustom.dart';
 
 class ProductDetail extends StatelessWidget {
-  const ProductDetail({super.key});
+  const ProductDetail(
+      {super.key, this.productDetail, required this.productCategoryTitle});
+  final dynamic productDetail;
+  final String productCategoryTitle;
 
   @override
   Widget build(BuildContext context) {
+    print('productdetails@@@@----$productDetail');
     return SafeArea(
       child: Scaffold(
         body: ListView(
           children: [
-            const ProductDetailContainer(),
+            ProductDetailContainer(
+              productDetail: productDetail,
+              productCategoryTitle: productCategoryTitle,
+            ),
             SizedBox(height: screenHeight * 0.01),
             const Padding(
               padding: EdgeInsets.only(right: 10, left: 10),
@@ -26,11 +33,10 @@ class ProductDetail extends StatelessWidget {
               ),
             ),
             SizedBox(height: screenHeight * 0.01),
-            const Padding(
-              padding: EdgeInsets.only(right: 10, left: 10),
+            Padding(
+              padding: const EdgeInsets.only(right: 10, left: 10),
               child: CustomSubTitle(
-                subTitle:
-                    'Lorem ipsum dolor sit amet consectetur. Vitae tellus quam diam bibendum quam risus sit. Sit ut at viverra sodales convallis. Felis vel velit est risus et tempus amet phasellus bibendum. At fringilla dignissim.Lorem ipsum dolor sit amet consectetur. Vitae tellus quam diam bibendum quam risus sit. Sit ut at viverra sodales convallis. Felis vel velit est risus et tempus amet phasellus bibendum. At fringilla dignissim.',
+                subTitle: productDetail['description'],
                 maxLines: 7,
                 fontSize: 10,
                 color: Appcolor.blackPrimary,
@@ -46,7 +52,9 @@ class ProductDetail extends StatelessWidget {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            const GalleryContainer(),
+            GalleryContainer(
+              gallery: productDetail['gallery'],
+            ),
             SizedBox(height: screenHeight * 0.01),
             Center(
               child: BlueButton(
@@ -69,22 +77,37 @@ class ProductDetail extends StatelessWidget {
 class GalleryContainer extends StatelessWidget {
   const GalleryContainer({
     super.key,
+    this.gallery,
   });
+  final List<dynamic>? gallery;
 
   @override
   Widget build(BuildContext context) {
+    print('galleryimages----)))==$gallery');
     return GridView.builder(
+        padding: const EdgeInsets.all(10),
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
-        itemCount: 6,
-        gridDelegate:
-            const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+        itemCount: gallery?.length ?? 0,
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 3,
+          mainAxisSpacing: 20,
+          crossAxisSpacing: 20,
+        ),
         itemBuilder: (context, index) {
+          final galleryImage = gallery?[index];
+          print('galleryImage!!!-----$galleryImage');
+
           return Container(
             height: screenHeight * 0.1,
-            decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('assets/png/galleryimage.png'))),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              image: DecorationImage(
+                image: NetworkImage(
+                    'https://royalfuji.jissanto.com${galleryImage['url']}'),
+                fit: BoxFit.cover,
+              ),
+            ),
           );
         });
   }

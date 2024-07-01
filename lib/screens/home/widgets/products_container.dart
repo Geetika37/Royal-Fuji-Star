@@ -52,7 +52,7 @@ class ProductsContainer extends StatelessWidget {
               onTap: () {
                 categoryProductController.categoryProduct(category['id']);
                 Get.to(ProductPage(
-                  productTitle: category['name'],
+                  productCategoryTitle: category['name'],
                 ));
               },
               child: Stack(

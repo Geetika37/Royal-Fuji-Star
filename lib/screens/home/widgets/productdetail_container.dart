@@ -8,16 +8,27 @@ import 'package:royal_fuji_star/utils/appcolor.dart';
 class ProductDetailContainer extends StatelessWidget {
   const ProductDetailContainer({
     super.key,
+    this.productDetail,
+    required this.productCategoryTitle,
   });
+  final dynamic productDetail;
+  final String productCategoryTitle;
 
   @override
   Widget build(BuildContext context) {
+    final imageUrl = productDetail['gallery'] != null &&
+            productDetail['gallery'].isNotEmpty &&
+            productDetail['gallery'][0]['url'] != null
+        ? 'https://royalfuji.jissanto.com${productDetail['gallery'][0]['url']}'
+        : null;
     return Container(
       height: screenHeight * 0.35,
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-            image: AssetImage('assets/png/productbg.png'), fit: BoxFit.cover),
-      ),
+      decoration: imageUrl != null
+          ? BoxDecoration(
+              image: DecorationImage(
+                  image: NetworkImage(imageUrl), fit: BoxFit.cover),
+            )
+          : null,
       child: Padding(
         padding: const EdgeInsets.all(15.0),
         child: Column(
@@ -49,7 +60,7 @@ class ProductDetailContainer extends StatelessWidget {
               ],
             ),
             Text(
-              'MRL Passenger Elevator',
+              productCategoryTitle,
               style: poppins(Appcolor.white, 17, FontWeight.w700),
             )
           ],

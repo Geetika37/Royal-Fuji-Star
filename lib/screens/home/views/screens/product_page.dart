@@ -3,14 +3,14 @@ import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
 import 'package:royal_fuji_star/screens/home/controller/categoryprod_controller.dart';
-import 'package:royal_fuji_star/screens/home/models/esclatorlist.dart';
+import 'package:royal_fuji_star/screens/home/views/screens/product_detail.dart';
 import 'package:royal_fuji_star/screens/widgets/customappbar.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 
 class ProductPage extends StatelessWidget {
-  const ProductPage({super.key, required this.productTitle});
+  const ProductPage({super.key, required this.productCategoryTitle});
 
-  final String productTitle;
+  final String productCategoryTitle;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class ProductPage extends StatelessWidget {
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(kToolbarHeight),
           child: CustomAppbar(
-            text: productTitle,
+            text: productCategoryTitle,
             titleSpacing: screenWidth * 0.2,
           ),
         ),
@@ -46,7 +46,12 @@ class ProductPage extends StatelessWidget {
               return Padding(
                 padding: const EdgeInsets.all(18.0),
                 child: InkWell(
-                  onTap: escalatorList[index].onTap,
+                  onTap: () {
+                    Get.to(ProductDetail(
+                      productDetail: categoryProd,
+                      productCategoryTitle: productCategoryTitle,
+                    ));
+                  },
                   child: Container(
                     decoration: const BoxDecoration(
                         color: Color.fromARGB(255, 197, 229, 247)),
