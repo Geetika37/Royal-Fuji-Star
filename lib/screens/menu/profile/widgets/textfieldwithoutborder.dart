@@ -6,10 +6,11 @@ class TextfieldWithoutborder extends StatelessWidget {
   const TextfieldWithoutborder({
     super.key,
     required this.imagePath,
-    required this.text,
+    required this.text, required this.controller,
   });
 
   final String imagePath, text;
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +23,7 @@ class TextfieldWithoutborder extends StatelessWidget {
               const Color.fromARGB(255, 32, 32, 32), 10, FontWeight.w400),
         ),
         TextFormField(
+          controller: controller,
           decoration: InputDecoration(
               prefixIcon: Image.asset(imagePath),
               enabledBorder: const UnderlineInputBorder(

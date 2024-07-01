@@ -12,12 +12,17 @@ class EditProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController userNameController = TextEditingController();
+    TextEditingController emailIDController = TextEditingController();
+    TextEditingController mobileController = TextEditingController();
+    TextEditingController locationController = TextEditingController();
+
     return SafeArea(
       child: Scaffold(
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(kToolbarHeight),
           child: CustomAppbar(
-            text: 'Edit Profile',
+            text: 'editprofile'.tr,
             titleSpacing: screenWidth * 0.2,
           ),
         ),
@@ -29,26 +34,35 @@ class EditProfile extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const TextfieldWithoutborder(
-                  imagePath: 'assets/png/picon1.png', text: 'Username'),
+              TextfieldWithoutborder(
+                imagePath: 'assets/png/picon1.png',
+                text: 'editprofilehinttext1'.tr,
+                controller: userNameController,
+              ),
               SizedBox(height: screenHeight * 0.02),
-              const TextfieldWithoutborder(
-                  imagePath: 'assets/png/picon2.png', text: 'Email id'),
+              TextfieldWithoutborder(
+                imagePath: 'assets/png/picon2.png',
+                text: 'editprofilehinttext2'.tr,
+                controller: emailIDController,
+              ),
               SizedBox(height: screenHeight * 0.02),
-              const TextfieldWithoutborder(
-                  imagePath: 'assets/png/picon3.png', text: 'Mobile'),
+              TextfieldWithoutborder(
+                  controller: mobileController,
+                  imagePath: 'assets/png/picon3.png',
+                  text: 'editprofilehinttext3'.tr),
               SizedBox(height: screenHeight * 0.02),
-              const TextfieldWithoutborder(
-                  imagePath: 'assets/png/picon4.png', text: 'Location'),
+              TextfieldWithoutborder(
+                  controller: locationController,
+                  imagePath: 'assets/png/picon4.png',
+                  text: 'editprofilehinttext4'.tr),
               SizedBox(height: screenHeight * 0.14),
               BlueButton(
-                
                 fontSize: 14,
                 textColor: Appcolor.white,
                 height: screenHeight * 0.08,
                 width: screenWidth * 0.9,
                 circularRadius: 20,
-                text: 'Save',
+                text: 'save'.tr,
                 onTap: () {
                   Get.bottomSheet(
                     backgroundColor: Appcolor.bgColor,

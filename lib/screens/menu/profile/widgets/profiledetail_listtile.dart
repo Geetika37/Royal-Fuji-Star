@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:royal_fuji_star/constants/size.dart';
@@ -18,7 +17,7 @@ class ProfileDetailListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: SvgPicture.asset(imagePath),
-      contentPadding: EdgeInsets.symmetric(horizontal: screenHeight * 0.1),
+      contentPadding: EdgeInsets.symmetric(horizontal: screenHeight * 0.09),
       title: Text(
         text,
         style: poppins(Appcolor.black, 14, FontWeight.w400),

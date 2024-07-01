@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
 import 'package:royal_fuji_star/screens/menu/faq/views/faq.dart';
-import 'package:royal_fuji_star/screens/menu/profile/views/profile.dart';
+import 'package:royal_fuji_star/screens/menu/profile/controller/profile_controller.dart';
 import 'package:royal_fuji_star/screens/menu/settings/views/settings.dart';
 import 'package:royal_fuji_star/screens/splash/views/screens/getstarted.dart';
 import 'package:royal_fuji_star/services/token.dart';
@@ -21,6 +21,7 @@ class SettingsDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ProfileController profileController = Get.put(ProfileController());
     TextStyle drawertext = poppins(Appcolor.white, 14, FontWeight.w500);
 
     return Drawer(
@@ -50,7 +51,7 @@ class SettingsDrawer extends StatelessWidget {
                     leading: Image.asset('assets/png/profile.png'),
                     title: Text('drawertext2'.tr, style: drawertext),
                     onTap: () {
-                      Get.to(const ProfilePage());
+                      profileController.profileDetails();
                     },
                     contentPadding: EdgeInsets.symmetric(
                       horizontal: width * 0.05,
