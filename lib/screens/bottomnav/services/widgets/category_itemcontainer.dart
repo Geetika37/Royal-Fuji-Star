@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
 import 'package:royal_fuji_star/screens/bottomnav/services/controllers/category_subcategory_controller.dart';
+import 'package:royal_fuji_star/screens/bottomnav/services/controllers/subcategory_spare.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 
 class CategoryItemcontainer extends StatefulWidget {
@@ -15,6 +16,9 @@ class CategoryItemcontainer extends StatefulWidget {
 class _CategoryItemcontainerState extends State<CategoryItemcontainer> {
   final CategorySubcategoryController categorySubcategoryController =
       Get.put(CategorySubcategoryController());
+
+  final SubcategorySparesController subcategorySparesController =
+      Get.put(SubcategorySparesController());
 
   int selectedIndex = 0;
 
@@ -47,6 +51,8 @@ class _CategoryItemcontainerState extends State<CategoryItemcontainer> {
                 setState(() {
                   selectedIndex = index;
                 });
+                subcategorySparesController
+                    .subCategorySpares(categoryItem['id']);
               },
               child: Column(
                 children: [
