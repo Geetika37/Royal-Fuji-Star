@@ -5,35 +5,16 @@ import 'package:royal_fuji_star/services/api_baseurl.dart';
 import 'package:http/http.dart' as http;
 import 'package:royal_fuji_star/services/token.dart';
 
-class SparecategoryController extends GetxController {
+class CategorySubcategoryController extends GetxController {
   var isLoading = false.obs;
-  var sparecategory = [].obs;
-  var errorMessage = ''.obs;
-  var locale = 'en'.obs;
+  var subCategory = [].obs;
 
-  @override
-  void onInit() {
-    super.onInit();
-    loadLocale();
-  }
-
-  Future<void> loadLocale() async {
-    try {
-      locale.value = await TokenKey.getValue('selectedLanguage') ?? 'en';
-      // print('locale: ---- ${locale.value}');
-    } catch (e) {
-      errorMessage.value = 'Error loading locale: ${e.toString()}';
-    } finally {
-      await spareCategory();
-    }
-  }
-
-  Future<void> spareCategory() async {
+  Future<void> catSubCategory(int id) async {
     isLoading(true);
     final token = await TokenKey.getValue('token');
     try {
       final url = Uri.parse(
-          '${APIConstants.baseUrl}/api/spare-categories?locale=${locale.value}');
+          '${APIConstants.baseUrl}/api/findCategorySubCategories/$id?&title=desc');
       final response = await http.get(
         url,
         headers: {
@@ -46,10 +27,9 @@ class SparecategoryController extends GetxController {
       final jsonResponse = jsonDecode(response.body);
 
       if (response.statusCode == 200) {
-        // print('jsonnrespon------->$jsonResponse');
-        sparecategory.value = jsonResponse['data'];
-        // print('spare category----====>$sparecategory');
-        
+        // print('jsonresp======>${jsonResponse}');
+        subCategory.value = jsonResponse['data'];
+        print('subcategory=====>$subCategory');
       } else {
         print('error message --->${jsonResponse['error']['message']}');
       }

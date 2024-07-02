@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
+import 'package:royal_fuji_star/screens/bottomnav/services/controllers/category_subcategory_controller.dart';
 import 'package:royal_fuji_star/screens/bottomnav/services/controllers/sparecategory_controller.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 
@@ -17,12 +18,9 @@ class _CategoryAnimatedcontainerState extends State<CategoryAnimatedcontainer> {
   int selectedIndex = 1;
   final SparecategoryController sparecategoryController =
       Get.put(SparecategoryController());
+  final CategorySubcategoryController categorySubcategoryController =
+      Get.put(CategorySubcategoryController());
 
-  @override
-  void initState() {
-    super.initState();
-    sparecategoryController.spareCategory();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +55,8 @@ class _CategoryAnimatedcontainerState extends State<CategoryAnimatedcontainer> {
                 children: sparecategoryController.sparecategory
                     .asMap()
                     .entries
-                    .map((entry) => categories(entry.value['name'], entry.key))
+                    .map((entry) => categories(
+                        entry.value['name'], entry.key, entry.value['id']))
                     .toList(),
               );
             }),
@@ -67,13 +66,14 @@ class _CategoryAnimatedcontainerState extends State<CategoryAnimatedcontainer> {
     );
   }
 
-  Widget categories(String title, int index) {
+  Widget categories(String title, int index, int id) {
     return Expanded(
       child: GestureDetector(
         onTap: () {
           setState(() {
             selectedIndex = index;
           });
+          categorySubcategoryController.catSubCategory(id);
         },
         child: Container(
           alignment: Alignment.center,
