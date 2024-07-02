@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
 import 'package:royal_fuji_star/screens/home/models/partlist.dart';
@@ -17,7 +18,8 @@ class LiftPartsContainer extends StatelessWidget {
         itemCount: partList.length,
         itemBuilder: (context, index) {
           return Padding(
-            padding: const EdgeInsets.all(4.0),
+            padding:
+                const EdgeInsets.only(right: 10, left: 10, top: 4, bottom: 4),
             child: Container(
               decoration: BoxDecoration(
                 color: const Color.fromARGB(255, 197, 229, 247),
@@ -42,7 +44,7 @@ class LiftPartsContainer extends StatelessWidget {
                       height: screenHeight * 0.05,
                       width: screenWidth * 0.4,
                       circularRadius: 10,
-                      text: 'Enquiry Now',
+                      text: 'enquiry'.tr,
                       onTap: () {},
                       color: Appcolor.buttonColor,
                       textColor: Appcolor.white,

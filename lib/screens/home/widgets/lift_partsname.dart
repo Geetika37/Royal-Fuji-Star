@@ -6,7 +6,10 @@ class LiftPartsName extends StatelessWidget {
   const LiftPartsName({
     super.key,
     required this.text,
-    required this.fontWeight, required this.textColor, required this.dividerColor, required this.fontSize,
+    required this.fontWeight,
+    required this.textColor,
+    required this.dividerColor,
+    required this.fontSize,
   });
 
   final String text;
@@ -17,18 +20,17 @@ class LiftPartsName extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 10),
+      padding: const EdgeInsets.only(right: 10, left: 10),
       child: Row(
         children: [
           Text(
             text,
-            style: poppins(
-                textColor, fontSize, fontWeight),
+            style: poppins(textColor, fontSize, fontWeight),
           ),
           SizedBox(width: screenWidth * 0.03),
-           Expanded(
+          Expanded(
             child: Divider(
-              color:dividerColor,
+              color: dividerColor,
             ),
           ),
         ],

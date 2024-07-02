@@ -35,21 +35,21 @@ class ChangePassword extends StatelessWidget {
           children: [
             Textformfield(
               textfieldWidth: screenWidth,
-              hintText: 'Current Password',
+              hintText: 'changepassword1'.tr,
               hintTextSize: 14,
               controller: currentPassController,
             ),
             SizedBox(height: screenHeight * 0.03),
             Textformfield(
               textfieldWidth: screenWidth,
-              hintText: 'Password',
+              hintText: 'password'.tr,
               hintTextSize: 14,
               controller: passwordController,
             ),
             SizedBox(height: screenHeight * 0.03),
             Textformfield(
               textfieldWidth: screenWidth,
-              hintText: 'Confirm Password',
+              hintText: 'changepassword2'.tr,
               hintTextSize: 14,
               controller: confirmPassController,
             ),
@@ -58,7 +58,7 @@ class ChangePassword extends StatelessWidget {
               height: screenHeight * 0.07,
               width: screenWidth,
               circularRadius: 10,
-              text: 'Change Password',
+              text: 'Settingstitle7'.tr,
               onTap: () {
                 changePasswordController.changePassword(
                   currentPassController.text,

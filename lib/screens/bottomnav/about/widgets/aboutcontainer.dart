@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/screens/bottomnav/about/widgets/aboutgridview.dart';
 import 'package:royal_fuji_star/screens/bottomnav/about/widgets/contactinfo.dart';
@@ -26,46 +27,44 @@ class Aboutcontainer extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: screenHeight * 0.02),
-              const CustomTitle(
+              CustomTitle(
                   fontWeight: FontWeight.w500,
-                  textHeading: 'Projects',
+                  textHeading: 'abouttext1'.tr,
                   fontSize: 16,
                   color: Appcolor.buttonColor),
               SizedBox(height: screenHeight * 0.01),
-              const CustomSubTitle(
+              CustomSubTitle(
                   color: Appcolor.black,
                   fontSize: 11,
-                  subTitle:
-                      'Exploring the heights of innovation, let’s have a deep look at our cutting-edge elevator projects in the UAE.',
+                  subTitle: 'abouttext2'.tr,
                   maxLines: 2),
               SizedBox(height: screenHeight * 0.02),
-              const CustomTitle(
+              CustomTitle(
                   fontWeight: FontWeight.w500,
-                  textHeading: 'Watch video',
+                  textHeading: 'abouttext3'.tr,
                   fontSize: 12,
                   color: Appcolor.buttonColor),
               SizedBox(height: screenHeight * 0.02),
               const VideoPlayer(),
               SizedBox(height: screenHeight * 0.02),
-              const CustomTitle(
+              CustomTitle(
                   fontWeight: FontWeight.w500,
-                  textHeading: 'Why Royal Fuji Elevators....?',
+                  textHeading: 'abouttext4'.tr,
                   fontSize: 14,
                   color: Appcolor.buttonColor),
               SizedBox(height: screenHeight * 0.01),
-              const CustomSubTitle(
+              CustomSubTitle(
                 color: Appcolor.black,
                 fontSize: 11,
-                subTitle:
-                    "Elevators and escalators significantly enhance our everyday living, transforming mere transportation into a symbol of elegance.At Royal Fuji Elevator Company in the UAE, we pride ourselves on not just offering premium elevator solutions but also on our commitment to exceptional elevator maintenance and services.Our aim is to ensure the safety of our passengers and the durability of the elevators. From meticulous installations to comprehensive Annual Maintenance Contracts, our services are designed to prioritize the reliability and extended lifespan of your elevators.Discover how our Elevator Services can contribute to the enduring performance of your elevators.",
+                subTitle: "abouttext5".tr,
                 maxLines: 14,
               ),
               SizedBox(height: screenHeight * 0.02),
               Aboutgridview(),
               SizedBox(height: screenHeight * 0.02),
-              const CustomTitle(
+              CustomTitle(
                   fontWeight: FontWeight.w500,
-                  textHeading: 'Contact Info',
+                  textHeading: 'abouttext10'.tr,
                   fontSize: 14,
                   color: Appcolor.buttonColor),
               SizedBox(height: screenHeight * 0.02),

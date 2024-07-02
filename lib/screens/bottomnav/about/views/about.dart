@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
 import 'package:royal_fuji_star/screens/bottomnav/about/widgets/aboutcontainer.dart';
@@ -42,7 +43,7 @@ class About extends StatelessWidget {
                       height: screenHeight * 0.03,
                     ),
                     Text(
-                      'About',
+                      'bottomnav4'.tr,
                       style: poppins(Appcolor.white, 20, FontWeight.w600),
                     ),
                   ],

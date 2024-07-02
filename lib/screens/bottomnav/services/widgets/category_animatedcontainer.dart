@@ -16,7 +16,7 @@ class _CategoryAnimatedcontainerState extends State<CategoryAnimatedcontainer> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 10),
+      padding: const EdgeInsets.only(right: 10, left: 10),
       child: Container(
         width: screenWidth,
         height: screenHeight * 0.04,

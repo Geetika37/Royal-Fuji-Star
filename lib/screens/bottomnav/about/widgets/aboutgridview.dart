@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
 import 'package:royal_fuji_star/screens/bottomnav/about/models/aboutitem.dart';
@@ -7,10 +8,10 @@ import 'package:royal_fuji_star/utils/appcolor.dart';
 class Aboutgridview extends StatelessWidget {
   Aboutgridview({super.key});
   final List<AboutGridType> about = [
-    AboutGridType(title: '242', subTitle: 'Completed Projects'),
-    AboutGridType(title: '17', subTitle: 'Years of Excellence'),
-    AboutGridType(title: '100+', subTitle: 'Employees'),
-    AboutGridType(title: '300+', subTitle: 'Meetings'),
+    AboutGridType(title: '242', subTitle: 'abouttext6'.tr),
+    AboutGridType(title: '17', subTitle: 'abouttext7'.tr),
+    AboutGridType(title: '100+', subTitle: 'abouttext8'.tr),
+    AboutGridType(title: '300+', subTitle: 'abouttext9'.tr),
   ];
   @override
   Widget build(BuildContext context) {

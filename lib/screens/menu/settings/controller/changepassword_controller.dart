@@ -39,6 +39,8 @@ class ChangePasswordController extends GetxController {
         print(successMessage);
       } else {
         errorMessage.value = 'Error---${jsonResponse['error']['message']}';
+        Get.snackbar('Error', errorMessage.value);
+
         print(errorMessage);
       }
     } catch (e) {

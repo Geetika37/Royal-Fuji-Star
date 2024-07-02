@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/screens/bottomnav/services/widgets/category_animatedcontainer.dart';
 import 'package:royal_fuji_star/screens/bottomnav/services/widgets/category_itemcontainer.dart';
@@ -23,15 +24,15 @@ class _SparePartsState extends State<SpareParts> {
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(kToolbarHeight),
           child: CustomAppbar(
-            text: 'Spare Parts for all Brands',
+            text: 'servicetypes2'.tr,
             titleSpacing: screenWidth * 0.12,
           ),
         ),
         body: ListView(
-          padding: const EdgeInsets.only(left: 10, top: 5),
+          padding: const EdgeInsets.only(top: 5),
           children: [
-            const CustomTitle(
-              textHeading: 'Cabin Categories',
+            CustomTitle(
+              textHeading: 'sparecontainertext1'.tr,
               fontSize: 12,
               color: Appcolor.blackPrimary,
               fontWeight: FontWeight.w400,
@@ -39,8 +40,8 @@ class _SparePartsState extends State<SpareParts> {
             SizedBox(height: screenHeight * 0.01),
             const CategoryAnimatedcontainer(),
             SizedBox(height: screenHeight * 0.015),
-            const CustomTitle(
-              textHeading: 'Item Categories',
+            CustomTitle(
+              textHeading: 'sparecontainertext2'.tr,
               fontSize: 11,
               color: Appcolor.blackPrimary,
               fontWeight: FontWeight.w400,

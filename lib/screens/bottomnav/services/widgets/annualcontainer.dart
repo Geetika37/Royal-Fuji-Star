@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
 import 'package:royal_fuji_star/screens/bottomnav/services/widgets/radio_button.dart';
@@ -27,7 +28,7 @@ class Annualcontainer extends StatelessWidget {
             children: [
               SizedBox(height: screenHeight * 0.01),
               Text(
-                'Brand',
+                'annualcontainertext1'.tr,
                 style: poppins(Appcolor.black, 12, FontWeight.w400),
               ),
               SizedBox(height: screenHeight * 0.01),
@@ -38,24 +39,24 @@ class Annualcontainer extends StatelessWidget {
               // ),
               Row(
                 children: [
-                  const Expanded(child: Dropdown(title: 'Capacity')),
+                  Expanded(child: Dropdown(title: 'annualcontainertext2'.tr)),
                   SizedBox(width: screenWidth * 0.02),
-                  const Expanded(child: Dropdown(title: 'Number of Floors')),
+                  Expanded(child: Dropdown(title: 'annualcontainertext3'.tr)),
                 ],
               ),
               SizedBox(height: screenHeight * 0.01),
               Text(
-                'Brand',
+                'annualcontainertext1'.tr,
                 style: poppins(Appcolor.black, 12, FontWeight.w400),
               ),
               const RadioButton(),
               Text(
-                'Description',
+                'description'.tr,
                 style: poppins(Appcolor.black, 12, FontWeight.w400),
               ),
               SizedBox(height: screenHeight * 0.01),
-              const TextfieldMultipleLine(
-                hintText: 'Type here',
+              TextfieldMultipleLine(
+                hintText: 'annualcontainertext7'.tr,
                 hintTextSize: 12,
               ),
               Row(
@@ -66,7 +67,7 @@ class Annualcontainer extends StatelessWidget {
                     onChanged: (bool? newValue) {},
                   ),
                   Text(
-                    'I have read and agree to terms of service',
+                    'annualcontainertext8'.tr,
                     style: poppins(Appcolor.black, 12, FontWeight.w400),
                   ),
                 ],
@@ -81,7 +82,7 @@ class Annualcontainer extends StatelessWidget {
                     height: screenHeight * 0.06,
                     width: screenWidth * 0.7,
                     circularRadius: 10,
-                    text: 'Submit',
+                    text: 'annualcontainertext9'.tr,
                     onTap: () {}),
               )
             ],

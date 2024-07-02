@@ -22,7 +22,7 @@ class _CategoryItemcontainerState extends State<CategoryItemcontainer> {
       itemCount: itemList.length,
       itemBuilder: (context, index) {
         return Padding(
-          padding: const EdgeInsets.only(left: 10, right: 17),
+          padding: const EdgeInsets.only(left: 10, right: 10),
           child: GestureDetector(
             onTap: () {
               setState(() {

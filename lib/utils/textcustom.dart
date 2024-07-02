@@ -29,7 +29,8 @@ class CustomTitle extends StatelessWidget {
     super.key,
     required this.textHeading,
     required this.fontSize,
-    required this.color, required this.fontWeight,
+    required this.color,
+    required this.fontWeight,
   });
   final String textHeading;
   final double fontSize;
@@ -38,9 +39,12 @@ class CustomTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      textHeading,
-      style: poppins(color, fontSize, fontWeight),
+    return Padding(
+      padding: const EdgeInsets.only(left: 10, right: 10),
+      child: Text(
+        textHeading,
+        style: poppins(color, fontSize, fontWeight),
+      ),
     );
   }
 }

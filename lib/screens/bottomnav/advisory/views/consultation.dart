@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
 import 'package:royal_fuji_star/screens/bottomnav/advisory/widgets/consultation_container.dart';
@@ -49,7 +50,7 @@ class Consultation extends StatelessWidget {
                       height: screenHeight * 0.03,
                     ),
                     Text(
-                      'Advisory',
+                      'bottomnav3'.tr,
                       style: poppins(Appcolor.white, 20, FontWeight.w600),
                     ),
                   ],
