@@ -1,5 +1,8 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
+
+import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
+import 'package:royal_fuji_star/screens/bottomnav/services/controllers/sparecategory_controller.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 
 class CategoryAnimatedcontainer extends StatefulWidget {
@@ -12,6 +15,14 @@ class CategoryAnimatedcontainer extends StatefulWidget {
 
 class _CategoryAnimatedcontainerState extends State<CategoryAnimatedcontainer> {
   int selectedIndex = 1;
+  final SparecategoryController sparecategoryController =
+      Get.put(SparecategoryController());
+
+  @override
+  void initState() {
+    super.initState();
+    sparecategoryController.spareCategory();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,13 +49,18 @@ class _CategoryAnimatedcontainerState extends State<CategoryAnimatedcontainer> {
                 ),
               ),
             ),
-            Row(
-              children: [
-                categories('Standard', 0),
-                categories('Premium', 1),
-                categories('Luxury', 2),
-              ],
-            ),
+            Obx(() {
+              if (sparecategoryController.isLoading.value) {
+                return const Center(child: CircularProgressIndicator());
+              }
+              return Row(
+                children: sparecategoryController.sparecategory
+                    .asMap()
+                    .entries
+                    .map((entry) => categories(entry.value['name'], entry.key))
+                    .toList(),
+              );
+            }),
           ],
         ),
       ),
