@@ -24,9 +24,9 @@ class BlueButton extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        margin: EdgeInsets.symmetric(
-          horizontal: width * 0.05,
-        ),
+        // margin: EdgeInsets.symmetric(
+        //   horizontal: width * 0.05,
+        // ),
         height: height,
         width: width,
         decoration: BoxDecoration(

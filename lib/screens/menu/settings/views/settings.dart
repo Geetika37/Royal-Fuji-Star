@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
+import 'package:royal_fuji_star/screens/menu/settings/views/screens/change_password.dart';
 import 'package:royal_fuji_star/screens/menu/settings/views/screens/delete_account.dart';
 import 'package:royal_fuji_star/screens/menu/settings/views/screens/language_settings.dart';
 import 'package:royal_fuji_star/screens/menu/settings/views/screens/notification_settings.dart';
@@ -33,7 +34,11 @@ class SettingsPage extends StatelessWidget {
               ),
               CardSettings(
                 text: 'Settingstitle3'.tr,
-                onTap: () => Get.to( LanguageSettings()),
+                onTap: () => Get.to(LanguageSettings()),
+              ),
+              CardSettings(
+                text: 'Settingstitle7'.tr,
+                onTap: () => Get.to(const ChangePassword()),
               ),
               CardSettings(
                 text: 'Settingstitle4'.tr,
