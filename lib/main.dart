@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
         appBarTheme: const AppBarTheme(
           backgroundColor: Appcolor.bgColor,
         ),
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Appcolor.buttonColor),
         useMaterial3: true,
       ),
       translations: AppTranslations(), // Your translation class

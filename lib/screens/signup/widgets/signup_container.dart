@@ -12,7 +12,7 @@ class SignupContainer extends StatelessWidget {
     super.key,
     required this.onTap,
   });
-  final Function()onTap;
+  final Function() onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -57,11 +57,18 @@ class SignupContainer extends StatelessWidget {
                   hintTextSize: 15,
                 ),
                 SizedBox(height: screenHeight * 0.02),
-                TextformfieldWithIcons(
-                  controller: passwordController,
+                // TextformfieldWithIcons(
+                //   controller: passwordController,
+                //   textfieldWidth: screenWidth * 0.8,
+                //   hintText: 'password'.tr,
+                //   suffixIcon: Image.asset('assets/png/eye.png'),
+                // ),
+                TextformfieldPass(
                   textfieldWidth: screenWidth * 0.8,
                   hintText: 'password'.tr,
-                  suffixIcon: Image.asset('assets/png/eye.png'),
+                  hintTextSize: 14,
+                  controller: passwordController,
+                  obscureText: true,
                 ),
                 SizedBox(height: screenHeight * 0.04),
                 BlueButton(

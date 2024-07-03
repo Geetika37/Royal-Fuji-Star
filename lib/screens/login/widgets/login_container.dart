@@ -43,11 +43,18 @@ class LoginContainer extends StatelessWidget {
                   hintTextSize: 15,
                 ),
                 SizedBox(height: screenHeight * 0.03),
-                TextformfieldWithIcons(
+                // TextformfieldWithIcons(
+                //   textfieldWidth: screenWidth * 0.8,
+                //   hintText: 'password'.tr,
+                //   suffixIcon: Image.asset('assets/png/eye.png'),
+                //   controller: passwordController,
+                // ),
+                TextformfieldPass(
                   textfieldWidth: screenWidth * 0.8,
                   hintText: 'password'.tr,
-                  suffixIcon: Image.asset('assets/png/eye.png'),
+                  hintTextSize: 14,
                   controller: passwordController,
+                  obscureText: true,
                 ),
                 SizedBox(height: screenHeight * 0.01),
                 Align(

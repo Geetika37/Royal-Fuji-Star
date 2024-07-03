@@ -31,17 +31,20 @@ class ChangePasswordController extends GetxController {
       );
 
       final jsonResponse = jsonDecode(response.body);
+      if (password == confirmPassword) {
+        if (response.statusCode == 200) {
+          Get.to(const LoginScreen());
+          successMessage.value =
+              'Successfully changed password--${jsonResponse['success']}';
+          print(successMessage);
+        } else {
+          errorMessage.value = 'Error---${jsonResponse['error']['message']}';
+          Get.snackbar('Error', errorMessage.value);
 
-      if (response.statusCode == 200) {
-        Get.to(const LoginScreen());
-        successMessage.value =
-            'Successfully changed password--${jsonResponse['success']}';
-        print(successMessage);
+          print(errorMessage);
+        }
       } else {
-        errorMessage.value = 'Error---${jsonResponse['error']['message']}';
-        Get.snackbar('Error', errorMessage.value);
-
-        print(errorMessage);
+        Get.snackbar('Validation Error', 'Password is not same');
       }
     } catch (e) {
       errorMessage.value = 'Error Message ${e.toString()}';

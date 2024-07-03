@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
@@ -56,22 +55,19 @@ class ProductsContainer extends StatelessWidget {
                 ));
               },
               child: Container(
+                clipBehavior: Clip.antiAlias,
                 height: screenHeight * 0.15,
                 width: screenWidth * 0.41,
                 decoration: BoxDecoration(
                   border: Border.all(color: Appcolor.white, width: 2.5),
-                  borderRadius: BorderRadius.circular(8.0),
-                  // gradient: const LinearGradient(
-                  //     colors: [Color(0xFF00286A), Color(0xFF0052B6)],
-                  //     begin: Alignment.bottomCenter,
-                  //     end: Alignment.topCenter),
+                  // borderRadius: BorderRadius.circular(8.0),
                 ),
                 child: Column(
                   children: [
                     imageUrl != null
                         ? Image.network(
                             imageUrl,
-                            fit: BoxFit.cover,
+                            fit: BoxFit.fill,
                           )
                         : const SizedBox(),
                     Container(

@@ -15,7 +15,7 @@ class RadioButton extends StatefulWidget {
 List<String> options = [
   'Comprehensive',
   'Non-Comprehensive',
-  'Semi-Comprehensive'
+  // 'Semi-Comprehensive'
 ];
 
 class _RadioButtonState extends State<RadioButton> {
@@ -41,7 +41,7 @@ class _RadioButtonState extends State<RadioButton> {
               ),
               Text(
                 'annualcontainertext4'.tr,
-                style: poppins(Appcolor.black, 9, FontWeight.w500),
+                style: poppins(Appcolor.black, 11, FontWeight.w500),
               ),
             ],
           ),
@@ -61,31 +61,31 @@ class _RadioButtonState extends State<RadioButton> {
               ),
               Text(
                 'annualcontainertext5'.tr,
-                style: poppins(Appcolor.black, 9, FontWeight.w500),
+                style: poppins(Appcolor.black, 11, FontWeight.w500),
               ),
             ],
           ),
         ),
-        Expanded(
-          child: Row(
-            children: [
-              Radio(
-                activeColor: Appcolor.buttonColor,
-                value: options[1],
-                groupValue: currentOption,
-                onChanged: (value) {
-                  setState(() {
-                    currentOption = value.toString();
-                  });
-                },
-              ),
-              Text(
-                'annualcontainertext6'.tr,
-                style: poppins(Appcolor.black, 9, FontWeight.w500),
-              ),
-            ],
-          ),
-        ),
+        // Expanded(
+        //   child: Row(
+        //     children: [
+        //       Radio(
+        //         activeColor: Appcolor.buttonColor,
+        //         value: options[1],
+        //         groupValue: currentOption,
+        //         onChanged: (value) {
+        //           setState(() {
+        //             currentOption = value.toString();
+        //           });
+        //         },
+        //       ),
+        //       Text(
+        //         'annualcontainertext6'.tr,
+        //         style: poppins(Appcolor.black, 9, FontWeight.w500),
+        //       ),
+        //     ],
+        //   ),
+        // ),
       ],
     );
   }

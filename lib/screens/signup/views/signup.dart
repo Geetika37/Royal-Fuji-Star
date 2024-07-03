@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
-import 'package:royal_fuji_star/screens/signup/widgets/number_input.dart';
+import 'package:royal_fuji_star/screens/login/views/loginscreen.dart';
 import 'package:royal_fuji_star/screens/signup/widgets/signup_container.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 
@@ -54,9 +54,8 @@ class SignUp extends StatelessWidget {
               bottom: 0,
               child: SignupContainer(
                 onTap: () {
-                  // Get.to(const LoginScreen());
-                  Get.to(const NumberInput());
-
+                  Get.to(const LoginScreen());
+                  // Get.to(const NumberInput());
                 },
               ),
             ),

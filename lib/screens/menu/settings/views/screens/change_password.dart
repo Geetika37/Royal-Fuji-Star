@@ -33,25 +33,28 @@ class ChangePassword extends StatelessWidget {
             horizontal: screenHeight * 0.03,
           ),
           children: [
-            Textformfield(
+            TextformfieldPass(
               textfieldWidth: screenWidth,
               hintText: 'changepassword1'.tr,
               hintTextSize: 14,
               controller: currentPassController,
+              obscureText: true,
             ),
             SizedBox(height: screenHeight * 0.03),
-            Textformfield(
+            TextformfieldPass(
               textfieldWidth: screenWidth,
               hintText: 'password'.tr,
               hintTextSize: 14,
               controller: passwordController,
+              obscureText: true,
             ),
             SizedBox(height: screenHeight * 0.03),
-            Textformfield(
+            TextformfieldPass(
               textfieldWidth: screenWidth,
               hintText: 'changepassword2'.tr,
               hintTextSize: 14,
               controller: confirmPassController,
+              obscureText: true,
             ),
             SizedBox(height: screenHeight * 0.2),
             BlueButton(
