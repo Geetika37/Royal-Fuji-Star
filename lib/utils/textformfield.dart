@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 

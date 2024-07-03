@@ -16,17 +16,44 @@ class CardSettings extends StatelessWidget {
     return Card(
       elevation: 0,
       color: Appcolor.cardColor,
-      child: ListTile(
-        title: Text(
-          text,
-          style: poppins(Appcolor.black, 14, FontWeight.w500),
+      // child: ListTile(
+      //   title: Text(
+      //     text,
+      //     style: poppins(Appcolor.black, 14, FontWeight.w500),
+      //   ),
+      //   trailing: IconButton(
+      //       onPressed: onTap,
+      //       icon: const Icon(
+      //         Icons.arrow_forward_ios,
+      //         size: 20,
+      //       )),
+      // ),
+      child: Padding(
+        padding: const EdgeInsets.only(
+          top: 5,
+          bottom: 5,
         ),
-        trailing: IconButton(
-            onPressed: onTap,
-            icon: const Icon(
-              Icons.arrow_forward_ios,
-              size: 20,
-            )),
+        child: Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(
+                right: 10,
+                left: 10,
+              ),
+              child: Text(
+                text,
+                style: poppins(Appcolor.black, 14, FontWeight.w500),
+              ),
+            ),
+            const Spacer(),
+            IconButton(
+                onPressed: onTap,
+                icon: const Icon(
+                  Icons.arrow_forward_ios,
+                  size: 20,
+                )),
+          ],
+        ),
       ),
     );
   }

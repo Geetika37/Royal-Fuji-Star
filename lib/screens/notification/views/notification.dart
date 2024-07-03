@@ -13,8 +13,8 @@ class NotificationPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar:  PreferredSize(
-          preferredSize:const Size.fromHeight(kToolbarHeight),
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(kToolbarHeight),
           child: CustomAppbar(
             text: 'notifications'.tr,
             titleSpacing: 0,
@@ -26,52 +26,54 @@ class NotificationPage extends StatelessWidget {
             right: 15,
             left: 15,
           ),
-          child: Container(
-            width: double.infinity,
-            decoration: BoxDecoration(
-              color: Appcolor.white,
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.5),
-                  spreadRadius: 10,
-                  blurRadius: 10,
-                  offset: const Offset(0, 7),
-                ),
-              ],
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.only(
-                top: 20,
-                left: 18,
-                right: 18,
-                bottom: 30,
-              ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'notification_msg'.tr,
-                    style: poppins(const Color.fromARGB(255, 126, 130, 133), 14,
-                        FontWeight.w600),
-                  ),
-                  SizedBox(
-                    height: screenHeight * 0.02,
-                  ),
-                  Text(
-                    '10/05/2024',
-                    style: poppins(const Color.fromARGB(255, 126, 130, 133), 14,
-                        FontWeight.w400),
+          child: InkWell(
+            onTap: () {
+              Get.to(const NotificationEmpty());
+            },
+            child: Container(
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Appcolor.white,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 10,
+                    blurRadius: 10,
+                    offset: const Offset(0, 7),
                   ),
                 ],
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  top: 20,
+                  left: 18,
+                  right: 18,
+                  bottom: 30,
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'notification_msg'.tr,
+                      style: poppins(const Color.fromARGB(255, 126, 130, 133),
+                          14, FontWeight.w600),
+                    ),
+                    SizedBox(
+                      height: screenHeight * 0.02,
+                    ),
+                    Text(
+                      '10/05/2024',
+                      style: poppins(const Color.fromARGB(255, 126, 130, 133),
+                          14, FontWeight.w400),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
         ),
-        floatingActionButton: FloatingActionButton(onPressed: () {
-          Get.to(const NotificationEmpty());
-        }),
       ),
     );
   }

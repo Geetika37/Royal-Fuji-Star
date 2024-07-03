@@ -30,15 +30,14 @@ class SettingsDrawer extends StatelessWidget {
         children: [
           Container(
             height: screenHeight * 0.1,
+            width: screenWidth,
             color: const Color(0xFFD9D9D9),
-            child: Align(
-              alignment: Alignment.bottomLeft,
-              child: Padding(
-                padding: const EdgeInsets.only(bottom: 10, left: 15),
-                child: Text(
-                  'drawertext1'.tr,
-                  style: poppins(Appcolor.buttonColor, 14, FontWeight.w700),
-                ),
+            child: Padding(
+              padding: const EdgeInsets.only(
+                  bottom: 10, left: 15, top: 50, right: 15),
+              child: Text(
+                'drawertext1'.tr,
+                style: poppins(Appcolor.buttonColor, 14, FontWeight.w700),
               ),
             ),
           ),
@@ -47,6 +46,9 @@ class SettingsDrawer extends StatelessWidget {
               color: Appcolor.buttonColor,
               child: Column(
                 children: [
+                  SizedBox(
+                    height: screenHeight * 0.045,
+                  ),
                   ListTile(
                     leading: Image.asset('assets/png/profile.png'),
                     title: Text('drawertext2'.tr, style: drawertext),
@@ -56,7 +58,6 @@ class SettingsDrawer extends StatelessWidget {
                     contentPadding: EdgeInsets.symmetric(
                       horizontal: width * 0.05,
                     ),
-                    minTileHeight: screenHeight * 0.11,
                   ),
                   const Divider(),
                   ListTile(

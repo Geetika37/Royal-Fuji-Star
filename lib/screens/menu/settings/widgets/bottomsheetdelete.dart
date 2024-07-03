@@ -54,6 +54,9 @@ class BottomsheetDelete extends StatelessWidget {
                       },
                       color: const Color(0xFFE5E7E8)),
                 ),
+                SizedBox(
+                  width: screenWidth * 0.04,
+                ),
                 Expanded(
                   child: BlueButton(
                       fontSize: 14,

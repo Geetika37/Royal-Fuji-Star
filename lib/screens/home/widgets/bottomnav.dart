@@ -144,6 +144,7 @@ class BottomBarItem extends StatelessWidget {
       child: Column(mainAxisSize: MainAxisSize.min, children: [
         Container(
           height: screenHeight * 0.09,
+          width: screenWidth * 0.2,
           decoration: isSelected
               ? const BoxDecoration(
                   shape: BoxShape.circle,

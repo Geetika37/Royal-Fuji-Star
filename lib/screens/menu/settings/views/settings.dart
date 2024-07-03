@@ -21,39 +21,37 @@ class SettingsPage extends StatelessWidget {
           preferredSize: const Size.fromHeight(kToolbarHeight),
           child: CustomAppbar(
             text: 'Settingstitle1'.tr,
-            titleSpacing: screenWidth * 0.2,
+            titleSpacing: screenWidth * 0.28,
           ),
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: ListView(
-            children: [
-              CardSettings(
-                text: 'Settingstitle2'.tr,
-                onTap: () => Get.to(const NotificationSettings()),
-              ),
-              CardSettings(
-                text: 'Settingstitle3'.tr,
-                onTap: () => Get.to(LanguageSettings()),
-              ),
-              CardSettings(
-                text: 'Settingstitle7'.tr,
-                onTap: () => Get.to(const ChangePassword()),
-              ),
-              CardSettings(
-                text: 'Settingstitle4'.tr,
-                onTap: () => Get.to(const PrivacySecurity()),
-              ),
-              CardSettings(
-                text: 'Settingstitle5'.tr,
-                onTap: () => Get.to(const SupportFeedback()),
-              ),
-              CardSettings(
-                text: 'Settingstitle6'.tr,
-                onTap: () => Get.to(const DeleteAccount()),
-              ),
-            ],
-          ),
+        body: ListView(
+          padding: const EdgeInsets.all(8),
+          children: [
+            CardSettings(
+              text: 'Settingstitle2'.tr,
+              onTap: () => Get.to(const NotificationSettings()),
+            ),
+            CardSettings(
+              text: 'Settingstitle3'.tr,
+              onTap: () => Get.to(LanguageSettings()),
+            ),
+            CardSettings(
+              text: 'Settingstitle7'.tr,
+              onTap: () => Get.to(const ChangePassword()),
+            ),
+            CardSettings(
+              text: 'Settingstitle4'.tr,
+              onTap: () => Get.to(const PrivacySecurity()),
+            ),
+            CardSettings(
+              text: 'Settingstitle5'.tr,
+              onTap: () => Get.to(const SupportFeedback()),
+            ),
+            CardSettings(
+              text: 'Settingstitle6'.tr,
+              onTap: () => Get.to(const DeleteAccount()),
+            ),
+          ],
         ),
       ),
     );

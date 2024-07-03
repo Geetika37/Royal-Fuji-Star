@@ -187,8 +187,8 @@ class AppTranslations extends Translations {
           'abouttext8': 'Employees',
           'abouttext9': 'Meetings',
           'abouttext10': 'Contact Info',
-          'abouttext11': '',
-          'abouttext12': '',
+          'languageenglish': 'English',
+          'languagearabic': 'Arabic',
           'abouttext13': '',
         },
         'ar_AE': {
@@ -372,8 +372,8 @@ class AppTranslations extends Translations {
           'abouttext8': 'موظفين',
           'abouttext9': 'الاجتماعات',
           'abouttext10': 'معلومات الاتصال',
-          'abouttext11': '',
-          'abouttext12': '',
+          'languageenglish': 'إنجليزي',
+          'languagearabic': 'عربي',
           'abouttext13': '',
 
         },

@@ -39,12 +39,9 @@ class CustomTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 10, right: 10),
-      child: Text(
-        textHeading,
-        style: poppins(color, fontSize, fontWeight),
-      ),
+    return Text(
+      textHeading,
+      style: poppins(color, fontSize, fontWeight),
     );
   }
 }

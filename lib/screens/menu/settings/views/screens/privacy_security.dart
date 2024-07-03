@@ -16,7 +16,7 @@ class PrivacySecurity extends StatelessWidget {
           preferredSize: const Size.fromHeight(kToolbarHeight),
           child: CustomAppbar(
             text: 'Settingstitle4'.tr,
-            titleSpacing: screenWidth * 0.2,
+            titleSpacing: screenWidth * 0.17,
           ),
         ),
         body: Padding(

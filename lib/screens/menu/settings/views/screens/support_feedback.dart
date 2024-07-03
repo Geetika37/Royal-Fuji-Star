@@ -16,7 +16,7 @@ class SupportFeedback extends StatelessWidget {
           preferredSize: const Size.fromHeight(kToolbarHeight),
           child: CustomAppbar(
             text: 'Settingstitle5'.tr,
-            titleSpacing: screenWidth * 0.2,
+            titleSpacing: screenWidth * 0.15,
           ),
         ),
         body: Padding(

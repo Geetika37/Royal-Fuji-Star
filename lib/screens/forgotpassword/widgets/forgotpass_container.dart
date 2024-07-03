@@ -4,15 +4,23 @@ import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/screens/forgotpassword/controller/forgotpass_controller.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 import 'package:royal_fuji_star/utils/buttons.dart';
+import 'package:royal_fuji_star/utils/textformfield.dart';
 
-class ForgotpassContainer extends StatelessWidget {
+class ForgotpassContainer extends StatefulWidget {
   const ForgotpassContainer({super.key});
 
   @override
+  State<ForgotpassContainer> createState() => _ForgotpassContainerState();
+}
+
+class _ForgotpassContainerState extends State<ForgotpassContainer> {
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
+  final ForgotpassController forgotpassController =
+      Get.put(ForgotpassController());
+  TextEditingController emailController = TextEditingController();
+  @override
   Widget build(BuildContext context) {
-    final ForgotpassController forgotpassController =
-        Get.put(ForgotpassController());
-    TextEditingController emailController = TextEditingController();
     return Container(
       height: screenHeight * 0.65,
       width: screenWidth,
@@ -22,31 +30,48 @@ class ForgotpassContainer extends StatelessWidget {
               topLeft: Radius.circular(45), topRight: Radius.circular(45))),
       child: Padding(
         padding: const EdgeInsets.all(15.0),
-        child: Column(
-          children: [
-            SizedBox(height: screenHeight * 0.1),
-            // Textformfield(
-            //   textfieldWidth: screenWidth * 0.8,
-            //   hintText: 'Email',
-            //   hintTextSize: 15,
-            //   controller: emailController,
-            // ),
-            SizedBox(height: screenHeight * 0.05),
-            BlueButton(
-              height: screenHeight * 0.07,
-              width: screenWidth * 0.8,
-              circularRadius: 10,
-              text: 'Submit',
-              onTap: () {
-                forgotpassController.forgotPass(emailController.text);
-              },
-              color: Appcolor.buttonColor,
-              textColor: Appcolor.white,
-              fontSize: 14,
-            ),
-          ],
+        child: Form(
+          key: formKey,
+          child: Column(
+            children: [
+              SizedBox(height: screenHeight * 0.1),
+              Textformfield(
+                validator: (value) {
+                  if (value!.isEmpty ||
+                      !RegExp(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{3,}$')
+                          .hasMatch(value)) {
+                    return 'Enter Correct Email ID';
+                  }
+                  return null;
+                },
+                textfieldWidth: screenWidth * 0.8,
+                hintText: 'Email',
+                hintTextSize: 15,
+                controller: emailController,
+              ),
+              SizedBox(height: screenHeight * 0.05),
+              BlueButton(
+                height: screenHeight * 0.07,
+                width: screenWidth * 0.8,
+                circularRadius: 10,
+                text: 'Submit',
+                onTap: () {
+                  if (_validateForm()) {
+                    forgotpassController.forgotPass(emailController.text);
+                  }
+                },
+                color: Appcolor.buttonColor,
+                textColor: Appcolor.white,
+                fontSize: 14,
+              ),
+            ],
+          ),
         ),
       ),
     );
+  }
+
+  bool _validateForm() {
+    return formKey.currentState!.validate();
   }
 }

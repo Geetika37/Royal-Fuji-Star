@@ -105,32 +105,41 @@ class _LoginContainerState extends State<LoginContainer> {
           ),
         ),
         Positioned(
-            bottom: 0,
-            child: Padding(
-                padding: const EdgeInsets.only(right: 100, left: 100),
-                child: Row(
-                  children: [
-                    Text(
-                      'account_no'.tr,
-                      style: poppins(const Color.fromARGB(255, 163, 162, 162),
-                          13, FontWeight.w400),
+          bottom: 10,
+          left: 0,
+          right: 0,
+          child: SizedBox(
+            width: screenWidth,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'account_no'.tr,
+                  style: poppins(
+                    const Color.fromARGB(255, 163, 162, 162),
+                    13,
+                    FontWeight.w400,
+                  ),
+                ),
+                SizedBox(
+                  width: screenWidth * 0.01,
+                ),
+                InkWell(
+                  onTap: widget.onTap,
+                  child: Text(
+                    'sign_up'.tr,
+                    style: const TextStyle(
+                      color: Appcolor.buttonColor,
+                      fontSize: 13,
+                      fontWeight: FontWeight.w500,
                     ),
-                    SizedBox(
-                      height: screenHeight * 0.05,
-                    ),
-                    InkWell(
-                      onTap: widget.onTap,
-                      child: Text(
-                        'sign_up'.tr,
-                        style: const TextStyle(
-                          color: Appcolor.buttonColor,
-                          fontSize: 13,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    )
-                  ],
-                )))
+                  ),
+                )
+              ],
+            ),
+          ),
+        )
       ],
     );
   }

@@ -56,7 +56,7 @@ class _LanguageSettingsState extends State<LanguageSettings> {
           preferredSize: const Size.fromHeight(kToolbarHeight),
           child: CustomAppbar(
             text: 'Settingstitle3'.tr,
-            titleSpacing: screenWidth * 0.2,
+            titleSpacing: screenWidth * 0.18,
           ),
         ),
         body: Padding(
@@ -66,7 +66,7 @@ class _LanguageSettingsState extends State<LanguageSettings> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('English',
+                  Text('languageenglish'.tr,
                       style: poppins(Appcolor.black, 15, FontWeight.w500)),
                   Checkbox(
                     value: firstValue,
@@ -87,7 +87,7 @@ class _LanguageSettingsState extends State<LanguageSettings> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('arabic'.tr,
+                  Text('languagearabic'.tr,
                       style: poppins(Appcolor.black, 15, FontWeight.w500)),
                   Checkbox(
                     value: secondValue,

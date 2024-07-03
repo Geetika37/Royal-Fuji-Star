@@ -23,7 +23,7 @@ class _NotificationSettingsState extends State<NotificationSettings> {
           preferredSize: const Size.fromHeight(kToolbarHeight),
           child: CustomAppbar(
             text: 'Settingstitle2'.tr,
-            titleSpacing: screenWidth * 0.2,
+            titleSpacing: screenWidth * 0.16,
           ),
         ),
         body: Padding(
