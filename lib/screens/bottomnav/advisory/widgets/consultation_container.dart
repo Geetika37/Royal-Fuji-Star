@@ -13,9 +13,9 @@ class ConsultationContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController nameController = TextEditingController();
-    TextEditingController emailController = TextEditingController();
-    TextEditingController phoneController = TextEditingController();
+    // TextEditingController nameController = TextEditingController();
+    // TextEditingController emailController = TextEditingController();
+    // TextEditingController phoneController = TextEditingController();
 
     return Container(
       height: screenHeight * 0.58,
@@ -35,36 +35,36 @@ class ConsultationContainer extends StatelessWidget {
               Text('advisorycontainertext1'.tr,
                   style: poppins(Appcolor.black, 12, FontWeight.w400)),
               SizedBox(height: screenHeight * 0.01),
-              Textformfield(
-                textfieldWidth: screenWidth,
-                hintText: 'advisorycontainertext2'.tr,
-                hintTextSize: 12,
-                controller: nameController,
-              ),
+              // Textformfield(
+              //   textfieldWidth: screenWidth,
+              //   hintText: 'advisorycontainertext2'.tr,
+              //   hintTextSize: 12,
+              //   controller: nameController,
+              // ),
 
               //email
               SizedBox(height: screenHeight * 0.01),
               Text('email'.tr,
                   style: poppins(Appcolor.black, 12, FontWeight.w400)),
               SizedBox(height: screenHeight * 0.01),
-              Textformfield(
-                textfieldWidth: screenWidth,
-                hintText: '@',
-                hintTextSize: 12,
-                controller: emailController,
-              ),
+              // Textformfield(
+              //   textfieldWidth: screenWidth,
+              //   hintText: '@',
+              //   hintTextSize: 12,
+              //   controller: emailController,
+              // ),
 
               //phone number
               SizedBox(height: screenHeight * 0.01),
               Text('advisorycontainertext3'.tr,
                   style: poppins(Appcolor.black, 12, FontWeight.w400)),
               SizedBox(height: screenHeight * 0.01),
-              Textformfield(
-                textfieldWidth: screenWidth,
-                hintText: '+971',
-                hintTextSize: 12,
-                controller: phoneController,
-              ),
+              // Textformfield(
+              //   textfieldWidth: screenWidth,
+              //   hintText: '+971',
+              //   hintTextSize: 12,
+              //   controller: phoneController,
+              // ),
 
               //dropdown
               SizedBox(height: screenHeight * 0.001),

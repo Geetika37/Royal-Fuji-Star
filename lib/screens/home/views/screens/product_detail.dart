@@ -62,7 +62,7 @@ class ProductDetail extends StatelessWidget {
               child: BlueButton(
                   fontSize: 14,
                   height: screenHeight * 0.06,
-                  width: screenWidth,
+                  width: screenWidth * 0.9,
                   circularRadius: 10,
                   text: 'enquiry'.tr,
                   onTap: () {},

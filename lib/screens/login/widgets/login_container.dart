@@ -9,7 +9,7 @@ import 'package:royal_fuji_star/utils/appcolor.dart';
 import 'package:royal_fuji_star/utils/buttons.dart';
 import 'package:royal_fuji_star/utils/textformfield.dart';
 
-class LoginContainer extends StatelessWidget {
+class LoginContainer extends StatefulWidget {
   const LoginContainer({
     super.key,
     required this.onTap,
@@ -17,11 +17,18 @@ class LoginContainer extends StatelessWidget {
   final Function() onTap;
 
   @override
-  Widget build(BuildContext context) {
-    final LoginController loginController = Get.put(LoginController());
-    TextEditingController emailController = TextEditingController();
-    TextEditingController passwordController = TextEditingController();
+  State<LoginContainer> createState() => _LoginContainerState();
+}
 
+class _LoginContainerState extends State<LoginContainer> {
+  final _emailRegex =
+      r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+";
+  final _phoneRegex = r'^\d{10}$';
+  final LoginController loginController = Get.put(LoginController());
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  @override
+  Widget build(BuildContext context) {
     return Stack(
       children: [
         Container(
@@ -37,6 +44,7 @@ class LoginContainer extends StatelessWidget {
               children: [
                 SizedBox(height: screenHeight * 0.1),
                 Textformfield(
+                  validator: _emailMobileValidation,
                   controller: emailController,
                   textfieldWidth: screenWidth * 0.8,
                   hintText: 'phone_email'.tr,
@@ -111,7 +119,7 @@ class LoginContainer extends StatelessWidget {
                       height: screenHeight * 0.05,
                     ),
                     InkWell(
-                      onTap: onTap,
+                      onTap: widget.onTap,
                       child: Text(
                         'sign_up'.tr,
                         style: const TextStyle(
@@ -125,5 +133,16 @@ class LoginContainer extends StatelessWidget {
                 )))
       ],
     );
+  }
+
+  String? _emailMobileValidation(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Email or Phone cannot be empty';
+    }
+    if (!RegExp(_emailRegex).hasMatch(value) &&
+        !RegExp(_phoneRegex).hasMatch(value)) {
+      return 'Please enter valid Email or Phone';
+    }
+    return null;
   }
 }

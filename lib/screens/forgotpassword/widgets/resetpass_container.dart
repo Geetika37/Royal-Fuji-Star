@@ -33,18 +33,20 @@ class ResetpassContainer extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(height: screenHeight * 0.1),
-            Textformfield(
+            TextformfieldPass(
               textfieldWidth: screenWidth * 0.8,
               hintText: 'Password',
               hintTextSize: 14,
               controller: passwordController,
+              obscureText: true,
             ),
             SizedBox(height: screenHeight * 0.02),
-            Textformfield(
+            TextformfieldPass(
               textfieldWidth: screenWidth * 0.8,
               hintText: 'Confirm Password',
               hintTextSize: 14,
               controller: confirmPasswordController,
+              obscureText: true,
             ),
             SizedBox(height: screenHeight * 0.03),
             BlueButton(
@@ -53,11 +55,8 @@ class ResetpassContainer extends StatelessWidget {
               circularRadius: 10,
               text: 'Submit',
               onTap: () async {
-                await resetpassController.resetPassword(
-                  passwordController.text,
-                  confirmPasswordController.text,
-                  otp
-                );
+                await resetpassController.resetPassword(passwordController.text,
+                    confirmPasswordController.text, otp);
               },
               color: Appcolor.buttonColor,
               textColor: Appcolor.white,

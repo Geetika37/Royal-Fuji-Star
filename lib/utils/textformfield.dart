@@ -10,6 +10,49 @@ class Textformfield extends StatelessWidget {
     required this.hintText,
     required this.hintTextSize,
     required this.controller,
+    required this.validator,
+  });
+  final double textfieldWidth;
+  final String hintText;
+  final double hintTextSize;
+  final TextEditingController controller;
+  final String? Function(String?) validator;
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: SizedBox(
+        width: textfieldWidth,
+        // height: screenHeight * 0.06,
+        child: TextFormField(
+          validator: validator,
+          controller: controller,
+          decoration: InputDecoration(
+            hintText: hintText,
+            hintStyle: poppins(const Color.fromARGB(255, 149, 147, 147),
+                hintTextSize, FontWeight.w300),
+            filled: true,
+            fillColor: const Color.fromARGB(255, 227, 228, 229),
+            contentPadding:
+                const EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
+            border: const OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(0)),
+              borderSide: BorderSide.none,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class TextformfieldWithoutValidation extends StatelessWidget {
+  const TextformfieldWithoutValidation({
+    super.key,
+    required this.textfieldWidth,
+    required this.hintText,
+    required this.hintTextSize,
+    required this.controller,
   });
   final double textfieldWidth;
   final String hintText;
@@ -21,7 +64,7 @@ class Textformfield extends StatelessWidget {
     return Center(
       child: SizedBox(
         width: textfieldWidth,
-        height: screenHeight * 0.06,
+        // height: screenHeight * 0.06,
         child: TextFormField(
           controller: controller,
           decoration: InputDecoration(
@@ -43,8 +86,6 @@ class Textformfield extends StatelessWidget {
   }
 }
 
-
-
 class TextformfieldPass extends StatefulWidget {
   const TextformfieldPass({
     super.key,
@@ -54,7 +95,7 @@ class TextformfieldPass extends StatefulWidget {
     required this.controller,
     this.obscureText = false, // Default value is false
   });
-  
+
   final double textfieldWidth;
   final String hintText;
   final double hintTextSize;
@@ -71,7 +112,7 @@ class _TextformfieldPassState extends State<TextformfieldPass> {
   @override
   void initState() {
     super.initState();
-    _obscureText = widget.obscureText; 
+    _obscureText = widget.obscureText;
   }
 
   @override
@@ -79,7 +120,7 @@ class _TextformfieldPassState extends State<TextformfieldPass> {
     return Center(
       child: SizedBox(
         width: widget.textfieldWidth,
-        height: screenHeight * 0.06,
+        // height: screenHeight * 0.06,
         child: TextFormField(
           obscureText: _obscureText,
           controller: widget.controller,
@@ -113,13 +154,13 @@ class _TextformfieldPassState extends State<TextformfieldPass> {
   }
 }
 
-
 class TextformfieldWithIcons extends StatelessWidget {
   const TextformfieldWithIcons({
     super.key,
     required this.textfieldWidth,
     required this.hintText,
-    required this.suffixIcon, required this.controller,
+    required this.suffixIcon,
+    required this.controller,
   });
   final double textfieldWidth;
   final String hintText;

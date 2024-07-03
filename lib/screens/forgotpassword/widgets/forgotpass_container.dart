@@ -4,7 +4,6 @@ import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/screens/forgotpassword/controller/forgotpass_controller.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 import 'package:royal_fuji_star/utils/buttons.dart';
-import 'package:royal_fuji_star/utils/textformfield.dart';
 
 class ForgotpassContainer extends StatelessWidget {
   const ForgotpassContainer({super.key});
@@ -26,12 +25,12 @@ class ForgotpassContainer extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(height: screenHeight * 0.1),
-            Textformfield(
-              textfieldWidth: screenWidth * 0.8,
-              hintText: 'Email',
-              hintTextSize: 15,
-              controller: emailController,
-            ),
+            // Textformfield(
+            //   textfieldWidth: screenWidth * 0.8,
+            //   hintText: 'Email',
+            //   hintTextSize: 15,
+            //   controller: emailController,
+            // ),
             SizedBox(height: screenHeight * 0.05),
             BlueButton(
               height: screenHeight * 0.07,
