@@ -6,6 +6,7 @@ import 'package:royal_fuji_star/screens/signup/controller/signup_controller.dart
 import 'package:royal_fuji_star/utils/appcolor.dart';
 import 'package:royal_fuji_star/utils/buttons.dart';
 import 'package:royal_fuji_star/utils/textformfield.dart';
+import 'package:royal_fuji_star/utils/validators.dart';
 
 class SignupContainer extends StatefulWidget {
   const SignupContainer({
@@ -52,13 +53,7 @@ class _SignupContainerState extends State<SignupContainer> {
                     textfieldWidth: screenWidth * 0.8,
                     hintText: 'full_name'.tr,
                     hintTextSize: 15,
-                    validator: (value) {
-                      if (value!.isEmpty ||
-                          !RegExp(r'^[a-zA-Z\s]+$').hasMatch(value)) {
-                        return 'Enter Correct Name';
-                      }
-                      return null;
-                    },
+                    validator: Validators.validateName,
                   ),
                   SizedBox(height: screenHeight * 0.02),
                   Textformfield(
@@ -66,14 +61,7 @@ class _SignupContainerState extends State<SignupContainer> {
                     textfieldWidth: screenWidth * 0.8,
                     hintText: 'email'.tr,
                     hintTextSize: 15,
-                    validator: (value) {
-                      if (value!.isEmpty ||
-                          !RegExp(r'^[^@\s]+@[^@\s]+\.[^@\s]+$')
-                              .hasMatch(value)) {
-                        return 'Enter Correct Email ID';
-                      }
-                      return null;
-                    },
+                    validator: Validators.validateEmail,
                   ),
                   SizedBox(height: screenHeight * 0.02),
                   TextformfieldWithoutValidation(

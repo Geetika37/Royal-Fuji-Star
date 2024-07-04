@@ -6,8 +6,9 @@ import 'package:royal_fuji_star/screens/menu/profile/widgets/textfieldwithoutbor
 import 'package:royal_fuji_star/screens/widgets/customappbar.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 import 'package:royal_fuji_star/utils/buttons.dart';
+import 'package:royal_fuji_star/utils/validators.dart';
 
-class EditProfile extends StatelessWidget {
+class EditProfile extends StatefulWidget {
   const EditProfile(
       {super.key,
       required this.username,
@@ -20,16 +21,25 @@ class EditProfile extends StatelessWidget {
   final String location;
 
   @override
+  State<EditProfile> createState() => _EditProfileState();
+}
+
+class _EditProfileState extends State<EditProfile> {
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
+  final EditprofileController editprofileController =
+      Get.put(EditprofileController());
+
+  @override
   Widget build(BuildContext context) {
-    final EditprofileController editprofileController =
-        Get.put(EditprofileController());
     TextEditingController userNameController =
-        TextEditingController(text: username);
+        TextEditingController(text: widget.username);
     TextEditingController emailIDController =
-        TextEditingController(text: email);
-    TextEditingController mobileController = TextEditingController(text: phone);
+        TextEditingController(text: widget.email);
+    TextEditingController mobileController =
+        TextEditingController(text: widget.phone);
     TextEditingController locationController =
-        TextEditingController(text: location);
+        TextEditingController(text: widget.location);
 
     return SafeArea(
       child: Scaffold(
@@ -37,7 +47,7 @@ class EditProfile extends StatelessWidget {
           preferredSize: const Size.fromHeight(kToolbarHeight),
           child: CustomAppbar(
             text: 'editprofile'.tr,
-            titleSpacing: screenWidth * 0.2,
+            titleSpacing: screenWidth * 0.25,
           ),
         ),
         body: Padding(
@@ -47,53 +57,65 @@ class EditProfile extends StatelessWidget {
             top: screenHeight * 0.1,
           ),
           child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                TextfieldWithoutborder(
-                  imagePath: 'assets/png/picon1.png',
-                  text: 'editprofilehinttext1'.tr,
-                  controller: userNameController,
-                ),
-                SizedBox(height: screenHeight * 0.02),
-                TextfieldWithoutborder(
-                  imagePath: 'assets/png/picon2.png',
-                  text: 'editprofilehinttext2'.tr,
-                  controller: emailIDController,
-                ),
-                SizedBox(height: screenHeight * 0.02),
-                TextfieldWithoutborder(
-                    controller: mobileController,
-                    imagePath: 'assets/png/picon3.png',
-                    text: 'editprofilehinttext3'.tr),
-                SizedBox(height: screenHeight * 0.02),
-                TextfieldWithoutborder(
-                    controller: locationController,
-                    imagePath: 'assets/png/picon4.png',
-                    text: 'editprofilehinttext4'.tr),
-                SizedBox(height: screenHeight * 0.14),
-                BlueButton(
-                  fontSize: 14,
-                  textColor: Appcolor.white,
-                  height: screenHeight * 0.08,
-                  width: screenWidth * 0.9,
-                  circularRadius: 20,
-                  text: 'save'.tr,
-                  onTap: () {
-                    editprofileController.editProfile(
-                      userNameController.text,
-                      emailIDController.text,
-                      mobileController.text,
-                      locationController.text,
-                    );
-                  },
-                  color: Appcolor.buttonColor,
-                )
-              ],
+            child: Form(
+              key: formKey,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  TextfieldWithoutborder(
+                    validator: Validators.validateName,
+                    imagePath: 'assets/png/picon1.png',
+                    text: 'editprofilehinttext1'.tr,
+                    controller: userNameController,
+                  ),
+                  SizedBox(height: screenHeight * 0.02),
+                  TextfieldWithoutborder(
+                    validator: Validators.validateEmail,
+                    imagePath: 'assets/png/picon2.png',
+                    text: 'editprofilehinttext2'.tr,
+                    controller: emailIDController,
+                  ),
+                  SizedBox(height: screenHeight * 0.02),
+                  TextfieldWithoutborderWithoutValidation(
+                      controller: mobileController,
+                      imagePath: 'assets/png/picon3.png',
+                      text: 'editprofilehinttext3'.tr),
+                  SizedBox(height: screenHeight * 0.02),
+                  TextfieldWithoutborder(
+                      validator: Validators.validateName,
+                      controller: locationController,
+                      imagePath: 'assets/png/picon4.png',
+                      text: 'editprofilehinttext4'.tr),
+                  SizedBox(height: screenHeight * 0.14),
+                  BlueButton(
+                    fontSize: 14,
+                    textColor: Appcolor.white,
+                    height: screenHeight * 0.08,
+                    width: screenWidth * 0.9,
+                    circularRadius: 20,
+                    text: 'save'.tr,
+                    onTap: () {
+                      if (_validateForm()) {
+                        editprofileController.editProfile(
+                          userNameController.text,
+                          emailIDController.text,
+                          mobileController.text,
+                          locationController.text,
+                        );
+                      }
+                    },
+                    color: Appcolor.buttonColor,
+                  )
+                ],
+              ),
             ),
           ),
         ),
       ),
     );
+  }
+
+  bool _validateForm() {
+    return formKey.currentState!.validate();
   }
 }

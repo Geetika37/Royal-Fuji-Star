@@ -5,6 +5,8 @@ import 'package:royal_fuji_star/screens/menu/profile/controller/profile_controll
 import 'package:royal_fuji_star/screens/menu/profile/views/screens/editprofile.dart';
 import 'package:royal_fuji_star/screens/menu/profile/widgets/icon_container.dart';
 import 'package:royal_fuji_star/screens/menu/profile/widgets/profiledetail_listtile.dart';
+import 'package:royal_fuji_star/screens/splash/views/screens/getstarted.dart';
+import 'package:royal_fuji_star/services/token.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 import 'package:royal_fuji_star/utils/buttons.dart';
 
@@ -56,7 +58,10 @@ class ProfilePage extends StatelessWidget {
                           width: screenWidth * 0.2,
                           circularRadius: 20,
                           text: 'logout'.tr,
-                          onTap: () {},
+                          onTap: () async {
+                            await TokenKey.clearValue('token');
+                            Get.to(const GetStarted());
+                          },
                         ),
                       ),
                     ],
@@ -71,24 +76,28 @@ class ProfilePage extends StatelessWidget {
                   return const Text('No profile data available');
                 }
                 print('profile data######----$profileDetails');
-                return Column(
-                  children: [
-                    ProfileDetailListTile(
-                        imagePath: 'assets/svg/nams.svg',
-                        text: profileDetails['username'] ?? ''),
-                    SizedBox(height: screenHeight * 0.01),
-                    ProfileDetailListTile(
-                        imagePath: 'assets/svg/email.svg',
-                        text: profileDetails['email'] ?? ''),
-                    SizedBox(height: screenHeight * 0.01),
-                    ProfileDetailListTile(
-                        imagePath: 'assets/svg/phone.svg',
-                        text: profileDetails['phone'] ?? ''),
-                    SizedBox(height: screenHeight * 0.01),
-                    ProfileDetailListTile(
-                        imagePath: 'assets/svg/location.svg',
-                        text: profileDetails['location'] ?? ''),
-                  ],
+                return Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      ProfileDetailListTile(
+                          imagePath: 'assets/svg/nams.svg',
+                          text: profileDetails['username'] ?? ''),
+                      SizedBox(height: screenHeight * 0.01),
+                      ProfileDetailListTile(
+                          imagePath: 'assets/svg/email.svg',
+                          text: profileDetails['email'] ?? ''),
+                      SizedBox(height: screenHeight * 0.01),
+                      ProfileDetailListTile(
+                          imagePath: 'assets/svg/phone.svg',
+                          text: profileDetails['phone'] ?? ''),
+                      SizedBox(height: screenHeight * 0.01),
+                      ProfileDetailListTile(
+                          imagePath: 'assets/svg/location.svg',
+                          text: profileDetails['location'] ?? ''),
+                    ],
+                  ),
                 );
               }),
               SizedBox(height: screenHeight * 0.04),

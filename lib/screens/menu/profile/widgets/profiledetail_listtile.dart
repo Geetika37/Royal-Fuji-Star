@@ -18,9 +18,12 @@ class ProfileDetailListTile extends StatelessWidget {
     return ListTile(
       leading: SvgPicture.asset(imagePath),
       contentPadding: EdgeInsets.symmetric(horizontal: screenHeight * 0.09),
-      title: Text(
-        text,
-        style: poppins(Appcolor.black, 14, FontWeight.w400),
+      title: Padding(
+        padding: const EdgeInsets.only(left: 10, right: 10),
+        child: Text(
+          text,
+          style: poppins(Appcolor.black, 14, FontWeight.w400),
+        ),
       ),
     );
   }

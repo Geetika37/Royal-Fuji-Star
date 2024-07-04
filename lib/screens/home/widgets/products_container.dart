@@ -34,12 +34,10 @@ class ProductsContainer extends StatelessWidget {
             crossAxisCount: 2,
             mainAxisSpacing: 8,
             crossAxisSpacing: 8,
-            childAspectRatio: 1.45,
+            childAspectRatio: 1.4,
           ),
           itemBuilder: (context, index) {
             final category = productCategories[index];
-            print('category---$category');
-            print('category ID---${category['id']}');
 
             final imageUrl = category['image'] != null &&
                     category['image'].isNotEmpty &&
@@ -56,11 +54,8 @@ class ProductsContainer extends StatelessWidget {
               },
               child: Container(
                 clipBehavior: Clip.antiAlias,
-                height: screenHeight * 0.15,
-                width: screenWidth * 0.41,
                 decoration: BoxDecoration(
                   border: Border.all(color: Appcolor.white, width: 2.5),
-                  // borderRadius: BorderRadius.circular(8.0),
                 ),
                 child: Column(
                   children: [
@@ -71,15 +66,18 @@ class ProductsContainer extends StatelessWidget {
                           )
                         : const SizedBox(),
                     Container(
+                      height: screenHeight * 0.03,
                       width: screenWidth,
                       decoration: BoxDecoration(
                         color: Colors.black54.withOpacity(0.7),
                       ),
-                      child: Text(
-                        category['name'],
-                        maxLines: 2,
-                        style: poppins(Appcolor.white, 12, FontWeight.w600),
-                        textAlign: TextAlign.center,
+                      child: Center(
+                        child: Text(
+                          category['name'],
+                          maxLines: 2,
+                          style: poppins(Appcolor.white, 12, FontWeight.w600),
+                          textAlign: TextAlign.center,
+                        ),
                       ),
                     )
                   ],

@@ -25,13 +25,13 @@ class SettingsDrawer extends StatelessWidget {
     TextStyle drawertext = poppins(Appcolor.white, 14, FontWeight.w500);
 
     return Drawer(
+      backgroundColor: const Color(0xFFD9D9D9),
       width: width * 0.67,
       child: Column(
         children: [
-          Container(
+          SizedBox(
             height: screenHeight * 0.1,
             width: screenWidth,
-            color: const Color(0xFFD9D9D9),
             child: Padding(
               padding: const EdgeInsets.only(
                   bottom: 10, left: 15, top: 50, right: 15),
@@ -90,9 +90,8 @@ class SettingsDrawer extends StatelessWidget {
                           EdgeInsets.symmetric(horizontal: width * 0.05)),
                 ],
               )),
-          Container(
+          SizedBox(
             width: double.infinity,
-            color: const Color(0xFFD9D9D9),
             child: Row(
               children: [
                 Image.asset(
