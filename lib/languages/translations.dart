@@ -170,20 +170,12 @@ class AppTranslations extends Translations {
           'annualcontainertext9': 'Submit',
           'annualcontainertext10': '(Including Parts)',
           'annualcontainertext11': '(Excluding Parts)',
-          'annualcontainertext12':'Type',
-          'annualcontainertext13':'Enter the brand name here',
-          'repairtext1':'Type of repairs',
-          'repairtext2':'',
-
-
-
-
-
-
+          'annualcontainertext12': 'Type',
+          'annualcontainertext13': 'Enter the brand name here',
+          'repairtext1': 'Type of repairs',
           'sparecontainertext1': 'Cabin Categories',
           'sparecontainertext2': 'Item Categories',
-          'sparecontainertext3':'Press if you cant find the required item',
-
+          'sparecontainertext3': 'Press if you cant find the required item',
           'advisorycontainertext1': 'Name',
           'advisorycontainertext2': 'Enter the brand name here',
           'advisorycontainertext3': 'Phone Number',
@@ -208,6 +200,7 @@ class AppTranslations extends Translations {
           'verifyotp1': 'Verify OTP',
           'verifyotp2': 'Enter OTP',
           'resetpass': 'Reset Password',
+          'components': 'Components',
         },
         'ar_AE': {
           'started':
@@ -373,20 +366,13 @@ class AppTranslations extends Translations {
           'annualcontainertext9': 'يُقدِّم',
           'annualcontainertext10': '(بما في ذلك الأجزاء)',
           'annualcontainertext11': '(باستثناء الأجزاء)',
-          'annualcontainertext12':'يكتب',
-          'annualcontainertext13':'أدخل اسم العلامة التجارية هنا',
-          'repairtext1':'نوع الإصلاحات',
-          'repairtext2':'',
-
-
-          
-
-
-
+          'annualcontainertext12': 'يكتب',
+          'annualcontainertext13': 'أدخل اسم العلامة التجارية هنا',
+          'repairtext1': 'نوع الإصلاحات',
           'sparecontainertext1': 'فئات المقصورة',
           'sparecontainertext2': 'فئات العناصر',
-          'sparecontainertext3':'اضغط إذا لم تتمكن من العثور على العنصر المطلوب',
-
+          'sparecontainertext3':
+              'اضغط إذا لم تتمكن من العثور على العنصر المطلوب',
           'advisorycontainertext1': 'اسم',
           'advisorycontainertext2': 'أدخل اسم العلامة التجارية هنا',
           'advisorycontainertext3': 'رقم التليفون',
@@ -411,6 +397,7 @@ class AppTranslations extends Translations {
           'verifyotp1': 'التحقق من كلمة المرور',
           'verifyotp2': 'أدخل كلمة المرور',
           'resetpass': 'إعادة تعيين كلمة المرور',
+          'components': 'عناصر',
         },
       };
 }

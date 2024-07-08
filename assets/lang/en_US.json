@@ -134,11 +134,6 @@
     "annualcontainertext12":"Type",
     "annualcontainertext13":"Enter the brand name here",
     "repairtext1":"Type of repairs",
-    "repairtext2":"",
-    
-
-
-
 
     "sparecontainertext1":"Cabin Categories",
     "sparecontainertext2":"Item Categories",
@@ -165,7 +160,9 @@
     "languagearabic":"Arabic",
     "verifyotp1":"Verify OTP",
     "verifyotp2":"Enter OTP",
-    "resetpass":"Reset Password"
+    "resetpass":"Reset Password",
+    "components":"Components"
+
 
     
 

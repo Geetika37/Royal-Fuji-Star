@@ -134,10 +134,6 @@
     "annualcontainertext12":"يكتب",
     "annualcontainertext13":"أدخل اسم العلامة التجارية هنا",
     "repairtext1":"نوع الإصلاحات",
-    "repairtext2":"",
-
-
-
     "sparecontainertext1":"فئات المقصورة",
     "sparecontainertext2":"فئات العناصر",
     "sparecontainertext3":"اضغط إذا لم تتمكن من العثور على العنصر المطلوب",
@@ -162,7 +158,9 @@
     "languagearabic":"عربي",
     "verifyotp1":"التحقق من كلمة المرور",
     "verifyotp2":"أدخل كلمة المرور",
-    "resetpass":"إعادة تعيين كلمة المرور"
+    "resetpass":"إعادة تعيين كلمة المرور",
+    "components":"عناصر"
+
 
 
 
