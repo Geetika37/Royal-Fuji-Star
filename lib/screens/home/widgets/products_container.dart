@@ -24,8 +24,7 @@ class ProductsContainer extends StatelessWidget {
 
       final productCategories = productCategoryController.product;
 
-      return Padding(
-        padding: const EdgeInsets.all(8.0),
+      return SizedBox(
         child: GridView.builder(
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
@@ -34,7 +33,7 @@ class ProductsContainer extends StatelessWidget {
             crossAxisCount: 2,
             mainAxisSpacing: 8,
             crossAxisSpacing: 8,
-            childAspectRatio: 1.4,
+            childAspectRatio: 1.0,
           ),
           itemBuilder: (context, index) {
             final category = productCategories[index];
@@ -60,14 +59,17 @@ class ProductsContainer extends StatelessWidget {
                 child: Column(
                   children: [
                     imageUrl != null
-                        ? Image.network(
-                            imageUrl,
-                            fit: BoxFit.fill,
+                        ? Expanded(
+                            child: Image.network(
+                              imageUrl,
+                              fit: BoxFit.cover, 
+                              width: double.infinity,
+                            ),
                           )
                         : const SizedBox(),
                     Container(
-                      height: screenHeight * 0.03,
-                      width: screenWidth,
+                      height: screenHeight * 0.05,
+                      width: double.infinity, 
                       decoration: BoxDecoration(
                         color: Colors.black54.withOpacity(0.7),
                       ),
