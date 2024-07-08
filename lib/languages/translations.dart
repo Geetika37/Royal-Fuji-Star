@@ -171,6 +171,10 @@ class AppTranslations extends Translations {
           'annualcontainertext10': '(Including Parts)',
           'annualcontainertext11': '(Excluding Parts)',
           'annualcontainertext12':'Type',
+          'annualcontainertext13':'Enter the brand name here',
+          'repairtext1':'Type of repairs',
+          'repairtext2':'',
+
 
 
 
@@ -368,6 +372,11 @@ class AppTranslations extends Translations {
           'annualcontainertext10': '(بما في ذلك الأجزاء)',
           'annualcontainertext11': '(باستثناء الأجزاء)',
           'annualcontainertext12':'يكتب',
+          'annualcontainertext13':'أدخل اسم العلامة التجارية هنا',
+          'repairtext1':'نوع الإصلاحات',
+          'repairtext2':'',
+
+
           
 
 

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/screens/bottomnav/services/views/screens/annualmaintenance.dart';
+import 'package:royal_fuji_star/screens/bottomnav/services/views/screens/repair.dart';
 import 'package:royal_fuji_star/screens/bottomnav/services/views/screens/spare_parts.dart';
 import 'package:royal_fuji_star/screens/bottomnav/services/widgets/service_types.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
@@ -32,7 +33,9 @@ class ServiceContainer extends StatelessWidget {
             ),
             SizedBox(height: screenHeight * 0.04),
             ServiceTypes(
-              onTap: () {},
+              onTap: () {
+                Get.to(const Repair());
+              },
               text: 'servicetypes3'.tr,
               image: 'assets/svg/service2.svg',
             ),
