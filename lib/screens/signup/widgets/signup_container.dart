@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
 import 'package:royal_fuji_star/screens/signup/controller/signup_controller.dart';
+import 'package:royal_fuji_star/screens/signup/widgets/number_input.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 import 'package:royal_fuji_star/utils/buttons.dart';
 import 'package:royal_fuji_star/utils/textformfield.dart';
@@ -23,7 +24,9 @@ class _SignupContainerState extends State<SignupContainer> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final SignupController signupController = Get.put(SignupController());
   final TextEditingController nameController = TextEditingController();
-  final TextEditingController phoneController = TextEditingController();
+  // final TextEditingController phoneController = TextEditingController();
+  TextEditingController countryCodeController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
@@ -45,70 +48,79 @@ class _SignupContainerState extends State<SignupContainer> {
             padding: const EdgeInsets.all(15.0),
             child: Form(
               key: formKey,
-              child: Column(
-                children: [
-                  SizedBox(height: screenHeight * 0.05),
-                  Textformfield(
-                    controller: nameController,
-                    textfieldWidth: screenWidth * 0.8,
-                    hintText: 'full_name'.tr,
-                    hintTextSize: 15,
-                    validator: Validators.validateName,
-                  ),
-                  SizedBox(height: screenHeight * 0.02),
-                  Textformfield(
-                    controller: emailController,
-                    textfieldWidth: screenWidth * 0.8,
-                    hintText: 'email'.tr,
-                    hintTextSize: 15,
-                    validator: Validators.validateEmail,
-                  ),
-                  SizedBox(height: screenHeight * 0.02),
-                  TextformfieldWithoutValidation(
-                    controller: phoneController,
-                    textfieldWidth: screenWidth * 0.8,
-                    hintText: 'phone'.tr,
-                    hintTextSize: 15,
-                  ),
-                  SizedBox(height: screenHeight * 0.02),
-                  TextformfieldPass(
-                    controller: passwordController,
-                    textfieldWidth: screenWidth * 0.8,
-                    hintText: 'password'.tr,
-                    hintTextSize: 14,
-                    obscureText: true,
-                  ),
-                  SizedBox(height: screenHeight * 0.04),
-                  BlueButton(
-                    fontSize: 14,
-                    textColor: Appcolor.white,
-                    color: Appcolor.buttonColor,
-                    height: screenHeight * 0.07,
-                    width: screenWidth * 0.8,
-                    circularRadius: 10,
-                    text: 'sign_up'.tr,
-                    onTap: () {
-                      if (_validateForm()) {
-                        signupController.signUp(
-                          nameController.text,
-                          phoneController.text,
-                          emailController.text,
-                          passwordController.text,
-                        );
-                      }
-                    },
-                  ),
-                  SizedBox(height: screenHeight * 0.01),
-                  SizedBox(
-                    width: screenWidth * 0.5,
-                    child: Text(
-                      'policy_terms'.tr,
-                      maxLines: 2,
-                      style: poppins(Appcolor.buttonColor, 10, FontWeight.w500),
-                      textAlign: TextAlign.center,
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    SizedBox(height: screenHeight * 0.05),
+                    Textformfield(
+                      controller: nameController,
+                      textfieldWidth: screenWidth * 0.8,
+                      hintText: 'full_name'.tr,
+                      hintTextSize: 15,
+                      validator: Validators.validateName,
                     ),
-                  ),
-                ],
+                    SizedBox(height: screenHeight * 0.02),
+                    Textformfield(
+                      controller: emailController,
+                      textfieldWidth: screenWidth * 0.8,
+                      hintText: 'email'.tr,
+                      hintTextSize: 15,
+                      validator: Validators.validateEmail,
+                    ),
+                    // SizedBox(height: screenHeight * 0.02),
+                    // TextformfieldWithoutValidation(
+                    //   controller: phoneController,
+                    //   textfieldWidth: screenWidth * 0.8,
+                    //   hintText: 'phone'.tr,
+                    //   hintTextSize: 15,
+                    // ),
+                    SizedBox(height: screenHeight * 0.02),
+                    NumberInput(
+                      countryCodeController: countryCodeController,
+                      phoneController: phoneController,
+                    ),
+                    SizedBox(height: screenHeight * 0.02),
+                    TextformfieldPass(
+                      controller: passwordController,
+                      textfieldWidth: screenWidth * 0.8,
+                      hintText: 'password'.tr,
+                      hintTextSize: 14,
+                      obscureText: true,
+                    ),
+                    SizedBox(height: screenHeight * 0.04),
+                    BlueButton(
+                      fontSize: 14,
+                      textColor: Appcolor.white,
+                      color: Appcolor.buttonColor,
+                      height: screenHeight * 0.07,
+                      width: screenWidth * 0.8,
+                      circularRadius: 10,
+                      text: 'sign_up'.tr,
+                      onTap: () {
+                        if (_validateForm()) {
+                          signupController.signUp(
+                            nameController.text,
+                            countryCodeController.text,
+                            phoneController.text,
+                            emailController.text,
+                            passwordController.text,
+                          );
+                        }
+                      },
+                    ),
+                    SizedBox(height: screenHeight * 0.01),
+                    SizedBox(
+                      width: screenWidth * 0.5,
+                      child: Text(
+                        'policy_terms'.tr,
+                        maxLines: 2,
+                        style:
+                            poppins(Appcolor.buttonColor, 10, FontWeight.w500),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

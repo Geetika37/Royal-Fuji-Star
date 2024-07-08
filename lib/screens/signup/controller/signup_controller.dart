@@ -8,7 +8,7 @@ class SignupController extends GetxController {
   var isLoading = false.obs;
 
   Future<void> signUp(
-      String name, String phone, String email, String password) async {
+      String name, String countryCode,String phone, String email, String password) async {
     isLoading(true);
     try {
       final url = Uri.parse('${APIConstants.baseUrl}/api/auth/local/register');
@@ -17,7 +17,7 @@ class SignupController extends GetxController {
         headers: {'Content-Type': 'application/json'},
         body: json.encode({
           'username': name,
-          'phone': phone,
+          'phone': countryCode+phone,
           'email': email,
           'password': password,
         }),
