@@ -36,7 +36,7 @@ class VerifyOTPContainer extends StatelessWidget {
               child: Align(
                 alignment: Alignment.topLeft,
                 child: Text(
-                  'Enter OTP',
+                  'verifyotp2'.tr,
                   style: poppins(Appcolor.buttonColor, 16, FontWeight.w500),
                 ),
               ),
@@ -52,7 +52,7 @@ class VerifyOTPContainer extends StatelessWidget {
               height: screenHeight * 0.07,
               width: screenWidth * 0.8,
               circularRadius: 10,
-              text: 'Submit',
+              text: 'annualcontainertext9'.tr,
               onTap: () async {
                 await verifyotpController.verifyOtp(pinController.text);
               },

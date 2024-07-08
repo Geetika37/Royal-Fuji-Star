@@ -35,7 +35,7 @@ class ResetpassContainer extends StatelessWidget {
             SizedBox(height: screenHeight * 0.1),
             TextformfieldPass(
               textfieldWidth: screenWidth * 0.8,
-              hintText: 'Password',
+              hintText: 'password'.tr,
               hintTextSize: 14,
               controller: passwordController,
               obscureText: true,
@@ -43,7 +43,7 @@ class ResetpassContainer extends StatelessWidget {
             SizedBox(height: screenHeight * 0.02),
             TextformfieldPass(
               textfieldWidth: screenWidth * 0.8,
-              hintText: 'Confirm Password',
+              hintText: 'changepassword2'.tr,
               hintTextSize: 14,
               controller: confirmPasswordController,
               obscureText: true,
@@ -53,7 +53,7 @@ class ResetpassContainer extends StatelessWidget {
               height: screenHeight * 0.07,
               width: screenWidth * 0.8,
               circularRadius: 10,
-              text: 'Submit',
+              text: 'annualcontainertext9'.tr,
               onTap: () async {
                 await resetpassController.resetPassword(passwordController.text,
                     confirmPasswordController.text, otp);

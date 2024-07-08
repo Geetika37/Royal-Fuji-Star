@@ -189,7 +189,11 @@ class AppTranslations extends Translations {
           'abouttext10': 'Contact Info',
           'languageenglish': 'English',
           'languagearabic': 'Arabic',
-          'abouttext13': '',
+          'verifyotp1': 'Verify OTP',
+          'verifyotp2': 'Enter OTP',
+          'resetpass':'Reset Password',
+
+
         },
         'ar_AE': {
           'started':
@@ -374,8 +378,9 @@ class AppTranslations extends Translations {
           'abouttext10': 'معلومات الاتصال',
           'languageenglish': 'إنجليزي',
           'languagearabic': 'عربي',
-          'abouttext13': '',
-
+          'verifyotp1': 'التحقق من كلمة المرور',
+          'verifyotp2': 'أدخل كلمة المرور',
+          'resetpass':'إعادة تعيين كلمة المرور',
         },
       };
 }

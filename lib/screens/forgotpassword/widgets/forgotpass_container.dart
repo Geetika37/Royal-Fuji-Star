@@ -39,7 +39,7 @@ class _ForgotpassContainerState extends State<ForgotpassContainer> {
               Textformfield(
                 validator: Validators.validateEmail,
                 textfieldWidth: screenWidth * 0.8,
-                hintText: 'Email',
+                hintText: 'email'.tr,
                 hintTextSize: 15,
                 controller: emailController,
               ),
@@ -48,7 +48,7 @@ class _ForgotpassContainerState extends State<ForgotpassContainer> {
                 height: screenHeight * 0.07,
                 width: screenWidth * 0.8,
                 circularRadius: 10,
-                text: 'Submit',
+                text: 'annualcontainertext9'.tr,
                 onTap: () {
                   if (_validateForm()) {
                     forgotpassController.forgotPass(emailController.text);

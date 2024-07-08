@@ -21,6 +21,8 @@ class ForgotpassController extends GetxController {
           'email': email,
         }),
       );
+      final jsonresponse = jsonDecode(response.body);
+      print(jsonresponse);
       if (response.statusCode == 200) {
         Get.to(const VerifyOtp());
         Get.snackbar(
@@ -30,7 +32,13 @@ class ForgotpassController extends GetxController {
           colorText: Appcolor.white,
         );
       } else {
-        Get.snackbar('Error', 'OTp not sent');
+        print('error ${jsonresponse['error']['message']}');
+        Get.snackbar(
+          'Error',
+          jsonresponse['error']['message'],
+          backgroundColor: Colors.red,
+          colorText: Appcolor.white,
+        );
       }
     } catch (e) {
       print('error${e.toString()}');

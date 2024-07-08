@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
 import 'package:royal_fuji_star/screens/forgotpassword/widgets/verifyotp_container.dart';
@@ -42,7 +43,7 @@ class VerifyOtp extends StatelessWidget {
                       height: screenHeight * 0.03,
                     ),
                     Text(
-                      'Verify OTP',
+                      'verifyotp1'.tr,
                       style: poppins(Appcolor.white, 20, FontWeight.w600),
                     ),
                   ],

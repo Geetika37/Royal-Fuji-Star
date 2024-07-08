@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
 import 'package:royal_fuji_star/screens/forgotpassword/widgets/resetpass_container.dart';
@@ -43,15 +44,17 @@ class Resetpassword extends StatelessWidget {
                       height: screenHeight * 0.03,
                     ),
                     Text(
-                      'Reset Password',
+                      'resetpass'.tr,
                       style: poppins(Appcolor.white, 20, FontWeight.w600),
                     ),
                   ],
                 ),
               ),
-               Positioned(
+              Positioned(
                 bottom: 0,
-                child: ResetpassContainer(otp: otp,),
+                child: ResetpassContainer(
+                  otp: otp,
+                ),
               ),
             ],
           ),
