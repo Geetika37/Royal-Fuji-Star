@@ -13,8 +13,9 @@ class Annualcontainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController brandNameController = TextEditingController();
     return Container(
-      height: screenHeight * 0.58,
+      height: ScreenSize.getHeight(context) * 0.65,
       width: screenWidth,
       decoration: const BoxDecoration(
           color: Appcolor.white,
@@ -32,11 +33,12 @@ class Annualcontainer extends StatelessWidget {
                 style: poppins(Appcolor.black, 12, FontWeight.w400),
               ),
               SizedBox(height: screenHeight * 0.01),
-              // Textformfield(
-              //   textfieldWidth: screenWidth,
-              //   hintText: 'Enter the brand name here',
-              //   hintTextSize: 12,
-              // ),
+              TextformfieldWithoutValidation(
+                controller: brandNameController,
+                textfieldWidth: screenWidth,
+                hintText: 'Enter the brand name here',
+                hintTextSize: 12,
+              ),
               Row(
                 children: [
                   Expanded(child: Dropdown(title: 'annualcontainertext2'.tr)),
@@ -46,7 +48,7 @@ class Annualcontainer extends StatelessWidget {
               ),
               SizedBox(height: screenHeight * 0.01),
               Text(
-                'annualcontainertext1'.tr,
+                'annualcontainertext12'.tr,
                 style: poppins(Appcolor.black, 12, FontWeight.w400),
               ),
               const RadioButton(),
@@ -59,19 +61,21 @@ class Annualcontainer extends StatelessWidget {
                 hintText: 'annualcontainertext7'.tr,
                 hintTextSize: 12,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Checkbox(
-                    value: false,
-                    onChanged: (bool? newValue) {},
-                  ),
-                  Text(
-                    'annualcontainertext8'.tr,
-                    style: poppins(Appcolor.black, 12, FontWeight.w400),
-                  ),
-                ],
-              ),
+              SizedBox(height: screenHeight * 0.02),
+
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.start,
+              //   children: [
+              //     Checkbox(
+              //       value: false,
+              //       onChanged: (bool? newValue) {},
+              //     ),
+              //     Text(
+              //       'annualcontainertext8'.tr,
+              //       style: poppins(Appcolor.black, 12, FontWeight.w400),
+              //     ),
+              //   ],
+              // ),
               const Divider(),
               SizedBox(height: screenHeight * 0.01),
               Center(

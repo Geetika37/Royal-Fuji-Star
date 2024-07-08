@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 
+
+// textformfield with validation
 class Textformfield extends StatelessWidget {
   const Textformfield({
     super.key,
@@ -45,6 +47,10 @@ class Textformfield extends StatelessWidget {
   }
 }
 
+
+// Textformfield Without  Validation
+
+
 class TextformfieldWithoutValidation extends StatelessWidget {
   const TextformfieldWithoutValidation({
     super.key,
@@ -84,6 +90,11 @@ class TextformfieldWithoutValidation extends StatelessWidget {
     );
   }
 }
+
+
+// Textformfield for password
+
+
 
 class TextformfieldPass extends StatefulWidget {
   const TextformfieldPass({
@@ -153,6 +164,10 @@ class _TextformfieldPassState extends State<TextformfieldPass> {
   }
 }
 
+
+// Textformfield With icons
+
+
 class TextformfieldWithIcons extends StatelessWidget {
   const TextformfieldWithIcons({
     super.key,
@@ -192,6 +207,10 @@ class TextformfieldWithIcons extends StatelessWidget {
     );
   }
 }
+
+
+
+// Textformfield With mutliple line
 
 class TextfieldMultipleLine extends StatelessWidget {
   const TextfieldMultipleLine(

@@ -156,7 +156,7 @@ class AppTranslations extends Translations {
               'Keep exploring the app to enjoy a personalized experience',
           'servicetypes1': 'Annual Maintenance',
           'servicetypes2': 'Spare Parts for all Brands',
-          'servicetypes3': 'Others',
+          'servicetypes3': 'Repair',
           'changepassword1': 'Current Password',
           'changepassword2': 'Confirm Password',
           'annualcontainertext1': 'Brand',
@@ -168,6 +168,14 @@ class AppTranslations extends Translations {
           'annualcontainertext7': 'Type here',
           'annualcontainertext8': 'I have read and agree to terms of service',
           'annualcontainertext9': 'Submit',
+          'annualcontainertext10': '(Including Parts)',
+          'annualcontainertext11': '(Excluding Parts)',
+          'annualcontainertext12':'Type',
+
+
+
+
+
           'sparecontainertext1': 'Cabin Categories',
           'sparecontainertext2': 'Item Categories',
           'advisorycontainertext1': 'Name',
@@ -178,10 +186,12 @@ class AppTranslations extends Translations {
           'advisorycontainertext6': 'Description of requirements',
           'advisorycontainertext7': 'Additional Comments or Questions',
           'abouttext1': 'Projects',
-          'abouttext2': 'Exploring the heights of innovation, let’s have a deep look at our cutting-edge elevator projects in the UAE.',
+          'abouttext2':
+              'Exploring the heights of innovation, let’s have a deep look at our cutting-edge elevator projects in the UAE.',
           'abouttext3': 'Watch video',
           'abouttext4': 'Why Royal Fuji Elevators....?',
-          'abouttext5': 'Elevators and escalators significantly enhance our everyday living, transforming mere transportation into a symbol of elegance.At Royal Fuji Elevator Company in the UAE, we pride ourselves on not just offering premium elevator solutions but also on our commitment to exceptional elevator maintenance and services.Our aim is to ensure the safety of our passengers and the durability of the elevators. From meticulous installations to comprehensive Annual Maintenance Contracts, our services are designed to prioritize the reliability and extended lifespan of your elevators.Discover how our Elevator Services can contribute to the enduring performance of your elevators.',
+          'abouttext5':
+              'Elevators and escalators significantly enhance our everyday living, transforming mere transportation into a symbol of elegance.At Royal Fuji Elevator Company in the UAE, we pride ourselves on not just offering premium elevator solutions but also on our commitment to exceptional elevator maintenance and services.Our aim is to ensure the safety of our passengers and the durability of the elevators. From meticulous installations to comprehensive Annual Maintenance Contracts, our services are designed to prioritize the reliability and extended lifespan of your elevators.Discover how our Elevator Services can contribute to the enduring performance of your elevators.',
           'abouttext6': 'Completed Projects',
           'abouttext7': 'Years of Excellence',
           'abouttext8': 'Employees',
@@ -191,9 +201,7 @@ class AppTranslations extends Translations {
           'languagearabic': 'Arabic',
           'verifyotp1': 'Verify OTP',
           'verifyotp2': 'Enter OTP',
-          'resetpass':'Reset Password',
-
-
+          'resetpass': 'Reset Password',
         },
         'ar_AE': {
           'started':
@@ -345,7 +353,7 @@ class AppTranslations extends Translations {
               'استمر في استكشاف التطبيق للاستمتاع بتجربة مخصصة',
           'servicetypes1': 'الصيانة السنوية',
           'servicetypes2': 'قطع غيار لجميع الماركات',
-          'servicetypes3': 'آحرون',
+          'servicetypes3': 'بصلح',
           'changepassword1': 'كلمة السر الحالية',
           'changepassword2': 'تأكيد كلمة المرور',
           'annualcontainertext1': 'ماركة',
@@ -357,6 +365,13 @@ class AppTranslations extends Translations {
           'annualcontainertext7': 'أكتب هنا',
           'annualcontainertext8': 'لقد قرأت ووافقت على شروط الخدمة',
           'annualcontainertext9': 'يُقدِّم',
+          'annualcontainertext10': '(بما في ذلك الأجزاء)',
+          'annualcontainertext11': '(باستثناء الأجزاء)',
+          'annualcontainertext12':'يكتب',
+          
+
+
+
           'sparecontainertext1': 'فئات المقصورة',
           'sparecontainertext2': 'فئات العناصر',
           'advisorycontainertext1': 'اسم',
@@ -367,10 +382,12 @@ class AppTranslations extends Translations {
           'advisorycontainertext6': 'وصف المتطلبات',
           'advisorycontainertext7': 'تعليقات أو أسئلة إضافية',
           'abouttext1': 'المشاريع',
-          'abouttext2': 'لاستكشاف قمم الابتكار، دعونا نلقي نظرة عميقة على مشاريع المصاعد المتطورة لدينا في دولة الإمارات العربية المتحدة.',
+          'abouttext2':
+              'لاستكشاف قمم الابتكار، دعونا نلقي نظرة عميقة على مشاريع المصاعد المتطورة لدينا في دولة الإمارات العربية المتحدة.',
           'abouttext3': 'شاهد الفيديو',
           'abouttext4': 'لماذا مصاعد رويال فوجي....؟',
-          'abouttext5': 'تعمل المصاعد والسلالم المتحركة على تحسين حياتنا اليومية بشكل كبير، وتحول مجرد وسائل النقل إلى رمز للأناقة. في شركة رويال فوجي للمصاعد في الإمارات العربية المتحدة، نفخر ليس فقط بتقديم حلول المصاعد المتميزة ولكن أيضًا بالتزامنا بصيانة وخدمات المصاعد الاستثنائية. الهدف هو ضمان سلامة الركاب ومتانة المصاعد. بدءًا من التركيبات الدقيقة وحتى عقود الصيانة السنوية الشاملة، تم تصميم خدماتنا لإعطاء الأولوية للموثوقية والعمر الطويل لمصاعدك. اكتشف كيف يمكن أن تساهم خدمات المصاعد لدينا في الأداء الدائم لمصاعدك.',
+          'abouttext5':
+              'تعمل المصاعد والسلالم المتحركة على تحسين حياتنا اليومية بشكل كبير، وتحول مجرد وسائل النقل إلى رمز للأناقة. في شركة رويال فوجي للمصاعد في الإمارات العربية المتحدة، نفخر ليس فقط بتقديم حلول المصاعد المتميزة ولكن أيضًا بالتزامنا بصيانة وخدمات المصاعد الاستثنائية. الهدف هو ضمان سلامة الركاب ومتانة المصاعد. بدءًا من التركيبات الدقيقة وحتى عقود الصيانة السنوية الشاملة، تم تصميم خدماتنا لإعطاء الأولوية للموثوقية والعمر الطويل لمصاعدك. اكتشف كيف يمكن أن تساهم خدمات المصاعد لدينا في الأداء الدائم لمصاعدك.',
           'abouttext6': 'المشاريع المنجزة',
           'abouttext7': 'سنوات من التميز',
           'abouttext8': 'موظفين',
@@ -380,7 +397,7 @@ class AppTranslations extends Translations {
           'languagearabic': 'عربي',
           'verifyotp1': 'التحقق من كلمة المرور',
           'verifyotp2': 'أدخل كلمة المرور',
-          'resetpass':'إعادة تعيين كلمة المرور',
+          'resetpass': 'إعادة تعيين كلمة المرور',
         },
       };
 }

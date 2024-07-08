@@ -117,7 +117,7 @@
     "profileeditbottomsheet3":"Keep exploring the app to enjoy a personalized experience",
     "servicetypes1":"Annual Maintenance",
     "servicetypes2":"Spare Parts for all Brands",
-    "servicetypes3":"Others",
+    "servicetypes3":"Repair",
     "changepassword1":"Current Password",
     "changepassword2":"Confirm Password",
     "annualcontainertext1":"Brand",
@@ -129,6 +129,11 @@
     "annualcontainertext7":"Type here",
     "annualcontainertext8":"I have read and agree to terms of service",
     "annualcontainertext9":"Submit",
+    "annualcontainertext10":"(Including Parts)",
+    "annualcontainertext11":"(Excluding Parts)",
+    "annualcontainertext12":"Type",
+
+
     "sparecontainertext1":"Cabin Categories",
     "sparecontainertext2":"Item Categories",
     "advisorycontainertext1":"Name",

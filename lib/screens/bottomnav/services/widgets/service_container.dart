@@ -11,7 +11,6 @@ class ServiceContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
     return Container(
       height: screenHeight * 0.58,
       width: screenWidth,
@@ -33,17 +32,17 @@ class ServiceContainer extends StatelessWidget {
             ),
             SizedBox(height: screenHeight * 0.04),
             ServiceTypes(
+              onTap: () {},
+              text: 'servicetypes3'.tr,
+              image: 'assets/svg/service2.svg',
+            ),
+            SizedBox(height: screenHeight * 0.04),
+            ServiceTypes(
               onTap: () {
                 Get.to(const SpareParts());
               },
               image: 'assets/svg/service2.svg',
               text: 'servicetypes2'.tr,
-            ),
-            SizedBox(height: screenHeight * 0.04),
-            ServiceTypes(
-              onTap: () {},
-              image: 'assets/svg/service3.svg',
-              text: 'servicetypes3'.tr,
             ),
           ],
         ),

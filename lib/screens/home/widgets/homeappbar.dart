@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
-import 'package:royal_fuji_star/screens/notification/views/notification.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 
 class HomeAppbar extends StatelessWidget {
@@ -34,17 +31,17 @@ class HomeAppbar extends StatelessWidget {
               style: poppins(Appcolor.black, 18, FontWeight.w600))
         ],
       ),
-      actions: [
-        InkWell(
-          onTap: () {
-            Get.to(const NotificationPage());
-          },
-          child: SvgPicture.asset('assets/svg/notification.svg'),
-        ),
-        SizedBox(
-          width: screenWidth * 0.02,
-        )
-      ],
+      // actions: [
+      //   InkWell(
+      //     onTap: () {
+      //       Get.to(const NotificationPage());
+      //     },
+      //     child: SvgPicture.asset('assets/svg/notification.svg'),
+      //   ),
+      //   SizedBox(
+      //     width: screenWidth * 0.02,
+      //   )
+      // ],
     );
   }
 }
