@@ -63,7 +63,7 @@ class _HomepageState extends State<Homepage> {
               Center(
                 child: Text(
                   'hometitle5'.tr,
-                  style: poppins(Appcolor.white, 12, FontWeight.w600),
+                  style: poppins(Appcolor.buttonColor, 12, FontWeight.w600),
                 ),
               ),
               ProductsContainer()
@@ -74,4 +74,3 @@ class _HomepageState extends State<Homepage> {
     );
   }
 }
-
