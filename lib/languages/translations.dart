@@ -182,6 +182,8 @@ class AppTranslations extends Translations {
 
           'sparecontainertext1': 'Cabin Categories',
           'sparecontainertext2': 'Item Categories',
+          'sparecontainertext3':'Press if you cant find the required item',
+
           'advisorycontainertext1': 'Name',
           'advisorycontainertext2': 'Enter the brand name here',
           'advisorycontainertext3': 'Phone Number',
@@ -383,6 +385,8 @@ class AppTranslations extends Translations {
 
           'sparecontainertext1': 'فئات المقصورة',
           'sparecontainertext2': 'فئات العناصر',
+          'sparecontainertext3':'اضغط إذا لم تتمكن من العثور على العنصر المطلوب',
+
           'advisorycontainertext1': 'اسم',
           'advisorycontainertext2': 'أدخل اسم العلامة التجارية هنا',
           'advisorycontainertext3': 'رقم التليفون',
