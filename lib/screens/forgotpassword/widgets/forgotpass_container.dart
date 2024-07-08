@@ -5,6 +5,7 @@ import 'package:royal_fuji_star/screens/forgotpassword/controller/forgotpass_con
 import 'package:royal_fuji_star/utils/appcolor.dart';
 import 'package:royal_fuji_star/utils/buttons.dart';
 import 'package:royal_fuji_star/utils/textformfield.dart';
+import 'package:royal_fuji_star/utils/validators.dart';
 
 class ForgotpassContainer extends StatefulWidget {
   const ForgotpassContainer({super.key});
@@ -36,14 +37,7 @@ class _ForgotpassContainerState extends State<ForgotpassContainer> {
             children: [
               SizedBox(height: screenHeight * 0.1),
               Textformfield(
-                validator: (value) {
-                  if (value!.isEmpty ||
-                      !RegExp(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{3,}$')
-                          .hasMatch(value)) {
-                    return 'Enter Correct Email ID';
-                  }
-                  return null;
-                },
+                validator: Validators.validateEmail,
                 textfieldWidth: screenWidth * 0.8,
                 hintText: 'Email',
                 hintTextSize: 15,

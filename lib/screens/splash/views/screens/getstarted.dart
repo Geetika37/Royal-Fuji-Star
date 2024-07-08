@@ -19,22 +19,26 @@ class GetStarted extends StatelessWidget {
             Stack(
               children: [
                 SizedBox(
+                  height: screenHeight * 0.8,
                   width: screenWidth,
                   child: Image.asset(
-                    'assets/png/getstarted.png',
-                    height: screenHeight * 0.8,
+                    'assets/png/getstartedbg1.png',
                     fit: BoxFit.cover,
                   ),
                 ),
                 Positioned(
                   child: Padding(
-                    padding: const EdgeInsets.all(60.0),
+                    padding:
+                        const EdgeInsets.only(left: 60, right: 60, top: 20),
                     child: Column(
                       children: [
-                        Image.asset(
-                          'assets/png/logo.png',
-                          height: screenHeight * 0.2,
+                        SizedBox(
+                          child: Image.asset(
+                            'assets/png/royallogo.png',
+                            height: screenHeight * 0.18,
+                          ),
                         ),
+                        SizedBox(height: screenHeight * 0.02),
                         Text(
                           'started'.tr,
                           textAlign: TextAlign.center,
@@ -63,7 +67,7 @@ class GetStarted extends StatelessWidget {
               circularRadius: 10,
               text: 'get_button'.tr,
               onTap: () {
-                Get.to( LanguageSelect());
+                Get.to(LanguageSelect());
               },
             ),
           ],

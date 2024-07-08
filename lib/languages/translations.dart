@@ -127,7 +127,7 @@ class AppTranslations extends Translations {
               '1. How fast can i expect delivery of my desired elevator?',
           'faqtitle3': '2. Tell me more about the installation process.',
           'faqtitle4':
-              '3. What makes Royal Fuji’s elevator repair service xceptional?',
+              '3. What makes Royal Fuji’s elevator repair service Exceptional?',
           'faqtitle5': '4. Can you elaborate on elevator maintenance services?',
           'faqtitle6':
               '5. Why are spare parts crucial for elevator maintenance?',
