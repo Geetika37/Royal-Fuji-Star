@@ -17,12 +17,11 @@ class ProductPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final CategoryProductController categoryProductController =
         Get.put(CategoryProductController());
-
     final OneProductController oneProductController =
         Get.put(OneProductController());
 
     final categoryProduct = categoryProductController.product;
-    print('categoryProduct ))) $categoryProduct');
+    // print('categoryProduct ))) $categoryProduct');
 
     return SafeArea(
       child: Scaffold(
@@ -41,7 +40,7 @@ class ProductPage extends StatelessWidget {
             itemCount: categoryProduct.length,
             itemBuilder: (context, index) {
               final categoryProd = categoryProduct[index];
-              print('categoryProd%%%%----$categoryProd');
+              // print('categoryProd%%%%----$categoryProd');
               final imageUrl = categoryProd['mainImage'] != null &&
                       categoryProd['mainImage'].isNotEmpty &&
                       categoryProd['mainImage']['url'] != null
@@ -51,11 +50,12 @@ class ProductPage extends StatelessWidget {
                 padding: const EdgeInsets.all(18.0),
                 child: InkWell(
                   onTap: () {
-                    oneProductController.oneProduct(categoryProd['id']);
-                    Get.to(ProductDetail(
-                      productDetail: categoryProd,
-                      productCategoryTitle: productCategoryTitle,
-                    ));
+                    print('category id-->${categoryProd['id']}');
+                    oneProductController.fetchProduct(categoryProd['id']);
+                    // oneProductController.fetchProduct();
+
+                    Get.to(const ProductDetail());
+                    // Get.to(const ProductView());
                   },
                   child: Container(
                     decoration: const BoxDecoration(
