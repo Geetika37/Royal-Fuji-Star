@@ -17,7 +17,7 @@ class AppTranslations extends Translations {
           'gallery': 'Gallery',
           'change_preference':
               'Your language preference can be changed at any time in settings',
-          'join': 'Join us',
+          'join': 'Join us!',
           'explore_innovations': 'Explore our innovations',
           'sign_up': 'Sign Up',
           'login': 'Login',
@@ -216,7 +216,7 @@ class AppTranslations extends Translations {
           'gallery': 'صالة عرض',
           'change_preference':
               'يمكن تغيير تفضيل اللغة الخاص بك في أي وقت في الإعدادات',
-          'join': 'انضم إلينا',
+          'join': '!انضم إلينا',
           'explore_innovations': 'اكتشف ابتكاراتنا',
           'sign_up': 'اشتراك',
           'login': 'تسجيل الدخول',

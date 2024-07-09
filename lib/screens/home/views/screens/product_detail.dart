@@ -14,7 +14,7 @@ class ProductDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('productdetails@@@@----$productDetail');
+    // print('productdetails@@@@----$productDetail');
     return SafeArea(
       child: Scaffold(
         body: ListView(
@@ -44,6 +44,20 @@ class ProductDetail extends StatelessWidget {
               ),
             ),
             SizedBox(height: screenHeight * 0.02),
+
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
+              child: CustomTitle(
+                textHeading: 'gallery'.tr,
+                fontSize: 12,
+                color: Appcolor.black,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+            // GalleryContainer(
+            //   gallery: productDetail['gallery'],
+            // ),
+            SizedBox(height: screenHeight * 0.02),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
               child: CustomTitle(
@@ -54,9 +68,7 @@ class ProductDetail extends StatelessWidget {
               ),
             ),
             SizedBox(height: screenHeight * 0.01),
-            // GalleryContainer(
-            //   gallery: productDetail['gallery'],
-            // ),
+
             Padding(
               padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
               child: const CustomTitle(
@@ -67,7 +79,7 @@ class ProductDetail extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: screenHeight * 0.19,
+              height: screenHeight * 0.20,
               child: const ComponentsContainer(),
             ),
 

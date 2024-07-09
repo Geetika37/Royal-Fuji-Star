@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
 import 'package:royal_fuji_star/screens/home/controller/categoryprod_controller.dart';
+import 'package:royal_fuji_star/screens/home/controller/oneproduct_controller.dart';
 import 'package:royal_fuji_star/screens/home/views/screens/product_detail.dart';
 import 'package:royal_fuji_star/screens/widgets/customappbar.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
@@ -16,6 +17,9 @@ class ProductPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final CategoryProductController categoryProductController =
         Get.put(CategoryProductController());
+
+    final OneProductController oneProductController =
+        Get.put(OneProductController());
 
     final categoryProduct = categoryProductController.product;
     print('categoryProduct ))) $categoryProduct');
@@ -47,6 +51,7 @@ class ProductPage extends StatelessWidget {
                 padding: const EdgeInsets.all(18.0),
                 child: InkWell(
                   onTap: () {
+                    oneProductController.oneProduct(categoryProd['id']);
                     Get.to(ProductDetail(
                       productDetail: categoryProd,
                       productCategoryTitle: productCategoryTitle,

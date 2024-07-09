@@ -5,17 +5,16 @@ import 'package:royal_fuji_star/services/api_baseurl.dart';
 import 'package:royal_fuji_star/services/token.dart';
 import 'package:http/http.dart' as http;
 
-class CategoryProductController extends GetxController {
+class OneProductController extends GetxController {
   var isLoading = false.obs;
   var product = <dynamic>[].obs;
   var errorMessage = ''.obs;
 
-  Future<void> categoryProduct(int id) async {
+  Future<void> oneProduct(int id) async {
     isLoading(true);
     try {
       final token = await TokenKey.getValue('token');
-      final url = Uri.parse(
-          '${APIConstants.baseUrl}/api/findCategoryProducts/$id?&title=desc');
+      final url = Uri.parse('${APIConstants.baseUrl}/api/products/$id');
       final response = await http.get(
         url,
         headers: {
@@ -26,23 +25,18 @@ class CategoryProductController extends GetxController {
       );
 
       final jsonResponse = jsonDecode(response.body);
-      // print('jsonResponse is ******* :$jsonResponse');
+      print('jsonresponse====>$jsonResponse');
 
       if (response.statusCode == 200) {
-        if (jsonResponse['data'] != null) {
-          product.value = jsonResponse['data'];
-          // print('product ###----$product');
-          // print(response.statusCode);
-        } else {
-          errorMessage.value = 'Error: No data in response';
-        }
+        print('jsonresponse====>$jsonResponse');
       } else {
         print(response.statusCode);
 
         errorMessage.value = 'Error: ${jsonResponse['error']['message']}';
+        print('errorrrr----$errorMessage');
       }
     } catch (e) {
-      print(e);
+      print('Error---${e.toString()}');
     } finally {
       isLoading(false);
     }
