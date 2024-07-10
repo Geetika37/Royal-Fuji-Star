@@ -57,6 +57,10 @@ class _CategoryItemcontainerState extends State<CategoryItemcontainer> {
               child: Column(
                 children: [
                   Container(
+                    constraints: BoxConstraints(
+                      minHeight: ScreenSize.getHeight(context) * 0.07,
+                      minWidth: ScreenSize.getWidth(context) * 0.14,
+                    ),
                     height: screenHeight * 0.06,
                     decoration: BoxDecoration(
                         border: Border.all(

@@ -61,7 +61,7 @@ class _VideoPlayerState extends State<VideoPlayer> {
       },
       child: Center(
         child: SizedBox(
-          width: MediaQuery.of(context).size.width * 0.6,
+          width: MediaQuery.of(context).size.width,
           child: YoutubePlayer(
             controller: youtubePlayerController,
             showVideoProgressIndicator: true,
