@@ -23,7 +23,7 @@ class ConsultationContainer extends StatelessWidget {
       decoration: const BoxDecoration(
           color: Appcolor.white,
           borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(45), topRight: Radius.circular(45))),
+              topLeft: Radius.circular(40), topRight: Radius.circular(40))),
       child: Padding(
         padding: const EdgeInsets.all(15.0),
         child: SingleChildScrollView(
@@ -31,7 +31,7 @@ class ConsultationContainer extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // name
-              SizedBox(height: screenHeight * 0.01),
+              SizedBox(height: screenHeight * 0.02),
               Text('advisorycontainertext1'.tr,
                   style: poppins(Appcolor.black, 12, FontWeight.w400)),
               SizedBox(height: screenHeight * 0.01),
@@ -49,7 +49,7 @@ class ConsultationContainer extends StatelessWidget {
               SizedBox(height: screenHeight * 0.01),
               TextformfieldWithoutValidation(
                 textfieldWidth: screenWidth,
-                hintText: '@',
+                hintText: 'Enter Email',
                 hintTextSize: 12,
                 controller: emailController,
               ),

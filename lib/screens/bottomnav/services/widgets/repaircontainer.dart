@@ -14,14 +14,16 @@ class RepairContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     TextEditingController brandNameController = TextEditingController();
+    RxString typeRepairController = 'Select'.obs;
+
     return Container(
       height: ScreenSize.getHeight(context) * 0.65,
       width: screenWidth,
       decoration: const BoxDecoration(
         color: Appcolor.white,
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(45),
-          topRight: Radius.circular(45),
+          topLeft: Radius.circular(40),
+          topRight: Radius.circular(40),
         ),
       ),
       child: Padding(
@@ -30,7 +32,7 @@ class RepairContainer extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: screenHeight * 0.01),
+              SizedBox(height: screenHeight * 0.02),
               Text(
                 'annualcontainertext1'.tr,
                 style: poppins(Appcolor.black, 12, FontWeight.w400),
@@ -43,7 +45,12 @@ class RepairContainer extends StatelessWidget {
                 hintTextSize: 12,
               ),
               SizedBox(height: screenHeight * 0.01),
-              DropdownRepair(title: 'repairtext1'.tr),
+              DropdownRepair(
+                title: 'repairtext1'.tr,
+                onValueChanged: (String value) {
+                  typeRepairController.value = value;
+                },
+              ),
               SizedBox(height: screenHeight * 0.01),
 
               //Description

@@ -47,6 +47,7 @@ class _HomepageState extends State<Homepage> {
           padding: const EdgeInsets.only(right: 15, left: 15),
           child: ListView(
             children: [
+              SizedBox(height: ScreenSize.getHeight(context) * 0.01),
               Text('hometitle1'.tr,
                   style: poppins(Appcolor.black, 9, FontWeight.w600)),
               SizedBox(height: screenHeight * 0.007),
@@ -63,7 +64,7 @@ class _HomepageState extends State<Homepage> {
               Center(
                 child: Text(
                   'hometitle5'.tr,
-                  style: poppins(Appcolor.buttonColor, 13, FontWeight.w600),
+                  style: poppins(Appcolor.buttonColor, 14, FontWeight.w600),
                 ),
               ),
               SizedBox(height: screenHeight * 0.02),

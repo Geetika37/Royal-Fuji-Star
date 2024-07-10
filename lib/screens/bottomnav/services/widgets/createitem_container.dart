@@ -18,8 +18,8 @@ class CreateItemContainer extends StatelessWidget {
       decoration: const BoxDecoration(
         color: Appcolor.white,
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(45),
-          topRight: Radius.circular(45),
+          topLeft: Radius.circular(40),
+          topRight: Radius.circular(40),
         ),
       ),
       child: Padding(

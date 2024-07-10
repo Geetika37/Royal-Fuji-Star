@@ -14,20 +14,23 @@ class Annualcontainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     TextEditingController brandNameController = TextEditingController();
+    RxString capacityController = 'Select'.obs;
+    RxString numFloorController = 'Select'.obs;
+
     return Container(
       height: ScreenSize.getHeight(context) * 0.65,
       width: screenWidth,
       decoration: const BoxDecoration(
           color: Appcolor.white,
           borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(45), topRight: Radius.circular(45))),
+              topLeft: Radius.circular(40), topRight: Radius.circular(40))),
       child: Padding(
         padding: const EdgeInsets.all(15.0),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: screenHeight * 0.01),
+              SizedBox(height: screenHeight * 0.02),
               Text(
                 'annualcontainertext1'.tr,
                 style: poppins(Appcolor.black, 12, FontWeight.w400),
@@ -41,9 +44,23 @@ class Annualcontainer extends StatelessWidget {
               ),
               Row(
                 children: [
-                  Expanded(child: Dropdown(title: 'annualcontainertext2'.tr)),
+                  Expanded(
+                    child: DropdownCapacity(
+                      title: 'annualcontainertext2'.tr,
+                      onValueChanged: (value) {
+                        capacityController.value = value;
+                      },
+                    ),
+                  ),
                   SizedBox(width: screenWidth * 0.02),
-                  Expanded(child: Dropdown(title: 'annualcontainertext3'.tr)),
+                  Expanded(
+                    child: DropdownNumFloor(
+                      title: 'annualcontainertext3'.tr,
+                      onValueChanged: (String value) {
+                        numFloorController.value = value;
+                      },
+                    ),
+                  ),
                 ],
               ),
               SizedBox(height: screenHeight * 0.01),

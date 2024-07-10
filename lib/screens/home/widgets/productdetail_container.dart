@@ -18,7 +18,7 @@ class ProductDetailContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final image = productDetails!.data.mainImage?.url ?? '';
+    final image = productDetails!.data.mainImage.url;
     final imageUrl = '${APIConstants.baseUrl}$image';
     // print('image url----------!!=>$imageUrl');
 
@@ -57,7 +57,7 @@ class ProductDetailContainer extends StatelessWidget {
                 InkWell(
                   onTap: () {
                     if (productDetails!.data.brochure != null) {
-                      shareFile(productDetails!.data.brochure!.url);
+                      shareFile(productDetails!.data.brochure.url);
                     }
                   },
                   child: Container(

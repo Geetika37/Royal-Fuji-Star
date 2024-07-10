@@ -30,6 +30,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
+        textSelectionTheme: const TextSelectionThemeData(
+          cursorColor: Appcolor.buttonColor,
+        ),
         fontFamily: 'Poppins',
         scaffoldBackgroundColor: Appcolor.bgColor,
         appBarTheme: const AppBarTheme(
@@ -38,6 +41,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Appcolor.buttonColor),
         useMaterial3: true,
       ),
+
       translations: AppTranslations(), // Your translation class
       locale: savedLanguage.toString() == 'ar'
           ? const Locale('ar', 'AE')
