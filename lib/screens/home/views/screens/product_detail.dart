@@ -99,7 +99,7 @@ class ProductDetail extends StatelessWidget {
                   productDetails: product,
                 ),
                 SizedBox(
-                  height: screenHeight * 0.1,
+                  height: screenHeight * 0.05,
                 ),
                 Center(
                   child: BlueButton(
