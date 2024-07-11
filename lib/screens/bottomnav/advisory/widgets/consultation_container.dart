@@ -84,23 +84,22 @@ class ConsultationContainer extends StatelessWidget {
               Text('advisorycontainertext6'.tr,
                   style: poppins(Appcolor.black, 12, FontWeight.w400)),
               SizedBox(height: screenHeight * 0.01),
-              TextfieldMultipleLine(
-                hintText: 'annualcontainertext7'.tr,
-                hintTextSize: 12,
-              ),
+              // TextfieldMultipleLine(
+              //   hintText: 'annualcontainertext7'.tr,
+              //   hintTextSize: 12,
+              // ),
 
               //Additional Comments or Questions
               SizedBox(height: screenHeight * 0.01),
               Text('advisorycontainertext7'.tr,
                   style: poppins(Appcolor.black, 12, FontWeight.w400)),
               SizedBox(height: screenHeight * 0.01),
-              TextfieldMultipleLine(
-                hintText: 'annualcontainertext7'.tr,
-                hintTextSize: 12,
-              ),
+              // TextfieldMultipleLine(
+              //   hintText: 'annualcontainertext7'.tr,
+              //   hintTextSize: 12,
+              // ),
 
               SizedBox(height: screenHeight * 0.01),
-              const Divider(),
               SizedBox(height: screenHeight * 0.01),
 
               Center(

@@ -43,10 +43,10 @@ class CreateItemContainer extends StatelessWidget {
               Text('advisorycontainertext6'.tr,
                   style: poppins(Appcolor.black, 12, FontWeight.w400)),
               SizedBox(height: screenHeight * 0.01),
-              TextfieldMultipleLine(
-                hintText: 'annualcontainertext7'.tr,
-                hintTextSize: 12,
-              ),
+              // TextfieldMultipleLine(
+              //   hintText: 'annualcontainertext7'.tr,
+              //   hintTextSize: 12,
+              // ),
 
               SizedBox(height: screenHeight * 0.1),
               Center(

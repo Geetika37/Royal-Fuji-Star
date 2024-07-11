@@ -63,40 +63,38 @@ class UploadPicBoxRectangleState extends State<UploadPicBoxRectangle> {
         color: const Color.fromARGB(255, 227, 228, 229),
         borderRadius: BorderRadius.circular(0),
       ),
-      child: Center(
-        child: isImageSelected()
-            ? Wrap(
-                spacing: 10,
-                runSpacing: 10,
-                children: _images.map((image) {
-                  return ClipRRect(
-                    borderRadius: BorderRadius.circular(10),
-                    child: Image.file(
-                      image,
-                      width: widget.deviceWidth * 0.3,
-                      height: widget.deviceWidth * 0.3,
-                      fit: BoxFit.cover,
-                    ),
-                  );
-                }).toList(),
-              )
-            : GestureDetector(
-                onTap: _pickAndCropImage,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SvgPicture.asset('assets/svg/upload.svg'),
-                    SizedBox(
-                      height: screenHeight * 0.01,
-                    ),
-                    Text(
-                      'Drop items here',
-                      style: poppins(Appcolor.black, 10, FontWeight.w300),
-                    )
-                  ],
-                ),
+      child: isImageSelected()
+          ? Wrap(
+              spacing: 10,
+              runSpacing: 10,
+              children: _images.map((image) {
+                return ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: Image.file(
+                    image,
+                    width: widget.deviceWidth * 0.1,
+                    height: widget.deviceWidth * 0.1,
+                    fit: BoxFit.cover,
+                  ),
+                );
+              }).toList(),
+            )
+          : GestureDetector(
+              onTap: _pickAndCropImage,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SvgPicture.asset('assets/svg/upload.svg'),
+                  SizedBox(
+                    height: screenHeight * 0.01,
+                  ),
+                  Text(
+                    'Drop items here',
+                    style: poppins(Appcolor.black, 10, FontWeight.w300),
+                  )
+                ],
               ),
-      ),
+            ),
     );
   }
 }

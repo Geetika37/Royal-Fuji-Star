@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 
-
 // textformfield with validation
 class Textformfield extends StatelessWidget {
   const Textformfield({
@@ -47,9 +46,7 @@ class Textformfield extends StatelessWidget {
   }
 }
 
-
 // Textformfield Without  Validation
-
 
 class TextformfieldWithoutValidation extends StatelessWidget {
   const TextformfieldWithoutValidation({
@@ -91,10 +88,7 @@ class TextformfieldWithoutValidation extends StatelessWidget {
   }
 }
 
-
 // Textformfield for password
-
-
 
 class TextformfieldPass extends StatefulWidget {
   const TextformfieldPass({
@@ -164,9 +158,7 @@ class _TextformfieldPassState extends State<TextformfieldPass> {
   }
 }
 
-
 // Textformfield With icons
-
 
 class TextformfieldWithIcons extends StatelessWidget {
   const TextformfieldWithIcons({
@@ -208,18 +200,18 @@ class TextformfieldWithIcons extends StatelessWidget {
   }
 }
 
-
-
 // Textformfield With mutliple line
 
 class TextfieldMultipleLine extends StatelessWidget {
   const TextfieldMultipleLine(
-      {super.key, required this.hintText, required this.hintTextSize});
+      {super.key, required this.hintText, required this.hintTextSize, required this.controller});
   final String hintText;
   final double hintTextSize;
+  final TextEditingController controller;
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: controller,
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: poppins(const Color.fromARGB(255, 149, 147, 147),
