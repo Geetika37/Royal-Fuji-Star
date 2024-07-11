@@ -33,10 +33,10 @@ class LiftPartsContainer extends StatelessWidget {
             final spareItem = spares[index];
             // print('---spare item )))$spareItem');
 
-            final imageUrl = spareItem['gallery'] != null &&
-                    spareItem['gallery'].isNotEmpty &&
-                    spareItem['gallery'][0]['url'] != null
-                ? 'https://royalfuji.jissanto.com${spareItem['gallery'][0]['url']}'
+            final imageUrl = spareItem['image'] != null &&
+                    spareItem['image'].isNotEmpty &&
+                    spareItem['image']['url'] != null
+                ? 'https://royalfuji.jissanto.com${spareItem['image']['url']}'
                 : null;
             // print('image url--->$imageUrl');
             return Padding(

@@ -15,7 +15,7 @@ class SubcategorySparesController extends GetxController {
     final token = await TokenKey.getValue('token');
     try {
       final url = Uri.parse(
-          '${APIConstants.baseUrl}/api/findSubCategorySpares/$id?title=desc');
+          '${APIConstants.baseUrl}/api/spares-sub-category-spares/$id?title=desc');
       final response = await http.get(
         url,
         headers: {
