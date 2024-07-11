@@ -46,11 +46,6 @@ class _ComponentsContainerState extends State<ComponentsContainer> {
         final components = widget.productDetails!.data.components;
 
         return ListView.builder(
-          // padding: const EdgeInsets.only(
-          //   // right: 10,
-          //   // left: 10,
-          //   bottom: 10,
-          // ),
           physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
           itemCount: components.length,
@@ -83,82 +78,86 @@ class _ComponentsContainerState extends State<ComponentsContainer> {
                     itemBuilder: (context, innerIndex) {
                       final componentList = componentsItem
                           .componentCollection.componentList[innerIndex];
-
                       final gallery =
                           componentList.image.formats!.thumbnail.url;
-
                       final imageUrl = '${APIConstants.baseUrl}$gallery';
 
                       return InkWell(
-                        onTap: () {},
                         child: Obx(
-                          () => Container(
-                            margin: const EdgeInsets.only(
-                              // horizontal: screenWidth * 0.01,
-                              left: 20,
-                            ),
-                            width: screenWidth * 0.4,
-                            decoration: BoxDecoration(
-                              color: const Color.fromARGB(255, 197, 229, 247),
-                              border: selectedIndices[componentName]?.value ==
-                                      innerIndex
-                                  ? Border.all(
-                                      width: 2.5,
-                                      color: Appcolor.buttonColor,
-                                    )
-                                  : Border.all(
-                                      width: 1,
-                                      color: Appcolor.buttonColor,
-                                    ),
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Column(
-                                children: [
-                                  InkWell(
-                                    onTap: () {
-                                      Get.to(ComponentImage(
-                                        imageUrl: imageUrl,
-                                        name: componentList.name,
-                                        description: componentList.description,
-                                      ));
-                                    },
-                                    child: SizedBox(
-                                      height:
-                                          ScreenSize.getHeight(context) * 0.1,
-                                      width: ScreenSize.getWidth(context) * 0.3,
-                                      child: Image.network(
-                                        imageUrl,
-                                        fit: BoxFit.contain,
+                          () {
+                            final isSelected =
+                                selectedIndices[componentName]?.value ==
+                                    innerIndex;
+                            return Container(
+                              margin: const EdgeInsets.only(
+                                left: 20,
+                              ),
+                              width: screenWidth * 0.4,
+                              decoration: BoxDecoration(
+                                color: const Color.fromARGB(255, 197, 229, 247),
+                                border: isSelected
+                                    ? Border.all(
+                                        width: 2.5,
+                                        color: Appcolor.buttonColor,
+                                      )
+                                    : Border.all(
+                                        width: 1,
+                                        color: Appcolor.buttonColor,
+                                      ),
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Column(
+                                  children: [
+                                    InkWell(
+                                      onTap: () {
+                                        Get.to(ComponentImage(
+                                          imageUrl: imageUrl,
+                                          name: componentList.name,
+                                          description:
+                                              componentList.description,
+                                        ));
+                                      },
+                                      child: SizedBox(
+                                        height:
+                                            ScreenSize.getHeight(context) * 0.1,
+                                        width:
+                                            ScreenSize.getWidth(context) * 0.3,
+                                        child: Image.network(
+                                          imageUrl,
+                                          fit: BoxFit.contain,
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                  SizedBox(height: screenHeight * 0.005),
-                                  Text(
-                                    componentList.name,
-                                    style: poppins(Appcolor.buttonColor, 10,
-                                        FontWeight.w500),
-                                  ),
-                                  SizedBox(height: screenHeight * 0.01),
-                                  BlueButton(
-                                    height: screenHeight * 0.05,
-                                    width: screenWidth * 0.4,
-                                    circularRadius: 10,
-                                    text: 'Select',
-                                    onTap: () {
-                                      selectedIndices[componentName]?.value =
-                                          innerIndex;
-                                      print('selectedIndices $selectedIndices');
-                                    },
-                                    color: Appcolor.buttonColor,
-                                    textColor: Appcolor.white,
-                                    fontSize: 13,
-                                  )
-                                ],
+                                    SizedBox(height: screenHeight * 0.005),
+                                    Text(
+                                      componentList.name,
+                                      style: poppins(Appcolor.buttonColor, 10,
+                                          FontWeight.w500),
+                                    ),
+                                    SizedBox(height: screenHeight * 0.01),
+                                    BlueButton(
+                                      height: screenHeight * 0.05,
+                                      width: screenWidth * 0.4,
+                                      circularRadius: 10,
+                                      text: isSelected ? 'UnSelect' : 'Select',
+                                      onTap: () {
+                                        selectedIndices[componentName]?.value =
+                                            isSelected ? -1 : innerIndex;
+
+                                        print(
+                                            'selected index--->$selectedIndices');
+                                      },
+                                      color: Appcolor.buttonColor,
+                                      textColor: Appcolor.white,
+                                      fontSize: 13,
+                                    ),
+                                  ],
+                                ),
                               ),
-                            ),
-                          ),
+                            );
+                          },
                         ),
                       );
                     },

@@ -40,80 +40,83 @@ class ComponentImage extends StatelessWidget {
 
             return SizedBox(
               width: double.infinity,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Stack(
-                    children: [
-                      GestureDetector(
-                        onTap: () {
-                          showImageZoom(context, imageUrl);
-                        },
-                        child: Image.network(
-                          imageUrl,
-                          fit: BoxFit.contain,
-                          width: ScreenSize.getWidth(context),
-                          height: ScreenSize.getHeight(context) * 0.4,
-                        ),
-                      ),
-                      Positioned(
-                        left: 15,
-                        top: 20,
-                        child: Container(
-                          decoration: const BoxDecoration(
-                            color: Appcolor.buttonColor,
-                            borderRadius: BorderRadius.all(Radius.circular(10)),
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Stack(
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            showImageZoom(context, imageUrl);
+                          },
+                          child: Image.network(
+                            imageUrl,
+                            fit: BoxFit.contain,
+                            width: ScreenSize.getWidth(context),
+                            height: ScreenSize.getHeight(context) * 0.65,
                           ),
-                          child: InkWell(
-                            onTap: () => Get.back(),
-                            child: const Icon(
-                              Icons.arrow_back,
-                              color: Appcolor.white,
+                        ),
+                        Positioned(
+                          left: 15,
+                          top: 20,
+                          child: Container(
+                            decoration: const BoxDecoration(
+                              color: Appcolor.buttonColor,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10)),
+                            ),
+                            child: InkWell(
+                              onTap: () => Get.back(),
+                              child: const Icon(
+                                Icons.arrow_back,
+                                color: Appcolor.white,
+                              ),
                             ),
                           ),
                         ),
+                      ],
+                    ),
+                    Container(
+                      margin: EdgeInsets.symmetric(
+                        horizontal: ScreenSize.getWidth(context) * 0.03,
+                        vertical: ScreenSize.getHeight(context) * 0.02,
                       ),
-                    ],
-                  ),
-                  Container(
-                    margin: EdgeInsets.symmetric(
-                      horizontal: ScreenSize.getWidth(context) * 0.03,
-                      vertical: 10,
-                    ),
-                    decoration: BoxDecoration(
-                      color: Appcolor.buttonColor,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        name,
-                        style: poppins(Appcolor.white, 17, FontWeight.w700),
+                      decoration: BoxDecoration(
+                        color: Appcolor.buttonColor,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          name,
+                          style: poppins(Appcolor.white, 17, FontWeight.w700),
+                        ),
                       ),
                     ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: ScreenSize.getWidth(context) * 0.03),
-                    child: CustomTitle(
-                      textHeading: 'description'.tr,
-                      fontSize: 16,
-                      color: Appcolor.black,
-                      fontWeight: FontWeight.w600,
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: ScreenSize.getWidth(context) * 0.03),
+                      child: CustomTitle(
+                        textHeading: 'description'.tr,
+                        fontSize: 16,
+                        color: Appcolor.black,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
-                  ),
-                  SizedBox(height: screenHeight * 0.01),
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: ScreenSize.getWidth(context) * 0.03),
-                    child: CustomSubTitle(
-                      subTitle: description,
-                      maxLines: 7,
-                      fontSize: 13,
-                      color: Appcolor.blackPrimary,
+                    SizedBox(height: screenHeight * 0.01),
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: ScreenSize.getWidth(context) * 0.03),
+                      child: CustomSubTitle(
+                        subTitle: description,
+                        maxLines: 7,
+                        fontSize: 13,
+                        color: Appcolor.blackPrimary,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             );
           },
@@ -127,14 +130,37 @@ class ComponentImage extends StatelessWidget {
         context: context,
         builder: (BuildContext context) {
           return Dialog(
-              child: SizedBox(
-            width: double.infinity,
-            // height: double.infinity,
-            child: PhotoView(
-              imageProvider: NetworkImage(imageUrl),
-            ),
-          ));
+              backgroundColor: Colors.transparent,
+              child: Stack(
+                children: [
+                  SizedBox(
+                    width: double.infinity,
+                    // height: double.infinity,
+                    child: PhotoView(
+                      imageProvider: NetworkImage(imageUrl),
+                      backgroundDecoration: const BoxDecoration(
+                        color: Colors.transparent,
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    right: 10,
+                    child: Container(
+                      decoration: const BoxDecoration(
+                        color: Appcolor.white,
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                      ),
+                      child: InkWell(
+                        onTap: () => Get.back(),
+                        child: const Icon(
+                          Icons.close,
+                          color: Appcolor.buttonColor,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ));
         });
   }
-
 }

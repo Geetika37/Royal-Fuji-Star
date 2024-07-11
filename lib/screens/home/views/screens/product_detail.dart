@@ -51,7 +51,7 @@ class ProductDetail extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
                   child: CustomTitle(
                     textHeading: 'description'.tr,
-                    fontSize: 12,
+                    fontSize: 14,
                     color: Appcolor.black,
                     fontWeight: FontWeight.w500,
                   ),
@@ -62,7 +62,7 @@ class ProductDetail extends StatelessWidget {
                   child: CustomSubTitle(
                     subTitle: product.data.description,
                     maxLines: 7,
-                    fontSize: 10,
+                    fontSize: 12,
                     color: Appcolor.blackPrimary,
                   ),
                 ),
@@ -74,7 +74,7 @@ class ProductDetail extends StatelessWidget {
                             horizontal: screenWidth * 0.05),
                         child: CustomTitle(
                           textHeading: 'gallery'.tr,
-                          fontSize: 12,
+                          fontSize: 14,
                           color: Appcolor.black,
                           fontWeight: FontWeight.w500,
                         ),
@@ -89,7 +89,7 @@ class ProductDetail extends StatelessWidget {
                             horizontal: screenWidth * 0.05),
                         child: CustomTitle(
                           textHeading: 'components'.tr,
-                          fontSize: 12,
+                          fontSize: 14,
                           color: Appcolor.black,
                           fontWeight: FontWeight.w500,
                         ),
