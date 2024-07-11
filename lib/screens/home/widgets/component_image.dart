@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:photo_view/photo_view.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
 import 'package:royal_fuji_star/screens/home/controller/oneproduct_controller.dart';
@@ -44,11 +45,16 @@ class ComponentImage extends StatelessWidget {
                 children: [
                   Stack(
                     children: [
-                      Image.network(
-                        imageUrl,
-                        fit: BoxFit.fill,
-                        width: ScreenSize.getWidth(context),
-                        height: ScreenSize.getHeight(context) * 0.4,
+                      GestureDetector(
+                        onTap: () {
+                          showImageZoom(context, imageUrl);
+                        },
+                        child: Image.network(
+                          imageUrl,
+                          fit: BoxFit.contain,
+                          width: ScreenSize.getWidth(context),
+                          height: ScreenSize.getHeight(context) * 0.4,
+                        ),
                       ),
                       Positioned(
                         left: 15,
@@ -115,4 +121,20 @@ class ComponentImage extends StatelessWidget {
       ),
     );
   }
+
+  void showImageZoom(BuildContext context, String imageUrl) {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return Dialog(
+              child: SizedBox(
+            width: double.infinity,
+            // height: double.infinity,
+            child: PhotoView(
+              imageProvider: NetworkImage(imageUrl),
+            ),
+          ));
+        });
+  }
+
 }
