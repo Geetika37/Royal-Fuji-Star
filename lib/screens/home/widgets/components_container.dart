@@ -21,6 +21,18 @@ class _ComponentsContainerState extends State<ComponentsContainer> {
   final OneProductController oneProductController =
       Get.put(OneProductController());
 
+  final Map<String, RxInt> selectedIndices = {};
+
+  @override
+  void initState() {
+    super.initState();
+    if (widget.productDetails != null) {
+      for (var component in widget.productDetails!.data.components) {
+        selectedIndices[component.componentCollection.name] = (-1).obs;
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Obx(
@@ -44,6 +56,7 @@ class _ComponentsContainerState extends State<ComponentsContainer> {
           itemCount: components.length,
           itemBuilder: (context, outerIndex) {
             final componentsItem = components[outerIndex];
+            final componentName = componentsItem.componentCollection.name;
 
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -77,9 +90,7 @@ class _ComponentsContainerState extends State<ComponentsContainer> {
                       final imageUrl = '${APIConstants.baseUrl}$gallery';
 
                       return InkWell(
-                        onTap: () {
-                          oneProductController.selectedIndex.value = innerIndex;
-                        },
+                        onTap: () {},
                         child: Obx(
                           () => Container(
                             margin: const EdgeInsets.only(
@@ -89,17 +100,16 @@ class _ComponentsContainerState extends State<ComponentsContainer> {
                             width: screenWidth * 0.4,
                             decoration: BoxDecoration(
                               color: const Color.fromARGB(255, 197, 229, 247),
-                              border:
-                                  oneProductController.selectedIndex.value ==
-                                          innerIndex
-                                      ? Border.all(
-                                          width: 2.5,
-                                          color: Appcolor.buttonColor,
-                                        )
-                                      : Border.all(
-                                          width: 1,
-                                          color: Appcolor.buttonColor,
-                                        ),
+                              border: selectedIndices[componentName]?.value ==
+                                      innerIndex
+                                  ? Border.all(
+                                      width: 2.5,
+                                      color: Appcolor.buttonColor,
+                                    )
+                                  : Border.all(
+                                      width: 1,
+                                      color: Appcolor.buttonColor,
+                                    ),
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: Padding(
@@ -108,7 +118,7 @@ class _ComponentsContainerState extends State<ComponentsContainer> {
                                 children: [
                                   InkWell(
                                     onTap: () {
-                                      Get.to( ComponentImage(
+                                      Get.to(ComponentImage(
                                         imageUrl: imageUrl,
                                         name: componentList.name,
                                         description: componentList.description,
@@ -136,7 +146,11 @@ class _ComponentsContainerState extends State<ComponentsContainer> {
                                     width: screenWidth * 0.4,
                                     circularRadius: 10,
                                     text: 'Select',
-                                    onTap: () {},
+                                    onTap: () {
+                                      selectedIndices[componentName]?.value =
+                                          innerIndex;
+                                      print('selectedIndices $selectedIndices');
+                                    },
                                     color: Appcolor.buttonColor,
                                     textColor: Appcolor.white,
                                     fontSize: 13,
