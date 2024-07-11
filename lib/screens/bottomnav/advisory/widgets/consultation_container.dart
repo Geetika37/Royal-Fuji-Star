@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
@@ -16,6 +18,8 @@ class ConsultationContainer extends StatelessWidget {
     TextEditingController nameController = TextEditingController();
     TextEditingController emailController = TextEditingController();
     TextEditingController phoneController = TextEditingController();
+    List<File> selectedImages = [];
+    
 
     return Container(
       height: screenHeight * 0.58,
@@ -76,7 +80,11 @@ class ConsultationContainer extends StatelessWidget {
                   style: poppins(Appcolor.black, 12, FontWeight.w400)),
               SizedBox(height: screenHeight * 0.01),
               UploadPicBoxRectangle(
-                  deviceWidth: screenWidth, onImageSelected: () {}),
+                deviceWidth: screenWidth,
+                onImageSelected: (images) {
+                  selectedImages = images;
+                },
+              ),
               SizedBox(height: screenHeight * 0.01),
 
               //Description of requirements

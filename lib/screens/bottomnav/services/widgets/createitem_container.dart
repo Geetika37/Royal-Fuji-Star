@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
@@ -5,13 +7,14 @@ import 'package:royal_fuji_star/constants/textstyle.dart';
 import 'package:royal_fuji_star/screens/bottomnav/advisory/widgets/uploadpic.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 import 'package:royal_fuji_star/utils/buttons.dart';
-import 'package:royal_fuji_star/utils/textformfield.dart';
 
 class CreateItemContainer extends StatelessWidget {
   const CreateItemContainer({super.key});
 
   @override
   Widget build(BuildContext context) {
+    List<File> selectedImages = [];
+
     return Container(
       height: ScreenSize.getHeight(context) * 0.65,
       width: screenWidth,
@@ -35,7 +38,10 @@ class CreateItemContainer extends StatelessWidget {
                   style: poppins(Appcolor.black, 12, FontWeight.w400)),
               SizedBox(height: screenHeight * 0.01),
               UploadPicBoxRectangle(
-                  deviceWidth: screenWidth, onImageSelected: () {}),
+                  deviceWidth: screenWidth,
+                  onImageSelected: (images) {
+                    selectedImages = images;
+                  }),
               SizedBox(height: screenHeight * 0.01),
 
               //Description of requirements

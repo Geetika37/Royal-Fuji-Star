@@ -1,8 +1,11 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
 import 'package:royal_fuji_star/screens/bottomnav/advisory/widgets/uploadpic.dart';
+import 'package:royal_fuji_star/screens/bottomnav/services/controllers/repair_controller.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 import 'package:royal_fuji_star/utils/buttons.dart';
 import 'package:royal_fuji_star/utils/dropdown.dart';
@@ -13,8 +16,12 @@ class RepairContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final RepairController repairController = Get.put(RepairController());
+
     TextEditingController brandNameController = TextEditingController();
     RxString typeRepairController = 'Select'.obs;
+    TextEditingController descriptionController = TextEditingController();
+    List<File> selectedImagesController = [];
 
     return Container(
       height: ScreenSize.getHeight(context) * 0.65,
@@ -58,10 +65,11 @@ class RepairContainer extends StatelessWidget {
               Text('advisorycontainertext6'.tr,
                   style: poppins(Appcolor.black, 12, FontWeight.w400)),
               SizedBox(height: screenHeight * 0.01),
-              // TextfieldMultipleLine(
-              //   hintText: 'annualcontainertext7'.tr,
-              //   hintTextSize: 12,
-              // ),
+              TextfieldMultipleLine(
+                hintText: 'annualcontainertext7'.tr,
+                hintTextSize: 12,
+                controller: descriptionController,
+              ),
               SizedBox(height: screenHeight * 0.01),
 
               //Upload images
@@ -70,7 +78,12 @@ class RepairContainer extends StatelessWidget {
                   style: poppins(Appcolor.black, 12, FontWeight.w400)),
               SizedBox(height: screenHeight * 0.01),
               UploadPicBoxRectangle(
-                  deviceWidth: screenWidth, onImageSelected: () {}),
+                deviceWidth: screenWidth,
+                onImageSelected: (images) {
+                  selectedImagesController = images;
+                  // print('selected images --->$selectedImagesController');
+                },
+              ),
               SizedBox(height: screenHeight * 0.03),
 
               Center(
@@ -82,7 +95,14 @@ class RepairContainer extends StatelessWidget {
                     width: screenWidth * 0.7,
                     circularRadius: 10,
                     text: 'annualcontainertext9'.tr,
-                    onTap: () {}),
+                    onTap: () {
+                      repairController.saveRepairData(
+                        brandNameController.text,
+                        descriptionController.text,
+                        typeRepairController.value,
+                        selectedImagesController,
+                      );
+                    }),
               )
             ],
           ),
