@@ -8,6 +8,7 @@ import 'package:http/http.dart' as http;
 class OneProductController extends GetxController {
   var isLoading = false.obs;
   var errorMessage = ''.obs;
+  var selectedIndex = (-1).obs;
   var product = Rxn<Product>(); // Using Rxn for nullable reactive variables
 
   Future<void> fetchProduct(int id) async {

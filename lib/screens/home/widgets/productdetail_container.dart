@@ -14,17 +14,17 @@ class ProductDetailContainer extends StatelessWidget {
     required this.productDetails,
   });
 
-  final Product? productDetails;
+  final Product productDetails;
 
   @override
   Widget build(BuildContext context) {
-    final image = productDetails!.data.mainImage.url;
-    final imageUrl = '${APIConstants.baseUrl}$image';
+    final image = productDetails.data.mainImage?.url;
+    final imageUrl = image != null ? '${APIConstants.baseUrl}$image' : '';
     // print('image url----------!!=>$imageUrl');
 
     return Container(
       height: screenHeight * 0.35,
-      decoration: image.isNotEmpty
+      decoration: image!=null
           ? BoxDecoration(
               image: DecorationImage(
                 image: NetworkImage(imageUrl),
@@ -56,8 +56,8 @@ class ProductDetailContainer extends StatelessWidget {
                 ),
                 InkWell(
                   onTap: () {
-                    if (productDetails!.data.brochure != null) {
-                      shareFile(productDetails!.data.brochure.url);
+                    if (productDetails.data.brochure != null) {
+                      shareFile(productDetails.data.brochure!.url);
                     }
                   },
                   child: Container(
@@ -81,7 +81,7 @@ class ProductDetailContainer extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
-                  productDetails!.data.productCategory.name,
+                  productDetails.data.productCategory.name,
                   style: poppins(Appcolor.white, 17, FontWeight.w700),
                 ),
               ),

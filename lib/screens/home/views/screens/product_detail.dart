@@ -38,6 +38,7 @@ class ProductDetail extends StatelessWidget {
 
           final product = oneProductController.product.value;
           final List<Brochure>? gallery = product!.data.gallery;
+          final List<Component> components = product.data.components;
 
           return SizedBox(
             height: ScreenSize.getHeight(context),
@@ -78,20 +79,22 @@ class ProductDetail extends StatelessWidget {
                           fontWeight: FontWeight.w500,
                         ),
                       ),
+                SizedBox(height: screenHeight * 0.02),
                 GalleryContainer(productDetails: product),
-                gallery == null
+                SizedBox(height: screenHeight * 0.02),
+                components.isEmpty
                     ? const SizedBox()
-                    : SizedBox(height: screenHeight * 0.02),
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.05),
-                  child: CustomTitle(
-                    textHeading: 'components'.tr,
-                    fontSize: 12,
-                    color: Appcolor.black,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-                SizedBox(height: screenHeight * 0.01),
+                    : Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: screenWidth * 0.05),
+                        child: CustomTitle(
+                          textHeading: 'components'.tr,
+                          fontSize: 12,
+                          color: Appcolor.black,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                // SizedBox(height: screenHeight * 0.01),
                 ComponentsContainer(
                   productDetails: product,
                 ),
