@@ -10,16 +10,16 @@ class SubcategorySparesController extends GetxController {
   var isLoading = false.obs;
   // var spares = [].obs;
   var errorMessage = ''.obs;
-  var categoryd = 1.obs;
 
   var spare = Rxn<Spare>();
 
-  Future<void> subCategorySpares(int id, ) async {
+  Future<void> subCategorySpares(int id, int categoryID) async {
     isLoading(true);
     final token = await TokenKey.getValue('token');
+
     try {
       final url = Uri.parse(
-          '${APIConstants.baseUrl}/api/spares-sub-category-spares/$id?title=desc&categoryId=1');
+          '${APIConstants.baseUrl}/api/spares-sub-category-spares/$id?title=desc&categoryId=$categoryID');
       final response = await http.get(
         url,
         headers: {
@@ -30,25 +30,28 @@ class SubcategorySparesController extends GetxController {
       );
 
       final jsonResponse = jsonDecode(response.body);
+      // print('response--------->$jsonResponse');
 
       if (response.statusCode == 200) {
-        // print('response--------->$jsonResponse');
+        print('response--------->$jsonResponse');
         if (jsonResponse['success']) {
           try {
-            final spareData = Spare.fromJson(jsonResponse);
-            spare.value = spareData;
-            print('Product Data: $spareData');
+            // print('response==$jsonResponse');
+            // final spareData = Spare.fromJson(jsonResponse);
+            spare.value = Spare.fromJson(jsonResponse);
+            // print('Spare Data: $spareData');
           } catch (e) {
-            print('Parsing Error: $e');
+            // print('Parsing Error: $e');
             errorMessage.value = 'Error parsing product data: ${e.toString()}';
           }
         } else {
           errorMessage.value = 'Error: ${jsonResponse['message']}';
+          // print('error-->$errorMessage');
         }
       } else {
         errorMessage.value =
             'Error Message==== ${jsonResponse['error']['message']}';
-        print(errorMessage);
+        print('error-->$errorMessage');
       }
     } catch (e) {
       print('error--->##${e.toString()}');

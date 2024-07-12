@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
 import 'package:royal_fuji_star/screens/bottomnav/services/controllers/spare_subcategory_spare_controller.dart';
+import 'package:royal_fuji_star/screens/bottomnav/services/controllers/spareenquiry_controller.dart';
 import 'package:royal_fuji_star/screens/home/widgets/lift_partsname.dart';
 import 'package:royal_fuji_star/services/api_baseurl.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
@@ -18,6 +19,9 @@ class LiftPartsContainer extends StatelessWidget {
     final SubcategorySparesController subcategorySparesController =
         Get.put(SubcategorySparesController());
 
+    final SpareEnquiryController spareEnquiryController =
+        Get.put(SpareEnquiryController());
+
     return Obx(() {
       if (subcategorySparesController.isLoading.value) {
         return const Center(
@@ -25,23 +29,19 @@ class LiftPartsContainer extends StatelessWidget {
         );
       }
 
-      if (subcategorySparesController.errorMessage.isNotEmpty) {
-        return Center(
-          child: Text(
-            subcategorySparesController.errorMessage.value,
-            style: const TextStyle(color: Colors.blue),
-          ),
-        );
-      }
-
       final spare = subcategorySparesController.spare.value;
+      // print('spare--->$spare');
+
+      if (spare == null || spare.data!.isEmpty) {
+        return const SizedBox();
+      }
 
       return ListView.builder(
           physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
-          itemCount: spare!.data.length,
+          itemCount: spare.data!.length,
           itemBuilder: (context, index) {
-            final sparetem = spare.data[index];
+            final sparetem = spare.data![index];
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -57,10 +57,10 @@ class LiftPartsContainer extends StatelessWidget {
                   child: ListView.builder(
                       shrinkWrap: true,
                       scrollDirection: Axis.horizontal,
-                      itemCount: sparetem.brandSpares.spareList.length,
+                      itemCount: sparetem.brandSpares.spareList!.length,
                       itemBuilder: (context, index) {
                         final spareListItem =
-                            sparetem.brandSpares.spareList[index];
+                            sparetem.brandSpares.spareList![index];
 
                         final imageUrl = spareListItem.image.url;
                         // final categoryId = spareListItem.subCategory.id;
@@ -102,7 +102,10 @@ class LiftPartsContainer extends StatelessWidget {
                                     width: screenWidth * 0.4,
                                     circularRadius: 10,
                                     text: 'enquiry'.tr,
-                                    onTap: () {},
+                                    onTap: () {
+                                      spareEnquiryController
+                                          .saveSpareEnquiry(spareListItem.id);
+                                    },
                                     color: Appcolor.buttonColor,
                                     textColor: Appcolor.white,
                                     fontSize: 12,

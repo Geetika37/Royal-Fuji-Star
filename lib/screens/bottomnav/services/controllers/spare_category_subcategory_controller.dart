@@ -29,7 +29,7 @@ class CategorySubcategoryController extends GetxController {
       if (response.statusCode == 200) {
         // print('jsonresp======>${jsonResponse}');
         subCategory.value = jsonResponse['data'];
-        print('subcategory=====>$subCategory');
+        // print('subcategory=====>$subCategory');
       } else {
         print('error message --->${jsonResponse['error']['message']}');
       }

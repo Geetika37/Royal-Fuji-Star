@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:royal_fuji_star/constants/size.dart';
-import 'package:royal_fuji_star/screens/home/widgets/lift_partscontainer.dart';
+import 'package:royal_fuji_star/screens/bottomnav/services/widgets/lift_partscontainer.dart';
 import 'package:royal_fuji_star/screens/home/widgets/lift_partsname.dart';
 import 'package:royal_fuji_star/screens/widgets/customappbar.dart';
 

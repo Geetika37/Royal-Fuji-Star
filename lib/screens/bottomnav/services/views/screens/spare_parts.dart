@@ -4,20 +4,15 @@ import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/screens/bottomnav/services/widgets/category_animatedcontainer.dart';
 import 'package:royal_fuji_star/screens/bottomnav/services/widgets/category_itemcontainer.dart';
 import 'package:royal_fuji_star/screens/bottomnav/services/widgets/create_item.dart';
-import 'package:royal_fuji_star/screens/home/widgets/lift_partscontainer.dart';
+import 'package:royal_fuji_star/screens/bottomnav/services/widgets/lift_partscontainer.dart';
 import 'package:royal_fuji_star/screens/widgets/customappbar.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 import 'package:royal_fuji_star/utils/buttons.dart';
 import 'package:royal_fuji_star/utils/textcustom.dart';
 
-class SpareParts extends StatefulWidget {
+class SpareParts extends StatelessWidget {
   const SpareParts({super.key});
 
-  @override
-  State<SpareParts> createState() => _SparePartsState();
-}
-
-class _SparePartsState extends State<SpareParts> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -42,7 +37,7 @@ class _SparePartsState extends State<SpareParts> {
               ),
             ),
             SizedBox(height: screenHeight * 0.01),
-            const CategoryAnimatedcontainer(),
+            CategoryAnimatedContainer(),
             SizedBox(height: screenHeight * 0.015),
             Padding(
               padding: const EdgeInsets.only(left: 10, right: 10),
@@ -56,10 +51,10 @@ class _SparePartsState extends State<SpareParts> {
             SizedBox(height: screenHeight * 0.01),
             SizedBox(
               height: screenHeight * 0.1,
-              child: const CategoryItemcontainer(),
+              child: CategoryItemContainer(),
             ),
             const LiftPartsContainer(),
-            SizedBox(height: screenHeight * 0.01),
+            SizedBox(height: screenHeight * 0.02),
             Center(
               child: BlueButton(
                   fontSize: 14,
