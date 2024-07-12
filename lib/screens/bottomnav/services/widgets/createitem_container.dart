@@ -5,15 +5,20 @@ import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
 import 'package:royal_fuji_star/screens/bottomnav/advisory/widgets/uploadpic.dart';
+import 'package:royal_fuji_star/screens/bottomnav/services/controllers/sparenotfound_controller.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 import 'package:royal_fuji_star/utils/buttons.dart';
+import 'package:royal_fuji_star/utils/textformfield.dart';
 
 class CreateItemContainer extends StatelessWidget {
   const CreateItemContainer({super.key});
 
   @override
   Widget build(BuildContext context) {
-    List<File> selectedImages = [];
+    final SpareNotFoundController spareNotFoundController =
+        Get.put(SpareNotFoundController());
+    List<File> selectedImagesController = [];
+    TextEditingController descriptionController = TextEditingController();
 
     return Container(
       height: ScreenSize.getHeight(context) * 0.65,
@@ -38,10 +43,12 @@ class CreateItemContainer extends StatelessWidget {
                   style: poppins(Appcolor.black, 12, FontWeight.w400)),
               SizedBox(height: screenHeight * 0.01),
               UploadPicBoxRectangle(
-                  deviceWidth: screenWidth,
-                  onImageSelected: (images) {
-                    selectedImages = images;
-                  }),
+                deviceWidth: screenWidth,
+                onImageSelected: (images) {
+                  selectedImagesController = images;
+                  // print('selected images --->$selectedImagesController');
+                },
+              ),
               SizedBox(height: screenHeight * 0.01),
 
               //Description of requirements
@@ -49,22 +56,29 @@ class CreateItemContainer extends StatelessWidget {
               Text('advisorycontainertext6'.tr,
                   style: poppins(Appcolor.black, 12, FontWeight.w400)),
               SizedBox(height: screenHeight * 0.01),
-              // TextfieldMultipleLine(
-              //   hintText: 'annualcontainertext7'.tr,
-              //   hintTextSize: 12,
-              // ),
+              TextfieldMultipleLine(
+                controller: descriptionController,
+                hintText: 'annualcontainertext7'.tr,
+                hintTextSize: 12,
+              ),
 
               SizedBox(height: screenHeight * 0.1),
               Center(
                 child: BlueButton(
-                    fontSize: 14,
-                    textColor: Appcolor.white,
-                    color: Appcolor.buttonColor,
-                    height: screenHeight * 0.06,
-                    width: screenWidth * 0.7,
-                    circularRadius: 10,
-                    text: 'annualcontainertext9'.tr,
-                    onTap: () {}),
+                  fontSize: 14,
+                  textColor: Appcolor.white,
+                  color: Appcolor.buttonColor,
+                  height: screenHeight * 0.06,
+                  width: screenWidth * 0.7,
+                  circularRadius: 10,
+                  text: 'annualcontainertext9'.tr,
+                  onTap: () {
+                    spareNotFoundController.saveSpareNotFoundItem(
+                      descriptionController.text,
+                      selectedImagesController,
+                    );
+                  },
+                ),
               )
             ],
           ),

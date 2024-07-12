@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
+import 'package:royal_fuji_star/screens/bottomnav/advisory/controllers/advisory_controller.dart';
 import 'package:royal_fuji_star/screens/bottomnav/advisory/widgets/uploadpic.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 import 'package:royal_fuji_star/utils/buttons.dart';
@@ -15,11 +16,11 @@ class ConsultationContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController nameController = TextEditingController();
-    TextEditingController emailController = TextEditingController();
-    TextEditingController phoneController = TextEditingController();
-    List<File> selectedImages = [];
-    
+    final AdvisoryController advisoryController = Get.put(AdvisoryController());
+    List<File> selectedImagesController = [];
+    TextEditingController descriptionController = TextEditingController();
+    TextEditingController additionalCommentController = TextEditingController();
+    RxString consultationController = 'Select'.obs;
 
     return Container(
       height: screenHeight * 0.58,
@@ -34,45 +35,14 @@ class ConsultationContainer extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // name
-              SizedBox(height: screenHeight * 0.02),
-              Text('advisorycontainertext1'.tr,
-                  style: poppins(Appcolor.black, 12, FontWeight.w400)),
-              SizedBox(height: screenHeight * 0.01),
-              TextformfieldWithoutValidation(
-                textfieldWidth: screenWidth,
-                hintText: 'advisorycontainertext2'.tr,
-                hintTextSize: 12,
-                controller: nameController,
-              ),
-
-              //email
-              SizedBox(height: screenHeight * 0.01),
-              Text('email'.tr,
-                  style: poppins(Appcolor.black, 12, FontWeight.w400)),
-              SizedBox(height: screenHeight * 0.01),
-              TextformfieldWithoutValidation(
-                textfieldWidth: screenWidth,
-                hintText: 'Enter Email',
-                hintTextSize: 12,
-                controller: emailController,
-              ),
-
-              //phone number
-              SizedBox(height: screenHeight * 0.01),
-              Text('advisorycontainertext3'.tr,
-                  style: poppins(Appcolor.black, 12, FontWeight.w400)),
-              SizedBox(height: screenHeight * 0.01),
-              TextformfieldWithoutValidation(
-                textfieldWidth: screenWidth,
-                hintText: '+971',
-                hintTextSize: 12,
-                controller: phoneController,
-              ),
-
               //dropdown
               SizedBox(height: screenHeight * 0.001),
-              Dropdown(title: 'advisorycontainertext4'.tr),
+              DropdownConsultation(
+                title: 'advisorycontainertext4'.tr,
+                onValueChanged: (String value) {
+                  consultationController.value = value;
+                },
+              ),
 
               //Upload images
               SizedBox(height: screenHeight * 0.01),
@@ -82,7 +52,7 @@ class ConsultationContainer extends StatelessWidget {
               UploadPicBoxRectangle(
                 deviceWidth: screenWidth,
                 onImageSelected: (images) {
-                  selectedImages = images;
+                  selectedImagesController = images;
                 },
               ),
               SizedBox(height: screenHeight * 0.01),
@@ -92,34 +62,44 @@ class ConsultationContainer extends StatelessWidget {
               Text('advisorycontainertext6'.tr,
                   style: poppins(Appcolor.black, 12, FontWeight.w400)),
               SizedBox(height: screenHeight * 0.01),
-              // TextfieldMultipleLine(
-              //   hintText: 'annualcontainertext7'.tr,
-              //   hintTextSize: 12,
-              // ),
+              TextfieldMultipleLine(
+                controller: descriptionController,
+                hintText: 'annualcontainertext7'.tr,
+                hintTextSize: 12,
+              ),
 
               //Additional Comments or Questions
               SizedBox(height: screenHeight * 0.01),
               Text('advisorycontainertext7'.tr,
                   style: poppins(Appcolor.black, 12, FontWeight.w400)),
               SizedBox(height: screenHeight * 0.01),
-              // TextfieldMultipleLine(
-              //   hintText: 'annualcontainertext7'.tr,
-              //   hintTextSize: 12,
-              // ),
+              TextfieldMultipleLine(
+                controller: additionalCommentController,
+                hintText: 'annualcontainertext7'.tr,
+                hintTextSize: 12,
+              ),
 
               SizedBox(height: screenHeight * 0.01),
-              SizedBox(height: screenHeight * 0.01),
+              // SizedBox(height: screenHeight * 0.01),
 
               Center(
                 child: BlueButton(
-                    fontSize: 14,
-                    textColor: Appcolor.white,
-                    color: Appcolor.buttonColor,
-                    height: screenHeight * 0.06,
-                    width: screenWidth * 0.7,
-                    circularRadius: 10,
-                    text: 'annualcontainertext9'.tr,
-                    onTap: () {}),
+                  fontSize: 14,
+                  textColor: Appcolor.white,
+                  color: Appcolor.buttonColor,
+                  height: screenHeight * 0.06,
+                  width: screenWidth * 0.7,
+                  circularRadius: 10,
+                  text: 'annualcontainertext9'.tr,
+                  onTap: () {
+                    advisoryController.saveAdvisory(
+                      consultationController.value,
+                      descriptionController.text,
+                      additionalCommentController.text,
+                      selectedImagesController,
+                    );
+                  },
+                ),
               ),
               SizedBox(height: screenHeight * 0.01),
             ],
