@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
-import 'package:royal_fuji_star/screens/bottomnav/services/controllers/subcategory_spare.dart';
+import 'package:royal_fuji_star/screens/bottomnav/services/controllers/spare_subcategory_spare_controller.dart';
+import 'package:royal_fuji_star/screens/home/widgets/lift_partsname.dart';
+import 'package:royal_fuji_star/services/api_baseurl.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 import 'package:royal_fuji_star/utils/buttons.dart';
 
@@ -23,66 +25,96 @@ class LiftPartsContainer extends StatelessWidget {
         );
       }
 
-      final spares = subcategorySparesController.spares;
-      // print('---===spare item---==$spares');
+      if (subcategorySparesController.errorMessage.isNotEmpty) {
+        return Center(
+          child: Text(
+            subcategorySparesController.errorMessage.value,
+            style: const TextStyle(color: Colors.blue),
+          ),
+        );
+      }
+
+      final spare = subcategorySparesController.spare.value;
 
       return ListView.builder(
-          scrollDirection: Axis.horizontal,
-          itemCount: spares.length,
+          physics: const NeverScrollableScrollPhysics(),
+          shrinkWrap: true,
+          itemCount: spare!.data.length,
           itemBuilder: (context, index) {
-            final spareItem = spares[index];
-            // print('---spare item )))$spareItem');
+            final sparetem = spare.data[index];
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                LiftPartsName(
+                  fontWeight: FontWeight.w600,
+                  text: sparetem.brandSpares.name,
+                  fontSize: 13,
+                  textColor: const Color.fromARGB(255, 88, 88, 88),
+                  dividerColor: const Color.fromARGB(255, 48, 55, 62),
+                ),
+                SizedBox(
+                  height: screenHeight * 0.22,
+                  child: ListView.builder(
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      itemCount: sparetem.brandSpares.spareList.length,
+                      itemBuilder: (context, index) {
+                        final spareListItem =
+                            sparetem.brandSpares.spareList[index];
 
-            final imageUrl = spareItem['image'] != null &&
-                    spareItem['image'].isNotEmpty &&
-                    spareItem['image']['url'] != null
-                ? 'https://royalfuji.jissanto.com${spareItem['image']['url']}'
-                : null;
-            // print('image url--->$imageUrl');
-            return Padding(
-              padding:
-                  const EdgeInsets.only(right: 10, left: 10, top: 4, bottom: 4),
-              child: Container(
-                width: screenWidth * 0.4,
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 197, 229, 247),
-                  border: Border.all(
-                    width: 1,
-                    color: Appcolor.buttonColor,
-                  ),
-                  borderRadius: BorderRadius.circular(10),
+                        final imageUrl = spareListItem.image.url;
+                        // final categoryId = spareListItem.subCategory.id;
+
+                        return Padding(
+                          padding: const EdgeInsets.only(
+                              right: 10, left: 10, top: 4, bottom: 4),
+                          child: Container(
+                            width: screenWidth * 0.4,
+                            decoration: BoxDecoration(
+                              color: const Color.fromARGB(255, 197, 229, 247),
+                              border: Border.all(
+                                width: 1,
+                                color: Appcolor.buttonColor,
+                              ),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                children: [
+                                  SizedBox(
+                                    height: ScreenSize.getHeight(context) * 0.1,
+                                    width: ScreenSize.getWidth(context) * 0.3,
+                                    child: Image.network(
+                                      '${APIConstants.baseUrl}$imageUrl',
+                                      fit: BoxFit.contain,
+                                    ),
+                                  ),
+                                  SizedBox(height: screenHeight * 0.005),
+                                  Text(
+                                    spareListItem.name,
+                                    style: poppins(Appcolor.buttonColor, 10,
+                                        FontWeight.w500),
+                                  ),
+                                  SizedBox(height: screenHeight * 0.01),
+                                  BlueButton(
+                                    height: screenHeight * 0.05,
+                                    width: screenWidth * 0.4,
+                                    circularRadius: 10,
+                                    text: 'enquiry'.tr,
+                                    onTap: () {},
+                                    color: Appcolor.buttonColor,
+                                    textColor: Appcolor.white,
+                                    fontSize: 12,
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                        );
+                      }),
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    children: [
-                      imageUrl != null
-                          ? Image.network(
-                              imageUrl,
-                              fit: BoxFit.cover,
-                            )
-                          : const SizedBox(),
-                      SizedBox(height: screenHeight * 0.005),
-                      Text(
-                        spareItem['name'],
-                        style:
-                            poppins(Appcolor.buttonColor, 10, FontWeight.w500),
-                      ),
-                      SizedBox(height: screenHeight * 0.01),
-                      BlueButton(
-                        height: screenHeight * 0.05,
-                        width: screenWidth * 0.4,
-                        circularRadius: 10,
-                        text: 'enquiry'.tr,
-                        onTap: () {},
-                        color: Appcolor.buttonColor,
-                        textColor: Appcolor.white,
-                        fontSize: 12,
-                      )
-                    ],
-                  ),
-                ),
-              ),
+              ],
             );
           });
     });

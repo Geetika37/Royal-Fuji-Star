@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
-import 'package:royal_fuji_star/screens/bottomnav/services/controllers/category_subcategory_controller.dart';
-import 'package:royal_fuji_star/screens/bottomnav/services/controllers/subcategory_spare.dart';
+import 'package:royal_fuji_star/screens/bottomnav/services/controllers/spare_category_subcategory_controller.dart';
+import 'package:royal_fuji_star/screens/bottomnav/services/controllers/spare_subcategory_spare_controller.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 
 class CategoryItemcontainer extends StatefulWidget {
@@ -51,8 +51,9 @@ class _CategoryItemcontainerState extends State<CategoryItemcontainer> {
                 setState(() {
                   selectedIndex = index;
                 });
-                subcategorySparesController
-                    .subCategorySpares(categoryItem['id']);
+                subcategorySparesController.subCategorySpares(
+                  categoryItem['id'],
+                );
               },
               child: Column(
                 children: [

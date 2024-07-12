@@ -24,7 +24,7 @@ class ProductDetailContainer extends StatelessWidget {
 
     return Container(
       height: screenHeight * 0.35,
-      decoration: image!=null
+      decoration: image != null
           ? BoxDecoration(
               image: DecorationImage(
                 image: NetworkImage(imageUrl),
@@ -81,7 +81,7 @@ class ProductDetailContainer extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
-                  productDetails.data.productCategory.name,
+                  productDetails.data.name,
                   style: poppins(Appcolor.white, 17, FontWeight.w700),
                 ),
               ),

@@ -15,7 +15,7 @@ class CategoryProductController extends GetxController {
     try {
       final token = await TokenKey.getValue('token');
       final url = Uri.parse(
-          '${APIConstants.baseUrl}/api/findCategoryProducts/$id?&title=desc');
+          '${APIConstants.baseUrl}/api/products-find-category-products/$id?&title=desc');
       final response = await http.get(
         url,
         headers: {

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/screens/home/controller/oneproduct_controller.dart';
+import 'package:royal_fuji_star/screens/home/controller/oneproduct_enquiry_controller.dart';
 import 'package:royal_fuji_star/screens/home/models/oneproduct_model.dart';
 import 'package:royal_fuji_star/screens/home/widgets/components_container.dart';
 import 'package:royal_fuji_star/screens/home/widgets/gallercontainer.dart';
@@ -10,15 +11,23 @@ import 'package:royal_fuji_star/utils/appcolor.dart';
 import 'package:royal_fuji_star/utils/buttons.dart';
 import 'package:royal_fuji_star/utils/textcustom.dart';
 
-class ProductDetail extends StatelessWidget {
+class ProductDetail extends StatefulWidget {
   const ProductDetail({
     super.key,
   });
 
   @override
+  State<ProductDetail> createState() => _ProductDetailState();
+}
+
+class _ProductDetailState extends State<ProductDetail> {
+  final List<int> selectedComponentIds = [];
+  @override
   Widget build(BuildContext context) {
     final OneProductController oneProductController =
         Get.put(OneProductController());
+    final OneproductEnquiryController oneproductEnquiryController =
+        Get.put(OneproductEnquiryController());
 
     return SafeArea(
       child: Scaffold(
@@ -97,6 +106,12 @@ class ProductDetail extends StatelessWidget {
                 // SizedBox(height: screenHeight * 0.01),
                 ComponentsContainer(
                   productDetails: product,
+                  onSelectionChanged: (selectedIds) {
+                    setState(() {
+                      selectedComponentIds.clear();
+                      selectedComponentIds.addAll(selectedIds);
+                    });
+                  },
                 ),
                 SizedBox(
                   height: screenHeight * 0.05,
@@ -108,7 +123,12 @@ class ProductDetail extends StatelessWidget {
                       width: screenWidth * 0.9,
                       circularRadius: 10,
                       text: 'enquiry'.tr,
-                      onTap: () {},
+                      onTap: () {
+                        oneproductEnquiryController.saveEnquiryOneProduct(
+                          product.data.id,
+                          selectedComponentIds,
+                        );
+                      },
                       color: Appcolor.buttonColor,
                       textColor: Appcolor.white),
                 ),

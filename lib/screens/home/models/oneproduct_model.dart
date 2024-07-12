@@ -40,7 +40,7 @@ class Data {
   DateTime updatedAt;
   DateTime? publishedAt;
   Locale? locale;
-  Category productCategory;
+  // Category productCategory;
   Brochure? mainImage;
   List<Brochure>? gallery;
   Brochure? brochure;
@@ -54,7 +54,7 @@ class Data {
     required this.updatedAt,
     this.publishedAt,
     this.locale,
-    required this.productCategory,
+    // required this.productCategory,
     required this.mainImage,
     required this.gallery,
     required this.brochure,
@@ -72,7 +72,7 @@ class Data {
             : DateTime.parse(json["publishedAt"]),
         locale:
             json['locale'] == null ? null : localeValues.map[json["locale"]],
-        productCategory: Category.fromJson(json["productCategory"]),
+        // productCategory: Category.fromJson(json["productCategory"]),
         mainImage:json['mainImage'] == null ?null : Brochure.fromJson(json["mainImage"]) ,
         gallery:json['gallery'] == null?null: List<Brochure>.from(
             json["gallery"].map((x) => Brochure.fromJson(x))),
@@ -89,7 +89,7 @@ class Data {
         "updatedAt": updatedAt.toIso8601String(),
         "publishedAt": publishedAt?.toIso8601String(),
         "locale": localeValues.reverse[locale],
-        "productCategory": productCategory.toJson(),
+        // "productCategory": productCategory.toJson(),
         "mainImage": mainImage?.toJson(),
         "gallery": List<dynamic>.from(gallery!.map((x) => x.toJson())),
         "brochure": brochure?.toJson(),

@@ -10,8 +10,12 @@ import 'package:royal_fuji_star/utils/appcolor.dart';
 import 'package:royal_fuji_star/utils/buttons.dart';
 
 class ComponentsContainer extends StatefulWidget {
-  const ComponentsContainer({super.key, required this.productDetails});
+  const ComponentsContainer(
+      {super.key,
+      required this.productDetails,
+      required this.onSelectionChanged});
   final Product? productDetails;
+  final Function(List<int>) onSelectionChanged;
 
   @override
   State<ComponentsContainer> createState() => _ComponentsContainerState();
@@ -22,6 +26,7 @@ class _ComponentsContainerState extends State<ComponentsContainer> {
       Get.put(OneProductController());
 
   final Map<String, RxInt> selectedIndices = {};
+  final List<int> selectedComponentIds = [];
 
   @override
   void initState() {
@@ -143,11 +148,22 @@ class _ComponentsContainerState extends State<ComponentsContainer> {
                                       circularRadius: 10,
                                       text: isSelected ? 'UnSelect' : 'Select',
                                       onTap: () {
-                                        selectedIndices[componentName]?.value =
-                                            isSelected ? -1 : innerIndex;
+                                        setState(() {
+                                          if (isSelected) {
+                                            selectedComponentIds
+                                                .remove(componentList.id);
+                                            selectedIndices[componentName]
+                                                ?.value = -1;
+                                          } else {
+                                            selectedComponentIds
+                                                .add(componentList.id);
+                                            selectedIndices[componentName]
+                                                ?.value = innerIndex;
+                                          }
+                                        });
 
-                                        print(
-                                            'selected index--->$selectedIndices');
+                                        widget.onSelectionChanged(
+                                            selectedComponentIds);
                                       },
                                       color: Appcolor.buttonColor,
                                       textColor: Appcolor.white,

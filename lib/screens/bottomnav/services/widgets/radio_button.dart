@@ -26,7 +26,7 @@ class _RadioButtonState extends State<RadioButton> {
               children: [
                 Radio(
                   activeColor: Appcolor.buttonColor,
-                  value: 'comprehensive',
+                  value: 'Comprehensive',
                   groupValue: annualMaintenanceController.typeController.value,
                   onChanged: (String? newValue) {
                     annualMaintenanceController.typeController.value =
@@ -55,7 +55,7 @@ class _RadioButtonState extends State<RadioButton> {
               children: [
                 Radio(
                   activeColor: Appcolor.buttonColor,
-                  value: 'nonComprehensive',
+                  value: 'Non-Comprehensive',
                   groupValue: annualMaintenanceController.typeController.value,
                   onChanged: (String? newValue) {
                     annualMaintenanceController.typeController.value =

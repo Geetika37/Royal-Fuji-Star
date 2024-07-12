@@ -1,21 +1,25 @@
 import 'dart:convert';
 
 import 'package:get/get.dart';
+import 'package:royal_fuji_star/screens/bottomnav/services/models/spare_subcategory_spare_modek.dart';
 import 'package:royal_fuji_star/services/api_baseurl.dart';
 import 'package:http/http.dart' as http;
 import 'package:royal_fuji_star/services/token.dart';
 
 class SubcategorySparesController extends GetxController {
   var isLoading = false.obs;
-  var spares = [].obs;
+  // var spares = [].obs;
   var errorMessage = ''.obs;
+  var categoryd = 1.obs;
 
-  Future<void> subCategorySpares(int id) async {
+  var spare = Rxn<Spare>();
+
+  Future<void> subCategorySpares(int id, ) async {
     isLoading(true);
     final token = await TokenKey.getValue('token');
     try {
       final url = Uri.parse(
-          '${APIConstants.baseUrl}/api/spares-sub-category-spares/$id?title=desc');
+          '${APIConstants.baseUrl}/api/spares-sub-category-spares/$id?title=desc&categoryId=1');
       final response = await http.get(
         url,
         headers: {
@@ -29,8 +33,18 @@ class SubcategorySparesController extends GetxController {
 
       if (response.statusCode == 200) {
         // print('response--------->$jsonResponse');
-        spares.value = jsonResponse['data'];
-        // print('sparee data----------((()))$spares');
+        if (jsonResponse['success']) {
+          try {
+            final spareData = Spare.fromJson(jsonResponse);
+            spare.value = spareData;
+            print('Product Data: $spareData');
+          } catch (e) {
+            print('Parsing Error: $e');
+            errorMessage.value = 'Error parsing product data: ${e.toString()}';
+          }
+        } else {
+          errorMessage.value = 'Error: ${jsonResponse['message']}';
+        }
       } else {
         errorMessage.value =
             'Error Message==== ${jsonResponse['error']['message']}';
