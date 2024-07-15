@@ -68,7 +68,8 @@ class _HomepageState extends State<Homepage> {
                 ),
               ),
               SizedBox(height: screenHeight * 0.02),
-              ProductsContainer()
+              ProductsContainer(),
+              SizedBox(height: screenHeight * 0.02),
             ],
           ),
         ),

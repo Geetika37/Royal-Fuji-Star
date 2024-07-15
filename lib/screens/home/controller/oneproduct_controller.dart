@@ -28,15 +28,15 @@ class OneProductController extends GetxController {
 
       if (response.statusCode == 200) {
         final jsonResponse = jsonDecode(response.body);
-        print('JSON Response: $jsonResponse');
+        // print('JSON Response: $jsonResponse');
 
         if (jsonResponse['success']) {
           try {
             final productData = Product.fromJson(jsonResponse);
             product.value = productData;
-            print('Product Data: $productData');
+            // print('Product Data: $productData');
           } catch (e) {
-            print('Parsing Error: $e');
+            // print('Parsing Error: $e');
             errorMessage.value = 'Error parsing product data: ${e.toString()}';
           }
         } else {
@@ -45,11 +45,11 @@ class OneProductController extends GetxController {
       } else {
         final jsonResponse = jsonDecode(response.body);
         errorMessage.value = 'Error: ${jsonResponse['error']['message']}';
-        print('Error Message: ${errorMessage.value}');
+        // print('Error Message: ${errorMessage.value}');
       }
     } catch (e) {
       errorMessage.value = 'Error: ${e.toString()}';
-      print('Error Message: ${errorMessage.value}');
+      // print('Error Message: ${errorMessage.value}');
     } finally {
       isLoading.value = false;
     }
