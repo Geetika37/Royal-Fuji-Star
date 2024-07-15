@@ -32,12 +32,10 @@ class CarouselSliderController extends GetxController {
 
   Future<void> fetchCarouselImage() async {
     isLoading(true);
-    // final token = await TokenKey.getValue('token');
-    // print('token---$token');
+   
     try {
       final url = Uri.parse(
           '${APIConstants.baseUrl}/api/home-pages?locale=${locale.value}');
-      // final url = Uri.parse('${APIConstants.baseUrl}/api/home-pages?locale=');
 
       final response = await http.get(
         url,
