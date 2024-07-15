@@ -164,7 +164,9 @@ class ProductsContainer extends StatelessWidget {
 
             return InkWell(
               onTap: () {
+                // categoryProductController.product.value = null;
                 categoryProductController.categoryProduct(category['id']);
+
                 Get.to(ProductPage(
                   productCategoryTitle: category['name'],
                 ));

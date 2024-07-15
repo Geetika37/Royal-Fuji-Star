@@ -8,6 +8,7 @@ import 'package:royal_fuji_star/screens/login/controllers/login_controller.dart'
 import 'package:royal_fuji_star/utils/appcolor.dart';
 import 'package:royal_fuji_star/utils/buttons.dart';
 import 'package:royal_fuji_star/utils/textformfield.dart';
+import 'package:royal_fuji_star/utils/validators.dart';
 
 class LoginContainer extends StatefulWidget {
   const LoginContainer({
@@ -21,9 +22,9 @@ class LoginContainer extends StatefulWidget {
 }
 
 class _LoginContainerState extends State<LoginContainer> {
-  final _emailRegex =
-      r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+";
-  final _phoneRegex = r'^\d{10}$';
+  // final _emailRegex =
+  //     r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+";
+  // final _phoneRegex = r'^\d{10}$';
   final LoginController loginController = Get.put(LoginController());
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
@@ -44,10 +45,10 @@ class _LoginContainerState extends State<LoginContainer> {
               children: [
                 SizedBox(height: screenHeight * 0.1),
                 Textformfield(
-                  validator: _emailMobileValidation,
+                  validator: Validators.validateEmail,
                   controller: emailController,
                   textfieldWidth: screenWidth * 0.8,
-                  hintText: 'phone_email'.tr,
+                  hintText: 'email'.tr,
                   hintTextSize: 15,
                 ),
                 SizedBox(height: screenHeight * 0.03),
@@ -144,14 +145,14 @@ class _LoginContainerState extends State<LoginContainer> {
     );
   }
 
-  String? _emailMobileValidation(String? value) {
-    if (value == null || value.isEmpty) {
-      return 'Email or Phone cannot be empty';
-    }
-    if (!RegExp(_emailRegex).hasMatch(value) &&
-        !RegExp(_phoneRegex).hasMatch(value)) {
-      return 'Please enter valid Email or Phone';
-    }
-    return null;
-  }
+  // String? _emailMobileValidation(String? value) {
+  //   if (value == null || value.isEmpty) {
+  //     return 'Email or Phone cannot be empty';
+  //   }
+  //   if (!RegExp(_emailRegex).hasMatch(value) &&
+  //       !RegExp(_phoneRegex).hasMatch(value)) {
+  //     return 'Please enter valid Email or Phone';
+  //   }
+  //   return null;
+  // }
 }

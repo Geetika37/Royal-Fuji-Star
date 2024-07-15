@@ -24,39 +24,48 @@ class SpareParts extends StatelessWidget {
             titleSpacing: screenWidth * 0.12,
           ),
         ),
-        body: ListView(
-          padding: const EdgeInsets.only(top: 5),
+        body: Stack(
           children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 10, right: 10),
-              child: CustomTitle(
-                textHeading: 'sparecontainertext1'.tr,
-                fontSize: 12,
-                color: Appcolor.blackPrimary,
-                fontWeight: FontWeight.w400,
-              ),
+            ListView(
+              padding: const EdgeInsets.only(top: 5),
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 10, right: 10),
+                  child: CustomTitle(
+                    textHeading: 'sparecontainertext1'.tr,
+                    fontSize: 12,
+                    color: Appcolor.blackPrimary,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+                SizedBox(height: screenHeight * 0.01),
+                CategoryAnimatedContainer(),
+                SizedBox(height: screenHeight * 0.015),
+                Padding(
+                  padding: const EdgeInsets.only(left: 10, right: 10),
+                  child: CustomTitle(
+                    textHeading: 'sparecontainertext2'.tr,
+                    fontSize: 11,
+                    color: Appcolor.blackPrimary,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+                SizedBox(height: screenHeight * 0.01),
+                SizedBox(
+                  height: screenHeight * 0.1,
+                  child: CategoryItemContainer(),
+                ),
+                SizedBox(height: screenHeight * 0.01),
+                const LiftPartsContainer(),
+                SizedBox(height: screenHeight * 0.1),
+              ],
             ),
-            SizedBox(height: screenHeight * 0.01),
-            CategoryAnimatedContainer(),
-            SizedBox(height: screenHeight * 0.015),
-            Padding(
-              padding: const EdgeInsets.only(left: 10, right: 10),
-              child: CustomTitle(
-                textHeading: 'sparecontainertext2'.tr,
-                fontSize: 11,
-                color: Appcolor.blackPrimary,
-                fontWeight: FontWeight.w400,
-              ),
-            ),
-            SizedBox(height: screenHeight * 0.01),
-            SizedBox(
-              height: screenHeight * 0.1,
-              child: CategoryItemContainer(),
-            ),
-            const LiftPartsContainer(),
-            SizedBox(height: screenHeight * 0.02),
-            Center(
-              child: BlueButton(
+            Positioned(
+              bottom: 10,
+              left: 0,
+              right: 0,
+              child: Center(
+                child: BlueButton(
                   fontSize: 14,
                   textColor: Appcolor.white,
                   color: Appcolor.buttonColor,
@@ -66,9 +75,10 @@ class SpareParts extends StatelessWidget {
                   text: 'sparecontainertext3'.tr,
                   onTap: () {
                     Get.to(const CreateItem());
-                  }),
+                  },
+                ),
+              ),
             ),
-            SizedBox(height: screenHeight * 0.01),
           ],
         ),
       ),

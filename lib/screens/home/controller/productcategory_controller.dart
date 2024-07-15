@@ -13,6 +13,8 @@ class ProductCategoryController extends GetxController {
   @override
   void onInit() {
     super.onInit();
+    productCategory();
+
     loadLocale();
   }
 

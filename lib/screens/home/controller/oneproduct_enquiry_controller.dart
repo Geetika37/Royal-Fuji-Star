@@ -13,7 +13,7 @@ class OneproductEnquiryController extends GetxController {
     isLoading(true);
     final token = await TokenKey.getValue('token');
     try {
-      final url = Uri.parse('${APIConstants.baseUrl}/api/component-enquiries');
+      final url = Uri.parse('${APIConstants.baseUrl}/api/product-enquiries');
       final response = await http.post(
         url,
         headers: {

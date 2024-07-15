@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
@@ -90,8 +89,6 @@ class Annualcontainer extends StatelessWidget {
                 hintTextSize: 12,
               ),
               SizedBox(height: screenHeight * 0.02),
-              const Divider(),
-              SizedBox(height: screenHeight * 0.01),
               Center(
                 child: BlueButton(
                     fontSize: 14,

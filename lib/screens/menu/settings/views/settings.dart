@@ -4,7 +4,6 @@ import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/screens/menu/settings/views/screens/change_password.dart';
 import 'package:royal_fuji_star/screens/menu/settings/views/screens/delete_account.dart';
 import 'package:royal_fuji_star/screens/menu/settings/views/screens/language_settings.dart';
-import 'package:royal_fuji_star/screens/menu/settings/views/screens/notification_settings.dart';
 import 'package:royal_fuji_star/screens/menu/settings/views/screens/privacy_security.dart';
 import 'package:royal_fuji_star/screens/menu/settings/views/screens/support_feedback.dart';
 import 'package:royal_fuji_star/screens/menu/settings/widgets/cardsettings.dart';
@@ -27,10 +26,10 @@ class SettingsPage extends StatelessWidget {
         body: ListView(
           padding: const EdgeInsets.all(8),
           children: [
-            CardSettings(
-              text: 'Settingstitle2'.tr,
-              onTap: () => Get.to(const NotificationSettings()),
-            ),
+            // CardSettings(
+            //   text: 'Settingstitle2'.tr,
+            //   onTap: () => Get.to(const NotificationSettings()),
+            // ),
             CardSettings(
               text: 'Settingstitle3'.tr,
               onTap: () => Get.to(LanguageSettings()),

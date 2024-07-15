@@ -1,5 +1,3 @@
-
-
 // import 'package:flutter/material.dart';
 // import 'package:get/get.dart';
 // import 'package:royal_fuji_star/constants/size.dart';
@@ -96,7 +94,6 @@
 //   }
 // }
 
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shimmer/shimmer.dart';
@@ -115,7 +112,7 @@ class CategoryItemContainer extends StatelessWidget {
   final SubcategorySparesController subcategorySparesController =
       Get.put(SubcategorySparesController());
 
-  final RxInt selectedIndex = 0.obs;
+  final RxInt selectedIndex = 2000.obs;
 
   @override
   Widget build(BuildContext context) {
