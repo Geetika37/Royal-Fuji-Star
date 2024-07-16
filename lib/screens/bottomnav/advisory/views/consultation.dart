@@ -23,13 +23,13 @@ class Consultation extends StatelessWidget {
           ),
           child: Stack(
             children: [
-              const Padding(
-                padding: EdgeInsets.all(15.0),
-                child: Icon(
-                  Icons.arrow_back,
-                  color: Appcolor.white,
-                ),
-              ),
+              // const Padding(
+              //   padding: EdgeInsets.all(15.0),
+              //   child: Icon(
+              //     Icons.arrow_back,
+              //     color: Appcolor.white,
+              //   ),
+              // ),
               Center(
                 child: Column(
                   children: [
