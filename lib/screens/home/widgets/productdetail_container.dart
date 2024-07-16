@@ -58,6 +58,13 @@ class ProductDetailContainer extends StatelessWidget {
                   onTap: () {
                     if (productDetails.data.brochure != null) {
                       shareFile(productDetails.data.brochure!.url);
+                    } else {
+                      Get.snackbar(
+                        'Error',
+                        'No Brochure',
+                        colorText: Appcolor.white,
+                        backgroundColor: Colors.red,
+                      );
                     }
                   },
                   child: Container(

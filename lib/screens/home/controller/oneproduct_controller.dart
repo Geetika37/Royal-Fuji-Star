@@ -28,7 +28,7 @@ class OneProductController extends GetxController {
 
       if (response.statusCode == 200) {
         final jsonResponse = jsonDecode(response.body);
-        // print('JSON Response: $jsonResponse');
+        print('JSON Response: $jsonResponse');
 
         if (jsonResponse['success']) {
           try {
