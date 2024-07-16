@@ -96,7 +96,6 @@
 //     );
 //   }
 // }
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
@@ -123,10 +122,6 @@ class CategoryAnimatedContainer extends StatelessWidget {
     final spareValue = sparecategoryController.sparecategory;
     print('-sssparee valuee-->$spareValue');
 
-    // // Load initial data
-    // categorySubcategoryController.catSubCategory(1);
-    // subcategorySparesController.subCategorySpares(1, 1);
-
     return Padding(
       padding: const EdgeInsets.only(right: 10, left: 10),
       child: Container(
@@ -139,12 +134,10 @@ class CategoryAnimatedContainer extends StatelessWidget {
         child: Stack(
           children: [
             Obx(() {
-              double leftPosition = selectedIndex.value * 128.0;
+              double leftPosition = selectedIndex.value * (screenWidth * 0.34);
               if (Directionality.of(context) == TextDirection.rtl) {
-                leftPosition =
-                    ScreenSize.getHeight(context) - (selectedIndex.value + 1);
-                // leftPosition = ScreenSize.getHeight(context) -
-                //     (selectedIndex.value + 1) * 131;
+                leftPosition = screenWidth -
+                    (selectedIndex.value + 1) * (screenWidth * 0.34);
               }
               return AnimatedPositioned(
                 duration: const Duration(milliseconds: 200),
