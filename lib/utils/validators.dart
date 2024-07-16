@@ -7,6 +7,14 @@ class Validators {
     }
     return null;
   }
+  static String? validateLocation(String? value) {
+    if (value == null ||
+        value.isEmpty ||
+        !RegExp(r'^[a-zA-Z\s]+$').hasMatch(value)) {
+      return 'Enter Correct Location';
+    }
+    return null;
+  }
 
   static String? validateEmail(String? value) {
     final RegExp emailRegExp =

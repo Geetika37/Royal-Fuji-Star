@@ -24,6 +24,8 @@ class _SignupContainerState extends State<SignupContainer> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final SignupController signupController = Get.put(SignupController());
   final TextEditingController nameController = TextEditingController();
+  final TextEditingController locationController = TextEditingController();
+
   // final TextEditingController phoneController = TextEditingController();
   TextEditingController countryCodeController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
@@ -51,7 +53,7 @@ class _SignupContainerState extends State<SignupContainer> {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    SizedBox(height: screenHeight * 0.05),
+                    // SizedBox(height: screenHeight * 0.05),
                     Textformfield(
                       controller: nameController,
                       textfieldWidth: screenWidth * 0.8,
@@ -80,6 +82,15 @@ class _SignupContainerState extends State<SignupContainer> {
                       phoneController: phoneController,
                     ),
                     SizedBox(height: screenHeight * 0.02),
+                    Textformfield(
+                      controller: locationController,
+                      textfieldWidth: screenWidth * 0.8,
+                      hintText: 'location'.tr,
+                      hintTextSize: 15,
+                      validator: Validators.validateLocation,
+                    ),
+                    SizedBox(height: screenHeight * 0.02),
+
                     TextformfieldPass(
                       controller: passwordController,
                       textfieldWidth: screenWidth * 0.8,
@@ -87,6 +98,7 @@ class _SignupContainerState extends State<SignupContainer> {
                       hintTextSize: 14,
                       obscureText: true,
                     ),
+
                     SizedBox(height: screenHeight * 0.04),
                     BlueButton(
                       fontSize: 14,
@@ -104,6 +116,7 @@ class _SignupContainerState extends State<SignupContainer> {
                             phoneController.text,
                             emailController.text,
                             passwordController.text,
+                            locationController.text,
                           );
                         }
                       },
@@ -119,46 +132,40 @@ class _SignupContainerState extends State<SignupContainer> {
                         textAlign: TextAlign.center,
                       ),
                     ),
+                    SizedBox(height: screenHeight * 0.01),
+
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'already_account'.tr,
+                          style: poppins(
+                            const Color.fromARGB(255, 163, 162, 162),
+                            13,
+                            FontWeight.w400,
+                          ),
+                        ),
+                        SizedBox(width: screenWidth * 0.01),
+                        InkWell(
+                          onTap: widget.onTap,
+                          child: Text(
+                            'login'.tr,
+                            style: const TextStyle(
+                              color: Appcolor.buttonColor,
+                              fontSize: 13,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ),
             ),
           ),
         ),
-        Positioned(
-          bottom: 10,
-          left: 0,
-          right: 0,
-          child: SizedBox(
-            width: screenWidth,
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'already_account'.tr,
-                  style: poppins(
-                    const Color.fromARGB(255, 163, 162, 162),
-                    13,
-                    FontWeight.w400,
-                  ),
-                ),
-                SizedBox(width: screenWidth * 0.01),
-                InkWell(
-                  onTap: widget.onTap,
-                  child: Text(
-                    'login'.tr,
-                    style: const TextStyle(
-                      color: Appcolor.buttonColor,
-                      fontSize: 13,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        )
       ],
     );
   }

@@ -17,6 +17,8 @@
     "full_name":"الاسم الكامل",
     "email":"بريد إلكتروني",
     "phone":"هاتف",
+    "location":"موقع",
+
     "password":"كلمة المرور",
     "select":"يختار",
     "image_dropitem":"إسقاط العناصر هنا",

@@ -27,6 +27,8 @@ class AppTranslations extends Translations {
           'email': 'Email',
           'phone': 'Phone',
           'password': 'Password',
+          'location':'Location',
+
           'select': 'Select',
           "image_dropitem": 'Drop items here',
           'editprofile': 'Edit Profile',
@@ -231,6 +233,7 @@ class AppTranslations extends Translations {
           'email': 'بريد إلكتروني',
           'phone': 'هاتف',
           'password': 'كلمة المرور',
+          'location':'موقع',
           'select': 'يختار',
           "image_dropitem": 'إسقاط العناصر هنا',
           'editprofile': 'تعديل الملف الشخصي',

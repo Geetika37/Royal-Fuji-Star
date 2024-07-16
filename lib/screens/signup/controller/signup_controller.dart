@@ -7,8 +7,8 @@ import 'package:http/http.dart' as http;
 class SignupController extends GetxController {
   var isLoading = false.obs;
 
-  Future<void> signUp(
-      String name, String countryCode,String phone, String email, String password) async {
+  Future<void> signUp(String name, String countryCode, String phone,
+      String email, String password, String location) async {
     isLoading(true);
     try {
       final url = Uri.parse('${APIConstants.baseUrl}/api/auth/local/register');
@@ -17,9 +17,10 @@ class SignupController extends GetxController {
         headers: {'Content-Type': 'application/json'},
         body: json.encode({
           'username': name,
-          'phone': countryCode+phone,
+          'phone': countryCode + phone,
           'email': email,
           'password': password,
+          'location': location,
         }),
       );
       final jsonResponse = jsonDecode(response.body);

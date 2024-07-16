@@ -16,6 +16,7 @@
     "full_name":"Full Name",
     "email":"Email",
     "phone":"Phone",
+    "location":"Location",
     "password":"Password",
     "select":"Select",
     "image_dropitem":"Drop items here",
