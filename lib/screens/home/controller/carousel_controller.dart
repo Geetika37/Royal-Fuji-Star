@@ -47,18 +47,18 @@ class CarouselSliderController extends GetxController {
       );
 
       final jsonResponse = jsonDecode(response.body);
-      print('JSON Response: $jsonResponse');
+      // print('JSON Response: $jsonResponse');
 
       if (response.statusCode == 200) {
         final imageData = CarouselSliderModel.fromJson(jsonResponse);
         carouselImage.value = imageData;
       } else {
         errorMessage.value = 'Error: ${jsonResponse['error']['message']}';
-        print('Status Code: ${response.statusCode}');
+        // print('Status Code: ${response.statusCode}');
       }
     } catch (e) {
       errorMessage.value = 'Error: ${e.toString()}';
-      print('Error Message: ${errorMessage.value}');
+      // print('Error Message: ${errorMessage.value}');
     } finally {
       isLoading.value = false;
     }
