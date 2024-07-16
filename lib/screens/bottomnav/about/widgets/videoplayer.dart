@@ -74,6 +74,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:royal_fuji_star/constants/size.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class VideoPlayer extends StatefulWidget {
@@ -127,6 +128,7 @@ class _VideoPlayerState extends State<VideoPlayer> {
 
   @override
   Widget build(BuildContext context) {
+    // ignore: deprecated_member_use
     return WillPopScope(
       onWillPop: () async {
         // Reset preferred orientations and system UI when navigating back
@@ -142,21 +144,22 @@ class _VideoPlayerState extends State<VideoPlayer> {
             return Stack(
               children: [
                 // Black background
-                Container(
-                  color: orientation == Orientation.landscape
-                      ? Colors.black
-                      : Colors.white,
-                ),
+                // Container(
+                //   color: orientation == Orientation.landscape
+                //       ? Colors.black
+                //       : Colors.white,
+                // ),
                 // Center the video player
                 Center(
                   child: SizedBox(
                     width: orientation == Orientation.landscape
-                        ? MediaQuery.sizeOf(context).width
+                        ? ScreenSize.getWidth(context)
                         : MediaQuery.sizeOf(context).width,
                     height: orientation == Orientation.landscape
                         ? MediaQuery.sizeOf(context).height * 0.5
                         : MediaQuery.sizeOf(context).height * 0.5,
                     child: YoutubePlayer(
+                      // aspectRatio: 16 / 7,
                       controller: youtubePlayerController,
                       showVideoProgressIndicator: true,
                     ),

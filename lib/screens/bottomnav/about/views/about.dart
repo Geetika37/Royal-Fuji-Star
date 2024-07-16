@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
@@ -43,7 +41,7 @@ class About extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      height: screenHeight * 0.03,
+                      height: screenHeight * 0.02,
                     ),
                     Text(
                       'bottomnav4'.tr,

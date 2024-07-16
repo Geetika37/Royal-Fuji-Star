@@ -106,11 +106,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/screens/bottomnav/about/widgets/aboutgridview.dart';
 import 'package:royal_fuji_star/screens/bottomnav/about/widgets/contactinfo.dart';
 import 'package:royal_fuji_star/screens/bottomnav/about/widgets/emailinfo.dart';
-import 'package:royal_fuji_star/screens/bottomnav/about/widgets/videoplayer.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 import 'package:royal_fuji_star/utils/textcustom.dart';
 
@@ -119,8 +119,7 @@ class Aboutcontainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isPortrait =
-        MediaQuery.of(context).orientation == Orientation.portrait;
+    
 
     return Container(
       height: ScreenSize.getHeight(context) * 0.58,
@@ -159,21 +158,17 @@ class Aboutcontainer extends StatelessWidget {
                 fontSize: 12,
                 color: Appcolor.buttonColor,
               ),
-              if (isPortrait) ...[
-                SizedBox(height: ScreenSize.getHeight(context) * 0.015),
-                SizedBox(
-                  height: ScreenSize.getHeight(context) * 0.25,
-                  child: const VideoPlayer(),
+              SizedBox(height: ScreenSize.getHeight(context) * 0.01),
+              GestureDetector(
+                onTap: () =>
+                    launchURL("https://www.youtube.com/watch?v=dh7rRIZCni0"),
+                child: SizedBox(
+                  child: Image.network(
+                    "https://img.youtube.com/vi/${getVideoID("https://www.youtube.com/watch?v=dh7rRIZCni0")}/0.jpg",
+                  ),
                 ),
-                SizedBox(height: ScreenSize.getHeight(context) * 0.01),
-              ] else ...[
-                SizedBox(height: ScreenSize.getHeight(context) * 0.07),
-                SizedBox(
-                  height: ScreenSize.getHeight(context) * 0.5,
-                  child: const VideoPlayer(),
-                ),
-                SizedBox(height: ScreenSize.getHeight(context) * 0.07),
-              ],
+              ),
+              SizedBox(height: ScreenSize.getHeight(context) * 0.01),
               CustomTitle(
                 fontWeight: FontWeight.w500,
                 textHeading: 'abouttext4'.tr,
@@ -219,5 +214,23 @@ class Aboutcontainer extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  String getVideoID(String url) {
+    if (url.contains('youtu.be/')) {
+      return url.split('youtu.be/')[1].split('?')[0];
+    } else if (url.contains('watch?v=')) {
+      return url.split('watch?v=')[1].split('&')[0];
+    } else {
+      throw 'Invalid YouTube URL';
+    }
+  }
+
+  void launchURL(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 }
