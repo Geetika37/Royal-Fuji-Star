@@ -27,8 +27,7 @@ class AppTranslations extends Translations {
           'email': 'Email',
           'phone': 'Phone',
           'password': 'Password',
-          'location':'Location',
-
+          'location': 'Location',
           'select': 'Select',
           "image_dropitem": 'Drop items here',
           'editprofile': 'Edit Profile',
@@ -57,8 +56,7 @@ class AppTranslations extends Translations {
           'drawertext3': 'Settings',
           'drawertext4': '',
           'drawertext5': 'Logout',
-          'drawertext6':'ROYAL FUJI STAR',
-
+          'drawertext6': 'ROYAL FUJI STAR',
           'Settingstitle1': 'Settings',
           'Settingstitle2': 'Notification Settings',
           'Settingstitle3': 'Language Settings',
@@ -211,7 +209,7 @@ class AppTranslations extends Translations {
         'ar_AE': {
           'companyname': 'رويال فوجي ستار للمصاعد والسلالم المتحركة ذ.م.م',
           'started':
-              'اكتشف كيف يمكن لخدمات المصاعد التي نقدمها في شركة Royal Fuji Elevator Company في الإمارات العربية المتحدة أن تساهم في الأداء الدائم لمصاعدك من خلال التركيبات الدقيقة وعقود الصيانة السنوية الشاملة التي تعطي الأولوية للسلامة والمتانة.',
+              'نحن شريكك الموثوق به لحلول النقل العمودي في دولة الإمارات العربية المتحدة. مع 17 عامًا من الخبرة في صناعة المصاعد، نحن ملتزمون بتزويدك بالمصعد المثالي الذي يلبي احتياجاتك. خدماتنا الشاملة مصممة لتعزيز مستويات معيشتك، وفريق الخبراء لدينا على استعداد دائمًا لدعمك. مصاعدنا هي الحل الأمثل لترقية وسائل النقل اليومية بين الطوابق. أولويتنا القصوى هي توفير رحلة آمنة لجميع الركاب. سواء كنت بحاجة إلى خدمات تركيب أو إصلاح المصاعد السكنية، فإننا نضمن رضاك',
           'get_button': 'البدء',
           'welcome': 'مرحبا بكم في رويال فوجي ستار',
           'choose_language': 'اختر لغتك',
@@ -233,7 +231,7 @@ class AppTranslations extends Translations {
           'email': 'بريد إلكتروني',
           'phone': 'هاتف',
           'password': 'كلمة المرور',
-          'location':'موقع',
+          'location': 'موقع',
           'select': 'يختار',
           "image_dropitem": 'إسقاط العناصر هنا',
           'editprofile': 'تعديل الملف الشخصي',
@@ -250,7 +248,7 @@ class AppTranslations extends Translations {
           'hometitle2': 'راحة عالية في السماء',
           'hometitle3': 'المصاعد ستغير حياتك',
           'hometitle4':
-              'رويال فوجي هي شركة مصاعد رائدة في دبي، وتتمتع بخبرة تزيد عن 15 عامًا. نحن متخصصون في تصنيع وتوريد وتركيب وإصلاح وصيانة وتحديث جميع أنواع المصاعد للمباني السكنية والتجارية. سمعتنا مبنية على الاحتراف والعمل الجاد والمنتجات عالية الجودة المصممة خصيصًا لتلبية احتياجات عملائنا.',
+              'تعمل المصاعد والسلالم المتحركة على تحسين حياتنا اليومية بشكل كبير، وتحول مجرد وسائل النقل إلى رمز للأناقة. في شركة Royal Fuji Elevator Company في الإمارات العربية المتحدة، نفخر ليس فقط بتقديم حلول المصاعد المتميزة ولكن أيضًا بالتزامنا بصيانة وخدمات المصاعد الاستثنائية. الهدف هو ضمان سلامة الركاب ومتانة المصاعد. بدءًا من التركيبات الدقيقة وحتى عقود الصيانة السنوية الشاملة، تم تصميم خدماتنا لإعطاء الأولوية للموثوقية والعمر الطويل لمصاعدك. اكتشف كيف يمكن أن تساهم خدمات المصاعد لدينا في الأداء الدائم لمصاعدك',
           'hometitle5': 'منتجاتنا',
           'bottomnav1': 'منتجات',
           'bottomnav2': 'خدمات',
@@ -261,8 +259,7 @@ class AppTranslations extends Translations {
           'drawertext3': 'إعدادات',
           'drawertext4': '',
           'drawertext5': 'تسجيل خروج',
-          'drawertext6':'رويال فوجي ستار',
-
+          'drawertext6': 'رويال فوجي ستار',
           'Settingstitle1': 'إعدادات',
           'Settingstitle2': 'إعدادات الإشعار',
           'Settingstitle3': 'اعدادات اللغة',

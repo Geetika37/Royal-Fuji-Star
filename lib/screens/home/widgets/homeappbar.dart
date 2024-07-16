@@ -29,7 +29,7 @@ class HomeAppbar extends StatelessWidget {
             height: screenHeight * 0.05,
           ),
           SizedBox(
-            width: ScreenSize.getWidth(context) * 0.4,
+            width: ScreenSize.getWidth(context) * 0.5,
             child: Text(
               'companyname'.tr,
               style: poppins(Appcolor.black, 11, FontWeight.w600),
