@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:royal_fuji_star/constants/size.dart';
@@ -128,7 +129,7 @@ class UploadPicBoxRectangleState extends State<UploadPicBoxRectangle> {
                         height: screenHeight * 0.01,
                       ),
                       Text(
-                        'Drop items here',
+                        'image_dropitem'.tr,
                         style: poppins(Appcolor.black, 10, FontWeight.w300),
                       )
                     ],

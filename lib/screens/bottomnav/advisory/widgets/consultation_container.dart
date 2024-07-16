@@ -20,7 +20,7 @@ class ConsultationContainer extends StatelessWidget {
     List<File> selectedImagesController = [];
     TextEditingController descriptionController = TextEditingController();
     TextEditingController additionalCommentController = TextEditingController();
-    RxString consultationController = 'Select'.obs;
+    RxString consultationController = 'select'.tr.obs;
 
     return Container(
       height: screenHeight * 0.58,

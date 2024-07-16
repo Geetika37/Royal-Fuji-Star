@@ -17,6 +17,8 @@
     "email":"Email",
     "phone":"Phone",
     "password":"Password",
+    "select":"Select",
+    "image_dropitem":"Drop items here",
     "policy_terms":"By signing up you accept the Terms of Service and Privacy Policy",
     "already_account":"Already have an account?",
     "login_heading":"Login to Your Account",

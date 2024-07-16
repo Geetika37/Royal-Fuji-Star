@@ -27,6 +27,8 @@ class AppTranslations extends Translations {
           'email': 'Email',
           'phone': 'Phone',
           'password': 'Password',
+          'select': 'Select',
+          "image_dropitem": 'Drop items here',
           'editprofile': 'Edit Profile',
           'policy_terms':
               'By signing up you accept the Terms of Service and Privacy Policy',
@@ -227,6 +229,8 @@ class AppTranslations extends Translations {
           'email': 'بريد إلكتروني',
           'phone': 'هاتف',
           'password': 'كلمة المرور',
+          'select': 'يختار',
+          "image_dropitem": 'إسقاط العناصر هنا',
           'editprofile': 'تعديل الملف الشخصي',
           'enquiry': 'الاستفسار الآن',
           'policy_terms': 'بالتسجيل فإنك توافق على شروط الخدمة وسياسة الخصوصية',

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
@@ -219,7 +220,7 @@ class _DropdownConsultationState extends State<DropdownConsultation> {
 
   @override
   void initState() {
-    dropdownValue = 'Select';
+    dropdownValue = 'select'.tr;
     super.initState();
   }
 
@@ -241,7 +242,7 @@ class _DropdownConsultationState extends State<DropdownConsultation> {
             elevation: 40,
             dropdownColor: const Color.fromARGB(255, 227, 228, 229),
             validator: (value) {
-              if (value == null || value == 'Select') {
+              if (value == null || value == 'select'.tr) {
                 return 'Please select a valid option';
               }
               return null;
@@ -275,7 +276,7 @@ class _DropdownConsultationState extends State<DropdownConsultation> {
               });
             },
             items: [
-              'Select',
+              'select'.tr,
               'PLAN TO CONSTRUCT A NEW VILLA ',
               'LOOKING FOR A SUITABLE ELEVATOR FOR YOUR HOME',
               'LOOKING FOR ELEVATOR DETAILS AS PER YOUR AVAILBILE AREA SPECIFICATION ',
@@ -285,7 +286,7 @@ class _DropdownConsultationState extends State<DropdownConsultation> {
                 value: value,
                 child: Text(
                   value,
-                  style: value == 'Select'
+                  style: value == 'select'.tr
                       ? poppins(Colors.black12, 14, FontWeight.w400)
                       : poppins(Colors.grey.shade700, 14, FontWeight.w400),
                 ),
