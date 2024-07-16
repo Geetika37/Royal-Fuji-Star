@@ -172,12 +172,16 @@ class CategoryItemContainer extends StatelessWidget {
                               : const SizedBox(),
                         ),
                       ),
-                      SizedBox(height: screenHeight * 0.008),
-                      Text(
-                        categoryItem['name'],
-                        style: selectedIndex.value == index
-                            ? poppins(Appcolor.buttonColor, 11, FontWeight.w400)
-                            : poppins(Appcolor.black, 11, FontWeight.w400),
+                      // SizedBox(height: screenHeight * 0.008),
+                      Container(
+                        margin: const EdgeInsets.all(5),
+                        child: Text(
+                          categoryItem['name'],
+                          style: selectedIndex.value == index
+                              ? poppins(
+                                  Appcolor.buttonColor, 11, FontWeight.w400)
+                              : poppins(Appcolor.black, 11, FontWeight.w400),
+                        ),
                       ),
                     ],
                   )),

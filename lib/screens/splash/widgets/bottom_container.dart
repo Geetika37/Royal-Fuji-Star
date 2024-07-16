@@ -26,7 +26,7 @@ class BottomContainer extends StatelessWidget {
             children: [
               Image.asset('assets/png/logo.png'),
               Text(
-                'company_name'.tr,
+                'companyname'.tr,
                 style: poppins(Appcolor.black, 12, FontWeight.w500),
               )
             ],

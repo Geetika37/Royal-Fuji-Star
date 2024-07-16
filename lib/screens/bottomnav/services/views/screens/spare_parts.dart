@@ -52,7 +52,7 @@ class SpareParts extends StatelessWidget {
                 ),
                 SizedBox(height: screenHeight * 0.01),
                 SizedBox(
-                  height: screenHeight * 0.1,
+                  height: ScreenSize.getHeight(context) * 0.11,
                   child: CategoryItemContainer(),
                 ),
                 SizedBox(height: screenHeight * 0.01),
