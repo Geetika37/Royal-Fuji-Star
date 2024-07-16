@@ -98,7 +98,7 @@ class SettingsDrawer extends StatelessWidget {
                   'assets/png/logo.png',
                 ),
                 Text(
-                  'ROYAL FUJI STAR',
+                  'drawertext6'.tr,
                   style: poppins(Appcolor.black, 20, FontWeight.w600),
                 ),
               ],

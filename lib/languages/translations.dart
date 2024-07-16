@@ -55,6 +55,8 @@ class AppTranslations extends Translations {
           'drawertext3': 'Settings',
           'drawertext4': '',
           'drawertext5': 'Logout',
+          'drawertext6':'ROYAL FUJI STAR',
+
           'Settingstitle1': 'Settings',
           'Settingstitle2': 'Notification Settings',
           'Settingstitle3': 'Language Settings',
@@ -256,6 +258,8 @@ class AppTranslations extends Translations {
           'drawertext3': 'إعدادات',
           'drawertext4': '',
           'drawertext5': 'تسجيل خروج',
+          'drawertext6':'رويال فوجي ستار',
+
           'Settingstitle1': 'إعدادات',
           'Settingstitle2': 'إعدادات الإشعار',
           'Settingstitle3': 'اعدادات اللغة',
