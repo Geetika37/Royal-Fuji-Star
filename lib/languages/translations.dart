@@ -43,7 +43,7 @@ class AppTranslations extends Translations {
           'hometitle3': 'Elevators to transform your life',
           'hometitle4':
               'Elevators and escalators significantly enhance our everyday living, transforming mere transportation into a symbol of elegance.At Royal Fuji Elevator Company in the UAE, we pride ourselves on not just offering premium elevator solutions but also on our commitment to exceptional elevator maintenance and services.Our aim is to ensure the safety of our passengers and the durability of the elevators. From meticulous installations to comprehensive Annual Maintenance Contracts, our services are designed to prioritize the reliability and extended lifespan of your elevators.Discover how our Elevator Services can contribute to the enduring performance of your elevators',
-          'hometitle5': 'Our Products',
+          'hometitle5': 'OUR PRODUCTS',
           'bottomnav1': 'Products',
           'bottomnav2': 'Services',
           'bottomnav3': 'Advisory',

@@ -31,8 +31,12 @@ class HomeAppbar extends StatelessWidget {
             'assets/png/logo.png',
             height: screenHeight * 0.05,
           ),
-          Text('companyname'.tr,
-              style: poppins(Appcolor.black, 12, FontWeight.w600))
+          Text(
+            'companyname'.tr,
+            style: poppins(Appcolor.black, 12, FontWeight.w600),
+            overflow: TextOverflow.ellipsis,
+            maxLines: 1,
+          ),
         ],
       ),
       // actions: [
