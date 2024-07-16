@@ -117,7 +117,7 @@ class _DropdownCapacityState extends State<DropdownCapacity> {
 
   @override
   void initState() {
-    dropdownValue = 'Select';
+    dropdownValue = 'select'.tr;
     super.initState();
   }
 
@@ -139,7 +139,7 @@ class _DropdownCapacityState extends State<DropdownCapacity> {
             elevation: 40,
             dropdownColor: const Color.fromARGB(255, 227, 228, 229),
             validator: (value) {
-              if (value == null || value == 'Select') {
+              if (value == null || value == 'select'.tr) {
                 return 'Please select a valid option';
               }
               return null;
@@ -173,7 +173,7 @@ class _DropdownCapacityState extends State<DropdownCapacity> {
               });
             },
             items: [
-              'Select',
+              'select'.tr,
               ' 300KG',
               '450KG',
               '630KG',
@@ -185,7 +185,7 @@ class _DropdownCapacityState extends State<DropdownCapacity> {
                 value: value,
                 child: Text(
                   value,
-                  style: value == 'Select'
+                  style: value == 'select'.tr
                       ? poppins(Colors.black12, 14, FontWeight.w400)
                       : poppins(Colors.grey.shade700, 14, FontWeight.w400),
                 ),
@@ -321,7 +321,7 @@ class _DropdownNumFloorState extends State<DropdownNumFloor> {
 
   @override
   void initState() {
-    dropdownValue = 'Select';
+    dropdownValue = 'select'.tr;
     super.initState();
   }
 
@@ -342,7 +342,7 @@ class _DropdownNumFloorState extends State<DropdownNumFloor> {
           DropdownButtonFormField<String>(
             dropdownColor: const Color.fromARGB(255, 227, 228, 229),
             validator: (value) {
-              if (value == null || value == 'Select') {
+              if (value == null || value == 'select'.tr) {
                 return 'Please select a valid option';
               }
               return null;
@@ -376,14 +376,14 @@ class _DropdownNumFloorState extends State<DropdownNumFloor> {
               });
             },
             items: [
-              'Select',
+              'select'.tr,
               ...List.generate(200, (index) => (index + 1).toString())
             ].map<DropdownMenuItem<String>>((String value) {
               return DropdownMenuItem<String>(
                 value: value,
                 child: Text(
                   value,
-                  style: value == 'Select'
+                  style: value == 'select'.tr
                       ? poppins(Colors.black12, 14, FontWeight.w400)
                       : poppins(Colors.grey.shade700, 14, FontWeight.w400),
                 ),
@@ -418,7 +418,7 @@ class _DropdownRepairState extends State<DropdownRepair> {
 
   @override
   void initState() {
-    dropdownValue = 'Select';
+    dropdownValue = 'select'.tr;
     super.initState();
   }
 
@@ -439,7 +439,7 @@ class _DropdownRepairState extends State<DropdownRepair> {
           DropdownButtonFormField<String>(
             dropdownColor: const Color.fromARGB(255, 227, 228, 229),
             validator: (value) {
-              if (value == null || value == 'Select') {
+              if (value == null || value == 'select'.tr) {
                 return 'Please select a valid option';
               }
               return null;
@@ -473,7 +473,7 @@ class _DropdownRepairState extends State<DropdownRepair> {
               });
             },
             items: [
-              'Select',
+              'select'.tr,
               'One Time Repair',
               'Major Repair',
               'Replacement of Controllers and others',
@@ -482,7 +482,7 @@ class _DropdownRepairState extends State<DropdownRepair> {
                 value: value,
                 child: Text(
                   value,
-                  style: value == 'Select'
+                  style: value == 'select'.tr
                       ? poppins(Colors.black12, 14, FontWeight.w400)
                       : poppins(Colors.grey.shade700, 14, FontWeight.w400),
                 ),

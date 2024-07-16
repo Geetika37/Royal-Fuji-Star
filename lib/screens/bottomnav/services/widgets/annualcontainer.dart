@@ -19,8 +19,8 @@ class Annualcontainer extends StatelessWidget {
 
     TextEditingController brandNameController = TextEditingController();
     TextEditingController descriptionController = TextEditingController();
-    RxString capacityController = 'Select'.obs;
-    RxString numFloorController = 'Select'.obs;
+    RxString capacityController = 'select'.tr.obs;
+    RxString numFloorController = 'select'.tr.obs;
 
     return Container(
       height: ScreenSize.getHeight(context) * 0.65,

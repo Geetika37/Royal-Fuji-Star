@@ -19,7 +19,7 @@ class RepairContainer extends StatelessWidget {
     final RepairController repairController = Get.put(RepairController());
 
     TextEditingController brandNameController = TextEditingController();
-    RxString typeRepairController = 'Select'.obs;
+    RxString typeRepairController = 'select'.tr.obs;
     TextEditingController descriptionController = TextEditingController();
     List<File> selectedImagesController = [];
 
