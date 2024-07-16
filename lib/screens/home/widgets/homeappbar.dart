@@ -22,20 +22,19 @@ class HomeAppbar extends StatelessWidget {
           },
           child: Image.asset('assets/png/drawer.png')),
       title: Row(
-        // mainAxisAlignment: MainAxisAlignment.center,
+        // crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // SizedBox(
-          //   width: screenWidth * 0.1,
-          // ),
           Image.asset(
             'assets/png/logo.png',
             height: screenHeight * 0.05,
           ),
-          Text(
-            'companyname'.tr,
-            style: poppins(Appcolor.black, 12, FontWeight.w600),
-            overflow: TextOverflow.ellipsis,
-            maxLines: 1,
+          Expanded(
+            child: Text(
+              'companyname'.tr,
+              style: poppins(Appcolor.black, 11, FontWeight.w600),
+              overflow: TextOverflow.ellipsis,
+              maxLines: 1,
+            ),
           ),
         ],
       ),

@@ -94,7 +94,6 @@ class _VideoPlayerState extends State<VideoPlayer> {
       flags: const YoutubePlayerFlags(
         autoPlay: false,
         mute: true,
-        hideThumbnail: true,
       ),
     );
 
@@ -152,11 +151,11 @@ class _VideoPlayerState extends State<VideoPlayer> {
                 Center(
                   child: SizedBox(
                     width: orientation == Orientation.landscape
-                        ? MediaQuery.of(context).size.width
-                        : MediaQuery.of(context).size.width * 0.9,
+                        ? MediaQuery.sizeOf(context).width
+                        : MediaQuery.sizeOf(context).width,
                     height: orientation == Orientation.landscape
-                        ? MediaQuery.of(context).size.height
-                        : MediaQuery.of(context).size.height * 0.5,
+                        ? MediaQuery.sizeOf(context).height * 0.5
+                        : MediaQuery.sizeOf(context).height * 0.5,
                     child: YoutubePlayer(
                       controller: youtubePlayerController,
                       showVideoProgressIndicator: true,
