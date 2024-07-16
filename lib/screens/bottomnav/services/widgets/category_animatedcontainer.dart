@@ -104,6 +104,7 @@ import 'package:royal_fuji_star/screens/bottomnav/services/controllers/spare_cat
 import 'package:royal_fuji_star/screens/bottomnav/services/controllers/sparecategory_controller.dart';
 import 'package:royal_fuji_star/screens/bottomnav/services/controllers/spare_subcategory_spare_controller.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
+import 'package:royal_fuji_star/utils/shimmerloading.dart';
 
 class CategoryAnimatedContainer extends StatelessWidget {
   CategoryAnimatedContainer({super.key});
@@ -140,8 +141,10 @@ class CategoryAnimatedContainer extends StatelessWidget {
             Obx(() {
               double leftPosition = selectedIndex.value * 128.0;
               if (Directionality.of(context) == TextDirection.rtl) {
-                leftPosition = ScreenSize.getHeight(context) -
-                    (selectedIndex.value + 1) * 131;
+                leftPosition =
+                    ScreenSize.getHeight(context) - (selectedIndex.value + 1);
+                // leftPosition = ScreenSize.getHeight(context) -
+                //     (selectedIndex.value + 1) * 131;
               }
               return AnimatedPositioned(
                 duration: const Duration(milliseconds: 200),
@@ -158,7 +161,7 @@ class CategoryAnimatedContainer extends StatelessWidget {
             }),
             Obx(() {
               if (sparecategoryController.isLoading.value) {
-                return const Center(child: CircularProgressIndicator());
+                return const Center(child: ShimmerLoading());
               }
               return Row(
                 children: sparecategoryController.sparecategory
