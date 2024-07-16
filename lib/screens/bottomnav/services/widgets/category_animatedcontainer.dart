@@ -140,7 +140,8 @@ class CategoryAnimatedContainer extends StatelessWidget {
             Obx(() {
               double leftPosition = selectedIndex.value * 128.0;
               if (Directionality.of(context) == TextDirection.rtl) {
-                leftPosition = screenWidth - (selectedIndex.value + 1) * 131;
+                leftPosition = ScreenSize.getHeight(context) -
+                    (selectedIndex.value + 1) * 131;
               }
               return AnimatedPositioned(
                 duration: const Duration(milliseconds: 200),
