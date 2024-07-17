@@ -23,6 +23,7 @@ class Annualcontainer extends StatelessWidget {
     RxString numFloorController = 'select'.tr.obs;
 
     return Container(
+      margin: EdgeInsets.only(top: 10),
       height: ScreenSize.getHeight(context) * 0.65,
       width: screenWidth,
       decoration: const BoxDecoration(

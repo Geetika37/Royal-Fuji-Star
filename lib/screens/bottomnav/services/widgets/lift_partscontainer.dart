@@ -34,7 +34,17 @@ class LiftPartsContainer extends StatelessWidget {
       // print('spare--->$spare');
 
       if (spare == null || spare.data!.isEmpty) {
-        return const SizedBox();
+        return const SizedBox(
+          child: Padding(
+            padding: EdgeInsets.only(
+              top: 10,
+              left: 10,
+            ),
+            child: Text(
+              'No Spares Found',
+            ),
+          ),
+        );
       }
 
       return ListView.builder(
@@ -99,44 +109,33 @@ class LiftPartsContainer extends StatelessWidget {
                                   ),
                                   SizedBox(height: screenHeight * 0.01),
                                   Obx(
-                                    () => LoadingBlueButton(
+                                    () => BlueButtonn(
+                                      color: Appcolor.buttonColor,
                                       height: screenHeight * 0.05,
                                       width: screenWidth * 0.4,
                                       circularRadius: 10,
-                                      color: Appcolor.buttonColor,
-                                      onTap:
+                                      text:
                                           spareEnquiryController.isLoading.value
-                                              ? null
-                                              : () {
-                                                  spareEnquiryController
-                                                      .saveSpareEnquiry(
-                                                          spareListItem.id);
-                                                },
-                                      child: Stack(
-                                        alignment: Alignment.center,
-                                        children: [
-                                          Text(
-                                            'enquiry'.tr,
-                                            style: TextStyle(
-                                              fontSize: 14,
-                                              color: spareEnquiryController
-                                                      .isLoading.value
-                                                  ? Colors.transparent
-                                                  : Appcolor.white,
-                                              fontWeight: FontWeight.w600,
-                                            ),
-                                          ),
-                                          if (spareEnquiryController
-                                              .isLoading.value)
-                                            LoadingAnimationWidget
-                                                .prograssiveDots(
-                                              size: 20,
-                                              color: Appcolor.white,
-                                            ),
-                                        ],
-                                      ),
+                                              ? LoadingAnimationWidget
+                                                  .prograssiveDots(
+                                                  size: 20,
+                                                  color: Appcolor.white,
+                                                )
+                                              : Text(
+                                                  'enquiry'.tr,
+                                                  style: const TextStyle(
+                                                    fontSize: 14,
+                                                    color: Appcolor.white,
+                                                    fontWeight: FontWeight.w600,
+                                                  ),
+                                                ),
+                                      onTap: () async {
+                                        await spareEnquiryController
+                                            .saveSpareEnquiry(spareListItem.id);
+                                      },
+                                      fontSize: 14,
                                     ),
-                                  )
+                                  ),
                                 ],
                               ),
                             ),

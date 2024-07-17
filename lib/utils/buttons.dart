@@ -47,6 +47,46 @@ class BlueButton extends StatelessWidget {
   }
 }
 
+class BlueButtonn extends StatelessWidget {
+  const BlueButtonn({
+    super.key,
+    required this.height,
+    required this.width,
+    required this.circularRadius,
+    required this.text,
+    required this.onTap,
+    required this.color,
+    // required this.textColor,
+    required this.fontSize,
+  });
+  final double height, width, circularRadius, fontSize;
+  final Widget text;
+  final VoidCallback onTap;
+  // final Color color, textColor;
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        // margin: EdgeInsets.symmetric(
+        //   horizontal: width * 0.05,
+        // ),
+        height: height,
+        width: width,
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: BorderRadius.circular(circularRadius),
+        ),
+        child: Center(
+          child: text,
+        ),
+      ),
+    );
+  }
+}
+
 class LoadingBlueButton extends StatelessWidget {
   const LoadingBlueButton({
     super.key,
@@ -78,7 +118,6 @@ class LoadingBlueButton extends StatelessWidget {
     );
   }
 }
-
 
 class BlueButtonOutlined extends StatelessWidget {
   const BlueButtonOutlined({

@@ -33,26 +33,35 @@ class CardSettings extends StatelessWidget {
           top: 5,
           bottom: 5,
         ),
-        child: Row(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(
-                right: 10,
-                left: 10,
+        child: GestureDetector(
+          onTap: onTap,
+          child: Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(
+                  top: 10,
+                  right: 10,
+                  left: 10,
+                  bottom: 10,
+                ),
+                child: Text(
+                  text,
+                  style: poppins(Appcolor.black, 14, FontWeight.w500),
+                ),
               ),
-              child: Text(
-                text,
-                style: poppins(Appcolor.black, 14, FontWeight.w500),
+              const Spacer(),
+              // IconButton(
+              //     onPressed: onTap,
+              //     icon: const Icon(
+              //       Icons.arrow_forward_ios,
+              //       size: 20,
+              //     )),
+              const Icon(
+                Icons.arrow_forward_ios,
+                size: 20,
               ),
-            ),
-            const Spacer(),
-            IconButton(
-                onPressed: onTap,
-                icon: const Icon(
-                  Icons.arrow_forward_ios,
-                  size: 20,
-                )),
-          ],
+            ],
+          ),
         ),
       ),
     );
