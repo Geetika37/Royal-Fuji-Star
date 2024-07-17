@@ -34,14 +34,12 @@ class LiftPartsContainer extends StatelessWidget {
       // print('spare--->$spare');
 
       if (spare == null || spare.data!.isEmpty) {
-        return const SizedBox(
-          child: Padding(
-            padding: EdgeInsets.only(
-              top: 10,
-              left: 10,
-            ),
+        return SizedBox(
+          height: screenHeight * 0.1,
+          child: const Center(
             child: Text(
               'No Spares Found',
+              style: TextStyle(color: Colors.black),
             ),
           ),
         );
