@@ -80,40 +80,34 @@ class _LoginContainerState extends State<LoginContainer> {
                 ),
                 SizedBox(height: screenHeight * 0.04),
 
-                Obx(() => LoadingBlueButton(
-                      height: screenHeight * 0.07,
-                      width: screenWidth * 0.8,
-                      circularRadius: 10,
-                      color: Appcolor.buttonColor,
-                      onTap: loginController.isLoading.value
-                          ? null
-                          : () {
-                              loginController.login(
-                                emailController.text,
-                                passwordController.text,
-                              );
-                            },
-                      child: Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          Text(
+                Obx(
+                  () => BlueButtonn(
+                    color: Appcolor.buttonColor,
+                    height: screenHeight * 0.07,
+                    width: screenWidth * 0.8,
+                    circularRadius: 10,
+                    text: loginController.isLoading.value
+                        ? LoadingAnimationWidget.prograssiveDots(
+                            size: 35,
+                            color: Appcolor.white,
+                          )
+                        : Text(
                             'login'.tr,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 14,
-                              color: loginController.isLoading.value
-                                  ? Colors.transparent
-                                  : Appcolor.white,
+                              color: Appcolor.white,
                               fontWeight: FontWeight.w600,
                             ),
                           ),
-                          if (loginController.isLoading.value)
-                            LoadingAnimationWidget.prograssiveDots(
-                              size: 35,
-                              color: Appcolor.white,
-                            ),
-                        ],
-                      ),
-                    )),
+                    onTap: () async {
+                      loginController.login(
+                        emailController.text,
+                        passwordController.text,
+                      );
+                    },
+                    fontSize: 14,
+                  ),
+                )
               ],
             ),
           ),

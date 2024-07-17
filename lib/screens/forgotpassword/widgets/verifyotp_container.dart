@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:pinput/pinput.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
@@ -48,17 +49,30 @@ class VerifyOTPContainer extends StatelessWidget {
               onCompleted: (pin) => print(pin),
             ),
             SizedBox(height: screenHeight * 0.05),
-            BlueButton(
-              height: screenHeight * 0.07,
-              width: screenWidth * 0.8,
-              circularRadius: 10,
-              text: 'annualcontainertext9'.tr,
-              onTap: () async {
-                await verifyotpController.verifyOtp(pinController.text);
-              },
-              color: Appcolor.buttonColor,
-              textColor: Appcolor.white,
-              fontSize: 14,
+            Obx(
+              () => BlueButtonn(
+                color: Appcolor.buttonColor,
+                height: screenHeight * 0.07,
+                width: screenWidth * 0.8,
+                circularRadius: 10,
+                text: verifyotpController.isLoading.value
+                    ? LoadingAnimationWidget.prograssiveDots(
+                        size: 35,
+                        color: Appcolor.white,
+                      )
+                    : Text(
+                        'annualcontainertext9'.tr,
+                        style: const TextStyle(
+                          fontSize: 14,
+                          color: Appcolor.white,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                onTap: () async {
+                  verifyotpController.verifyOtp(pinController.text);
+                },
+                fontSize: 14,
+              ),
             ),
           ],
         ),

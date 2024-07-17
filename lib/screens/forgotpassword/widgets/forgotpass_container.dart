@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/screens/forgotpassword/controller/forgotpass_controller.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
@@ -44,19 +45,32 @@ class _ForgotpassContainerState extends State<ForgotpassContainer> {
                 controller: emailController,
               ),
               SizedBox(height: screenHeight * 0.05),
-              BlueButton(
-                height: screenHeight * 0.07,
-                width: screenWidth * 0.8,
-                circularRadius: 10,
-                text: 'annualcontainertext9'.tr,
-                onTap: () {
-                  if (_validateForm()) {
-                    forgotpassController.forgotPass(emailController.text);
-                  }
-                },
-                color: Appcolor.buttonColor,
-                textColor: Appcolor.white,
-                fontSize: 14,
+              Obx(
+                () => BlueButtonn(
+                  color: Appcolor.buttonColor,
+                  height: screenHeight * 0.07,
+                  width: screenWidth * 0.8,
+                  circularRadius: 10,
+                  text: forgotpassController.isLoading.value
+                      ? LoadingAnimationWidget.prograssiveDots(
+                          size: 35,
+                          color: Appcolor.white,
+                        )
+                      : Text(
+                          'annualcontainertext9'.tr,
+                          style: const TextStyle(
+                            fontSize: 14,
+                            color: Appcolor.white,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                  onTap: () async {
+                    if (_validateForm()) {
+                      forgotpassController.forgotPass(emailController.text);
+                    }
+                  },
+                  fontSize: 14,
+                ),
               ),
             ],
           ),

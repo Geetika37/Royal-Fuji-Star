@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/screens/forgotpassword/controller/resetpass_controller.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
@@ -49,18 +50,33 @@ class ResetpassContainer extends StatelessWidget {
               obscureText: true,
             ),
             SizedBox(height: screenHeight * 0.03),
-            BlueButton(
-              height: screenHeight * 0.07,
-              width: screenWidth * 0.8,
-              circularRadius: 10,
-              text: 'annualcontainertext9'.tr,
-              onTap: () async {
-                await resetpassController.resetPassword(passwordController.text,
-                    confirmPasswordController.text, otp);
-              },
-              color: Appcolor.buttonColor,
-              textColor: Appcolor.white,
-              fontSize: 14,
+            Obx(
+              () => BlueButtonn(
+                color: Appcolor.buttonColor,
+                height: screenHeight * 0.07,
+                width: screenWidth * 0.8,
+                circularRadius: 10,
+                text: resetpassController.isLoading.value
+                    ? LoadingAnimationWidget.prograssiveDots(
+                        size: 35,
+                        color: Appcolor.white,
+                      )
+                    : Text(
+                        'annualcontainertext9'.tr,
+                        style: const TextStyle(
+                          fontSize: 14,
+                          color: Appcolor.white,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                onTap: () async {
+                  await resetpassController.resetPassword(
+                      passwordController.text,
+                      confirmPasswordController.text,
+                      otp);
+                },
+                fontSize: 14,
+              ),
             ),
           ],
         ),
