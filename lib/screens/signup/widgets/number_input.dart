@@ -20,40 +20,28 @@ class NumberInput extends StatelessWidget {
       child: Row(
         children: [
           CountryCodePicker(
-            // backgroundColor: Colors.green,
-            // boxDecoration: const BoxDecoration(
-            //   color: Appcolor.buttonColor,
-            // ),
-            // flagDecoration: const BoxDecoration(
-            //   borderRadius: BorderRadius.all(Radius.circular(5)),
-            // ),
             textStyle: poppins(
                 const Color.fromARGB(255, 149, 147, 147), 15, FontWeight.w300),
             onChanged: (countryCode) {
               countryCodeController.text = countryCode.dialCode ?? '';
             },
-
-            initialSelection: 'GB',
-            favorite: const ['+44', 'GB'],
+            initialSelection: 'AE',
+            favorite: const ['+971', 'AE', '+966', 'SA', '+965', 'KW', '+973', 'BH', '+974', 'QA', '+968', 'OM'],
             showCountryOnly: false,
-            // showOnlyCountryWhenClosed: false,
             alignLeft: false,
-            // countryFilter: const ['GB', 'IN'],
             onInit: (countryCode) {
-              countryCodeController.text = countryCode?.dialCode ?? '';
+              countryCodeController.text = countryCode?.dialCode ?? '+971';
             },
           ),
           SizedBox(width: screenWidth * 0.02),
           Expanded(
             child: TextFormField(
               maxLength: 10,
-              // cursorColor: const Color.fromRGBO(152, 151, 151, 1),
               keyboardType: TextInputType.phone,
               inputFormatters: [
                 FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
                 LengthLimitingTextInputFormatter(10),
               ],
-
               style: poppins(const Color.fromARGB(255, 149, 147, 147), 15,
                   FontWeight.w300),
               controller: phoneController,
