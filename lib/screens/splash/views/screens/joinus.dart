@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
@@ -69,6 +70,7 @@ class _JoinUsState extends State<JoinUs> {
                   circularRadius: 10,
                   text: 'sign_up'.tr,
                   onTap: () {
+                    HapticFeedback.mediumImpact();
                     Get.to(const SignUp());
                   },
                 ),
@@ -81,6 +83,8 @@ class _JoinUsState extends State<JoinUs> {
                   circularRadius: 10,
                   text: 'login'.tr,
                   onTap: () {
+                    HapticFeedback.mediumImpact();
+
                     Get.to(const LoginScreen());
                   },
                 )

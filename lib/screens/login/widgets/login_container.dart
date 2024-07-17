@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:royal_fuji_star/constants/size.dart';
@@ -100,6 +101,8 @@ class _LoginContainerState extends State<LoginContainer> {
                             ),
                           ),
                     onTap: () async {
+                    HapticFeedback.mediumImpact();
+
                       loginController.login(
                         emailController.text,
                         passwordController.text,

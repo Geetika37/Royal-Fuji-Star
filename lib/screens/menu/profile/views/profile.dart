@@ -60,6 +60,8 @@ class ProfilePage extends StatelessWidget {
                           circularRadius: 20,
                           text: 'logout'.tr,
                           onTap: () async {
+                            HapticFeedback.mediumImpact();
+
                             await TokenKey.clearValue('token');
                             Get.to(const GetStarted());
                           },

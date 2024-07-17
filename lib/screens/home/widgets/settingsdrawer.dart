@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
@@ -53,6 +54,8 @@ class SettingsDrawer extends StatelessWidget {
                     leading: Image.asset('assets/png/profile.png'),
                     title: Text('drawertext2'.tr, style: drawertext),
                     onTap: () {
+                      HapticFeedback.lightImpact();
+
                       profileController.profileDetails();
                     },
                     contentPadding: EdgeInsets.symmetric(
@@ -64,6 +67,8 @@ class SettingsDrawer extends StatelessWidget {
                       leading: Image.asset('assets/png/settings.png'),
                       title: Text('drawertext3'.tr, style: drawertext),
                       onTap: () {
+                        HapticFeedback.lightImpact();
+
                         Get.to(const SettingsPage());
                       },
                       contentPadding:
@@ -73,6 +78,8 @@ class SettingsDrawer extends StatelessWidget {
                     leading: Image.asset('assets/png/faq.png'),
                     title: Text('FAQ'.tr, style: drawertext),
                     onTap: () {
+                      HapticFeedback.lightImpact();
+
                       Get.to(const FAQPage());
                     },
                     contentPadding:
@@ -83,6 +90,8 @@ class SettingsDrawer extends StatelessWidget {
                       leading: Image.asset('assets/png/logout.png'),
                       title: Text('drawertext5'.tr, style: drawertext),
                       onTap: () async {
+                        HapticFeedback.lightImpact();
+
                         await TokenKey.clearValue('token');
                         Get.to(const GetStarted());
                       },

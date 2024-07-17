@@ -130,6 +130,7 @@ class _LanguageSelectState extends State<LanguageSelect> {
                 circularRadius: 10,
                 text: 'continue'.tr,
                 onTap: () {
+                  HapticFeedback.mediumImpact();
                   Get.to(const JoinUs());
                 },
               ),
@@ -140,4 +141,3 @@ class _LanguageSelectState extends State<LanguageSelect> {
     );
   }
 }
-

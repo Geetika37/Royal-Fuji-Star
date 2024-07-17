@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:royal_fuji_star/screens/splash/views/screens/language_select.dart';
@@ -67,6 +68,7 @@ class GetStarted extends StatelessWidget {
               circularRadius: 10,
               text: 'get_button'.tr,
               onTap: () {
+                HapticFeedback.mediumImpact();
                 Get.to(LanguageSelect());
               },
             ),
