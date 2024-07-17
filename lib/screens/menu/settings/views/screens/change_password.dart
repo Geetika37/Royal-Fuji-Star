@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/screens/menu/settings/controller/changepassword_controller.dart';
 import 'package:royal_fuji_star/screens/widgets/customappbar.dart';
@@ -57,22 +59,36 @@ class ChangePassword extends StatelessWidget {
               obscureText: true,
             ),
             SizedBox(height: screenHeight * 0.2),
-            BlueButton(
-              height: screenHeight * 0.07,
-              width: screenWidth,
-              circularRadius: 10,
-              text: 'Settingstitle7'.tr,
-              onTap: () {
-                changePasswordController.changePassword(
-                  currentPassController.text,
-                  passwordController.text,
-                  confirmPassController.text,
-                );
-              },
-              color: Appcolor.buttonColor,
-              textColor: Appcolor.white,
-              fontSize: 15,
-            ),
+            Obx(
+              () => BlueButtonn(
+                color: Appcolor.buttonColor,
+                height: screenHeight * 0.07,
+                width: screenWidth * 0.92,
+                circularRadius: 10,
+                text: changePasswordController.isLoading.value
+                    ? LoadingAnimationWidget.prograssiveDots(
+                        size: 35,
+                        color: Appcolor.white,
+                      )
+                    : Text(
+                        'Settingstitle7'.tr,
+                        style: const TextStyle(
+                          fontSize: 14,
+                          color: Appcolor.white,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                onTap: () async {
+                  HapticFeedback.mediumImpact();
+                  await changePasswordController.changePassword(
+                    currentPassController.text,
+                    passwordController.text,
+                    confirmPassController.text,
+                  );
+                },
+                fontSize: 14,
+              ),
+            )
           ],
         ),
       ),

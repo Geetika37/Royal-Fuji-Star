@@ -1,7 +1,9 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
 import 'package:royal_fuji_star/screens/bottomnav/advisory/controllers/advisory_controller.dart';
@@ -79,26 +81,44 @@ class ConsultationContainer extends StatelessWidget {
                 hintTextSize: 12,
               ),
 
-              SizedBox(height: screenHeight * 0.01),
+              SizedBox(height: screenHeight * 0.02),
               // SizedBox(height: screenHeight * 0.01),
 
               Center(
-                child: BlueButton(
-                  fontSize: 14,
-                  textColor: Appcolor.white,
-                  color: Appcolor.buttonColor,
-                  height: screenHeight * 0.06,
-                  width: screenWidth * 0.7,
-                  circularRadius: 10,
-                  text: 'annualcontainertext9'.tr,
-                  onTap: () {
-                    advisoryController.saveAdvisory(
-                      consultationController.value,
-                      descriptionController.text,
-                      additionalCommentController.text,
-                      selectedImagesController,
-                    );
-                  },
+                child: Obx(
+                  () => BlueButtonn(
+                    color: Appcolor.buttonColor,
+                    height: screenHeight * 0.07,
+                    width: screenWidth * 0.92,
+                    circularRadius: 10,
+                    text: advisoryController.isLoading.value
+                        ? LoadingAnimationWidget.prograssiveDots(
+                            size: 35,
+                            color: Appcolor.white,
+                          )
+                        : Text(
+                            'annualcontainertext9'.tr,
+                            style: const TextStyle(
+                              fontSize: 14,
+                              color: Appcolor.white,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                    onTap: () async {
+                      HapticFeedback.mediumImpact();
+                      await advisoryController.saveAdvisory(
+                        consultationController.value,
+                        descriptionController.text,
+                        additionalCommentController.text,
+                        selectedImagesController,
+                      );
+                      // consultationController.value = 'select'.obs;
+                      descriptionController.clear();
+                      additionalCommentController.clear();
+                      selectedImagesController.clear();
+                    },
+                    fontSize: 14,
+                  ),
                 ),
               ),
               SizedBox(height: screenHeight * 0.01),

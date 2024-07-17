@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/screens/menu/profile/controller/editprofile_controller.dart';
 import 'package:royal_fuji_star/screens/menu/profile/widgets/textfieldwithoutborder.dart';
@@ -87,25 +89,39 @@ class _EditProfileState extends State<EditProfile> {
                       imagePath: 'assets/png/picon4.png',
                       text: 'editprofilehinttext4'.tr),
                   SizedBox(height: screenHeight * 0.14),
-                  BlueButton(
-                    fontSize: 14,
-                    textColor: Appcolor.white,
-                    height: screenHeight * 0.08,
-                    width: screenWidth * 0.9,
-                    circularRadius: 20,
-                    text: 'save'.tr,
-                    onTap: () {
-                      if (_validateForm()) {
-                        editprofileController.editProfile(
-                          userNameController.text,
-                          emailIDController.text,
-                          mobileController.text,
-                          locationController.text,
-                        );
-                      }
-                    },
-                    color: Appcolor.buttonColor,
-                  )
+                  Obx(
+                    () => BlueButtonn(
+                      color: Appcolor.buttonColor,
+                      height: screenHeight * 0.07,
+                      width: screenWidth * 0.92,
+                      circularRadius: 10,
+                      text: editprofileController.isLoading.value
+                          ? LoadingAnimationWidget.prograssiveDots(
+                              size: 35,
+                              color: Appcolor.white,
+                            )
+                          : Text(
+                              'save'.tr,
+                              style: const TextStyle(
+                                fontSize: 14,
+                                color: Appcolor.white,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                      onTap: () async {
+                        HapticFeedback.mediumImpact();
+                        if (_validateForm()) {
+                          await editprofileController.editProfile(
+                            userNameController.text,
+                            emailIDController.text,
+                            mobileController.text,
+                            locationController.text,
+                          );
+                        }
+                      },
+                      fontSize: 14,
+                    ),
+                  ),
                 ],
               ),
             ),

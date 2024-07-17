@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 
@@ -33,16 +34,16 @@ class CardSettings extends StatelessWidget {
           top: 5,
           bottom: 5,
         ),
-        child: GestureDetector(
+        child: InkWell(
           onTap: onTap,
           child: Row(
             children: [
               Padding(
                 padding: const EdgeInsets.only(
-                  top: 10,
+                  top: 13,
                   right: 10,
                   left: 10,
-                  bottom: 10,
+                  bottom: 13,
                 ),
                 child: Text(
                   text,
@@ -60,6 +61,7 @@ class CardSettings extends StatelessWidget {
                 Icons.arrow_forward_ios,
                 size: 20,
               ),
+              SizedBox(width: screenWidth * 0.02),
             ],
           ),
         ),
