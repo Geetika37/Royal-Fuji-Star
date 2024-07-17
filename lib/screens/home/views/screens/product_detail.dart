@@ -120,39 +120,31 @@ class _ProductDetailState extends State<ProductDetail> {
                 ),
                 Center(
                   child: Obx(
-                    () => LoadingBlueButton(
+                    () => BlueButtonn(
+                      color: Appcolor.buttonColor,
                       height: screenHeight * 0.06,
                       width: screenWidth * 0.9,
                       circularRadius: 10,
-                      color: Appcolor.buttonColor,
-                      onTap: oneproductEnquiryController.isLoading.value
-                          ? null
-                          : () {
-                              oneproductEnquiryController.saveEnquiryOneProduct(
-                                product.data.id,
-                                selectedComponentIds,
-                              );
-                            },
-                      child: Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          Text(
-                            'enquiry'.tr,
-                            style: TextStyle(
-                              fontSize: 14,
-                              color: oneproductEnquiryController.isLoading.value
-                                  ? Colors.transparent
-                                  : Appcolor.white,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                          if (oneproductEnquiryController.isLoading.value)
-                            LoadingAnimationWidget.prograssiveDots(
-                              size: 20,
+                      text: oneproductEnquiryController.isLoading.value
+                          ? LoadingAnimationWidget.prograssiveDots(
+                              size: 35,
                               color: Appcolor.white,
+                            )
+                          : Text(
+                              'enquiry'.tr,
+                              style: const TextStyle(
+                                fontSize: 14,
+                                color: Appcolor.white,
+                                fontWeight: FontWeight.w600,
+                              ),
                             ),
-                        ],
-                      ),
+                      onTap: () async {
+                        oneproductEnquiryController.saveEnquiryOneProduct(
+                          product.data.id,
+                          selectedComponentIds,
+                        );
+                      },
+                      fontSize: 14,
                     ),
                   ),
                 ),

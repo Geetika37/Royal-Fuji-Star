@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
 import 'package:royal_fuji_star/screens/bottomnav/services/controllers/annualmaintenance_controller.dart';
@@ -23,7 +25,7 @@ class Annualcontainer extends StatelessWidget {
     RxString numFloorController = 'select'.tr.obs;
 
     return Container(
-      margin: EdgeInsets.only(top: 10),
+      margin: const EdgeInsets.only(top: 10),
       height: ScreenSize.getHeight(context) * 0.65,
       width: screenWidth,
       decoration: const BoxDecoration(
@@ -91,22 +93,43 @@ class Annualcontainer extends StatelessWidget {
               ),
               SizedBox(height: screenHeight * 0.02),
               Center(
-                child: BlueButton(
-                    fontSize: 14,
-                    textColor: Appcolor.white,
+                child: Obx(
+                  () => BlueButtonn(
                     color: Appcolor.buttonColor,
-                    height: screenHeight * 0.06,
-                    width: screenWidth * 0.7,
+                    height: screenHeight * 0.07,
+                    width: screenWidth * 0.92,
                     circularRadius: 10,
-                    text: 'annualcontainertext9'.tr,
-                    onTap: () {
-                      annualMaintenanceController.saveAnnualMaintenance(
+                    text: annualMaintenanceController.isLoading.value
+                        ? LoadingAnimationWidget.prograssiveDots(
+                            size: 35,
+                            color: Appcolor.white,
+                          )
+                        : Text(
+                            'annualcontainertext9'.tr,
+                            style: const TextStyle(
+                              fontSize: 14,
+                              color: Appcolor.white,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                    onTap: () async {
+                      HapticFeedback.mediumImpact();
+                      await annualMaintenanceController.saveAnnualMaintenance(
                         brandNameController.text,
                         descriptionController.text,
                         capacityController.value,
                         numFloorController.value,
                       );
-                    }),
+                      // Clear the input fields after successful submission
+                      brandNameController.clear();
+                      descriptionController.clear();
+                      capacityController.value = 'select'.tr;
+                      numFloorController.value = 'select'.tr;
+                      annualMaintenanceController.typeController.value = '';
+                    },
+                    fontSize: 14,
+                  ),
+                ),
               )
             ],
           ),
