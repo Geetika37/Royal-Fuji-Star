@@ -108,13 +108,17 @@ class SettingsDrawer extends StatelessWidget {
                 Image.asset(
                   'assets/png/logo.png',
                 ),
-                Text(
-                  'drawertext6'.tr,
-                  style: poppins(Appcolor.black, 20, FontWeight.w600),
+                Expanded(
+                  child: Text(
+                    'drawertext6'.tr,
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 1,
+                    style: poppins(Appcolor.black, 18, FontWeight.w600),
+                  ),
                 ),
               ],
             ),
-          ),
+          )
         ],
       ),
     );
