@@ -5,7 +5,11 @@ import 'package:royal_fuji_star/constants/textstyle.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 
 class ServiceTypes extends StatelessWidget {
-  const ServiceTypes({super.key, required this.image, required this.text, required this.onTap});
+  const ServiceTypes(
+      {super.key,
+      required this.image,
+      required this.text,
+      required this.onTap});
   final String image;
   final String text;
   final Function() onTap;
@@ -36,6 +40,8 @@ class ServiceTypes extends StatelessWidget {
                 text,
                 style: poppins(Appcolor.buttonColor, 11, FontWeight.w500),
                 textAlign: TextAlign.center,
+                overflow: TextOverflow.ellipsis,
+                maxLines: 2,
               ),
             ],
           ),

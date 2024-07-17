@@ -47,13 +47,13 @@ class _SignupContainerState extends State<SignupContainer> {
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(15.0),
+        padding: const EdgeInsets.only(),
         child: Form(
           key: formKey,
           child: SingleChildScrollView(
             child: Column(
               children: [
-                // SizedBox(height: screenHeight * 0.05),
+                SizedBox(height: screenHeight * 0.06),
                 Textformfield(
                   controller: nameController,
                   textfieldWidth: screenWidth * 0.8,

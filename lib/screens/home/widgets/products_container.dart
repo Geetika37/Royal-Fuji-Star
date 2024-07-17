@@ -8,11 +8,22 @@ import 'package:royal_fuji_star/screens/home/views/screens/product_page.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 import 'package:royal_fuji_star/utils/shimmerloading.dart';
 
-class ProductsContainer extends StatelessWidget {
+class ProductsContainer extends StatefulWidget {
+  ProductsContainer({super.key});
+
+  @override
+  State<ProductsContainer> createState() => _ProductsContainerState();
+}
+
+class _ProductsContainerState extends State<ProductsContainer> {
   final ProductCategoryController productCategoryController =
       Get.put(ProductCategoryController());
 
-  ProductsContainer({super.key});
+  @override
+  void initState() {
+    super.initState();
+    productCategoryController.loadLocale();
+  }
 
   @override
   Widget build(BuildContext context) {

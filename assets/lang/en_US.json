@@ -100,7 +100,7 @@
     "faqtitle6":"5. Why are spare parts crucial for elevator maintenance?",
     "description":"Description",
     "gallery":"Gallery",
-    "enquiry":"Enquiry Now",
+    "enquiry":"Enquire Now",
     "faqsubtitle1":"We take pride in our rapid delivery service – your desired elevator product will be at your doorstep within just 30 days.",
     "faqsubtitle2":"Our expert technicians efficiently complete elevator installations from the ground floor to the tenth floor within an astonishing 40 to 42 days. Residential or commercial, we’ve got you covered.",
     "faqsubtitle3":"Our experienced technicians promptly diagnose and efficiently repair elevator malfunctions, ensuring uninterrupted vertical mobility",
@@ -166,9 +166,9 @@
     "verifyotp1":"Verify OTP",
     "verifyotp2":"Enter OTP",
     "resetpass":"Reset Password",
-    "components":"Components"
-
-
+    "components":"Components",
+    "productnotfound":"No Products Found",
+    "sparenotfound":"No Spares Found"
     
 
 

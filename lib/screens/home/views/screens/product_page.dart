@@ -36,6 +36,19 @@ class ProductPage extends StatelessWidget {
           if (categoryProductController.isLoading.value) {
             return const Center(child: ShimmerLoading());
           }
+          if (categoryProduct.isEmpty) {
+            return Center(
+              child: Text(
+                'productnotfound'.tr,
+                style: poppins(
+                  Appcolor.black,
+                  16,
+                  FontWeight.w500,
+                ),
+              ),
+            );
+          }
+
           return ListView.builder(
             itemCount: categoryProduct.length,
             itemBuilder: (context, index) {

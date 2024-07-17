@@ -42,63 +42,65 @@ class SettingsDrawer extends StatelessWidget {
               ),
             ),
           ),
-          Container(
-              height: screenHeight * 0.76,
-              color: Appcolor.buttonColor,
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: screenHeight * 0.045,
-                  ),
-                  ListTile(
-                    leading: Image.asset('assets/png/profile.png'),
-                    title: Text('drawertext2'.tr, style: drawertext),
-                    onTap: () {
-                      HapticFeedback.lightImpact();
-
-                      profileController.profileDetails();
-                    },
-                    contentPadding: EdgeInsets.symmetric(
-                      horizontal: width * 0.05,
+          Expanded(
+            child: Container(
+                // height: screenHeight * 0.76,
+                color: Appcolor.buttonColor,
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: screenHeight * 0.045,
                     ),
-                  ),
-                  const Divider(),
-                  ListTile(
-                      leading: Image.asset('assets/png/settings.png'),
-                      title: Text('drawertext3'.tr, style: drawertext),
+                    ListTile(
+                      leading: Image.asset('assets/png/profile.png'),
+                      title: Text('drawertext2'.tr, style: drawertext),
                       onTap: () {
                         HapticFeedback.lightImpact();
 
-                        Get.to(const SettingsPage());
+                        profileController.profileDetails();
                       },
-                      contentPadding:
-                          EdgeInsets.symmetric(horizontal: width * 0.05)),
-                  const Divider(),
-                  ListTile(
-                    leading: Image.asset('assets/png/faq.png'),
-                    title: Text('FAQ'.tr, style: drawertext),
-                    onTap: () {
-                      HapticFeedback.lightImpact();
+                      contentPadding: EdgeInsets.symmetric(
+                        horizontal: width * 0.05,
+                      ),
+                    ),
+                    const Divider(),
+                    ListTile(
+                        leading: Image.asset('assets/png/settings.png'),
+                        title: Text('drawertext3'.tr, style: drawertext),
+                        onTap: () {
+                          HapticFeedback.lightImpact();
 
-                      Get.to(const FAQPage());
-                    },
-                    contentPadding:
-                        EdgeInsets.symmetric(horizontal: width * 0.05),
-                  ),
-                  const Divider(),
-                  ListTile(
-                      leading: Image.asset('assets/png/logout.png'),
-                      title: Text('drawertext5'.tr, style: drawertext),
-                      onTap: () async {
+                          Get.to(const SettingsPage());
+                        },
+                        contentPadding:
+                            EdgeInsets.symmetric(horizontal: width * 0.05)),
+                    const Divider(),
+                    ListTile(
+                      leading: Image.asset('assets/png/faq.png'),
+                      title: Text('FAQ'.tr, style: drawertext),
+                      onTap: () {
                         HapticFeedback.lightImpact();
 
-                        await TokenKey.clearValue('token');
-                        Get.to(const GetStarted());
+                        Get.to(const FAQPage());
                       },
                       contentPadding:
-                          EdgeInsets.symmetric(horizontal: width * 0.05)),
-                ],
-              )),
+                          EdgeInsets.symmetric(horizontal: width * 0.05),
+                    ),
+                    const Divider(),
+                    ListTile(
+                        leading: Image.asset('assets/png/logout.png'),
+                        title: Text('drawertext5'.tr, style: drawertext),
+                        onTap: () async {
+                          HapticFeedback.lightImpact();
+
+                          await TokenKey.clearValue('token');
+                          Get.to(const GetStarted());
+                        },
+                        contentPadding:
+                            EdgeInsets.symmetric(horizontal: width * 0.05)),
+                  ],
+                )),
+          ),
           SizedBox(
             width: double.infinity,
             child: Row(

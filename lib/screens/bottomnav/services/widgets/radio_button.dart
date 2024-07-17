@@ -20,9 +20,13 @@ class _RadioButtonState extends State<RadioButton> {
     return Obx(() {
       return Row(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Expanded(
+            flex: 5,
             child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Radio(
                   activeColor: Appcolor.buttonColor,
@@ -51,7 +55,10 @@ class _RadioButtonState extends State<RadioButton> {
             ),
           ),
           Expanded(
+            flex: 5,
             child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Radio(
                   activeColor: Appcolor.buttonColor,

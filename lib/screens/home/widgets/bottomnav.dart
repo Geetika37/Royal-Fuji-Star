@@ -165,9 +165,12 @@ class BottomBarItem extends StatelessWidget {
               Text(
                 label,
                 style: TextStyle(
-                    color: isSelected ? Appcolor.buttonColor : Colors.white,
-                    fontSize: 11.0,
-                    fontWeight: FontWeight.w600),
+                  color: isSelected ? Appcolor.buttonColor : Colors.white,
+                  fontSize: 11.0,
+                  fontWeight: FontWeight.w600,
+                ),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
               ),
             ],
           ),

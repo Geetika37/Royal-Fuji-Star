@@ -205,6 +205,8 @@ class AppTranslations extends Translations {
           'verifyotp2': 'Enter OTP',
           'resetpass': 'Reset Password',
           'components': 'Components',
+          'productnotfound':'No Products Found',
+          'sparenotfound':'No Spares Found',
         },
         'ar_AE': {
           'companyname': 'رويال فوجي ستار للمصاعد والسلالم المتحركة ذ.م.م',
@@ -407,6 +409,8 @@ class AppTranslations extends Translations {
           'verifyotp2': 'أدخل كلمة المرور',
           'resetpass': 'إعادة تعيين كلمة المرور',
           'components': 'عناصر',
+          'productnotfound':'لم يتم العثور على منتجات',
+          'sparenotfound':'لم يتم العثور على قطع الغيار',
         },
       };
 }
