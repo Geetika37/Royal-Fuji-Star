@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:royal_fuji_star/screens/home/widgets/bottomnav.dart';
 import 'package:royal_fuji_star/services/api_baseurl.dart';
 import 'package:http/http.dart' as http;
 import 'package:royal_fuji_star/services/token.dart';
@@ -34,6 +35,7 @@ class SpareEnquiryController extends GetxController {
             backgroundColor: Colors.green,
             colorText: Colors.white,
           );
+          Get.offAll(const Bottomnav());
           print('success-->${jsonResponse['success']}');
         }
       } else {

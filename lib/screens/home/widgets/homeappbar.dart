@@ -24,6 +24,7 @@ class HomeAppbar extends StatelessWidget {
       title: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          SizedBox(width: ScreenSize.getWidth(context) * 0.05),
           Image.asset(
             'assets/png/logo.png',
             height: screenHeight * 0.05,

@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
 
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Royal Fuji Star',
       theme: ThemeData(
         textSelectionTheme: const TextSelectionThemeData(
           cursorColor: Appcolor.buttonColor,

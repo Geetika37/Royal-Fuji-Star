@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/screens/home/controller/oneproduct_controller.dart';
 import 'package:royal_fuji_star/screens/home/controller/oneproduct_enquiry_controller.dart';
@@ -118,20 +119,42 @@ class _ProductDetailState extends State<ProductDetail> {
                   height: screenHeight * 0.05,
                 ),
                 Center(
-                  child: BlueButton(
-                      fontSize: 14,
+                  child: Obx(
+                    () => LoadingBlueButton(
                       height: screenHeight * 0.06,
                       width: screenWidth * 0.9,
                       circularRadius: 10,
-                      text: 'enquiry'.tr,
-                      onTap: () {
-                        oneproductEnquiryController.saveEnquiryOneProduct(
-                          product.data.id,
-                          selectedComponentIds,
-                        );
-                      },
                       color: Appcolor.buttonColor,
-                      textColor: Appcolor.white),
+                      onTap: oneproductEnquiryController.isLoading.value
+                          ? null
+                          : () {
+                              oneproductEnquiryController.saveEnquiryOneProduct(
+                                product.data.id,
+                                selectedComponentIds,
+                              );
+                            },
+                      child: Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          Text(
+                            'enquiry'.tr,
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: oneproductEnquiryController.isLoading.value
+                                  ? Colors.transparent
+                                  : Appcolor.white,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          if (oneproductEnquiryController.isLoading.value)
+                            LoadingAnimationWidget.prograssiveDots(
+                              size: 20,
+                              color: Appcolor.white,
+                            ),
+                        ],
+                      ),
+                    ),
+                  ),
                 ),
                 SizedBox(height: screenHeight * 0.02),
               ],
@@ -142,4 +165,3 @@ class _ProductDetailState extends State<ProductDetail> {
     );
   }
 }
-

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
 import 'package:royal_fuji_star/screens/bottomnav/services/controllers/spare_subcategory_spare_controller.dart';
@@ -97,18 +98,44 @@ class LiftPartsContainer extends StatelessWidget {
                                         FontWeight.w500),
                                   ),
                                   SizedBox(height: screenHeight * 0.01),
-                                  BlueButton(
-                                    height: screenHeight * 0.05,
-                                    width: screenWidth * 0.4,
-                                    circularRadius: 10,
-                                    text: 'enquiry'.tr,
-                                    onTap: () {
-                                      spareEnquiryController
-                                          .saveSpareEnquiry(spareListItem.id);
-                                    },
-                                    color: Appcolor.buttonColor,
-                                    textColor: Appcolor.white,
-                                    fontSize: 12,
+                                  Obx(
+                                    () => LoadingBlueButton(
+                                      height: screenHeight * 0.05,
+                                      width: screenWidth * 0.4,
+                                      circularRadius: 10,
+                                      color: Appcolor.buttonColor,
+                                      onTap:
+                                          spareEnquiryController.isLoading.value
+                                              ? null
+                                              : () {
+                                                  spareEnquiryController
+                                                      .saveSpareEnquiry(
+                                                          spareListItem.id);
+                                                },
+                                      child: Stack(
+                                        alignment: Alignment.center,
+                                        children: [
+                                          Text(
+                                            'enquiry'.tr,
+                                            style: TextStyle(
+                                              fontSize: 14,
+                                              color: spareEnquiryController
+                                                      .isLoading.value
+                                                  ? Colors.transparent
+                                                  : Appcolor.white,
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                          ),
+                                          if (spareEnquiryController
+                                              .isLoading.value)
+                                            LoadingAnimationWidget
+                                                .prograssiveDots(
+                                              size: 20,
+                                              color: Appcolor.white,
+                                            ),
+                                        ],
+                                      ),
+                                    ),
                                   )
                                 ],
                               ),

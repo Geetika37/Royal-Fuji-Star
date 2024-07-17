@@ -47,8 +47,8 @@ class BlueButton extends StatelessWidget {
   }
 }
 
-class LoginBlueButton extends StatelessWidget {
-  const LoginBlueButton({
+class LoadingBlueButton extends StatelessWidget {
+  const LoadingBlueButton({
     super.key,
     required this.height,
     required this.width,

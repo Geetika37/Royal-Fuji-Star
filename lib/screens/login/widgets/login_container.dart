@@ -79,9 +79,8 @@ class _LoginContainerState extends State<LoginContainer> {
                   ),
                 ),
                 SizedBox(height: screenHeight * 0.04),
-                
 
-                Obx(() => LoginBlueButton(
+                Obx(() => LoadingBlueButton(
                       height: screenHeight * 0.07,
                       width: screenWidth * 0.8,
                       circularRadius: 10,

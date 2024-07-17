@@ -6,9 +6,9 @@ package="com.example">
     <uses-permission android:name="android.permission.CAMERA"/>
    
     <application
-        android:label="royal_fuji_star"
+        android:label="Royal Fuji Star"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"
             android:exported="true"
