@@ -131,7 +131,7 @@ class _TextformfieldPassState extends State<TextformfieldPass> {
           decoration: InputDecoration(
             suffixIcon: IconButton(
               icon: Icon(
-                _obscureText ? Icons.visibility : Icons.visibility_off,
+                _obscureText ? Icons.visibility_off : Icons.visibility,
                 color: const Color.fromARGB(255, 149, 147, 147),
               ),
               onPressed: () {
@@ -204,7 +204,10 @@ class TextformfieldWithIcons extends StatelessWidget {
 
 class TextfieldMultipleLine extends StatelessWidget {
   const TextfieldMultipleLine(
-      {super.key, required this.hintText, required this.hintTextSize, required this.controller});
+      {super.key,
+      required this.hintText,
+      required this.hintTextSize,
+      required this.controller});
   final String hintText;
   final double hintTextSize;
   final TextEditingController controller;

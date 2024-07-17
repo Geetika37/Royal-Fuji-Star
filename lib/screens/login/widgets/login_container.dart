@@ -108,7 +108,7 @@ class _LoginContainerState extends State<LoginContainer> {
                           ),
                           if (loginController.isLoading.value)
                             LoadingAnimationWidget.prograssiveDots(
-                              size: 20,
+                              size: 35,
                               color: Appcolor.white,
                             ),
                         ],
