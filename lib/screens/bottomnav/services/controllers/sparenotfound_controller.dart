@@ -10,7 +10,10 @@ import 'package:royal_fuji_star/services/token.dart';
 class SpareNotFoundController extends GetxController {
   var isLoading = false.obs;
 
-  Future<void> saveSpareNotFoundItem(String description,List<File> uploadImages,) async {
+  Future<void> saveSpareNotFoundItem(
+    String description,
+    List<File> uploadImages,
+  ) async {
     final token = await TokenKey.getValue('token');
     isLoading(true);
     try {
@@ -21,14 +24,12 @@ class SpareNotFoundController extends GetxController {
         'Authorization': 'Bearer $token',
       });
 
-      request.fields['description']= description;
+      request.fields['description'] = description;
 
       for (var image in uploadImages) {
         request.files
             .add(await http.MultipartFile.fromPath('uploadImages', image.path));
       }
-
-
 
       // sendd
       var response = await request.send();
@@ -42,6 +43,7 @@ class SpareNotFoundController extends GetxController {
           backgroundColor: Colors.green,
           colorText: Colors.white,
         );
+        // Get.back();
       } else {
         Get.snackbar(
           'Error',
@@ -50,15 +52,10 @@ class SpareNotFoundController extends GetxController {
           colorText: Colors.white,
         );
       }
-
     } catch (e) {
-           print("error${e.toString()}");
-
-    }
-    finally
-    {
+      print("error${e.toString()}");
+    } finally {
       isLoading(false);
-
     }
   }
 }

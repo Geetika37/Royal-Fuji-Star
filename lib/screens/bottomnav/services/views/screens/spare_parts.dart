@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/screens/bottomnav/services/widgets/category_animatedcontainer.dart';
@@ -74,6 +75,7 @@ class SpareParts extends StatelessWidget {
                   circularRadius: 10,
                   text: 'sparecontainertext3'.tr,
                   onTap: () {
+                    HapticFeedback.mediumImpact();
                     Get.to(const CreateItem());
                   },
                 ),
