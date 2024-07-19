@@ -34,7 +34,7 @@ class _AnnualcontainerState extends State<Annualcontainer> {
     return Obx(
       () => Container(
         margin: const EdgeInsets.only(top: 10),
-        height: ScreenSize.getHeight(context) * 0.65,
+        // height: ScreenSize.getHeight(context) * 0.65,
         width: screenWidth,
         decoration: const BoxDecoration(
             color: Appcolor.white,
@@ -48,7 +48,7 @@ class _AnnualcontainerState extends State<Annualcontainer> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: screenHeight * 0.02),
+                  SizedBox(height: screenHeight * 0.025),
                   Text(
                     'annualcontainertext1'.tr,
                     style: poppins(Appcolor.black, 12, FontWeight.w400),
@@ -93,6 +93,7 @@ class _AnnualcontainerState extends State<Annualcontainer> {
                       annualMaintenanceController.typeController.value = value;
                     },
                   ),
+                  SizedBox(height: screenHeight * 0.01),
                   Text(
                     'description'.tr,
                     style: poppins(Appcolor.black, 12, FontWeight.w400),
@@ -103,7 +104,7 @@ class _AnnualcontainerState extends State<Annualcontainer> {
                     hintText: 'annualcontainertext7'.tr,
                     hintTextSize: 12,
                   ),
-                  SizedBox(height: screenHeight * 0.02),
+                  SizedBox(height: screenHeight * 0.04),
                   Center(
                     child: BlueButtonn(
                       color: Appcolor.buttonColor,
