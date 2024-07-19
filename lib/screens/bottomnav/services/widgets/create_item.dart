@@ -22,43 +22,43 @@ class CreateItem extends StatelessWidget {
           ),
           child: Stack(
             children: [
-              Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: IconButton(
-                  onPressed: () {
-                    Get.back();
-                  },
-                  icon: const Icon(
-                    Icons.arrow_back,
-                    color: Appcolor.white,
+              ListView(
+                shrinkWrap: true,
+                children: [
+                  SizedBox(
+                    height: screenHeight * 0.06,
+                  ),
+                  Container(
+                    width: screenWidth * 0.3,
+                    height: screenWidth * 0.3,
+                    decoration: const BoxDecoration(
+                      color: Appcolor.white,
+                      shape: BoxShape.circle,
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Image.asset('assets/png/logo.png'),
+                    ),
+                  ),
+                  SizedBox(
+                    height: screenHeight * 0.1,
+                  ),
+                  const CreateItemContainer(),
+                ],
+              ),
+              Positioned(
+                child: Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: IconButton(
+                    onPressed: () {
+                      Get.back();
+                    },
+                    icon: const Icon(
+                      Icons.arrow_back,
+                      color: Appcolor.white,
+                    ),
                   ),
                 ),
-              ),
-              Center(
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: screenHeight * 0.06,
-                    ),
-                    Container(
-                      decoration: const BoxDecoration(
-                        color: Appcolor.white,
-                        shape: BoxShape.circle,
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Image.asset('assets/png/logo.png'),
-                      ),
-                    ),
-                    SizedBox(
-                      height: screenHeight * 0.03,
-                    ),
-                  ],
-                ),
-              ),
-              const Positioned(
-                bottom: 0,
-                child: CreateItemContainer(),
               ),
             ],
           ),

@@ -1,6 +1,7 @@
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
 
@@ -26,7 +27,20 @@ class NumberInput extends StatelessWidget {
               countryCodeController.text = countryCode.dialCode ?? '';
             },
             initialSelection: 'AE',
-            favorite: const ['+971', 'AE', '+966', 'SA', '+965', 'KW', '+973', 'BH', '+974', 'QA', '+968', 'OM'],
+            favorite: const [
+              '+971',
+              'AE',
+              '+966',
+              'SA',
+              '+965',
+              'KW',
+              '+973',
+              'BH',
+              '+974',
+              'QA',
+              '+968',
+              'OM'
+            ],
             showCountryOnly: false,
             alignLeft: false,
             onInit: (countryCode) {
@@ -50,7 +64,7 @@ class NumberInput extends StatelessWidget {
                   filled: true,
                   counterText: '',
                   contentPadding: const EdgeInsets.symmetric(vertical: 10),
-                  hintText: "Enter your number",
+                  hintText: "hintphone".tr,
                   border: InputBorder.none,
                   hintStyle: poppins(const Color.fromARGB(255, 149, 147, 147),
                       15, FontWeight.w300)),

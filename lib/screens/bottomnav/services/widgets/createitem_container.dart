@@ -24,7 +24,7 @@ class CreateItemContainer extends StatelessWidget {
 
     return Obx(
       () => Container(
-        height: ScreenSize.getHeight(context) * 0.65,
+        // height: ScreenSize.getHeight(context) * 0.65,
         width: screenWidth,
         decoration: const BoxDecoration(
           color: Appcolor.white,
@@ -65,7 +65,7 @@ class CreateItemContainer extends StatelessWidget {
                   hintTextSize: 12,
                 ),
 
-                SizedBox(height: screenHeight * 0.1),
+                SizedBox(height: screenHeight * 0.13),
                 Center(
                   child: BlueButtonn(
                     color: Appcolor.buttonColor,
