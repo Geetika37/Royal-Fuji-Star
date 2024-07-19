@@ -128,11 +128,11 @@ class _RepairContainerState extends State<RepairContainer> {
                             typeRepairController.value,
                             selectedImagesController,
                           );
+                          brandNameController.clear();
+                          descriptionController.clear();
+                          typeRepairController.value = 'select'.tr;
+                          selectedImagesController.clear();
                         }
-                        brandNameController.clear();
-                        descriptionController.clear();
-                        typeRepairController.value = 'select'.tr;
-                        selectedImagesController.clear();
                       },
                       fontSize: 14,
                     ),

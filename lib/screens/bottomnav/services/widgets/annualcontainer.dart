@@ -62,6 +62,7 @@ class _AnnualcontainerState extends State<Annualcontainer> {
                     hintTextSize: 12,
                   ),
                   Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Expanded(
                         child: DropdownCapacity(
@@ -132,13 +133,13 @@ class _AnnualcontainerState extends State<Annualcontainer> {
                             capacityController.value,
                             numFloorController.value,
                           );
+                          brandNameController.clear();
+                          descriptionController.clear();
+                          capacityController.value = 'select'.tr;
+                          numFloorController.value = 'select'.tr;
+                          annualMaintenanceController.typeController.value = '';
                         }
                         // Clear the input fields after successful submission
-                        brandNameController.clear();
-                        descriptionController.clear();
-                        capacityController.value = 'select'.tr;
-                        numFloorController.value = 'select'.tr;
-                        annualMaintenanceController.typeController.value = '';
                       },
                       fontSize: 14,
                     ),
