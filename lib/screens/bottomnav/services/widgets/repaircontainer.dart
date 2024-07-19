@@ -31,7 +31,7 @@ class _RepairContainerState extends State<RepairContainer> {
     TextEditingController brandNameController = TextEditingController();
     RxString typeRepairController = 'select'.tr.obs;
     TextEditingController descriptionController = TextEditingController();
-    List<File> selectedImagesController = [];
+    final RxList<File> selectedImagesController = <File>[].obs;
 
     return Container(
       height: ScreenSize.getHeight(context) * 0.65,
@@ -93,7 +93,7 @@ class _RepairContainerState extends State<RepairContainer> {
                 UploadPicBoxRectangle(
                   deviceWidth: screenWidth,
                   onImageSelected: (images) {
-                    selectedImagesController = images;
+                    selectedImagesController.value = images;
                     // print('selected images --->$selectedImagesController');
                   },
                 ),
