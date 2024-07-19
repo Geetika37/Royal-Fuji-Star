@@ -9,7 +9,7 @@ import 'package:royal_fuji_star/utils/appcolor.dart';
 import 'package:royal_fuji_star/utils/shimmerloading.dart';
 
 class ProductsContainer extends StatefulWidget {
-  ProductsContainer({super.key});
+  const ProductsContainer({super.key});
 
   @override
   State<ProductsContainer> createState() => _ProductsContainerState();
@@ -87,7 +87,7 @@ class _ProductsContainerState extends State<ProductsContainer> {
                       ),
                       child: Center(
                         child: Text(
-                          category['name'],
+                          category['name'] ?? '',
                           maxLines: 2,
                           style: poppins(Appcolor.white, 12, FontWeight.w600),
                           textAlign: TextAlign.center,

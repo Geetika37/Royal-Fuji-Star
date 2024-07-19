@@ -83,9 +83,18 @@ class _ComponentsContainerState extends State<ComponentsContainer> {
                     itemBuilder: (context, innerIndex) {
                       final componentList = componentsItem
                           .componentCollection.componentList[innerIndex];
+                      // final gallery =
+                      //     componentList.image.formats!.thumbnail.url;
+                      // final gallery =
+                      //     componentList.image.formats?.thumbnail.url ?? '';
+
+                      // final imageUrl = '${APIConstants.baseUrl}$gallery';
                       final gallery =
-                          componentList.image.formats!.thumbnail.url;
-                      final imageUrl = '${APIConstants.baseUrl}$gallery';
+                          componentList.image.formats?.thumbnail.url ?? '';
+
+                      final imageUrl = gallery.isNotEmpty
+                          ? '${APIConstants.baseUrl}$gallery'
+                          : null;
 
                       return InkWell(
                         child: Obx(
@@ -117,22 +126,26 @@ class _ComponentsContainerState extends State<ComponentsContainer> {
                                   children: [
                                     InkWell(
                                       onTap: () {
-                                        Get.to(ComponentImage(
-                                          imageUrl: imageUrl,
-                                          name: componentList.name,
-                                          description:
-                                              componentList.description,
-                                        ));
+                                        if (imageUrl != null) {
+                                          Get.to(ComponentImage(
+                                            imageUrl: imageUrl,
+                                            name: componentList.name,
+                                            description:
+                                                componentList.description,
+                                          ));
+                                        }
                                       },
                                       child: SizedBox(
                                         height:
                                             ScreenSize.getHeight(context) * 0.1,
                                         width:
                                             ScreenSize.getWidth(context) * 0.3,
-                                        child: Image.network(
-                                          imageUrl,
-                                          fit: BoxFit.contain,
-                                        ),
+                                        child: imageUrl != null
+                                            ? Image.network(
+                                                imageUrl,
+                                                fit: BoxFit.contain,
+                                              )
+                                            : const Placeholder(),
                                       ),
                                     ),
                                     SizedBox(height: screenHeight * 0.005),

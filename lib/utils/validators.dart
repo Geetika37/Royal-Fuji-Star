@@ -7,6 +7,7 @@ class Validators {
     }
     return null;
   }
+  // location
   static String? validateLocation(String? value) {
     if (value == null ||
         value.isEmpty ||
@@ -16,6 +17,17 @@ class Validators {
     return null;
   }
 
+  // brand name
+  static String? validateBrand(String? value) {
+    if (value == null ||
+        value.isEmpty ||
+        !RegExp(r'^[a-zA-Z\s]+$').hasMatch(value)) {
+      return 'Enter Correct Brand Name';
+    }
+    return null;
+  }
+  
+  // email
   static String? validateEmail(String? value) {
     final RegExp emailRegExp =
         RegExp(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{3,}$');
