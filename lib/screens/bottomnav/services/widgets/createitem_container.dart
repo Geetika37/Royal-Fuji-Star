@@ -19,55 +19,55 @@ class CreateItemContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     final SpareNotFoundController spareNotFoundController =
         Get.put(SpareNotFoundController());
-    List<File> selectedImagesController = [];
+    final RxList<File> selectedImagesController = <File>[].obs;
     TextEditingController descriptionController = TextEditingController();
 
-    return Container(
-      height: ScreenSize.getHeight(context) * 0.65,
-      width: screenWidth,
-      decoration: const BoxDecoration(
-        color: Appcolor.white,
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(40),
-          topRight: Radius.circular(40),
+    return Obx(
+      () => Container(
+        height: ScreenSize.getHeight(context) * 0.65,
+        width: screenWidth,
+        decoration: const BoxDecoration(
+          color: Appcolor.white,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(40),
+            topRight: Radius.circular(40),
+          ),
         ),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(15.0),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(height: screenHeight * 0.02),
-              //Upload images
-              SizedBox(height: screenHeight * 0.01),
-              Text('advisorycontainertext5'.tr,
-                  style: poppins(Appcolor.black, 12, FontWeight.w400)),
-              SizedBox(height: screenHeight * 0.01),
-              UploadPicBoxRectangle(
-                deviceWidth: screenWidth,
-                onImageSelected: (images) {
-                  selectedImagesController = images;
-                  // print('selected images --->$selectedImagesController');
-                },
-              ),
-              SizedBox(height: screenHeight * 0.01),
+        child: Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(height: screenHeight * 0.02),
+                //Upload images
+                SizedBox(height: screenHeight * 0.01),
+                Text('advisorycontainertext5'.tr,
+                    style: poppins(Appcolor.black, 12, FontWeight.w400)),
+                SizedBox(height: screenHeight * 0.01),
+                UploadPicBoxRectangle(
+                  deviceWidth: screenWidth,
+                  onImageSelected: (images) {
+                    selectedImagesController.value = images;
+                    // print('selected images --->$selectedImagesController');
+                  },
+                ),
+                SizedBox(height: screenHeight * 0.01),
 
-              //Description of requirements
-              SizedBox(height: screenHeight * 0.01),
-              Text('advisorycontainertext6'.tr,
-                  style: poppins(Appcolor.black, 12, FontWeight.w400)),
-              SizedBox(height: screenHeight * 0.01),
-              TextfieldMultipleLine(
-                controller: descriptionController,
-                hintText: 'annualcontainertext7'.tr,
-                hintTextSize: 12,
-              ),
+                //Description of requirements
+                SizedBox(height: screenHeight * 0.01),
+                Text('advisorycontainertext6'.tr,
+                    style: poppins(Appcolor.black, 12, FontWeight.w400)),
+                SizedBox(height: screenHeight * 0.01),
+                TextfieldMultipleLine(
+                  controller: descriptionController,
+                  hintText: 'annualcontainertext7'.tr,
+                  hintTextSize: 12,
+                ),
 
-              SizedBox(height: screenHeight * 0.1),
-              Center(
-                child: Obx(
-                  () => BlueButtonn(
+                SizedBox(height: screenHeight * 0.1),
+                Center(
+                  child: BlueButtonn(
                     color: Appcolor.buttonColor,
                     height: screenHeight * 0.07,
                     width: screenWidth * 0.92,
@@ -91,12 +91,14 @@ class CreateItemContainer extends StatelessWidget {
                         descriptionController.text,
                         selectedImagesController,
                       );
+                      selectedImagesController.clear();
+                      descriptionController.clear();
                     },
                     fontSize: 14,
                   ),
                 ),
-              )
-            ],
+              ],
+            ),
           ),
         ),
       ),

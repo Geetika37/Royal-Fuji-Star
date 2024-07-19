@@ -23,85 +23,84 @@ class RepairContainer extends StatefulWidget {
 
 class _RepairContainerState extends State<RepairContainer> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  final RepairController repairController = Get.put(RepairController());
+
+  TextEditingController brandNameController = TextEditingController();
+  RxString typeRepairController = 'select'.tr.obs;
+  TextEditingController descriptionController = TextEditingController();
+  final RxList<File> selectedImagesController = <File>[].obs;
 
   @override
   Widget build(BuildContext context) {
-    final RepairController repairController = Get.put(RepairController());
-
-    TextEditingController brandNameController = TextEditingController();
-    RxString typeRepairController = 'select'.tr.obs;
-    TextEditingController descriptionController = TextEditingController();
-    final RxList<File> selectedImagesController = <File>[].obs;
-
-    return Container(
-      height: ScreenSize.getHeight(context) * 0.65,
-      width: screenWidth,
-      decoration: const BoxDecoration(
-        color: Appcolor.white,
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(40),
-          topRight: Radius.circular(40),
+    return Obx(
+      () => Container(
+        height: ScreenSize.getHeight(context) * 0.65,
+        width: screenWidth,
+        decoration: const BoxDecoration(
+          color: Appcolor.white,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(40),
+            topRight: Radius.circular(40),
+          ),
         ),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(15.0),
-        child: SingleChildScrollView(
-          child: Form(
-            key: formKey,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(height: screenHeight * 0.02),
-                Text(
-                  'annualcontainertext1'.tr,
-                  style: poppins(Appcolor.black, 12, FontWeight.w400),
-                ),
-                SizedBox(height: screenHeight * 0.01),
-                Textformfield(
-                  validator: Validators.validateBrand,
-                  controller: brandNameController,
-                  textfieldWidth: screenWidth,
-                  hintText: 'annualcontainertext13'.tr,
-                  hintTextSize: 12,
-                ),
-                SizedBox(height: screenHeight * 0.01),
-                DropdownRepair(
-                  title: 'repairtext1'.tr,
-                  onValueChanged: (String value) {
-                    typeRepairController.value = value;
-                  },
-                ),
-                SizedBox(height: screenHeight * 0.01),
+        child: Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: SingleChildScrollView(
+            child: Form(
+              key: formKey,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(height: screenHeight * 0.02),
+                  Text(
+                    'annualcontainertext1'.tr,
+                    style: poppins(Appcolor.black, 12, FontWeight.w400),
+                  ),
+                  SizedBox(height: screenHeight * 0.01),
+                  Textformfield(
+                    validator: Validators.validateBrand,
+                    controller: brandNameController,
+                    textfieldWidth: screenWidth,
+                    hintText: 'annualcontainertext13'.tr,
+                    hintTextSize: 12,
+                  ),
+                  SizedBox(height: screenHeight * 0.01),
+                  DropdownRepair(
+                    title: 'repairtext1'.tr,
+                    onValueChanged: (String value) {
+                      typeRepairController.value = value;
+                    },
+                  ),
+                  SizedBox(height: screenHeight * 0.01),
 
-                //Description
-                SizedBox(height: screenHeight * 0.01),
-                Text('advisorycontainertext6'.tr,
-                    style: poppins(Appcolor.black, 12, FontWeight.w400)),
-                SizedBox(height: screenHeight * 0.01),
-                TextfieldMultipleLine(
-                  hintText: 'annualcontainertext7'.tr,
-                  hintTextSize: 12,
-                  controller: descriptionController,
-                ),
-                SizedBox(height: screenHeight * 0.01),
+                  //Description
+                  SizedBox(height: screenHeight * 0.01),
+                  Text('advisorycontainertext6'.tr,
+                      style: poppins(Appcolor.black, 12, FontWeight.w400)),
+                  SizedBox(height: screenHeight * 0.01),
+                  TextfieldMultipleLine(
+                    hintText: 'annualcontainertext7'.tr,
+                    hintTextSize: 12,
+                    controller: descriptionController,
+                  ),
+                  SizedBox(height: screenHeight * 0.01),
 
-                //Upload images
-                SizedBox(height: screenHeight * 0.01),
-                Text('advisorycontainertext5'.tr,
-                    style: poppins(Appcolor.black, 12, FontWeight.w400)),
-                SizedBox(height: screenHeight * 0.01),
-                UploadPicBoxRectangle(
-                  deviceWidth: screenWidth,
-                  onImageSelected: (images) {
-                    selectedImagesController.value = images;
-                    // print('selected images --->$selectedImagesController');
-                  },
-                ),
-                SizedBox(height: screenHeight * 0.03),
+                  //Upload images
+                  SizedBox(height: screenHeight * 0.01),
+                  Text('advisorycontainertext5'.tr,
+                      style: poppins(Appcolor.black, 12, FontWeight.w400)),
+                  SizedBox(height: screenHeight * 0.01),
+                  UploadPicBoxRectangle(
+                    deviceWidth: screenWidth,
+                    onImageSelected: (images) {
+                      selectedImagesController.value = images;
+                      // print('selected images --->$selectedImagesController');
+                    },
+                  ),
+                  SizedBox(height: screenHeight * 0.03),
 
-                Center(
-                  child: Obx(
-                    () => BlueButtonn(
+                  Center(
+                    child: BlueButtonn(
                       color: Appcolor.buttonColor,
                       height: screenHeight * 0.07,
                       width: screenWidth * 0.92,
@@ -138,8 +137,8 @@ class _RepairContainerState extends State<RepairContainer> {
                       fontSize: 14,
                     ),
                   ),
-                )
-              ],
+                ],
+              ),
             ),
           ),
         ),
