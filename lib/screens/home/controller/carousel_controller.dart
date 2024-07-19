@@ -32,17 +32,18 @@ class CarouselSliderController extends GetxController {
 
   Future<void> fetchCarouselImage() async {
     isLoading(true);
-   
+
     try {
       final url = Uri.parse(
-          '${APIConstants.baseUrl}/api/home-pages?locale=${locale.value}');
+          '${APIConstants.baseUrl}/api/home-page?locale=${locale.value}');
 
       final response = await http.get(
         url,
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json',
-          'Authorization': 'Bearer c35abca4b93af8c66574ff6237d42864eae839e26eb6db9766635983bca5f0ac361a512c201c4962873fad07d1c710a4ca6cfa2dff2ffb1bc0cce41375585a897871b0f6310466c8292bdcfd9e71cd4365b545580d6f05d7718a0f7d7f59ad5cfb39a39bf2ed20768fe1c5795c45757ba9667a41343dbe8b32969cca59b69261',
+          'Authorization':
+              'Bearer c35abca4b93af8c66574ff6237d42864eae839e26eb6db9766635983bca5f0ac361a512c201c4962873fad07d1c710a4ca6cfa2dff2ffb1bc0cce41375585a897871b0f6310466c8292bdcfd9e71cd4365b545580d6f05d7718a0f7d7f59ad5cfb39a39bf2ed20768fe1c5795c45757ba9667a41343dbe8b32969cca59b69261',
         },
       );
 
@@ -52,9 +53,11 @@ class CarouselSliderController extends GetxController {
       if (response.statusCode == 200) {
         final imageData = CarouselSliderModel.fromJson(jsonResponse);
         carouselImage.value = imageData;
+        print('status code--${response.statusCode}');
       } else {
         errorMessage.value = 'Error: ${jsonResponse['error']['message']}';
-        // print('Status Code: ${response.statusCode}');
+        print('Status Code: ${response.statusCode}');
+        print('JSON Response: $jsonResponse');
       }
     } catch (e) {
       errorMessage.value = 'Error: ${e.toString()}';
