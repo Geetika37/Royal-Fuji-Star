@@ -157,7 +157,7 @@ class CategoryAnimatedContainer extends StatelessWidget {
                 return const Center(child: ShimmerLoading());
               }
               if (sparecategoryController.sparecategory.isEmpty) {
-                return const Text("No Data Found");
+                return const Center(child: Text("No Category Found"));
               }
               return Row(
                 children: sparecategoryController.sparecategory
