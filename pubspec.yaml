@@ -9,11 +9,11 @@ environment:
 
 dependencies:
   carousel_slider: ^4.2.1
+  connectivity_plus: ^6.0.3
   country_code_picker: ^3.0.0
   cupertino_icons: ^1.0.6
   flutter:
     sdk: flutter
-  
   flutter_svg: ^2.0.10+1
   font_awesome_flutter: ^10.7.0
   get: ^4.6.6
@@ -34,17 +34,16 @@ dependencies:
   youtube_player_flutter: ^8.1.2
 
 dev_dependencies:
+  flutter_launcher_icons: ^0.13.1
   flutter_lints: ^3.0.0
   flutter_test:
     sdk: flutter
-  flutter_launcher_icons: ^0.13.1
 
 flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
   image_path: "assets/icons/icon.png"
   remove_alpha_ios: true
- 
 
 flutter:
   uses-material-design: true

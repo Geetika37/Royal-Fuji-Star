@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:royal_fuji_star/languages/translations.dart';
 import 'package:royal_fuji_star/screens/splash/views/base.dart';
+import 'package:royal_fuji_star/services/network.dart';
 import 'package:royal_fuji_star/services/token.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 
@@ -15,6 +16,7 @@ void main() async {
   ]);
   await GetStorage.init();
   runApp(const MyApp());
+  DependencyInjection.init();
 }
 
 class MyApp extends StatelessWidget {
@@ -53,7 +55,11 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
+class DependencyInjection {
+  static void init() {
+    Get.put<NetworkController>(NetworkController(), permanent: true);
+  }
+}
 
 
 
