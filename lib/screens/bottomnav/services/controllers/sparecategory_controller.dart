@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:royal_fuji_star/services/api_baseurl.dart';
 import 'package:http/http.dart' as http;
 import 'package:royal_fuji_star/services/token.dart';
+import 'package:royal_fuji_star/services/token_expire.dart';
 
 // class SparecategoryController extends GetxController {
 //   var isLoading = false.obs;
@@ -107,6 +108,8 @@ class SparecategoryController extends GetxController {
       if (response.statusCode == 200) {
         sparecategory.value = jsonResponse['data'];
         // print('sparecategory vale===$sparecategory');
+      } else if (response.statusCode == 401) {
+        TokenExpire.handleTokenExpiration();
       } else {
         print('error message --->${jsonResponse['error']['message']}');
       }

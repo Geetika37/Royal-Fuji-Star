@@ -6,6 +6,7 @@ import 'package:royal_fuji_star/screens/menu/profile/widgets/bottomsheet.dart';
 import 'package:royal_fuji_star/services/api_baseurl.dart';
 import 'package:http/http.dart' as http;
 import 'package:royal_fuji_star/services/token.dart';
+import 'package:royal_fuji_star/services/token_expire.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 
 class EditprofileController extends GetxController {
@@ -45,7 +46,11 @@ class EditprofileController extends GetxController {
           backgroundColor: Appcolor.bgColor,
           const Bottomsheet(),
         );
-      } else {
+      } 
+      else if (response.statusCode == 401) {
+        TokenExpire.handleTokenExpiration();
+      }
+      else {
         Get.snackbar('success', jsonResponse['error']['message']);
       }
     } catch (e) {

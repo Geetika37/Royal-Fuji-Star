@@ -5,6 +5,7 @@ import 'package:royal_fuji_star/screens/menu/profile/views/profile.dart';
 import 'package:royal_fuji_star/services/api_baseurl.dart';
 import 'package:http/http.dart' as http;
 import 'package:royal_fuji_star/services/token.dart';
+import 'package:royal_fuji_star/services/token_expire.dart';
 
 class ProfileController extends GetxController {
   var isLoading = false.obs;
@@ -29,7 +30,11 @@ class ProfileController extends GetxController {
         Get.to(const ProfilePage());
         profileData.value = jsonResponse;
         print('response------$jsonResponse');
-      } else {
+      }
+      else if (response.statusCode == 401) {
+        TokenExpire.handleTokenExpiration();
+      }
+       else {
         errorMessage.value = 'error---${jsonResponse['error']['message']}';
       }
     } catch (e) {

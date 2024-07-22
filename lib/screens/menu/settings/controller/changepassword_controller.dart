@@ -4,6 +4,7 @@ import 'package:royal_fuji_star/screens/login/views/loginscreen.dart';
 import 'package:royal_fuji_star/services/api_baseurl.dart';
 import 'package:http/http.dart' as http;
 import 'package:royal_fuji_star/services/token.dart';
+import 'package:royal_fuji_star/services/token_expire.dart';
 
 class ChangePasswordController extends GetxController {
   var isLoading = false.obs;
@@ -37,6 +38,8 @@ class ChangePasswordController extends GetxController {
           successMessage.value =
               'Successfully changed password--${jsonResponse['success']}';
           print(successMessage);
+        } else if (response.statusCode == 401) {
+          TokenExpire.handleTokenExpiration();
         } else {
           errorMessage.value = 'Error---${jsonResponse['error']['message']}';
           Get.snackbar('Error', errorMessage.value);

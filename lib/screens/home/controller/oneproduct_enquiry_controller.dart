@@ -6,6 +6,7 @@ import 'package:royal_fuji_star/screens/home/widgets/bottomnav.dart';
 import 'package:royal_fuji_star/services/api_baseurl.dart';
 import 'package:http/http.dart' as http;
 import 'package:royal_fuji_star/services/token.dart';
+import 'package:royal_fuji_star/services/token_expire.dart';
 
 class OneproductEnquiryController extends GetxController {
   var isLoading = false.obs;
@@ -41,6 +42,8 @@ class OneproductEnquiryController extends GetxController {
           print('success-->${jsonResponse['success']}');
           Get.offAll(const Bottomnav());
         }
+      } else if (response.statusCode == 401) {
+        TokenExpire.handleTokenExpiration();
       } else {
         Get.snackbar(
           'Error',

@@ -4,6 +4,7 @@ import 'package:royal_fuji_star/screens/home/models/oneproduct_model.dart';
 import 'package:royal_fuji_star/services/api_baseurl.dart';
 import 'package:royal_fuji_star/services/token.dart';
 import 'package:http/http.dart' as http;
+import 'package:royal_fuji_star/services/token_expire.dart';
 
 class OneProductController extends GetxController {
   var isLoading = false.obs;
@@ -42,7 +43,11 @@ class OneProductController extends GetxController {
         } else {
           errorMessage.value = 'Error: ${jsonResponse['message']}';
         }
-      } else {
+      }
+      else if (response.statusCode == 401) {
+        TokenExpire.handleTokenExpiration();
+      }
+       else {
         final jsonResponse = jsonDecode(response.body);
         errorMessage.value = 'Error: ${jsonResponse['error']['message']}';
         // print('Error Message: ${errorMessage.value}');
