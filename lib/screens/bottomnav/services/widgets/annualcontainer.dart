@@ -28,6 +28,7 @@ class _AnnualcontainerState extends State<Annualcontainer> {
   TextEditingController descriptionController = TextEditingController();
   RxString capacityController = 'select'.tr.obs;
   RxString numFloorController = 'select'.tr.obs;
+  final RxBool radioSelected = true.obs;
 
   @override
   Widget build(BuildContext context) {
@@ -91,7 +92,23 @@ class _AnnualcontainerState extends State<Annualcontainer> {
                   RadioButton(
                     onValueChanged: (String value) {
                       annualMaintenanceController.typeController.value = value;
+                      radioSelected.value = value.isNotEmpty;
                     },
+                  ),
+                  Obx(
+                    () => radioSelected.value
+                        ? const SizedBox()
+                        : Padding(
+                            padding: const EdgeInsets.only(
+                                top: 8.0, left: 10, right: 10),
+                            child: Text(
+                              'Please select an valid option',
+                              style: poppins(
+                                  const Color.fromARGB(255, 166, 53, 53),
+                                  12,
+                                  FontWeight.w400),
+                            ),
+                          ),
                   ),
                   SizedBox(height: screenHeight * 0.01),
                   Text(
@@ -100,6 +117,7 @@ class _AnnualcontainerState extends State<Annualcontainer> {
                   ),
                   SizedBox(height: screenHeight * 0.01),
                   TextfieldMultipleLine(
+                    validator: Validators.validateEmpty,
                     controller: descriptionController,
                     hintText: 'annualcontainertext7'.tr,
                     hintTextSize: 12,
@@ -139,8 +157,11 @@ class _AnnualcontainerState extends State<Annualcontainer> {
                           capacityController.value = 'select'.tr;
                           numFloorController.value = 'select'.tr;
                           annualMaintenanceController.typeController.value = '';
+                          radioSelected.value = true;
+                        } else {
+                          radioSelected.value = annualMaintenanceController
+                              .typeController.isNotEmpty;
                         }
-                        // Clear the input fields after successful submission
                       },
                       fontSize: 14,
                     ),

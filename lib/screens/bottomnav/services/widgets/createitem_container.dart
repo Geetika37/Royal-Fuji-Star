@@ -11,17 +11,25 @@ import 'package:royal_fuji_star/screens/bottomnav/services/controllers/sparenotf
 import 'package:royal_fuji_star/utils/appcolor.dart';
 import 'package:royal_fuji_star/utils/buttons.dart';
 import 'package:royal_fuji_star/utils/textformfield.dart';
+import 'package:royal_fuji_star/utils/validators.dart';
 
-class CreateItemContainer extends StatelessWidget {
+class CreateItemContainer extends StatefulWidget {
   const CreateItemContainer({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final SpareNotFoundController spareNotFoundController =
-        Get.put(SpareNotFoundController());
-    final RxList<File> selectedImagesController = <File>[].obs;
-    TextEditingController descriptionController = TextEditingController();
+  State<CreateItemContainer> createState() => _CreateItemContainerState();
+}
 
+class _CreateItemContainerState extends State<CreateItemContainer> {
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  final SpareNotFoundController spareNotFoundController =
+      Get.put(SpareNotFoundController());
+  final RxList<File> selectedImagesController = <File>[].obs;
+  TextEditingController descriptionController = TextEditingController();
+  final RxBool isImageSelected = true.obs;
+
+  @override
+  Widget build(BuildContext context) {
     return Obx(
       () => Container(
         // height: ScreenSize.getHeight(context) * 0.65,
@@ -36,72 +44,102 @@ class CreateItemContainer extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(15.0),
           child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(height: screenHeight * 0.02),
-                //Upload images
-                SizedBox(height: screenHeight * 0.01),
-                Text('advisorycontainertext5'.tr,
-                    style: poppins(Appcolor.black, 12, FontWeight.w400)),
-                SizedBox(height: screenHeight * 0.01),
-                UploadPicBoxRectangle(
-                  deviceWidth: screenWidth,
-                  onImageSelected: (images) {
-                    selectedImagesController.value = images;
-                    // print('selected images --->$selectedImagesController');
-                  },
-                ),
-                SizedBox(height: screenHeight * 0.01),
-
-                //Description of requirements
-                SizedBox(height: screenHeight * 0.01),
-                Text('advisorycontainertext6'.tr,
-                    style: poppins(Appcolor.black, 12, FontWeight.w400)),
-                SizedBox(height: screenHeight * 0.01),
-                TextfieldMultipleLine(
-                  controller: descriptionController,
-                  hintText: 'annualcontainertext7'.tr,
-                  hintTextSize: 12,
-                ),
-
-                SizedBox(height: screenHeight * 0.13),
-                Center(
-                  child: BlueButtonn(
-                    color: Appcolor.buttonColor,
-                    height: screenHeight * 0.07,
-                    width: screenWidth * 0.92,
-                    circularRadius: 10,
-                    text: spareNotFoundController.isLoading.value
-                        ? LoadingAnimationWidget.prograssiveDots(
-                            size: 35,
-                            color: Appcolor.white,
-                          )
-                        : Text(
-                            'annualcontainertext9'.tr,
-                            style: const TextStyle(
-                              fontSize: 14,
-                              color: Appcolor.white,
-                              fontWeight: FontWeight.w600,
+            child: Form(
+              key: formKey,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(height: screenHeight * 0.02),
+                  //Upload images
+                  SizedBox(height: screenHeight * 0.01),
+                  Text('advisorycontainertext5'.tr,
+                      style: poppins(Appcolor.black, 12, FontWeight.w400)),
+                  SizedBox(height: screenHeight * 0.01),
+                  UploadPicBoxRectangle(
+                    deviceWidth: screenWidth,
+                    onImageSelected: (images) {
+                      selectedImagesController.value = images;
+                      isImageSelected.value = images.isNotEmpty;
+                    },
+                  ),
+                  Obx(
+                    () => isImageSelected.value
+                        ? const SizedBox()
+                        : Padding(
+                            padding: const EdgeInsets.only(
+                                top: 8.0, left: 10, right: 10),
+                            child: Text(
+                              'Please select at least one image',
+                              style: poppins(
+                                  const Color.fromARGB(255, 166, 53, 53),
+                                  12,
+                                  FontWeight.w400),
                             ),
                           ),
-                    onTap: () async {
-                      HapticFeedback.mediumImpact();
-                      await spareNotFoundController.saveSpareNotFoundItem(
-                        descriptionController.text,
-                        selectedImagesController,
-                      );
-                      selectedImagesController.clear();
-                      descriptionController.clear();
-                    },
-                    fontSize: 14,
                   ),
-                ),
-              ],
+                  SizedBox(height: screenHeight * 0.01),
+
+                  //Description of requirements
+                  SizedBox(height: screenHeight * 0.01),
+                  Text('advisorycontainertext6'.tr,
+                      style: poppins(Appcolor.black, 12, FontWeight.w400)),
+                  SizedBox(height: screenHeight * 0.01),
+                  TextfieldMultipleLine(
+                    validator: Validators.validateEmpty,
+                    controller: descriptionController,
+                    hintText: 'annualcontainertext7'.tr,
+                    hintTextSize: 12,
+                  ),
+
+                  SizedBox(height: screenHeight * 0.13),
+                  Center(
+                    child: BlueButtonn(
+                      color: Appcolor.buttonColor,
+                      height: screenHeight * 0.07,
+                      width: screenWidth * 0.92,
+                      circularRadius: 10,
+                      text: spareNotFoundController.isLoading.value
+                          ? LoadingAnimationWidget.prograssiveDots(
+                              size: 35,
+                              color: Appcolor.white,
+                            )
+                          : Text(
+                              'annualcontainertext9'.tr,
+                              style: const TextStyle(
+                                fontSize: 14,
+                                color: Appcolor.white,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                      onTap: () async {
+                        HapticFeedback.mediumImpact();
+                        if (_validateForm()) {
+                          await spareNotFoundController.saveSpareNotFoundItem(
+                            descriptionController.text,
+                            selectedImagesController,
+                          );
+                          selectedImagesController.clear();
+                          descriptionController.clear();
+                          isImageSelected.value = true;
+                        } else {
+                          isImageSelected.value =
+                              selectedImagesController.isNotEmpty;
+                        }
+                      },
+                      fontSize: 14,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
       ),
     );
+  }
+
+  bool _validateForm() {
+    return formKey.currentState!.validate() &&
+        selectedImagesController.isNotEmpty;
   }
 }

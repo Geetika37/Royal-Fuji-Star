@@ -207,13 +207,15 @@ class TextfieldMultipleLine extends StatelessWidget {
       {super.key,
       required this.hintText,
       required this.hintTextSize,
-      required this.controller});
+      required this.controller, required this.validator});
   final String hintText;
   final double hintTextSize;
   final TextEditingController controller;
+  final String? Function(String?) validator;
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
+      validator: validator,
       controller: controller,
       decoration: InputDecoration(
         hintText: hintText,

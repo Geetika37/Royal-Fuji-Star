@@ -1,4 +1,5 @@
 class Validators {
+  // name
   static String? validateName(String? value) {
     if (value == null ||
         value.isEmpty ||
@@ -7,6 +8,7 @@ class Validators {
     }
     return null;
   }
+
   // location
   static String? validateLocation(String? value) {
     if (value == null ||
@@ -26,7 +28,7 @@ class Validators {
     }
     return null;
   }
-  
+
   // email
   static String? validateEmail(String? value) {
     final RegExp emailRegExp =
@@ -39,6 +41,16 @@ class Validators {
         value.split('@').last.contains('..') ||
         value.split('@').last.split('.').length > 2) {
       return 'Enter Correct Email';
+    }
+    return null;
+  }
+
+  // just empty
+  static String? validateEmpty(String? value) {
+    if (value == null ||
+        value.isEmpty ||
+        !RegExp(r'^[a-zA-Z\s]+$').hasMatch(value)) {
+      return 'Field cannot be empty';
     }
     return null;
   }

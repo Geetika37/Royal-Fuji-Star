@@ -12,6 +12,7 @@ import 'package:royal_fuji_star/utils/appcolor.dart';
 import 'package:royal_fuji_star/utils/buttons.dart';
 import 'package:royal_fuji_star/utils/dropdown.dart';
 import 'package:royal_fuji_star/utils/textformfield.dart';
+import 'package:royal_fuji_star/utils/validators.dart';
 
 class ConsultationContainer extends StatefulWidget {
   const ConsultationContainer({super.key});
@@ -29,6 +30,7 @@ class _ConsultationContainerState extends State<ConsultationContainer> {
   final TextEditingController additionalCommentController =
       TextEditingController();
   final RxString consultationController = 'select'.tr.obs;
+  final RxBool isImageSelected = true.obs;
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +68,23 @@ class _ConsultationContainerState extends State<ConsultationContainer> {
                     deviceWidth: screenWidth,
                     onImageSelected: (images) {
                       selectedImagesController.value = images;
+                      isImageSelected.value = images.isNotEmpty;
                     },
+                  ),
+                  Obx(
+                    () => isImageSelected.value
+                        ? const SizedBox()
+                        : Padding(
+                            padding: const EdgeInsets.only(
+                                top: 8.0, left: 10, right: 10),
+                            child: Text(
+                              'Please select at least one image',
+                              style: poppins(
+                                  const Color.fromARGB(255, 166, 53, 53),
+                                  12,
+                                  FontWeight.w400),
+                            ),
+                          ),
                   ),
                   SizedBox(height: screenHeight * 0.01),
 
@@ -76,6 +94,7 @@ class _ConsultationContainerState extends State<ConsultationContainer> {
                       style: poppins(Appcolor.black, 12, FontWeight.w400)),
                   SizedBox(height: screenHeight * 0.01),
                   TextfieldMultipleLine(
+                    validator: Validators.validateEmpty,
                     controller: descriptionController,
                     hintText: 'annualcontainertext7'.tr,
                     hintTextSize: 12,
@@ -87,6 +106,7 @@ class _ConsultationContainerState extends State<ConsultationContainer> {
                       style: poppins(Appcolor.black, 12, FontWeight.w400)),
                   SizedBox(height: screenHeight * 0.01),
                   TextfieldMultipleLine(
+                    validator: Validators.validateEmpty,
                     controller: additionalCommentController,
                     hintText: 'annualcontainertext7'.tr,
                     hintTextSize: 12,
@@ -123,6 +143,9 @@ class _ConsultationContainerState extends State<ConsultationContainer> {
                             selectedImagesController,
                           );
                           _resetForm();
+                        } else {
+                          isImageSelected.value =
+                              selectedImagesController.isNotEmpty;
                         }
                       },
                       fontSize: 14,
@@ -147,5 +170,6 @@ class _ConsultationContainerState extends State<ConsultationContainer> {
     descriptionController.clear();
     additionalCommentController.clear();
     selectedImagesController.clear();
+    isImageSelected.value = true;
   }
 }
