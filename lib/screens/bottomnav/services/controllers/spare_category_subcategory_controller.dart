@@ -9,13 +9,32 @@ import 'package:royal_fuji_star/services/token_expire.dart';
 class CategorySubcategoryController extends GetxController {
   var isLoading = false.obs;
   var subCategory = [].obs;
+  var errorMessage = ''.obs;
 
-  Future<void> catSubCategory(int id) async {
+  var locale = 'en'.obs;
+
+  @override
+  void onInit() {
+    super.onInit();
+    loadLocale();
+  }
+
+  Future<void> loadLocale() async {
+    try {
+      locale.value = await TokenKey.getValue('selectedLanguage') ?? 'en';
+    } catch (e) {
+      errorMessage.value = 'Error loading locale: ${e.toString()}';
+    } finally {
+      await catSubCategory();
+    }
+  }
+
+  Future<void> catSubCategory() async {
     isLoading(true);
     final token = await TokenKey.getValue('token');
     try {
       final url = Uri.parse(
-          '${APIConstants.baseUrl}/api/spares-category-sub-categories/$id?&title=desc');
+          '${APIConstants.baseUrl}/api/spare-categories?locale=${locale.value}');
       final response = await http.get(
         url,
         headers: {
@@ -31,11 +50,9 @@ class CategorySubcategoryController extends GetxController {
         // print('jsonresp======>${jsonResponse}');
         subCategory.value = jsonResponse['data'];
         // print('subcategory=====>$subCategory');
-      }
-      else if (response.statusCode == 401) {
+      } else if (response.statusCode == 401) {
         TokenExpire.handleTokenExpiration();
-      }
-       else {
+      } else {
         print('error message --->${jsonResponse['error']['message']}');
       }
     } catch (e) {

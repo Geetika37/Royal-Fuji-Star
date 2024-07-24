@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
-import 'package:royal_fuji_star/screens/bottomnav/services/widgets/category_animatedcontainer.dart';
 import 'package:royal_fuji_star/screens/bottomnav/services/widgets/category_itemcontainer.dart';
 import 'package:royal_fuji_star/screens/bottomnav/services/widgets/create_item.dart';
 import 'package:royal_fuji_star/screens/bottomnav/services/widgets/lift_partscontainer.dart';
@@ -30,18 +29,18 @@ class SpareParts extends StatelessWidget {
             ListView(
               padding: const EdgeInsets.only(top: 5),
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 10, right: 10),
-                  child: CustomTitle(
-                    textHeading: 'sparecontainertext1'.tr,
-                    fontSize: 12,
-                    color: Appcolor.blackPrimary,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-                SizedBox(height: screenHeight * 0.01),
-                CategoryAnimatedContainer(),
-                SizedBox(height: screenHeight * 0.015),
+                // Padding(
+                //   padding: const EdgeInsets.only(left: 10, right: 10),
+                //   child: CustomTitle(
+                //     textHeading: 'sparecontainertext1'.tr,
+                //     fontSize: 12,
+                //     color: Appcolor.blackPrimary,
+                //     fontWeight: FontWeight.w400,
+                //   ),
+                // ),
+                // SizedBox(height: screenHeight * 0.01),
+                // CategoryAnimatedContainer(),
+                // SizedBox(height: screenHeight * 0.015),
                 Padding(
                   padding: const EdgeInsets.only(left: 10, right: 10),
                   child: CustomTitle(

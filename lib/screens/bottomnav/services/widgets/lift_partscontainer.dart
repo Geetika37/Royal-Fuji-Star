@@ -185,9 +185,10 @@ class _LiftPartsContainerState extends State<LiftPartsContainer> {
         );
       }
 
-      final spare = subcategorySparesController.spare.value;
+      final spare = subcategorySparesController.spare;
+      // print('spare--$spare');
 
-      if (spare == null || spare.data!.isEmpty) {
+      if (spare.isEmpty) {
         return SizedBox(
           height: screenHeight * 0.1,
           child: Center(
@@ -202,9 +203,10 @@ class _LiftPartsContainerState extends State<LiftPartsContainer> {
       return ListView.builder(
           physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
-          itemCount: spare.data!.length,
+          itemCount: spare.length,
           itemBuilder: (context, index) {
-            final sparetem = spare.data![index];
+            final sparetem = spare[index];
+            print('spare name-->${sparetem.brandSpares.name}');
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -220,11 +222,11 @@ class _LiftPartsContainerState extends State<LiftPartsContainer> {
                   child: ListView.builder(
                       shrinkWrap: true,
                       scrollDirection: Axis.horizontal,
-                      itemCount: sparetem.brandSpares.spareList!.length,
+                      itemCount: sparetem.brandSpares.spareList.length,
                       itemBuilder: (context, index) {
                         final spareListItem =
-                            sparetem.brandSpares.spareList![index];
-                        final imageUrl = spareListItem.image.url;
+                            sparetem.brandSpares.spareList[index];
+                        final imageUrl = spareListItem.image!.url;
 
                         return Padding(
                           padding: const EdgeInsets.only(
