@@ -20,6 +20,7 @@
     "location":"Location",
     "password":"Password",
     "select":"Select",
+    "unselect":"UnSelect",
     "image_dropitem":"Drop items here",
     "policy_terms1":"By signing up you accept the ",
     "policy_terms2":"Terms of Service ",

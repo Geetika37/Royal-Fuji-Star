@@ -58,19 +58,24 @@ class ComponentImage extends StatelessWidget {
                           ),
                         ),
                         Positioned(
-                          left: 15,
-                          top: 20,
-                          child: Container(
-                            decoration: const BoxDecoration(
-                              color: Appcolor.buttonColor,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10)),
+                          child: Padding(
+                            padding: const EdgeInsets.only(
+                              left: 10,
+                              right: 10,
+                              top: 10,
                             ),
-                            child: InkWell(
-                              onTap: () => Get.back(),
-                              child: const Icon(
-                                Icons.arrow_back,
-                                color: Appcolor.white,
+                            child: Container(
+                              decoration: const BoxDecoration(
+                                color: Appcolor.buttonColor,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10)),
+                              ),
+                              child: InkWell(
+                                onTap: () => Get.back(),
+                                child: const Icon(
+                                  Icons.arrow_back,
+                                  color: Appcolor.white,
+                                ),
                               ),
                             ),
                           ),

@@ -258,7 +258,7 @@ class ComponentList {
   DateTime createdAt;
   DateTime updatedAt;
   DateTime publishedAt;
-  Locale locale;
+  Locale? locale;
   Category category;
   Brochure image;
 
@@ -281,7 +281,7 @@ class ComponentList {
         createdAt: DateTime.parse(json["createdAt"]),
         updatedAt: DateTime.parse(json["updatedAt"]),
         publishedAt: DateTime.parse(json["publishedAt"]),
-        locale: localeValues.map[json["locale"]]!,
+       locale: json['locale'] == null ? null : localeValues.map[json["locale"]],
         category: Category.fromJson(json["category"]),
         image: Brochure.fromJson(json["image"]),
       );

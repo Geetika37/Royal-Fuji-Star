@@ -159,7 +159,8 @@ class _ComponentsContainerState extends State<ComponentsContainer> {
                                       height: screenHeight * 0.05,
                                       width: screenWidth * 0.4,
                                       circularRadius: 10,
-                                      text: isSelected ? 'UnSelect' : 'Select',
+                                      text:
+                                          isSelected ? 'unselect'.tr : 'select'.tr,
                                       onTap: () {
                                         setState(() {
                                           if (isSelected) {
