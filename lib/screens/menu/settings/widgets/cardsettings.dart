@@ -8,15 +8,19 @@ class CardSettings extends StatelessWidget {
     super.key,
     required this.text,
     required this.onTap,
+    this.color = Appcolor.cardColor,
+    this.elevation = 0,
   });
   final String text;
   final Function() onTap;
+  final Color color;
+  final double elevation;
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 0,
-      color: Appcolor.cardColor,
+      elevation: elevation,
+      color: color,
       // child: ListTile(
       //   title: Text(
       //     text,

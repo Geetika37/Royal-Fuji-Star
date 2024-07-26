@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:royal_fuji_star/screens/login/views/loginscreen.dart';
+import 'package:royal_fuji_star/screens/auth/login/views/loginscreen.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 
 class TokenExpire {

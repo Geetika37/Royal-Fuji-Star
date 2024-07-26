@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
+import 'package:royal_fuji_star/screens/history/controller/history_controller.dart';
 import 'package:royal_fuji_star/screens/menu/faq/views/faq.dart';
 import 'package:royal_fuji_star/screens/menu/profile/controller/profile_controller.dart';
 import 'package:royal_fuji_star/screens/menu/settings/views/settings.dart';
@@ -22,6 +23,8 @@ class SettingsDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final HistoryController historyController = Get.put(HistoryController());
+
     final ProfileController profileController = Get.put(ProfileController());
     TextStyle drawertext = poppins(Appcolor.white, 14, FontWeight.w500);
 
@@ -82,6 +85,17 @@ class SettingsDrawer extends StatelessWidget {
                         HapticFeedback.lightImpact();
 
                         Get.to(const FAQPage());
+                      },
+                      contentPadding:
+                          EdgeInsets.symmetric(horizontal: width * 0.05),
+                    ),
+                    const Divider(),
+                    ListTile(
+                      leading: Image.asset('assets/png/faq.png'),
+                      title: Text('History'.tr, style: drawertext),
+                      onTap: () async {
+                        HapticFeedback.lightImpact();
+                        await historyController.fetchHistory();
                       },
                       contentPadding:
                           EdgeInsets.symmetric(horizontal: width * 0.05),

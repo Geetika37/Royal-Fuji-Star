@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:get/get.dart';
-import 'package:royal_fuji_star/screens/login/views/loginscreen.dart';
+import 'package:royal_fuji_star/screens/auth/login/views/loginscreen.dart';
 import 'package:royal_fuji_star/services/api_baseurl.dart';
 import 'package:http/http.dart' as http;
 import 'package:royal_fuji_star/services/token.dart';
