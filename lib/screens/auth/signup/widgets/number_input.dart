@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
+import 'package:royal_fuji_star/utils/appcolor.dart';
 
 class NumberInput extends StatelessWidget {
   const NumberInput(
@@ -56,18 +57,21 @@ class NumberInput extends StatelessWidget {
                 FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
                 LengthLimitingTextInputFormatter(10),
               ],
-              style: poppins(const Color.fromARGB(255, 149, 147, 147), 15,
-                  FontWeight.w300),
+              style: poppins(Appcolor.black, 15, FontWeight.w300),
               controller: phoneController,
               decoration: InputDecoration(
-                  fillColor: const Color.fromARGB(255, 227, 228, 229),
-                  filled: true,
-                  counterText: '',
-                  contentPadding: const EdgeInsets.symmetric(vertical: 10),
-                  hintText: "hintphone".tr,
-                  border: InputBorder.none,
-                  hintStyle: poppins(const Color.fromARGB(255, 149, 147, 147),
-                      15, FontWeight.w300)),
+                fillColor: const Color.fromARGB(255, 227, 228, 229),
+                filled: true,
+                counterText: '',
+                contentPadding: const EdgeInsets.symmetric(vertical: 10),
+                hintText: "hintphone".tr,
+                border: InputBorder.none,
+                hintStyle: poppins(
+                  const Color.fromARGB(255, 149, 147, 147),
+                  15,
+                  FontWeight.w300,
+                ),
+              ),
             ),
           ),
         ],

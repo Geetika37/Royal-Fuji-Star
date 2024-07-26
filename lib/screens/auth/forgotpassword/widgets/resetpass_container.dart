@@ -6,6 +6,7 @@ import 'package:royal_fuji_star/screens/auth/forgotpassword/controller/resetpass
 import 'package:royal_fuji_star/utils/appcolor.dart';
 import 'package:royal_fuji_star/utils/buttons.dart';
 import 'package:royal_fuji_star/utils/textformfield.dart';
+import 'package:royal_fuji_star/utils/validators.dart';
 
 class ResetpassContainer extends StatelessWidget {
   const ResetpassContainer({super.key, required this.otp});
@@ -35,6 +36,7 @@ class ResetpassContainer extends StatelessWidget {
           children: [
             SizedBox(height: screenHeight * 0.1),
             TextformfieldPass(
+              validator: Validators.validatePassword,
               textfieldWidth: screenWidth * 0.8,
               hintText: 'password'.tr,
               hintTextSize: 14,
@@ -43,6 +45,7 @@ class ResetpassContainer extends StatelessWidget {
             ),
             SizedBox(height: screenHeight * 0.02),
             TextformfieldPass(
+              validator: Validators.validatePassword,
               textfieldWidth: screenWidth * 0.8,
               hintText: 'changepassword2'.tr,
               hintTextSize: 14,

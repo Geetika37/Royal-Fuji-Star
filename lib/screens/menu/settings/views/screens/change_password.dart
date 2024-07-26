@@ -8,6 +8,7 @@ import 'package:royal_fuji_star/screens/widgets/customappbar.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 import 'package:royal_fuji_star/utils/buttons.dart';
 import 'package:royal_fuji_star/utils/textformfield.dart';
+import 'package:royal_fuji_star/utils/validators.dart';
 
 class ChangePassword extends StatelessWidget {
   const ChangePassword({super.key});
@@ -36,6 +37,7 @@ class ChangePassword extends StatelessWidget {
           ),
           children: [
             TextformfieldPass(
+              validator: Validators.validatePassword,
               textfieldWidth: screenWidth,
               hintText: 'changepassword1'.tr,
               hintTextSize: 14,
@@ -44,6 +46,7 @@ class ChangePassword extends StatelessWidget {
             ),
             SizedBox(height: screenHeight * 0.03),
             TextformfieldPass(
+              validator: Validators.validatePassword,
               textfieldWidth: screenWidth,
               hintText: 'password'.tr,
               hintTextSize: 14,
@@ -52,6 +55,7 @@ class ChangePassword extends StatelessWidget {
             ),
             SizedBox(height: screenHeight * 0.03),
             TextformfieldPass(
+              validator: Validators.validatePassword,
               textfieldWidth: screenWidth,
               hintText: 'changepassword2'.tr,
               hintTextSize: 14,

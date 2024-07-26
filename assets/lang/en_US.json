@@ -45,7 +45,7 @@
     "drawertext1":"We are ready to elevate you",
     "drawertext2":"Profile",
     "drawertext3":"Settings",
-    "drawertext4":"",
+    "drawertext4":"History",
     "drawertext5":"Logout",
     "drawertext6":"ROYAL FUJI STAR",
 
@@ -173,7 +173,15 @@
     "resetpass":"Reset Password",
     "components":"Components",
     "productnotfound":"No Products Found",
-    "sparenotfound":"No Spares Found"
+    "sparenotfound":"No Spares Found",
+    "noenquiry":"No Enquiry found",
+    "history1":"Annual Maintenance",
+    "history2":"Repair",
+    "history3":"Advisory",
+    "history4":"Product Enquiry",
+    "history5":"Spare Enquiry",
+    "history6":"Spare Not Found"
+
     
 
 

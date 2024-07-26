@@ -92,6 +92,7 @@ class _SignupContainerState extends State<SignupContainer> {
               SizedBox(height: screenHeight * 0.02),
 
               TextformfieldPass(
+                validator: Validators.validatePassword,
                 controller: passwordController,
                 textfieldWidth: screenWidth * 0.8,
                 hintText: 'password'.tr,

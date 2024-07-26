@@ -104,7 +104,7 @@ class SettingsDrawer extends StatelessWidget {
                           ),
                         ),
                       ),
-                      title: Text('History'.tr, style: drawertext),
+                      title: Text('drawertext4'.tr, style: drawertext),
                       onTap: () async {
                         HapticFeedback.lightImpact();
                         await historyController.fetchHistory();

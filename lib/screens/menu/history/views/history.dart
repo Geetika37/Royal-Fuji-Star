@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
+import 'package:royal_fuji_star/screens/menu/history/controller/history_controller.dart';
 import 'package:royal_fuji_star/screens/menu/history/views/screens/advisory_history.dart';
 import 'package:royal_fuji_star/screens/menu/history/views/screens/annualmaintenance_history.dart';
 import 'package:royal_fuji_star/screens/menu/history/views/screens/productenquiry_history.dart';
@@ -17,34 +18,61 @@ class HistoryPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final HistoryController historyController = Get.put(HistoryController());
     return SafeArea(
       child: Scaffold(
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(kToolbarHeight),
           child: CustomAppbar(
-            text: 'History'.tr,
+            text: 'drawertext4'.tr,
             titleSpacing: screenWidth * 0.28,
           ),
         ),
-        body: const Padding(
-          padding: EdgeInsets.all(8.0),
+        body: Padding(
+          padding: const EdgeInsets.all(8.0),
           child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                HistoryHeading(historyHeading: 'Annual Maintenance'),
-                AnnualMaintenanceHistory(),
-                HistoryHeading(historyHeading: 'Repair'),
-                RepairHistory(),
-                HistoryHeading(historyHeading: 'Advisory'),
-                AdvisoryHistory(),
-                HistoryHeading(historyHeading: 'Product Enquiry'),
-                ProductenquiryHistory(),
-                HistoryHeading(historyHeading: 'Spare Enquiry'),
-                SpareEnquiryHistory(),
-                HistoryHeading(historyHeading: 'Spare Not Found'),
-                SpareNotFoundHistory(),
-              ],
+            child: Obx(
+              () {
+                if (historyController.isLoading.value) {
+                  return const Center(child: CircularProgressIndicator());
+                }
+
+                if (historyController.advisory.isEmpty &&
+                    historyController.annualMaintenance.isEmpty &&
+                    historyController.productEnquiry.isEmpty &&
+                    historyController.repair.isEmpty &&
+                    historyController.spareEnquiry.isEmpty &&
+                    historyController.spareNotFound.isEmpty) {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 100),
+                    child: Center(
+                      child: Text(
+                        'noenquiry'.tr,
+                        style:
+                            poppins(Appcolor.buttonColor, 15, FontWeight.w500),
+                      ),
+                    ),
+                  );
+                }
+
+                return Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    HistoryHeading(historyHeading: 'history1'.tr),
+                    const AnnualMaintenanceHistory(),
+                    HistoryHeading(historyHeading: 'history2'.tr),
+                    const RepairHistory(),
+                    HistoryHeading(historyHeading: 'history3'.tr),
+                    const AdvisoryHistory(),
+                    HistoryHeading(historyHeading: 'history4'.tr),
+                    const ProductenquiryHistory(),
+                    HistoryHeading(historyHeading: 'history5'.tr),
+                    const SpareEnquiryHistory(),
+                    HistoryHeading(historyHeading: 'history6'.tr),
+                    const SpareNotFoundHistory(),
+                  ],
+                );
+              },
             ),
           ),
         ),

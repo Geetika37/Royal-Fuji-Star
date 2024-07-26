@@ -97,7 +97,8 @@ class TextformfieldPass extends StatefulWidget {
     required this.hintText,
     required this.hintTextSize,
     required this.controller,
-    this.obscureText = false, // Default value is false
+    this.obscureText = false,
+    this.validator, // Default value is false
   });
 
   final double textfieldWidth;
@@ -105,6 +106,7 @@ class TextformfieldPass extends StatefulWidget {
   final double hintTextSize;
   final TextEditingController controller;
   final bool obscureText;
+  final String? Function(String?)? validator;
 
   @override
   State<TextformfieldPass> createState() => _TextformfieldPassState();
@@ -126,6 +128,7 @@ class _TextformfieldPassState extends State<TextformfieldPass> {
         width: widget.textfieldWidth,
         // height: screenHeight * 0.06,
         child: TextFormField(
+          validator: widget.validator,
           obscureText: _obscureText,
           controller: widget.controller,
           decoration: InputDecoration(
@@ -207,7 +210,8 @@ class TextfieldMultipleLine extends StatelessWidget {
       {super.key,
       required this.hintText,
       required this.hintTextSize,
-      required this.controller, required this.validator});
+      required this.controller,
+      required this.validator});
   final String hintText;
   final double hintTextSize;
   final TextEditingController controller;

@@ -42,19 +42,17 @@ class HistoryController extends GetxController {
         repair.value = historyDetails.data.repairs;
         spareEnquiry.value = historyDetails.data.spareEnquiries;
         spareNotFound.value = historyDetails.data.spareNotFounds;
+
         Get.to(() => const HistoryPage());
-        print('response.statusCode---${response.statusCode}');
       } else if (response.statusCode == 401) {
-        print('response.statusCode---${response.statusCode}');
         TokenExpire.handleTokenExpiration();
       } else {
         final jsonResponse = jsonDecode(response.body);
         errorMessage.value = 'Error: ${jsonResponse['error']['message']}';
-        print('Error Message: ${errorMessage.value}');
+        Get.to(() => const HistoryPage());
       }
     } catch (e) {
       errorMessage.value = 'Error: ${e.toString()}';
-      print('Error Message: ${errorMessage.value}');
     } finally {
       isLoading.value = false;
     }
