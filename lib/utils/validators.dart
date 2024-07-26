@@ -32,6 +32,14 @@ class Validators {
     return null;
   }
 
+  // name
+  static String? validate(String? value) {
+    if (value == null) {
+      return 'Enter Correct Name';
+    }
+    return null;
+  }
+
   // location
   static String? validateLocation(String? value) {
     if (value == null ||

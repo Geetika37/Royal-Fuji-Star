@@ -56,7 +56,7 @@ class _AnnualcontainerState extends State<Annualcontainer> {
                   ),
                   SizedBox(height: screenHeight * 0.01),
                   Textformfield(
-                    validator: Validators.validateBrand,
+                    validator: Validators.validate,
                     controller: brandNameController,
                     textfieldWidth: screenWidth,
                     hintText: 'annualcontainertext13'.tr,
@@ -117,7 +117,7 @@ class _AnnualcontainerState extends State<Annualcontainer> {
                   ),
                   SizedBox(height: screenHeight * 0.01),
                   TextfieldMultipleLine(
-                    validator: Validators.validateEmpty,
+                    validator: Validators.validate,
                     controller: descriptionController,
                     hintText: 'annualcontainertext7'.tr,
                     hintTextSize: 12,

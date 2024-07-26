@@ -9,11 +9,35 @@ class ShimmerLoading extends StatelessWidget {
     return Shimmer.fromColors(
       baseColor: Colors.grey[300]!,
       highlightColor: Colors.grey[100]!,
-      child: Container(
-        width: double.infinity,
-        // height: 100.0,
-        color: Colors.white,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(
+                width: double.infinity,
+                height: 300.0,
+                color: Colors.white,
+              ),
+              const SizedBox(height: 10),
+              Container(
+                width: double.infinity,
+                height: 300.0,
+                color: Colors.white,
+              ),
+              const SizedBox(height: 10),
+              Container(
+                width: double.infinity,
+                height: 300.0,
+                color: Colors.white,
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
 }
+
+
+
