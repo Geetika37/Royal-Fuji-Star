@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
 import 'package:royal_fuji_star/screens/menu/history/controller/history_controller.dart';
-import 'package:royal_fuji_star/screens/menu/faq/views/faq.dart';
 import 'package:royal_fuji_star/screens/menu/profile/controller/profile_controller.dart';
 import 'package:royal_fuji_star/screens/menu/settings/views/settings.dart';
 import 'package:royal_fuji_star/screens/splash/views/screens/getstarted.dart';
@@ -77,21 +76,34 @@ class SettingsDrawer extends StatelessWidget {
                         },
                         contentPadding:
                             EdgeInsets.symmetric(horizontal: width * 0.05)),
-                    const Divider(),
-                    ListTile(
-                      leading: Image.asset('assets/png/faq.png'),
-                      title: Text('FAQ'.tr, style: drawertext),
-                      onTap: () {
-                        HapticFeedback.lightImpact();
+                    // const Divider(),
+                    // ListTile(
+                    //   leading: Image.asset('assets/png/faq.png'),
+                    //   title: Text('FAQ'.tr, style: drawertext),
+                    //   onTap: () {
+                    //     HapticFeedback.lightImpact();
 
-                        Get.to(const FAQPage());
-                      },
-                      contentPadding:
-                          EdgeInsets.symmetric(horizontal: width * 0.05),
-                    ),
+                    //     Get.to(const FAQPage());
+                    //   },
+                    //   contentPadding:
+                    //       EdgeInsets.symmetric(horizontal: width * 0.05),
+                    // ),
                     const Divider(),
                     ListTile(
-                      leading: Image.asset('assets/png/faq.png'),
+                      leading: Container(
+                        decoration: BoxDecoration(
+                            color: Appcolor.white,
+                            borderRadius: BorderRadius.circular(20)),
+                        child: Padding(
+                          padding: const EdgeInsets.all(4.0),
+                          child: Image.asset(
+                            'assets/png/history.png',
+                            width: 17,
+                            height: 17,
+                            color: Appcolor.buttonColor,
+                          ),
+                        ),
+                      ),
                       title: Text('History'.tr, style: drawertext),
                       onTap: () async {
                         HapticFeedback.lightImpact();
