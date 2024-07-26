@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:royal_fuji_star/screens/history/controller/history_controller.dart';
-import 'package:royal_fuji_star/screens/history/widgets/richtext_history.dart';
-import 'package:royal_fuji_star/services/api_baseurl.dart';
+import 'package:royal_fuji_star/screens/menu/history/controller/history_controller.dart';
+import 'package:royal_fuji_star/screens/menu/history/widgets/richtext_history.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 
-class AdvisoryHistory extends StatelessWidget {
-  const AdvisoryHistory({
+class AnnualMaintenanceHistory extends StatelessWidget {
+  const AnnualMaintenanceHistory({
     super.key,
   });
 
@@ -19,9 +18,8 @@ class AdvisoryHistory extends StatelessWidget {
       if (historyController.isLoading.value) {
         return const Center(child: CircularProgressIndicator());
       }
-      final advisory = historyController.advisory;
-
-      if (historyController.advisory.isEmpty) {
+      final annualMaintenance = historyController.annualMaintenance;
+      if (historyController.annualMaintenance.isEmpty) {
         return const Padding(
           padding: EdgeInsets.only(left: 8, right: 8),
           child: Text('No enquiry'),
@@ -30,34 +28,42 @@ class AdvisoryHistory extends StatelessWidget {
       return ListView.builder(
           physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
-          itemCount: advisory.length,
+          itemCount: annualMaintenance.length,
           itemBuilder: (context, index) {
-            final advisoryItem = advisory[index];
+            final annualMaintenanceItem = annualMaintenance[index];
             return Card(
               elevation: 1,
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                child: Stack(
                   children: [
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Expanded(
                           child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               RichtextHistory(
-                                mainTitle: 'Type of Consultation : ',
-                                text: advisoryItem.typeOfConsultation,
+                                mainTitle: 'Brand Name : ',
+                                text: annualMaintenanceItem.brand,
+                              ),
+                              RichtextHistory(
+                                mainTitle: 'Type : ',
+                                text: annualMaintenanceItem.type,
+                              ),
+                              RichtextHistory(
+                                mainTitle: 'Capacity : ',
+                                text: annualMaintenanceItem.capacity,
+                              ),
+                              RichtextHistory(
+                                mainTitle: 'No of Floors : ',
+                                text: annualMaintenanceItem.numberOfFloors
+                                    .toString(),
                               ),
                               RichtextHistory(
                                 mainTitle: 'Description : ',
-                                text: advisoryItem.description,
-                              ),
-                              RichtextHistory(
-                                mainTitle: 'Comments Or Questions : ',
-                                text: advisoryItem.commentsOrQuestion,
+                                text: annualMaintenanceItem.description,
+                                // overflow: TextOverflow.ellipsis,
                               ),
                             ],
                           ),
@@ -67,7 +73,7 @@ class AdvisoryHistory extends StatelessWidget {
                           children: [
                             Text(
                               DateFormat('dd-MM-yyyy')
-                                  .format(advisoryItem.createdAt),
+                                  .format(annualMaintenanceItem.createdAt),
                               style: const TextStyle(
                                 fontSize: 12,
                                 color: Appcolor.black,
@@ -77,7 +83,7 @@ class AdvisoryHistory extends StatelessWidget {
                             ),
                             Text(
                               DateFormat('hh:mm a')
-                                  .format(advisoryItem.createdAt),
+                                  .format(annualMaintenanceItem.createdAt),
                               style: const TextStyle(
                                 fontSize: 12,
                                 color: Appcolor.black,
@@ -88,38 +94,6 @@ class AdvisoryHistory extends StatelessWidget {
                           ],
                         ),
                       ],
-                    ),
-                    const Text(
-                      'Images',
-                      style: TextStyle(
-                        fontSize: 13,
-                        color: Appcolor.black,
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    const SizedBox(height: 5),
-                    SizedBox(
-                      height: 50,
-                      child: SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: Row(
-                          children: advisoryItem.uploadImages!.map((image) {
-                            return Padding(
-                              padding: const EdgeInsets.only(right: 8.0),
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(10),
-                                child: Image.network(
-                                  '${APIConstants.baseUrl}${image.url}',
-                                  width: 50,
-                                  height: 50,
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            );
-                          }).toList(),
-                        ),
-                      ),
                     ),
                   ],
                 ),

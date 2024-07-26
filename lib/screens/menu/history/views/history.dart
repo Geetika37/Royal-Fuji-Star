@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
-import 'package:royal_fuji_star/screens/history/views/screens/advisory_history.dart';
-import 'package:royal_fuji_star/screens/history/views/screens/annualmaintenance_history.dart';
-import 'package:royal_fuji_star/screens/history/views/screens/productenquiry_history.dart';
-import 'package:royal_fuji_star/screens/history/views/screens/repair_history.dart';
-import 'package:royal_fuji_star/screens/history/views/screens/spare_enquiry.dart';
-import 'package:royal_fuji_star/screens/history/views/screens/sparenot_found.dart';
+import 'package:royal_fuji_star/screens/menu/history/views/screens/advisory_history.dart';
+import 'package:royal_fuji_star/screens/menu/history/views/screens/annualmaintenance_history.dart';
+import 'package:royal_fuji_star/screens/menu/history/views/screens/productenquiry_history.dart';
+import 'package:royal_fuji_star/screens/menu/history/views/screens/repair_history.dart';
+import 'package:royal_fuji_star/screens/menu/history/views/screens/spare_enquiry.dart';
+import 'package:royal_fuji_star/screens/menu/history/views/screens/sparenot_found.dart';
 
 import 'package:royal_fuji_star/screens/widgets/customappbar.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';

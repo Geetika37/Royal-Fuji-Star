@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:royal_fuji_star/screens/history/controller/history_controller.dart';
-import 'package:royal_fuji_star/screens/history/widgets/richtext_history.dart';
+import 'package:royal_fuji_star/screens/menu/history/controller/history_controller.dart';
+import 'package:royal_fuji_star/screens/menu/history/widgets/richtext_history.dart';
 import 'package:royal_fuji_star/services/api_baseurl.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 

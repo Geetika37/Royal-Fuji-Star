@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:royal_fuji_star/screens/history/controller/history_controller.dart';
-import 'package:royal_fuji_star/screens/history/widgets/richtext_history.dart';
+import 'package:royal_fuji_star/screens/menu/history/controller/history_controller.dart';
+import 'package:royal_fuji_star/screens/menu/history/widgets/richtext_history.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
 
-class SpareEnquiryHistory extends StatelessWidget {
-  const SpareEnquiryHistory({
+class ProductenquiryHistory extends StatelessWidget {
+  const ProductenquiryHistory({
     super.key,
   });
 
@@ -19,21 +19,20 @@ class SpareEnquiryHistory extends StatelessWidget {
         if (historyController.isLoading.value) {
           return const Center(child: CircularProgressIndicator());
         }
-        final spareEnquiry = historyController.spareEnquiry;
+        final productEnquiry = historyController.productEnquiry;
 
-        if (spareEnquiry.isEmpty) {
+        if (historyController.productEnquiry.isEmpty) {
           return const Padding(
             padding: EdgeInsets.only(left: 8, right: 8),
             child: Text('No enquiry'),
           );
         }
-
         return ListView.builder(
           physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
-          itemCount: spareEnquiry.length,
+          itemCount: productEnquiry.length,
           itemBuilder: (context, index) {
-            final spareEnquiryItem = spareEnquiry[index];
+            final productEnquiryItem = productEnquiry[index];
             return Card(
               elevation: 1,
               child: Padding(
@@ -49,9 +48,16 @@ class SpareEnquiryHistory extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               RichtextHistory(
-                                mainTitle: 'Spare Name : ',
-                                text:
-                                    spareEnquiryItem.spare?.name ?? 'No Spare',
+                                mainTitle: 'Product Name : ',
+                                text: productEnquiryItem.product.name,
+                              ),
+                              RichtextHistory(
+                                mainTitle: 'Component Name : ',
+                                text: productEnquiryItem.components.isEmpty
+                                    ? 'No components'
+                                    : productEnquiryItem.components
+                                        .map((component) => component.name)
+                                        .join(', '),
                               ),
                             ],
                           ),
@@ -61,7 +67,7 @@ class SpareEnquiryHistory extends StatelessWidget {
                           children: [
                             Text(
                               DateFormat('dd-MM-yyyy')
-                                  .format(spareEnquiryItem.createdAt),
+                                  .format(productEnquiryItem.createdAt),
                               style: const TextStyle(
                                 fontSize: 12,
                                 color: Appcolor.black,
@@ -71,7 +77,7 @@ class SpareEnquiryHistory extends StatelessWidget {
                             ),
                             Text(
                               DateFormat('hh:mm a')
-                                  .format(spareEnquiryItem.createdAt),
+                                  .format(productEnquiryItem.createdAt),
                               style: const TextStyle(
                                 fontSize: 12,
                                 color: Appcolor.black,

@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:get/get.dart';
-import 'package:royal_fuji_star/screens/history/model/history_model.dart';
-import 'package:royal_fuji_star/screens/history/views/history.dart';
+import 'package:royal_fuji_star/screens/menu/history/model/history_model.dart';
+import 'package:royal_fuji_star/screens/menu/history/views/history.dart';
 import 'package:royal_fuji_star/services/api_baseurl.dart';
 import 'package:royal_fuji_star/services/token.dart';
 import 'package:http/http.dart' as http;

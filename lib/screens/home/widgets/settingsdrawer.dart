@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/constants/textstyle.dart';
-import 'package:royal_fuji_star/screens/history/controller/history_controller.dart';
+import 'package:royal_fuji_star/screens/menu/history/controller/history_controller.dart';
 import 'package:royal_fuji_star/screens/menu/faq/views/faq.dart';
 import 'package:royal_fuji_star/screens/menu/profile/controller/profile_controller.dart';
 import 'package:royal_fuji_star/screens/menu/settings/views/settings.dart';
