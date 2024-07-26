@@ -12,6 +12,7 @@ import 'package:royal_fuji_star/screens/menu/history/views/screens/sparenot_foun
 
 import 'package:royal_fuji_star/screens/widgets/customappbar.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
+import 'package:royal_fuji_star/utils/shimmerloading.dart';
 
 class HistoryPage extends StatelessWidget {
   const HistoryPage({super.key});
@@ -34,7 +35,7 @@ class HistoryPage extends StatelessWidget {
             child: Obx(
               () {
                 if (historyController.isLoading.value) {
-                  return const Center(child: CircularProgressIndicator());
+                  return const Center(child: ShimmerLoadingHistory());
                 }
 
                 if (historyController.advisory.isEmpty &&

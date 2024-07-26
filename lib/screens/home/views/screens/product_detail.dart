@@ -35,7 +35,7 @@ class _ProductDetailState extends State<ProductDetail> {
       child: Scaffold(
         body: Obx(() {
           if (oneProductController.isLoading.value) {
-            return const Center(child: ShimmerLoading());
+            return const Center(child: ShimmerLoadingProductDetails());
           }
 
           if (oneProductController.errorMessage.isNotEmpty) {

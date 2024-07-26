@@ -48,17 +48,17 @@ class RepairHistory extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               RichtextHistory(
-                                mainTitle: 'Brand Name : ',
+                                mainTitle: 'histor7'.tr,
                                 text: repairItem.brand,
                               ),
                               RichtextHistory(
-                                mainTitle: 'Type Of Repairs : ',
+                                mainTitle: 'histor17'.tr,
                                 text: repairItem.typeOfRepairs,
                                 // overflow: TextOverflow.ellipsis,
                                 // maxLines: 1,
                               ),
                               RichtextHistory(
-                                mainTitle: 'Description : ',
+                                mainTitle: 'histor11'.tr,
                                 text: repairItem.description,
                                 // overflow: TextOverflow.ellipsis,
                                 // maxLines: 3,
@@ -93,9 +93,9 @@ class RepairHistory extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const Text(
-                      'Images',
-                      style: TextStyle(
+                    Text(
+                      'histor18'.tr,
+                      style: const TextStyle(
                         fontSize: 13,
                         color: Appcolor.black,
                         fontFamily: 'Poppins',

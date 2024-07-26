@@ -34,8 +34,8 @@ class OneproductEnquiryController extends GetxController {
       if (response.statusCode == 200) {
         if (jsonResponse['success']) {
           Get.snackbar(
-            'Success',
-            'Submitted',
+            'histor21'.tr,
+            'histor22'.tr,
             backgroundColor: Colors.green,
             colorText: Colors.white,
           );

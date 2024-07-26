@@ -31,7 +31,7 @@ class ResetpassController extends GetxController {
 
       if (response.statusCode == 200) {
         Get.snackbar(
-          'success',
+          'histor21'.tr,
           jsonResponse['message'],
           colorText: Appcolor.white,
           backgroundColor: Colors.green,

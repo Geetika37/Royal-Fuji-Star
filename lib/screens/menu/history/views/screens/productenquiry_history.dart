@@ -22,8 +22,8 @@ class ProductenquiryHistory extends StatelessWidget {
         final productEnquiry = historyController.productEnquiry;
 
         if (historyController.productEnquiry.isEmpty) {
-          return  Padding(
-            padding:const EdgeInsets.only(left: 8, right: 8),
+          return Padding(
+            padding: const EdgeInsets.only(left: 8, right: 8),
             child: Text('noenquiry'.tr),
           );
         }
@@ -48,13 +48,13 @@ class ProductenquiryHistory extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               RichtextHistory(
-                                mainTitle: 'Product Name : ',
+                                mainTitle: 'histor14'.tr,
                                 text: productEnquiryItem.product.name,
                               ),
                               RichtextHistory(
-                                mainTitle: 'Component Name : ',
+                                mainTitle: 'histor16'.tr,
                                 text: productEnquiryItem.components.isEmpty
-                                    ? 'No components'
+                                    ? 'histor15'.tr
                                     : productEnquiryItem.components
                                         .map((component) => component.name)
                                         .join(', '),

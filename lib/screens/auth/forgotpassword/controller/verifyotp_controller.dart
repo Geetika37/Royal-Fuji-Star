@@ -30,7 +30,7 @@ class VerifyotpController extends GetxController {
         Get.to(Resetpassword(
           otp: otp,
         ));
-        Get.snackbar('Success', jsonResponse['message'],
+        Get.snackbar('histor21'.tr, jsonResponse['message'],
             colorText: Appcolor.white, backgroundColor: Colors.green);
       } else {
         Get.snackbar('Error', jsonResponse['error']['message'],

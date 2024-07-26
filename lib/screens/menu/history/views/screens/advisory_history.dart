@@ -22,8 +22,8 @@ class AdvisoryHistory extends StatelessWidget {
       final advisory = historyController.advisory;
 
       if (historyController.advisory.isEmpty) {
-        return  Padding(
-          padding:const EdgeInsets.only(left: 8, right: 8),
+        return Padding(
+          padding: const EdgeInsets.only(left: 8, right: 8),
           child: Text('noenquiry'.tr),
         );
       }
@@ -48,15 +48,15 @@ class AdvisoryHistory extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               RichtextHistory(
-                                mainTitle: 'Type of Consultation : ',
+                                mainTitle: 'histor12'.tr,
                                 text: advisoryItem.typeOfConsultation,
                               ),
                               RichtextHistory(
-                                mainTitle: 'Description : ',
+                                mainTitle: 'histor11'.tr,
                                 text: advisoryItem.description,
                               ),
                               RichtextHistory(
-                                mainTitle: 'Comments Or Questions : ',
+                                mainTitle: 'histor13'.tr,
                                 text: advisoryItem.commentsOrQuestion,
                               ),
                             ],
@@ -89,9 +89,9 @@ class AdvisoryHistory extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const Text(
-                      'Images',
-                      style: TextStyle(
+                    Text(
+                      'histor18'.tr,
+                      style: const TextStyle(
                         fontSize: 13,
                         color: Appcolor.black,
                         fontFamily: 'Poppins',
@@ -114,6 +114,17 @@ class AdvisoryHistory extends StatelessWidget {
                                   width: 50,
                                   height: 50,
                                   fit: BoxFit.cover,
+                                  errorBuilder: (context, error, stackTrace) {
+                                    return Container(
+                                      width: 50,
+                                      height: 50,
+                                      color: Colors.grey,
+                                      child: const Icon(
+                                        Icons.broken_image,
+                                        color: Colors.white,
+                                      ),
+                                    );
+                                  },
                                 ),
                               ),
                             );

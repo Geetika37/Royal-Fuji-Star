@@ -49,9 +49,9 @@ class SpareEnquiryHistory extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               RichtextHistory(
-                                mainTitle: 'Spare Name : ',
+                                mainTitle: 'histor19'.tr,
                                 text:
-                                    spareEnquiryItem.spare?.name ?? 'No Spare',
+                                    spareEnquiryItem.spare?.name ?? 'histor20'.tr,
                               ),
                             ],
                           ),

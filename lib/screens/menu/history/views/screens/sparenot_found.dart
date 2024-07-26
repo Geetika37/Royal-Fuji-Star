@@ -48,7 +48,7 @@ class SpareNotFoundHistory extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             RichtextHistory(
-                              mainTitle: 'Description : ',
+                              mainTitle: 'histor11'.tr,
                               text: spareNotFoundItem.description,
                             ),
                           ],
@@ -81,9 +81,9 @@ class SpareNotFoundHistory extends StatelessWidget {
                       ),
                     ],
                   ),
-                  const Text(
-                    'Images',
-                    style: TextStyle(
+                  Text(
+                    'histor18'.tr,
+                    style: const TextStyle(
                       fontSize: 13,
                       color: Appcolor.black,
                       fontFamily: 'Poppins',

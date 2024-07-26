@@ -20,8 +20,8 @@ class AnnualMaintenanceHistory extends StatelessWidget {
       }
       final annualMaintenance = historyController.annualMaintenance;
       if (historyController.annualMaintenance.isEmpty) {
-        return  Padding(
-          padding:const EdgeInsets.only(left: 8, right: 8),
+        return Padding(
+          padding: const EdgeInsets.only(left: 8, right: 8),
           child: Text('noenquiry'.tr),
         );
       }
@@ -42,26 +42,27 @@ class AnnualMaintenanceHistory extends StatelessWidget {
                       children: [
                         Expanded(
                           child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               RichtextHistory(
-                                mainTitle: 'Brand Name : ',
+                                mainTitle: 'histor7'.tr,
                                 text: annualMaintenanceItem.brand,
                               ),
                               RichtextHistory(
-                                mainTitle: 'Type : ',
+                                mainTitle: 'histor8'.tr,
                                 text: annualMaintenanceItem.type,
                               ),
                               RichtextHistory(
-                                mainTitle: 'Capacity : ',
+                                mainTitle: 'histor9'.tr,
                                 text: annualMaintenanceItem.capacity,
                               ),
                               RichtextHistory(
-                                mainTitle: 'No of Floors : ',
+                                mainTitle: 'histor10'.tr,
                                 text: annualMaintenanceItem.numberOfFloors
                                     .toString(),
                               ),
                               RichtextHistory(
-                                mainTitle: 'Description : ',
+                                mainTitle: 'histor11'.tr,
                                 text: annualMaintenanceItem.description,
                                 // overflow: TextOverflow.ellipsis,
                               ),

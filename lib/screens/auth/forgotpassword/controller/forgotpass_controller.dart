@@ -26,8 +26,8 @@ class ForgotpassController extends GetxController {
       if (response.statusCode == 200) {
         Get.to(const VerifyOtp());
         Get.snackbar(
-          'Success',
-          'OTP Successfully Sent',
+          'histor21'.tr,
+          'histor23'.tr,
           backgroundColor: Colors.green,
           colorText: Appcolor.white,
         );
