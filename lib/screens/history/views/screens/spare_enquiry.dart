@@ -22,7 +22,10 @@ class SpareEnquiryHistory extends StatelessWidget {
         final spareEnquiry = historyController.spareEnquiry;
 
         if (spareEnquiry.isEmpty) {
-          return const Text('No enquiry');
+          return const Padding(
+            padding: EdgeInsets.only(left: 8, right: 8),
+            child: Text('No enquiry'),
+          );
         }
 
         return ListView.builder(

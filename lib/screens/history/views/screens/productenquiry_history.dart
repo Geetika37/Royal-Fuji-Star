@@ -22,7 +22,10 @@ class ProductenquiryHistory extends StatelessWidget {
         final productEnquiry = historyController.productEnquiry;
 
         if (historyController.productEnquiry.isEmpty) {
-          return const Text('No enquiry');
+          return const Padding(
+            padding: EdgeInsets.only(left: 8, right: 8),
+            child: Text('No enquiry'),
+          );
         }
         return ListView.builder(
           physics: const NeverScrollableScrollPhysics(),

@@ -7,6 +7,7 @@ import 'package:royal_fuji_star/screens/history/views/screens/annualmaintenance_
 import 'package:royal_fuji_star/screens/history/views/screens/productenquiry_history.dart';
 import 'package:royal_fuji_star/screens/history/views/screens/repair_history.dart';
 import 'package:royal_fuji_star/screens/history/views/screens/spare_enquiry.dart';
+import 'package:royal_fuji_star/screens/history/views/screens/sparenot_found.dart';
 
 import 'package:royal_fuji_star/screens/widgets/customappbar.dart';
 import 'package:royal_fuji_star/utils/appcolor.dart';
@@ -42,6 +43,7 @@ class HistoryPage extends StatelessWidget {
                 HistoryHeading(historyHeading: 'Spare Enquiry'),
                 SpareEnquiryHistory(),
                 HistoryHeading(historyHeading: 'Spare Not Found'),
+                SpareNotFoundHistory(),
               ],
             ),
           ),

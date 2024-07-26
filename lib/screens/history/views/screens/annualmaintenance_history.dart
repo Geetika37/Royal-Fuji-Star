@@ -20,7 +20,10 @@ class AnnualMaintenanceHistory extends StatelessWidget {
       }
       final annualMaintenance = historyController.annualMaintenance;
       if (historyController.annualMaintenance.isEmpty) {
-        return const Text('No enquiry');
+        return const Padding(
+          padding: EdgeInsets.only(left: 8, right: 8),
+          child: Text('No enquiry'),
+        );
       }
       return ListView.builder(
           physics: const NeverScrollableScrollPhysics(),
