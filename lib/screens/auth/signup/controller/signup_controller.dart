@@ -28,7 +28,7 @@ class SignupController extends GetxController {
       if (response.statusCode == 200) {
         Get.to(const LoginScreen());
       } else {
-        Get.snackbar('Error', jsonResponse['error']['message']);
+        Get.snackbar('histor24'.tr, jsonResponse['error']['message']);
       }
     } catch (e) {
       print("error${e.toString()}");

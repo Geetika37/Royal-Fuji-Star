@@ -34,7 +34,7 @@ class ForgotpassController extends GetxController {
       } else {
         print('error ${jsonresponse['error']['message']}');
         Get.snackbar(
-          'Error',
+          'histor24'.tr,
           jsonresponse['error']['message'],
           backgroundColor: Colors.red,
           colorText: Appcolor.white,

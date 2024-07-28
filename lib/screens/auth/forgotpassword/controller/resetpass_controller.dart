@@ -39,7 +39,7 @@ class ResetpassController extends GetxController {
         Get.to(const LoginScreen());
       } else {
         Get.snackbar(
-          'Error',
+          'histor24'.tr,
           jsonResponse['error']['message'],
           colorText: Appcolor.white,
           backgroundColor: Colors.red,

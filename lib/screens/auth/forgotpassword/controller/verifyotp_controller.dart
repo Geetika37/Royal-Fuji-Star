@@ -33,7 +33,7 @@ class VerifyotpController extends GetxController {
         Get.snackbar('histor21'.tr, jsonResponse['message'],
             colorText: Appcolor.white, backgroundColor: Colors.green);
       } else {
-        Get.snackbar('Error', jsonResponse['error']['message'],
+        Get.snackbar('histor24'.tr, jsonResponse['error']['message'],
             colorText: Appcolor.white, backgroundColor: Colors.red);
       }
     } catch (e) {

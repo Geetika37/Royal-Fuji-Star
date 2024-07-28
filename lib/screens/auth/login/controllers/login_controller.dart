@@ -31,7 +31,7 @@ class LoginController extends GetxController {
         await TokenKey.saveValue('token', token);
         Get.offAll(const Bottomnav());
       } else {
-        Get.snackbar('Error', jsonResponse['error']['message'],
+        Get.snackbar('histor24'.tr, jsonResponse['error']['message'],
             backgroundColor: Colors.red, colorText: Appcolor.white);
       }
     } catch (e) {
