@@ -203,7 +203,20 @@
     "histor26":"",
     "histor27":"",
     "histor28":"",
-    "histor29":""
+    "histor29":"",
+    "validation1":"Password cannot be empty",
+    "validation2":"Password must be at least 8 characters long",
+    "validation3":"Password must contain at least one uppercase letter",
+    "validation4":"Password must contain at least one lowercase letter",
+    "validation5":"Password must contain at least one digit",
+    "validation6":"Password must contain at least one special character",
+    "validation7":"Enter Correct Name",
+    "validation8":"Field cannot be empty",
+    "validation9":"Enter Correct Location",
+    "validation10":"Enter Correct Brand Name",
+    "validation11":"Enter Correct Email",
+    "validation12":""
+
 
 
 

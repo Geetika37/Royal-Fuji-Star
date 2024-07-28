@@ -1,23 +1,25 @@
+import 'package:get/get.dart';
+
 class Validators {
   // Password Validation
   static String? validatePassword(String? value) {
     if (value == null || value.isEmpty) {
-      return 'Password cannot be empty';
+      return 'validation1'.tr;
     }
     if (value.length < 8) {
-      return 'Password must be at least 8 characters long';
+      return 'validation2'.tr;
     }
     if (!RegExp(r'[A-Z]').hasMatch(value)) {
-      return 'Password must contain at least one uppercase letter';
+      return 'validation3'.tr;
     }
     if (!RegExp(r'[a-z]').hasMatch(value)) {
-      return 'Password must contain at least one lowercase letter';
+      return 'validation4'.tr;
     }
     if (!RegExp(r'\d').hasMatch(value)) {
-      return 'Password must contain at least one digit';
+      return 'validation5'.tr;
     }
     if (!RegExp(r'[!@#\$&*~]').hasMatch(value)) {
-      return 'Password must contain at least one special character';
+      return 'validation6'.tr;
     }
     return null;
   }
@@ -27,7 +29,7 @@ class Validators {
     if (value == null ||
         value.isEmpty ||
         !RegExp(r'^[a-zA-Z\s]+$').hasMatch(value)) {
-      return 'Enter Correct Name';
+      return 'validation7'.tr;
     }
     return null;
   }
@@ -35,7 +37,7 @@ class Validators {
   // name
   static String? validate(String? value) {
     if (value == null) {
-      return 'Enter Correct Name';
+      return 'validation8'.tr;
     }
     return null;
   }
@@ -45,7 +47,7 @@ class Validators {
     if (value == null ||
         value.isEmpty ||
         !RegExp(r'^[a-zA-Z\s]+$').hasMatch(value)) {
-      return 'Enter Correct Location';
+      return 'validation9'.tr;
     }
     return null;
   }
@@ -55,7 +57,7 @@ class Validators {
     if (value == null ||
         value.isEmpty ||
         !RegExp(r'^[a-zA-Z\s]+$').hasMatch(value)) {
-      return 'Enter Correct Brand Name';
+      return 'validation10'.tr;
     }
     return null;
   }
@@ -71,7 +73,7 @@ class Validators {
         value.contains('..') ||
         value.split('@').last.contains('..') ||
         value.split('@').last.split('.').length > 2) {
-      return 'Enter Correct Email';
+      return 'validation11'.tr;
     }
     return null;
   }
@@ -81,7 +83,7 @@ class Validators {
     if (value == null ||
         value.isEmpty ||
         !RegExp(r'^[a-zA-Z\s]+$').hasMatch(value)) {
-      return 'Field cannot be empty';
+      return 'validation8'.tr;
     }
     return null;
   }
