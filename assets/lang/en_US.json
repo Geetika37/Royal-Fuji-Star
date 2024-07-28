@@ -199,11 +199,7 @@
     "histor22":"Submitted",
     "histor23":"OTP Successfully Sent",
     "histor24":"Error",
-    "histor25":"",
-    "histor26":"",
-    "histor27":"",
-    "histor28":"",
-    "histor29":"",
+    "histor25":"Successfully changed password",
     "validation1":"Password cannot be empty",
     "validation2":"Password must be at least 8 characters long",
     "validation3":"Password must contain at least one uppercase letter",
@@ -215,7 +211,16 @@
     "validation9":"Enter Correct Location",
     "validation10":"Enter Correct Brand Name",
     "validation11":"Enter Correct Email",
-    "validation12":""
+    "validation12":"Session Expired",
+    "validation13":"Your session has expired. Please log in again.",
+    "validation14":"Validation Error",
+    "validation15":"Password is not same",
+    "validation16":"",
+    "validation17":"",
+    "validation18":"",
+    "validation19":"",
+    "validation20":""
+
 
 
 

@@ -56,7 +56,7 @@ class ProfilePage extends StatelessWidget {
                           textColor: Appcolor.white,
                           color: Colors.red,
                           height: screenHeight * 0.04,
-                          width: screenWidth * 0.2,
+                          width: screenWidth * 0.3,
                           circularRadius: 20,
                           text: 'logout'.tr,
                           onTap: () async {

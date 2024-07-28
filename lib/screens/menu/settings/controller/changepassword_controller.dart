@@ -35,19 +35,18 @@ class ChangePasswordController extends GetxController {
       if (password == confirmPassword) {
         if (response.statusCode == 200) {
           Get.to(const LoginScreen());
-          successMessage.value =
-              'Successfully changed password--${jsonResponse['success']}';
-          print(successMessage);
+
+          Get.snackbar('histor21'.tr, 'histor25'.tr);
         } else if (response.statusCode == 401) {
           TokenExpire.handleTokenExpiration();
         } else {
           errorMessage.value = 'Error---${jsonResponse['error']['message']}';
-          Get.snackbar('Error', errorMessage.value);
+          Get.snackbar('histor24'.tr, errorMessage.value);
 
           print(errorMessage);
         }
       } else {
-        Get.snackbar('Validation Error', 'Password is not same');
+        Get.snackbar('validation14'.tr, 'validation15'.tr);
       }
     } catch (e) {
       errorMessage.value = 'Error Message ${e.toString()}';

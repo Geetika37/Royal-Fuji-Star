@@ -6,8 +6,8 @@ import 'package:royal_fuji_star/utils/appcolor.dart';
 class TokenExpire {
   static void handleTokenExpiration() {
     Get.snackbar(
-      'Session Expired',
-      'Your session has expired. Please log in again.',
+      'validation12'.tr,
+      'validation13'.tr,
       snackPosition: SnackPosition.BOTTOM,
       colorText: Appcolor.white,
       backgroundColor: Colors.red,
