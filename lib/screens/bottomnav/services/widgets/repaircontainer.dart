@@ -98,7 +98,7 @@ class _RepairContainerState extends State<RepairContainer> {
                           padding: const EdgeInsets.only(
                               top: 8.0, left: 10, right: 10),
                           child: Text(
-                            'Please select at least one image',
+                            'validation21'.tr,
                             style: poppins(
                                 const Color.fromARGB(255, 166, 53, 53),
                                 12,

@@ -39,7 +39,6 @@ class SubcategorySparesController extends GetxController {
           try {
             var spareData = SpareResponse.fromJson(json.decode(response.body));
             spare.value = spareData.data;
-            print('spare data--${spare}');
           } catch (e) {
             // print('Parsing Error: $e');
             errorMessage.value = 'Error parsing product data: ${e.toString()}';
@@ -52,7 +51,6 @@ class SubcategorySparesController extends GetxController {
       } else {
         errorMessage.value =
             'Error Message==== ${jsonResponse['error']['message']}';
-        print('error-->$errorMessage');
       }
     } catch (e) {
       print('error--->##${e.toString()}');

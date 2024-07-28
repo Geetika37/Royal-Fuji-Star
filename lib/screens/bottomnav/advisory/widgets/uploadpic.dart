@@ -112,15 +112,15 @@ class UploadPicBoxRectangleState extends State<UploadPicBoxRectangle> {
                   ),
           ),
           if (!_isImageSelected)
-            const Positioned(
+            Positioned(
               bottom: 0,
               left: 0,
               right: 0,
               child: Padding(
-                padding:  EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(8.0),
                 child: Text(
-                  'Please select at least one image',
-                  style: TextStyle(color: Colors.red, fontSize: 12),
+                  'validation21'.tr,
+                  style: const TextStyle(color: Colors.red, fontSize: 12),
                   textAlign: TextAlign.center,
                 ),
               ),

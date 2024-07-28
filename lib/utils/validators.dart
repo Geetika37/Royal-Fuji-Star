@@ -36,7 +36,7 @@ class Validators {
 
   // name
   static String? validate(String? value) {
-    if (value == null) {
+    if (value == null || value.isEmpty) {
       return 'validation8'.tr;
     }
     return null;

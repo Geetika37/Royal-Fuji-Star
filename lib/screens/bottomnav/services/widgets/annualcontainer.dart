@@ -102,7 +102,7 @@ class _AnnualcontainerState extends State<Annualcontainer> {
                             padding: const EdgeInsets.only(
                                 top: 8.0, left: 10, right: 10),
                             child: Text(
-                              'Please select an valid option',
+                              'validation16'.tr,
                               style: poppins(
                                   const Color.fromARGB(255, 166, 53, 53),
                                   12,

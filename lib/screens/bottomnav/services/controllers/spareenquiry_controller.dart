@@ -31,19 +31,18 @@ class SpareEnquiryController extends GetxController {
       if (response.statusCode == 200) {
         if (jsonResponse['success']) {
           Get.snackbar(
-            'Success',
-            'Submitted',
+            'histor21'.tr,
+            'histor22'.tr,
             backgroundColor: Colors.green,
             colorText: Colors.white,
           );
           Get.offAll(const Bottomnav());
-          print('success-->${jsonResponse['success']}');
         }
       } else if (response.statusCode == 401) {
         TokenExpire.handleTokenExpiration();
       } else {
         Get.snackbar(
-          'Error',
+          'histor24'.tr,
           jsonResponse['error']['message'],
           backgroundColor: Colors.red,
           colorText: Colors.white,
