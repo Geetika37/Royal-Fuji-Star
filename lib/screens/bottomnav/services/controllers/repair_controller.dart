@@ -98,7 +98,7 @@ class RepairController extends GetxController {
       var jsonResponse = jsonDecode(responseData);
       if (response.statusCode == 200) {
         Get.snackbar(
-          'Success',
+          'histor21'.tr,
           jsonResponse['message'],
           backgroundColor: Colors.green,
           colorText: Colors.white,
@@ -108,7 +108,7 @@ class RepairController extends GetxController {
         TokenExpire.handleTokenExpiration();
       } else {
         Get.snackbar(
-          'Error',
+          'histor24'.tr,
           jsonResponse['error']['message'],
           backgroundColor: Colors.red,
           colorText: Colors.white,

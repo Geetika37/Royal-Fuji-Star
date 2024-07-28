@@ -40,12 +40,11 @@ class AnnualMaintenanceController extends GetxController {
       if (response.statusCode == 200) {
         if (jsonResponse['success']) {
           Get.snackbar(
-            'Success',
-            'Submitted',
+            'histor21'.tr,
+            'histor22'.tr,
             backgroundColor: Colors.green,
             colorText: Colors.white,
           );
-          print('success-->${jsonResponse['success']}');
         }
       }
       else if (response.statusCode == 401) {
@@ -53,12 +52,11 @@ class AnnualMaintenanceController extends GetxController {
       }
        else {
         Get.snackbar(
-          'Error',
+          'histor24'.tr,
           jsonResponse['error']['message'],
           backgroundColor: Colors.red,
           colorText: Colors.white,
         );
-        print('jsonResponse---->${jsonResponse['error']['message']}');
       }
     } catch (e) {
       print("error${e.toString()}");
