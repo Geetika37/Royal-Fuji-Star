@@ -89,6 +89,8 @@ class RepairController extends GetxController {
       for (var image in uploadImages) {
         request.files
             .add(await http.MultipartFile.fromPath('uploadImages', image.path));
+
+        print("<<-------images ---> ${image.path}");
       }
 
       // sendd
@@ -103,7 +105,6 @@ class RepairController extends GetxController {
           backgroundColor: Colors.green,
           colorText: Colors.white,
         );
-        
       } else if (response.statusCode == 401) {
         TokenExpire.handleTokenExpiration();
       } else {
