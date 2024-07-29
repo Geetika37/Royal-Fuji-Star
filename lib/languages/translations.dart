@@ -266,7 +266,13 @@ class AppTranslations extends Translations {
           'validation27': 'Repair is created',
           'validation28': 'Spare Item is created',
           'validation29': 'Advisory is created',
-          'validation30': '',
+          'validation30': 'Invalid Email or Password',
+          'validation31': 'Attribute Must be Unique',
+          'validation32': '',
+          'validation33': '',
+          'validation34': '',
+          'validation35': '',
+          'validation36': '',
         },
         'ar_AE': {
           'companyname': 'رويال فوجي ستار للمصاعد والسلالم المتحركة ذ.م.م',
@@ -532,7 +538,14 @@ class AppTranslations extends Translations {
           'validation27': 'يتم إنشاء الإصلاح',
           'validation28': 'يتم إنشاء العنصر الاحتياطي',
           'validation29': 'يتم إنشاء الاستشارة',
-          'validation30': '',
+          'validation30': 'البريد الإلكتروني أو كلمة السر خاطئة',
+          'validation31': 'يجب أن تكون السمة فريدة',
+          'validation32': '',
+          'validation33': '',
+          'validation34': '',
+          'validation35': '',
+          'validation36': '',
+
         },
       };
 }

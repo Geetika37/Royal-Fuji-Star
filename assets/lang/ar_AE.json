@@ -228,8 +228,13 @@
     "validation27":"يتم إنشاء الإصلاح",
     "validation28":"يتم إنشاء العنصر الاحتياطي",
     "validation29":"يتم إنشاء الاستشارة",
-    "validation30":""
-
+    "validation30":"البريد الإلكتروني أو كلمة السر خاطئة",
+    "validation31":"يجب أن تكون السمة فريدة",
+    "validation32":"",
+    "validation33":"",
+    "validation34":"",
+    "validation35":"",
+    "validation36":""
 
   }
   

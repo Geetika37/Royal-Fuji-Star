@@ -31,11 +31,21 @@ class LoginController extends GetxController {
         await TokenKey.saveValue('token', token);
         Get.offAll(const Bottomnav());
       } else {
-        Get.snackbar('histor24'.tr, jsonResponse['error']['message'],
-            backgroundColor: Colors.red, colorText: Appcolor.white);
+        Get.snackbar(
+          'histor24'.tr,
+          'validation30'.tr,
+          backgroundColor: Colors.red,
+          colorText: Appcolor.white,
+        );
       }
     } catch (e) {
-      print('Error: ${e.toString()}');
+      Get.snackbar(
+        'histor24',
+        e.toString(),
+        backgroundColor: Colors.red,
+        colorText: Appcolor.white,
+      );
+      // print('Error: ${e.toString()}');
     } finally {
       isLoading(false);
     }

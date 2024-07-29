@@ -228,7 +228,14 @@
     "validation27":"Repair is created",
     "validation28":"Spare Item is created",
     "validation29":"Advisory is created",
-    "validation30":""
+    "validation30":"Invalid Email or Password",
+    "validation31":"Attribute Must be Unique",
+    "validation32":"",
+    "validation33":"",
+    "validation34":"",
+    "validation35":"",
+    "validation36":""
+
 
 
 
