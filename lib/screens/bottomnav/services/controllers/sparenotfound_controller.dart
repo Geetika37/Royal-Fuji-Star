@@ -40,7 +40,7 @@ class SpareNotFoundController extends GetxController {
       if (response.statusCode == 200) {
         Get.snackbar(
           'histor21'.tr,
-          jsonResponse['message'],
+          'validation28'.tr,
           backgroundColor: Colors.green,
           colorText: Colors.white,
         );

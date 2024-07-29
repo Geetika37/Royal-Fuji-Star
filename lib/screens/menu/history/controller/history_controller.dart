@@ -32,7 +32,6 @@ class HistoryController extends GetxController {
           'Authorization': 'Bearer $token',
         },
       );
-
       if (response.statusCode == 200) {
         var historyDetails =
             HistoryResponse.fromJson(json.decode(response.body));

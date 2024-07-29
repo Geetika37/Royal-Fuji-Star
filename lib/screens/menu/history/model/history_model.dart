@@ -400,43 +400,46 @@ class Repair {
 class RepairUploadImage {
   int id;
   String url;
-  FluffyFormats formats;
+  // FluffyFormats? formats;
 
   RepairUploadImage({
     required this.id,
     required this.url,
-    required this.formats,
+    // this.formats,
   });
 
-  factory RepairUploadImage.fromJson(Map<String, dynamic> json) =>
-      RepairUploadImage(
-        id: json["id"],
-        url: json["url"],
-        formats: FluffyFormats.fromJson(json["formats"]),
-      );
+  factory RepairUploadImage.fromJson(Map<String, dynamic> json) {
+    return RepairUploadImage(
+      id: json["id"],
+      url: json["url"],
+      // formats: json["formats"] != null
+      //     ? FluffyFormats.fromJson(json["formats"])
+      //     : null,
+    );
+  }
 
   Map<String, dynamic> toJson() => {
         "id": id,
         "url": url,
-        "formats": formats.toJson(),
+        // "formats": formats?.toJson(),
       };
 }
 
-class FluffyFormats {
-  Thumbnail thumbnail;
+// class FluffyFormats {
+//   Thumbnail thumbnail;
 
-  FluffyFormats({
-    required this.thumbnail,
-  });
+//   FluffyFormats({
+//     required this.thumbnail,
+//   });
 
-  factory FluffyFormats.fromJson(Map<String, dynamic> json) => FluffyFormats(
-        thumbnail: Thumbnail.fromJson(json["thumbnail"]),
-      );
+//   factory FluffyFormats.fromJson(Map<String, dynamic> json) => FluffyFormats(
+//         thumbnail: Thumbnail.fromJson(json["thumbnail"]),
+//       );
 
-  Map<String, dynamic> toJson() => {
-        "thumbnail": thumbnail.toJson(),
-      };
-}
+//   Map<String, dynamic> toJson() => {
+//         "thumbnail": thumbnail.toJson(),
+//       };
+// }
 
 class SpareEnquiry {
   int id;

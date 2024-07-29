@@ -45,15 +45,13 @@ class AdvisoryController extends GetxController {
       if (response.statusCode == 200) {
         Get.snackbar(
           'histor21'.tr,
-          jsonResponse['message'],
+          'validation29'.tr,
           backgroundColor: Colors.green,
           colorText: Colors.white,
         );
-      } 
-      else if (response.statusCode == 401) {
+      } else if (response.statusCode == 401) {
         TokenExpire.handleTokenExpiration();
-      }
-       else {
+      } else {
         Get.snackbar(
           'histor24'.tr,
           jsonResponse['error']['message'],
