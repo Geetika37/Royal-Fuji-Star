@@ -169,7 +169,7 @@ class DropdownCapacity extends StatelessWidget {
                 '630KG',
                 '800KG',
                 '1000KG',
-                'MORE THAN 1000KG'
+                'validation26'.tr,
               ].map<DropdownMenuItem<String>>((String value) {
                 return DropdownMenuItem<String>(
                   value: value,
