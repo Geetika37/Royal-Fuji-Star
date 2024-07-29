@@ -85,7 +85,7 @@ class _CreateItemContainerState extends State<CreateItemContainer> {
                       style: poppins(Appcolor.black, 12, FontWeight.w400)),
                   SizedBox(height: screenHeight * 0.01),
                   TextfieldMultipleLine(
-                    validator: Validators.validateEmpty,
+                    validator: Validators.validate,
                     controller: descriptionController,
                     hintText: 'annualcontainertext7'.tr,
                     hintTextSize: 12,

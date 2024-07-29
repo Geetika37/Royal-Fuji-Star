@@ -56,7 +56,7 @@ class _RepairContainerState extends State<RepairContainer> {
                 ),
                 SizedBox(height: screenHeight * 0.01),
                 Textformfield(
-                  validator: Validators.validateBrand,
+                  validator: Validators.validate,
                   controller: brandNameController,
                   textfieldWidth: screenWidth,
                   hintText: 'annualcontainertext13'.tr,
@@ -75,7 +75,7 @@ class _RepairContainerState extends State<RepairContainer> {
                     style: poppins(Appcolor.black, 12, FontWeight.w400)),
                 SizedBox(height: screenHeight * 0.01),
                 TextfieldMultipleLine(
-                  validator: Validators.validateEmpty,
+                  validator: Validators.validate,
                   hintText: 'annualcontainertext7'.tr,
                   hintTextSize: 12,
                   controller: descriptionController,

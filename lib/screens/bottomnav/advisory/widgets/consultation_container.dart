@@ -94,7 +94,7 @@ class _ConsultationContainerState extends State<ConsultationContainer> {
                       style: poppins(Appcolor.black, 12, FontWeight.w400)),
                   SizedBox(height: screenHeight * 0.01),
                   TextfieldMultipleLine(
-                    validator: Validators.validateEmpty,
+                    validator: Validators.validate,
                     controller: descriptionController,
                     hintText: 'annualcontainertext7'.tr,
                     hintTextSize: 12,
@@ -106,7 +106,7 @@ class _ConsultationContainerState extends State<ConsultationContainer> {
                       style: poppins(Appcolor.black, 12, FontWeight.w400)),
                   SizedBox(height: screenHeight * 0.01),
                   TextfieldMultipleLine(
-                    validator: Validators.validateEmpty,
+                    validator: Validators.validate,
                     controller: additionalCommentController,
                     hintText: 'annualcontainertext7'.tr,
                     hintTextSize: 12,
