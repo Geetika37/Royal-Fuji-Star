@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
 import 'package:royal_fuji_star/constants/size.dart';
 import 'package:royal_fuji_star/screens/bottomnav/about/views/about.dart';
 import 'package:royal_fuji_star/screens/bottomnav/advisory/views/consultation.dart';
@@ -81,7 +80,7 @@ class _BottomnavState extends State<Bottomnav> {
                       BottomBarItem(
                         image: bottombarContents[0].image,
                         pressedimage: bottombarContents[0].pressedimage,
-                        label: bottombarContents[0].label.tr,
+                        // label: bottombarContents[0].label.tr,
                         isSelected: _currentIndex == 0,
                         index: 0,
                         onTap: _onItemTapped,
@@ -89,7 +88,7 @@ class _BottomnavState extends State<Bottomnav> {
                       BottomBarItem(
                         image: bottombarContents[1].image,
                         pressedimage: bottombarContents[1].pressedimage,
-                        label: bottombarContents[1].label.tr,
+                        // label: bottombarContents[1].label.tr,
                         isSelected: _currentIndex == 1,
                         index: 1,
                         onTap: _onItemTapped,
@@ -97,7 +96,7 @@ class _BottomnavState extends State<Bottomnav> {
                       BottomBarItem(
                         image: bottombarContents[2].image,
                         pressedimage: bottombarContents[2].pressedimage,
-                        label: bottombarContents[2].label.tr,
+                        // label: bottombarContents[2].label.tr,
                         isSelected: _currentIndex == 2,
                         index: 2,
                         onTap: _onItemTapped,
@@ -105,7 +104,7 @@ class _BottomnavState extends State<Bottomnav> {
                       BottomBarItem(
                         image: bottombarContents[3].image,
                         pressedimage: bottombarContents[3].pressedimage,
-                        label: bottombarContents[3].label.tr,
+                        // label: bottombarContents[3].label.tr,
                         isSelected: _currentIndex == 3,
                         index: 3,
                         onTap: _onItemTapped,
@@ -122,7 +121,7 @@ class _BottomnavState extends State<Bottomnav> {
 class BottomBarItem extends StatelessWidget {
   final String image;
   final String pressedimage;
-  final String label;
+  // final String label;
   final bool isSelected;
   final int index;
   final Function(int) onTap;
@@ -131,7 +130,7 @@ class BottomBarItem extends StatelessWidget {
     super.key,
     required this.image,
     required this.pressedimage,
-    required this.label,
+    // required this.label,
     required this.isSelected,
     required this.index,
     required this.onTap,
@@ -162,16 +161,16 @@ class BottomBarItem extends StatelessWidget {
               SizedBox(
                 height: screenHeight * 0.005,
               ),
-              Text(
-                label,
-                style: TextStyle(
-                  color: isSelected ? Appcolor.buttonColor : Colors.white,
-                  fontSize: 11.0,
-                  fontWeight: FontWeight.w600,
-                ),
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-              ),
+              // Text(
+              //   label,
+              //   style: TextStyle(
+              //     color: isSelected ? Appcolor.buttonColor : Colors.white,
+              //     fontSize: 11.0,
+              //     fontWeight: FontWeight.w600,
+              //   ),
+              //   maxLines: 1,
+              //   overflow: TextOverflow.ellipsis,
+              // ),
             ],
           ),
         )
@@ -183,17 +182,33 @@ class BottomBarItem extends StatelessWidget {
 class BottombarContent {
   final String image;
   final String pressedimage;
-  final String label;
-  BottombarContent(this.image, this.pressedimage, this.label);
+  // final String label;
+  BottombarContent(
+    this.image,
+    this.pressedimage,
+    // this.label,
+  );
 }
 
 List<BottombarContent> bottombarContents = [
   BottombarContent(
-      "assets/svg/wproduct.svg", "assets/svg/bproduct.svg", "bottomnav1"),
+    "assets/svg/wproduct.svg",
+    "assets/svg/bproduct.svg",
+    // "bottomnav1",
+  ),
   BottombarContent(
-      "assets/svg/wservice.svg", "assets/svg/bservice.svg", "bottomnav2"),
+    "assets/svg/wservice.svg",
+    "assets/svg/bservice.svg",
+    // "bottomnav2",
+  ),
   BottombarContent(
-      "assets/svg/wadvisory.svg", "assets/svg/badvisory.svg", "bottomnav3"),
+    "assets/svg/wadvisory.svg",
+    "assets/svg/badvisory.svg",
+    // "bottomnav3",
+  ),
   BottombarContent(
-      "assets/svg/wabout.svg", "assets/svg/babout.svg", "bottomnav4"),
+    "assets/svg/wabout.svg",
+    "assets/svg/babout.svg",
+    // "bottomnav4",
+  ),
 ];
