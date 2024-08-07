@@ -152,54 +152,54 @@ class Formats {
 }
 
 class Thumbnail {
-  Ext ext;
+  // Ext ext;
   String url;
-  String hash;
-  Mime mime;
-  String name;
-  dynamic path;
-  double size;
-  int width;
-  int height;
-  int sizeInBytes;
+  // String hash;
+  // Mime mime;
+  // String name;
+  // dynamic path;
+  // double size;
+  // int width;
+  // int height;
+  // int sizeInBytes;
 
   Thumbnail({
-    required this.ext,
+    // required this.ext,
     required this.url,
-    required this.hash,
-    required this.mime,
-    required this.name,
-    required this.path,
-    required this.size,
-    required this.width,
-    required this.height,
-    required this.sizeInBytes,
+    // required this.hash,
+    // required this.mime,
+    // required this.name,
+    // required this.path,
+    // required this.size,
+    // required this.width,
+    // required this.height,
+    // required this.sizeInBytes,
   });
 
   factory Thumbnail.fromJson(Map<String, dynamic> json) => Thumbnail(
-        ext: extValues.map[json["ext"]]!,
+        // ext: extValues.map[json["ext"]]!,
         url: json["url"],
-        hash: json["hash"],
-        mime: mimeValues.map[json["mime"]]!,
-        name: json["name"],
-        path: json["path"],
-        size: json["size"]?.toDouble(),
-        width: json["width"],
-        height: json["height"],
-        sizeInBytes: json["sizeInBytes"],
+        // hash: json["hash"],
+        // mime: mimeValues.map[json["mime"]]!,
+        // name: json["name"],
+        // path: json["path"],
+        // size: json["size"]?.toDouble(),
+        // width: json["width"],
+        // height: json["height"],
+        // sizeInBytes: json["sizeInBytes"],
       );
 
   Map<String, dynamic> toJson() => {
-        "ext": extValues.reverse[ext],
+        // "ext": extValues.reverse[ext],
         "url": url,
-        "hash": hash,
-        "mime": mimeValues.reverse[mime],
-        "name": name,
-        "path": path,
-        "size": size,
-        "width": width,
-        "height": height,
-        "sizeInBytes": sizeInBytes,
+        // "hash": hash,
+        // "mime": mimeValues.reverse[mime],
+        // "name": name,
+        // "path": path,
+        // "size": size,
+        // "width": width,
+        // "height": height,
+        // "sizeInBytes": sizeInBytes,
       };
 }
 
