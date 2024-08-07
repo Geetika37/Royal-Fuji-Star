@@ -31,7 +31,7 @@ class AppTranslations extends Translations {
           'location': 'Location',
           'select': 'Select',
           'unselect': 'UnSelect',
-          "image_dropitem": 'Drop items here',
+          "image_dropitem": 'Upload Images',
           'editprofile': 'Edit Profile',
           'policy_terms1': 'By signing up you accept the ',
           'policy_terms2': 'Terms of Service ',
@@ -303,7 +303,7 @@ class AppTranslations extends Translations {
           'location': 'موقع',
           'select': 'يختار',
           'unselect': 'إلغاء التحديد',
-          "image_dropitem": 'إسقاط العناصر هنا',
+          "image_dropitem": 'تحميل الصور',
           'editprofile': 'تعديل الملف الشخصي',
           'enquiry': 'الاستفسار الآن',
           'policy_terms1': 'بالتسجيل فإنك تقبل ',
@@ -545,7 +545,6 @@ class AppTranslations extends Translations {
           'validation34': '',
           'validation35': '',
           'validation36': '',
-
         },
       };
 }
