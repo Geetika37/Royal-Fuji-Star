@@ -1,4 +1,4 @@
-package com.example.royal_fuji_star
+package com.erebsglobal.royalfujistar
 
 import io.flutter.embedding.android.FlutterActivity
 
