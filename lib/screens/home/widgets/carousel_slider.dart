@@ -27,7 +27,7 @@ class _CustomCarouselSliderState extends State<CustomCarouselSlider> {
 
       final carouselImage = carouselSliderController.carouselImage.value;
       if (carouselImage == null || carouselImage.data.images.isEmpty) {
-        return Center(child: Text(carouselSliderController.errorMessage.value));
+        return SizedBox();
       }
 
       // Flatten the list of images

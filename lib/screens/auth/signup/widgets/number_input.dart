@@ -51,7 +51,7 @@ class NumberInput extends StatelessWidget {
           SizedBox(width: screenWidth * 0.02),
           Expanded(
             child: TextFormField(
-              maxLength: 10,
+              // maxLength: 10,
               keyboardType: TextInputType.phone,
               inputFormatters: [
                 FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
