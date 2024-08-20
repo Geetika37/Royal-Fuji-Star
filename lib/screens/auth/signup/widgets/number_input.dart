@@ -54,8 +54,8 @@ class NumberInput extends StatelessWidget {
               // maxLength: 10,
               keyboardType: TextInputType.phone,
               inputFormatters: [
-                FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
-                LengthLimitingTextInputFormatter(10),
+                FilteringTextInputFormatter.allow(RegExp(r'[0-15]')),
+                LengthLimitingTextInputFormatter(15),
               ],
               style: poppins(Appcolor.black, 15, FontWeight.w300),
               controller: phoneController,

@@ -13,19 +13,18 @@ class CustomCarouselSlider extends StatefulWidget {
 }
 
 class _CustomCarouselSliderState extends State<CustomCarouselSlider> {
-  final CarouselSliderController carouselSliderController =
-      Get.put(CarouselSliderController());
+  final BannerController bannerController = Get.put(BannerController());
   final CarouselController carouselController = CarouselController();
   final currentIndex = 0.obs;
 
   @override
   Widget build(BuildContext context) {
     return Obx(() {
-      if (carouselSliderController.isLoading.value) {
+      if (bannerController.isLoading.value) {
         return Center(child: buildShimmerLoading());
       }
 
-      final carouselImage = carouselSliderController.carouselImage.value;
+      final carouselImage = bannerController.carouselImage.value;
       if (carouselImage == null || carouselImage.data.images.isEmpty) {
         return SizedBox();
       }
@@ -59,7 +58,7 @@ class _CustomCarouselSliderState extends State<CustomCarouselSlider> {
                       ),
                     );
                   },
-                  carouselController: carouselController,
+                  // carouselController: bannerController,
                   options: CarouselOptions(
                     scrollPhysics: const BouncingScrollPhysics(),
                     autoPlay: true,
@@ -79,7 +78,7 @@ class _CustomCarouselSliderState extends State<CustomCarouselSlider> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: allImages.asMap().entries.map((entry) {
                     return GestureDetector(
-                      onTap: () => carouselController.animateToPage(entry.key),
+                      // onTap: () => carouselController.animateToPage(entry.key),
                       child: Obx(() {
                         return Container(
                           clipBehavior: Clip.antiAlias,
@@ -121,12 +120,12 @@ class _CustomCarouselSliderState extends State<CustomCarouselSlider> {
   }
 }
 
-
-// import 'package:carousel_slider/carousel_slider.dart';
+// import 'package:carousel_slider/carousel_slider.dart' as slider;
 // import 'package:flutter/material.dart';
 // import 'package:get/get.dart';
 // import 'package:royal_fuji_star/screens/home/controller/carousel_controller.dart';
 // import 'package:royal_fuji_star/services/api_baseurl.dart';
+// import 'package:shimmer/shimmer.dart';
 
 // class CustomCarouselSlider extends StatefulWidget {
 //   const CustomCarouselSlider({super.key});
@@ -138,19 +137,20 @@ class _CustomCarouselSliderState extends State<CustomCarouselSlider> {
 // class _CustomCarouselSliderState extends State<CustomCarouselSlider> {
 //   final CarouselSliderController carouselSliderController =
 //       Get.put(CarouselSliderController());
-//   final CarouselController carouselController = CarouselController();
+//   final slider.CarouselController carouselController =
+//       slider.CarouselController();
 //   final currentIndex = 0.obs;
 
 //   @override
 //   Widget build(BuildContext context) {
 //     return Obx(() {
 //       if (carouselSliderController.isLoading.value) {
-//         return const Center(child: CircularProgressIndicator());
+//         return Center(child: buildShimmerLoading());
 //       }
 
 //       final carouselImage = carouselSliderController.carouselImage.value;
 //       if (carouselImage == null || carouselImage.data.images.isEmpty) {
-//         return Center(child: Text(carouselSliderController.errorMessage.value));
+//         return const SizedBox();
 //       }
 
 //       // Flatten the list of images
@@ -165,13 +165,12 @@ class _CustomCarouselSliderState extends State<CustomCarouselSlider> {
 //             children: [
 //               InkWell(
 //                 onTap: () {},
-//                 child: CarouselSlider.builder(
+//                 child: slider.CarouselSlider.builder(
 //                   itemCount: allImages.length,
 //                   itemBuilder: (context, index, realIndex) {
 //                     final imageUrl = allImages[index];
 //                     return ClipRRect(
-//                       borderRadius:
-//                           BorderRadius.circular(15.0), // Circular border
+//                       borderRadius: BorderRadius.circular(15.0),
 //                       child: Image.network(
 //                         imageUrl,
 //                         fit: BoxFit.cover,
@@ -183,7 +182,7 @@ class _CustomCarouselSliderState extends State<CustomCarouselSlider> {
 //                     );
 //                   },
 //                   carouselController: carouselController,
-//                   options: CarouselOptions(
+//                   options: slider.CarouselOptions(
 //                     scrollPhysics: const BouncingScrollPhysics(),
 //                     autoPlay: true,
 //                     aspectRatio: 2,
@@ -226,5 +225,20 @@ class _CustomCarouselSliderState extends State<CustomCarouselSlider> {
 //         ],
 //       );
 //     });
+//   }
+
+//   Widget buildShimmerLoading() {
+//     return Shimmer.fromColors(
+//       baseColor: Colors.grey[300]!,
+//       highlightColor: Colors.grey[100]!,
+//       child: Container(
+//         width: double.infinity,
+//         height: 200.0,
+//         decoration: BoxDecoration(
+//           borderRadius: BorderRadius.circular(15.0),
+//           color: Colors.white,
+//         ),
+//       ),
+//     );
 //   }
 // }

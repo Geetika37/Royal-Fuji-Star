@@ -6,7 +6,7 @@ import 'package:royal_fuji_star/services/api_baseurl.dart';
 import 'package:http/http.dart' as http;
 import 'package:royal_fuji_star/services/token.dart';
 
-class CarouselSliderController extends GetxController {
+class BannerController extends GetxController {
   var isLoading = false.obs;
   var carouselImage = Rxn<CarouselSliderModel>();
   var errorMessage = ''.obs;
